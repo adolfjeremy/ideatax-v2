@@ -1,0 +1,190 @@
+.admin-dashboard #wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+
+.admin-dashboard #sidebar-wrapper {
+    margin-top: 60px;
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin 0.25s ease-out;
+    transition: margin 0.25s ease-out;
+}
+
+.admin-dashboard #sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+
+.admin-dashboard #sidebar-wrapper .sidebar-heading img {
+    width: 100px;
+    border-radius: 0;
+}
+
+.admin-dashboard #sidebar-wrapper .list-group {
+    width: 15rem;
+}
+
+.admin-dashboard #sidebar-wrapper .list-group .list-group-item {
+    font-size: 1rem;
+    color: #272e45;
+}
+
+@media (min-width: 768px) {
+    .admin-dashboard #sidebar-wrapper {
+        margin: 0;
+    }
+    .admin-dashboard #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+    .admin-dashboard #wrapper.toggled #sidebar-wrapper {
+        margin-left: -15rem;
+    }
+}
+
+.admin-dashboard #page-content-wrapper {
+    background-color: #f5f5fb;
+    width: 100vw;
+}
+
+.admin-dashboard #page-content-wrapper .navbar-admin {
+    margin-top: 0;
+}
+
+.admin-dashboard #page-content-wrapper .navbar-admin .nav-item .nav-link {
+    margin: 0 10px;
+}
+
+.admin-dashboard #page-content-wrapper .profile-picture {
+    max-height: 45px;
+}
+
+.admin-dashboard .section-content {
+    margin-top: 100px;
+}
+
+@media (min-width: 768px) {
+    .admin-dashboard .section-content {
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+}
+
+.admin-dashboard .section-content .dashboard-title {
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 36px;
+    color: #272e45;
+}
+
+.admin-dashboard .section-content .dashboard-subtitle {
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 24px;
+    color: #9191a9;
+}
+
+.admin-dashboard .section-content .dashboard-card-title {
+    font-size: 16px;
+    line-height: 24px;
+    color: #c5c5c5;
+}
+
+.admin-dashboard .section-content .dashboard-card-subtitle {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+    color: #272e45;
+}
+
+.admin-dashboard .section-content .card-items {
+    background-color: #fff !important;
+}
+
+.admin-dashboard .section-content .card-items a {
+    text-decoration: none;
+}
+
+.admin-dashboard .section-content input,
+.admin-dashboard .section-content textarea,
+.admin-dashboard .section-content select {
+    background-color: #f5f5fb;
+}
+
+#discussion h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.discussion_list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+@media (min-width: 1024px) {
+    .discussion_list {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+    }
+}
+
+.discussion_item {
+    color: #eee;
+    background-color: #272e45;
+    border-radius: 8px;
+}
+
+.discussion_item h4 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.discussion_item span {
+    font-size: 14px;
+}
+
+.discussion_item .question_container {
+    font-size: 16px;
+    line-height: 1.2;
+    margin: 5px 0;
+}
+
+#sidebar-wrapper .list-group-item {
+    font-size: 1rem;
+    color: #272e45;
+}
+
+#sidebar-wrapper .active {
+    border: none !important;
+    border-right: 4px solid #ffc107 !important;
+    background: -webkit-gradient(
+        linear,
+        right top,
+        left top,
+        color-stop(0, rgba(255, 193, 7, 0.32)),
+        to(rgba(255, 193, 5, 0))
+    ) !important;
+    background: linear-gradient(
+        270deg,
+        rgba(255, 193, 7, 0.32) 0 2%,
+        rgba(255, 193, 5, 0) 100%
+    ) !important;
+}
+
+#sidebar-wrapper .list-group-item:hover {
+    background: -webkit-gradient(
+        linear,
+        right top,
+        left top,
+        color-stop(0, rgba(255, 193, 7, 0.32)),
+        to(rgba(255, 193, 5, 0))
+    );
+    background: linear-gradient(
+        270deg,
+        rgba(255, 193, 7, 0.32) 0 2%,
+        rgba(255, 193, 5, 0) 100%
+    );
+}

@@ -1,0 +1,125 @@
+header .navbar_brand {
+    font-size: 30px;
+    font-weight: 800 !important;
+    color: #272e45;
+    padding: 0.3125rem 0;
+}
+
+#hamburgerButton {
+    position: relative;
+    width: 40px;
+    height: 25px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+#hamburgerButton::after,
+#hamburgerButton::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    display: block;
+    height: 3px;
+    background-color: #ffc107;
+    transition: 250ms ease-out;
+}
+
+#hamburgerButton::after {
+    top: 0;
+    width: 40px;
+}
+
+#hamburgerButton::before {
+    bottom: 0;
+    width: 20px;
+}
+
+.inner-line {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 3px;
+    background-color: #ffc107;
+    transition: 250ms ease-out;
+}
+
+.rotate::before {
+    transform: rotate(45deg);
+    width: 40px !important;
+}
+
+.rotate::after {
+    transform: rotate(-45deg);
+}
+
+.rotate::after,
+.rotate::before {
+    transform-origin: 35px 1px;
+}
+.rotate .inner-line {
+    opacity: 0;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link-custom,
+.custom-dropdown-item {
+    color: #272e45;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.nav-link-custom {
+    padding: 0.5rem 1rem !important;
+}
+
+.nav-link-custom:focus,
+.custom-dropdown-item:focus {
+    color: #272e45;
+}
+
+.nav-link-custom:hover,
+.custom-dropdown-item:hover {
+    color: #ffc107;
+}
+
+@media (max-width: 991.98px) {
+    header nav {
+        position: absolute;
+        top: 0;
+        left: -70vw;
+        width: 70vw;
+        height: 100vh;
+        background-color: #fff;
+        transition: 250ms ease-out;
+        z-index: 3;
+    }
+    header nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .open {
+        transform: translateX(100%);
+    }
+
+    .dropdown-menu {
+        position: static;
+    }
+    .dropdown-item {
+        margin-left: 10px;
+    }
+}
+
+@media (min-width: 991.99px) {
+    .mobile_navbar_brand {
+        display: none;
+    }
+}

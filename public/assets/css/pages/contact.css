@@ -1,0 +1,26 @@
+#contactUs {
+    color: #fff;
+}
+
+#contactUs h2 {
+    color: #fff;
+}
+
+#contactUs .contact-list {
+    background-color: #272e45;
+}
+
+#contactUs ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#contactUs ul a {
+    color: #ffc107;
+    text-decoration: none;
+}
+
+#contactUs ul a:hover {
+    text-decoration: underline;
+}
