@@ -35,8 +35,8 @@
                     <div class="team_detail_list">
                         @foreach ($teams as $teamItem)
                             <div class="team_detail_item mt-4 mt-lg-0">
-                                <a href="{{ route('our-team-detail', $team->slug) }}" class="profile_image_container profile_detail" style="background-image: url('{{ asset("storage/" . $teamItem->photo) }}')"></a>
-                                <a href="{{ route('our-team-detail', $team->slug) }}" class="name_container mt-2 text-start">
+                                <a href="{{ route('our-team-detail', $teamItem->slug) }}" class="profile_image_container profile_detail" style="background-image: url('{{ asset("storage/" . $teamItem->photo) }}')"></a>
+                                <a href="{{ route('our-team-detail', $teamItem->slug) }}" class="name_container mt-2 text-start">
                                     <h5 class="mb-1">{{ $teamItem->name }}</h5>
                                     <p class="mt-0">{{ $teamItem->position }}</p>
                                 </a>

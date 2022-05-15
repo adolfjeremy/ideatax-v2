@@ -29,7 +29,7 @@ class aboutController extends Controller
     public function teamDetail($id)
     {
         $team = Team::where('slug', $id)->firstOrFail();
-        $teams = Team::where('id', '!=', $team->id)->get();
+        $teams = Team::where('id', '!=', $team->id)->take(3)->get();
 
         return view('pages.teamDetail',[
             "team" => $team,
