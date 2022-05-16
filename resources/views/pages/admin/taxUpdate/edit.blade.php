@@ -52,6 +52,11 @@
                                             <input type="file" id="photo" name="photo" class="form-control w-100" value="{{ $item->photo }}" onchange="previewImage()">
                                         </div>
                                         <div class="col-12 mb-3">
+                                            <label for="pdf" class="form-label">Attachment</label>
+                                            <input type="file" id="pdf" name="pdf" class="form-control w-100">
+                                            <input type="hidden" name="oldFile" class="form-control w-100" value="{{ $item->pdf }}">
+                                        </div>
+                                        <div class="col-12 mb-3">
                                             <label for="body">Tax Update Body</label>
                                             <textarea name="body" id="editor">{!! $item->body !!}</textarea>
                                         </div>

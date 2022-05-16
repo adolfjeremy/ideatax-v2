@@ -126,6 +126,7 @@ class TaxUpdateController extends Controller
     {
         $item = TaxUpdate::findOrFail($id);
         Storage::delete($item->photo);
+        Storage::delete($item->pdf);
         $item->delete();
 
         return redirect()->route('update.index');
