@@ -79,7 +79,7 @@
             </div>
         </div>
     </section>
-    <section id="newsContainer" class="pt-2 pb-5">
+    <section id="newsContainer" class="pt-2 mt-3 pb-5">
         <div class="container">
             <div class="row">
                 <div class="col-12">

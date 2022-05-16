@@ -33,8 +33,9 @@
                     </div>
                     <div class="row mt-2 news_title">
                         <h1>{{ $news->title }}</h1>
-                        <p class="text-warning fs-6 fw-bolder">{{ $news->newsCategory->title }}</p>
-                        <p>{{ $news->created_at->format('d/m/Y H:i') }}WIB</p>
+                    </div>
+                    <div class="row">
+                        <p class="text-warning fs-6 fw-bolder">{{ $news->newsCategory->title }} <span class="text-dark fw-normal">- {{ $news->created_at->format('d/m/Y H:i') }} WIB</span></p>
                     </div>
                     <div class="row">
                         <div class="news_body">{!! $news->body !!}</div>
@@ -92,7 +93,7 @@
                     </div>
                 </div>
             </div>
-            <div id="newsContainer" class="row">
+            <div id="newsContainer" class="row mb-5 mt-3">
                 <div class="col-12">
                     <div class="row mt-3" data-aos="fade-up">
                         <h3>Latest News</h3>

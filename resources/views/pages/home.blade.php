@@ -5,7 +5,7 @@
 @endsection
 
 @section('title')
-    Ideatax | konsultan pajak
+    Ideatax | Tax Consultant
 @endsection
 
 @section('content')

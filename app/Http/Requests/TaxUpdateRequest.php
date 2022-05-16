@@ -27,6 +27,7 @@ class TaxUpdateRequest extends FormRequest
             'title'=> "required|max:255",
             'photo' => 'image',
             'body'=> "required|string",
+            'pdf' => "required|mimetypes:application/pdf",
             'tax_update_categories_id'=> "required|exists:tax_update_categories,id",
         ];
     }

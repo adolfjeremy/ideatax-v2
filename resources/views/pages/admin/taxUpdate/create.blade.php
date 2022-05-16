@@ -46,6 +46,10 @@
                                             <input type="file" id="photo" name="photo" class="form-control w-100" onchange="previewImage()" required>
                                         </div>
                                         <div class="col-12 mb-3">
+                                            <label for="pdf" class="form-label">Attachment</label>
+                                            <input type="file" id="pdf" name="pdf" class="form-control w-100" required>
+                                        </div>
+                                        <div class="col-12 mb-3">
                                             <label for="body">Tax Update Body</label>
                                             <textarea name="body" id="editor"></textarea>
                                         </div>

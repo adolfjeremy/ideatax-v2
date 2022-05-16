@@ -69,6 +69,11 @@ class TaxUpdateController extends Controller
             $data['photo'] = $request->file('photo')->store('update');
         }
 
+        if($request->file('pdf'))
+        {
+            $data['pdf'] = $request->file('pdf')->store('update/pdf');
+        }
+
         $data['slug'] = Str::slug($request->title);
         
         TaxUpdate::create($data);
@@ -101,6 +106,15 @@ class TaxUpdateController extends Controller
                 Storage::delete($request->oldImage);
             }
             $data['photo'] = $request->file('photo')->store('update');
+        }
+
+        if($request->file('pdf'))
+        {
+            if($request->oldFile)
+            {
+                Storage::delete($request->oldFile);
+            }
+            $data['pdf'] = $request->file('pdf')->store('update/pdf');
         }
 
         $data['slug'] = Str::slug($request->title);

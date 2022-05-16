@@ -9,7 +9,7 @@ class TaxUpdate extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'title','slug', 'photo', 'body', "tax_update_categories_id",
+        'title','slug', 'photo', 'body', 'pdf',"tax_update_categories_id",
     ];
 
     public function taxUpdateCategory()

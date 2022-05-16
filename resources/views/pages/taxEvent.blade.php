@@ -2,6 +2,7 @@
 
 @section('page-style')
     <link rel="stylesheet" href="/assets/css/pages/news.css">
+    <link rel="stylesheet" href="/assets/css/pages/newsDetail.css">
 @endsection
 
 @section('title')
@@ -30,10 +31,13 @@
                     <div class="row">
                         <img src="{{ asset("storage/" . $taxEvent->photo) }}" alt="{{ $taxEvent->title }}" class="w-100">
                     </div>
-                    <div class="row">
-                        <h2>{{ $taxEvent->title }}</h2>
+                    <div class="row news_title mt-3">
+                        <h1>{{ $taxEvent->title }}</h1>
                     </div>
                     <div class="row">
+                        <p>{{ $taxEvent->created_at->format('d/m/Y H:i') }} WIB</p>
+                    </div>
+                    <div class="row mt-2">
                         <div>{!! $taxEvent->body !!}</div>
                     </div>
                 </div>

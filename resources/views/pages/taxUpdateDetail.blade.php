@@ -33,10 +33,15 @@
                     </div>
                     <div class="row mt-2 news_title">
                         <h1>{{ $taxUpdate->title }}</h1>
-                        <p class="text-warning fs-6 fw-bolder">{{ $taxUpdate->taxUpdateCategory->title }}</p>
+                    </div>
+                    <div class="row mt-2 d-flex flex-row">
+                        <p class="text-warning fs-6 fw-bolder">{{ $taxUpdate->taxUpdateCategory->title }} <span class="text-dark fw-normal">- {{ $taxUpdate->created_at->format('Y/m/d H:i') }} WIB</span></p>
                     </div>
                     <div class="row">
                         <div class="news_body">{!! $taxUpdate->body !!}</div>
+                        <div class="mt-2">
+                            <a href="{{ asset("storage/" . $taxUpdate->pdf) }}" target="_blank" class="btn btn-md btn-warning rounded">Download</a>
+                        </div>
                     </div>
                 </div>
                 <div id="sideNews" class="col-12 col-lg-4">
@@ -65,7 +70,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row mt-4 mb-1 related">
+                    <div id="newsContainer" class="row mt-4 mb-1 related">
                         <div class="col-12">
                             <div class="row" data-aos="fade-up">
                                 <h2>Related Updates</h2>
@@ -102,7 +107,7 @@
             </div>
             <div id="newsContainer" class="row">
                 <div class="col-12">
-                    <div class="row mt-3" data-aos="fade-up">
+                    <div class="row mt-5" data-aos="fade-up">
                         <h3>Latest Updates</h3>
                     </div>
                     <div class="row mb-4">
@@ -133,7 +138,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row mb-4 mt-3">
+            <div id="newsContainer" class="row mb-4 mt-3">
                 <div class="col-12">
                     <div class="row">
                         <div class="header_container text-start mb-2" data-aos="fade-up">
