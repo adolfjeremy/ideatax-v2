@@ -6,7 +6,7 @@
 @endsection
 
 @section('title')
-    Ideatax | {{ $news->title }}
+    {{ $news->title }} | Ideatax
 @endsection
 
     

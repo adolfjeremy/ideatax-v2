@@ -5,7 +5,7 @@
 @endsection
 
 @section('title')
-    Ideatax | About Ideatax
+    About | Ideatax
 @endsection
 
 @section('content')

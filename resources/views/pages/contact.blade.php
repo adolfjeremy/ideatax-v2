@@ -5,7 +5,7 @@
 @endsection
 
 @section('title')
-    Ideatax | Contact Us
+    Contact us | Ideatax
 @endsection
 
 @section('content')

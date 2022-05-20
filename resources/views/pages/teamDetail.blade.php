@@ -6,7 +6,7 @@
 @endsection
 
 @section('title')
-    Ideatax | Our Team
+    {{ $team->name }} | Ideatax
 @endsection
 
 @section('content')

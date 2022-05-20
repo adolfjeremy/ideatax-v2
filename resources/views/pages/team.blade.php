@@ -6,7 +6,7 @@
 @endsection
 
 @section('title')
-    Ideatax | Our Team
+    Our Team | Ideatax
 @endsection
 
 @section('content')

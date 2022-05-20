@@ -5,7 +5,7 @@
 @endsection
 
 @section('title')
-    Ideatax | Tax Update
+    Tax Updates | Ideatax
 @endsection
 
     

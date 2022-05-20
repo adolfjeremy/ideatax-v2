@@ -6,7 +6,7 @@
 @endsection
 
 @section('title')
-    Ideatax | {{ $taxEvent->title }}
+    {{ $taxEvent->title }} | Ideatax
 @endsection
 
     

@@ -6,7 +6,7 @@
 @endsection
 
 @section('title')
-    Ideatax | {{ $customerQuestion->title }}
+    {{ $customerQuestion->title }} | Ideatax
 @endsection
 
     

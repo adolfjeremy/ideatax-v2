@@ -5,7 +5,7 @@
 @endsection
 
 @section('title')
-    Ideatax | News and Event
+    Article | Ideatax
 @endsection
 
     

@@ -5,7 +5,7 @@
 @endsection
 
 @section('title')
-    Ideatax | Tax Consultant
+    Tax Consultant | Ideatax
 @endsection
 
 @section('content')

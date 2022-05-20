@@ -8,8 +8,8 @@
     <meta property="og:title" content="Ideatax">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Ideatax">
-    <meta property="og:description" content="We focus on helping your business grow and achieve its goals. Our day-to-day activities are focused on how we maintain strong relationships and maintain your trust, as well as provide thoughtful solutions to help manage your tax risks and meet beyond your expectations.">
-    <meta property="description" content="We focus on helping your business grow and achieve its goals. Our day-to-day activities are focused on how we maintain strong relationships and maintain your trust, as well as provide thoughtful solutions to help manage your tax risks and meet beyond your expectations.">
+    <meta property="og:description" content="Ideatax is tax consultant (konsultan pajak) focus on helping your business grow and achieve its goals. Our day-to-day activities are focused on how we maintain strong relationships and maintain your trust, as well as provide thoughtful solutions to help manage your tax risks and meet beyond your expectations.">
+    <meta property="description" content="Ideatax is tax consultant (konsultan pajak) focus on helping your business grow and achieve its goals. Our day-to-day activities are focused on how we maintain strong relationships and maintain your trust, as well as provide thoughtful solutions to help manage your tax risks and meet beyond your expectations.">
     <meta property="og:url" content="https://www.ideatax.id">
     <meta name="keywords" content="Ideatax ,Idea Tax ,TaxIdea ,Tax Idea ,Konsultan Pajak, Tax Consultant, Pajak, Sengketa Pajak, Tax Dispute, Dirgen Pajak">
     <!-- Global site tag (gtag.js) - Google Analytics -->
