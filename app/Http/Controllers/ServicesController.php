@@ -19,21 +19,4 @@ class ServicesController extends Controller
             'services' => $services
         ]);
     }
-
-    public function detail(Request $request, $id)
-    {
-        $services = Services::where('slug', $id)->firstOrFail();
-        return view('pages.ourServicesDetail',[
-            'services' => $services
-        ]);
-    }
-
-    public function litigations()
-    {
-        $services  = Services::take(4)->get();
-
-        return view('pages.taxLitigations',[
-            'services' => $services
-        ]);
-    }
 }

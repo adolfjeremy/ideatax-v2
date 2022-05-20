@@ -39,8 +39,6 @@ Route::get('/about/our-team', [AboutController::class, 'team'])->name('our-team'
 Route::get('/about/our-team/{id}', [AboutController::class, 'teamDetail'])->name('our-team-detail');
 
 Route::get('/our-services', [ServicesController::class, 'index'])->name('our-services');
-Route::get('/our-services/{id}', [ServicesController::class, 'detail'])->name('our-services-detail');
-Route::get('/our-services/detail/tax-litigations', [ServicesController::class, 'litigations'])->name('tax-litigations');
 
 Route::get('/tax-update', [TaxUpdateController::class, 'index'])->name('update');
 Route::get('/tax-update/category/{id}', [TaxUpdateController::class, 'sortByCategory'])->name('tax-update-category');
