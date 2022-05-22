@@ -5,7 +5,7 @@
 @endsection
 
 @section('title')
-    News | Ideatax
+    Articles | Ideatax
 @endsection
 
     
@@ -14,9 +14,9 @@
         <div class="container">
             <div class="row">
                 <ul>
-                    @foreach ($newsCategories as $newsCategory)
+                    @foreach ($articleCategories as $articleCategory)
                         <li>
-                            <a href="{{ route('news-category', $newsCategory->slug) }}">{{ $newsCategory->title }}</a>
+                            <a href="{{ route('article-category', $articleCategory->slug) }}">{{ $articleCategory->title }}</a>
                         </li>
                     @endforeach
                 </ul>
@@ -29,18 +29,18 @@
                 <div class="col-12 col-lg-8">
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
-                            @forelse ($newsCarousels as $newsCarousel)
+                            @forelse ($articleCarousels as $articleCarousel)
                                 <div class="carousel-item @if ($loop->first)active @endif">
-                                    <a href="{{ route('news-detail',$newsCarousel->slug) }}"><img src="{{ asset("storage/" . $newsCarousel->photo) }}" class="d-block w-100" alt="{{ $newsCarousel->title }}"></a>
+                                    <a href="{{ route('article-detail',$articleCarousel->slug) }}"><img src="{{ asset("storage/" . $articleCarousel->photo) }}" class="d-block w-100" alt="{{ $articleCarousel->title }}"></a>
                                     <div class="carousel-caption d-none d-md-block">
-                                        <h5><a href="{{ route('news-detail',$newsCarousel->slug) }}">{{ $newsCarousel->title }}</a></h5>
+                                        <h5><a href="{{ route('article-detail',$articleCarousel->slug) }}">{{ $articleCarousel->title }}</a></h5>
                                     </div>
                                 </div>
                             @empty
                                 <div class="carousel-item active">
                                     <img src="/assets/images/no-data.jpg" class="d-block w-100" alt="ideatax updates">
                                     <div class="carousel-caption d-block">
-                                        <h5>There Is No News</h5>
+                                        <h5>There Is No Article</h5>
                                     </div>
                                 </div>
                             @endforelse
@@ -91,26 +91,26 @@
                     <div class="row mb-2">
                         <div class="news_list">
                             @php $incrementCategory = 0 @endphp
-                            @forelse ($newses as $news)
+                            @forelse ($articles as $article)
                                 <div class="news_item" data-aos="zoom-in" data-aos-delay="{{ $incrementCategory+= 150 }}">
                                     <div class="news_image_container">
-                                        <a href="{{ route('news-detail',$news->slug) }}"><img src="{{ asset("storage/" . $news->photo) }}" alt="{{ $news->title }}"></a>
+                                        <a href="{{ route('article-detail',$article->slug) }}"><img src="{{ asset("storage/" . $article->photo) }}" alt="{{ $article->title }}"></a>
                                     </div>
                                     <div class="text_container">
-                                        <a href="{{ route('news-detail',$news->slug) }}">{!! str_limit($news->title, $limit = 61) !!}</a>
+                                        <a href="{{ route('article-detail',$article->slug) }}">{!! str_limit($article->title, $limit = 61) !!}</a>
                                         <div class="timestamp">
-                                            <a href="{{ route('news-category',$news->newsCategory->slug) }}" class="news_category">{{ $news->newsCategory->title }}</a>
-                                            <span>{{ $news->created_at->format('Y/m/d H:i') }} WIB</span>
+                                            <a href="{{ route('article-category',$article->articleCategory->slug) }}" class="news_category">{{ $article->articleCategory->title }}</a>
+                                            <span>{{ $article->created_at->format('Y/m/d H:i') }} WIB</span>
                                         </div>
                                     </div>
                                 </div>
                             @empty
                                 <div class="col-12">
-                                    There Is No News
+                                    There Is No Article
                                 </div>
                             @endforelse
                         </div>
-                        {{ $newses->links() }}
+                        {{ $articles->links() }}
                     </div>
                 </div>
             </div>

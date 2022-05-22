@@ -8,7 +8,7 @@
                     <li class="mb-3"><a href="{{ route('about') }}">About Us</a></li>
                     <li class="mb-3"><a href="{{ route('our-services') }}">Our Services</a></li>
                     <li class="mb-3"><a href="{{ route('update') }}">Updates</a></li>
-                    <li class="mb-3"><a href="{{ route('news') }}">News</a></li>
+                    <li class="mb-3"><a href="{{ route('articles') }}">Articles</a></li>
                     <li class="mb-3"><a href="{{ route('contact') }}">Contact Us</a></li>
                 </ul>
             </div>

@@ -21,7 +21,7 @@
                 </li>
                 <li class="nav-item"><a class="nav-link nav-link-custom{{ (request()->is('our-services*') ? " active" : "") }}" href="{{ route('our-services') }}">Our Services</a></li>
                 <li class="nav-item"><a class="nav-link nav-link-custom{{ (request()->is('tax-update*') ? " active" : "") }}" href="{{ route('update') }}">Updates</a></li>
-                <li class="nav-item"><a class="nav-link nav-link-custom{{ (request()->is('news*') ? " active" : "") }}" href="{{ route('news') }}">News</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-custom{{ (request()->is('articles*') ? " active" : "") }}" href="{{ route('articles') }}">Articles</a></li>
                 <li class="nav-item"><a class="nav-link nav-link-custom{{ (request()->is('contact*') ? " active" : "") }}" href="{{ route('contact') }}">Contact Us</a></li>
             </ul>
         </nav>

@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $services = Services::where('id', '>', 4)->where('id', '<', 7)->get();
+        $services = Services::take(3)->get();
         return view('pages.home',[
             "services" => $services
         ]);

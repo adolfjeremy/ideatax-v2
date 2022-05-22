@@ -50,12 +50,11 @@
                 <h2>Services We Offer</h2>
             </div>
         </div>
-        <div class="row">
+        <div class="row mt-5">
             <div class="our_services_list">
                 @php $incrementCategory = 0 @endphp
-                <a href="{{ route('tax-litigations') }}" class="our_service_item" data-aos="zoom-in" data-aos-delay="{{ $incrementCategory+= 100 }}"><span >Tax Litigation</span></a>
                 @foreach ($services as $service)
-                    <a href="{{ route('our-services-detail', $service->slug) }}" class="our_service_item" data-aos="zoom-in" data-aos-delay="{{ $incrementCategory+= 100 }}"><span>{{ $service->title }}</span></a>
+                    <a href="{{ route('our-services') }}" class="our_service_item" data-aos="zoom-in" data-aos-delay="{{ $incrementCategory+= 100 }}"><span>{{ $service->title }}</span></a>
                 @endforeach                
                 <a href="{{ route('our-services') }}" class="our_service_item" data-aos="zoom-in" data-aos-delay="{{ $incrementCategory+= 100 }}"><span >Discover more →</span></a>
             </div>

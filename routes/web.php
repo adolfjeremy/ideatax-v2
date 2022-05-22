@@ -4,10 +4,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\Admin\ArticleCategoryController;
+use App\Http\Controllers\Admin\ArticleController as AdminArticleController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\TaxUpdateController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\TaxEventController;
 use App\Http\Controllers\Admin\DiscussionController;
@@ -46,10 +49,15 @@ Route::get('/tax-update/{id}', [TaxUpdateController::class, 'detail'])->name('ta
 Route::post('/tax-update/save', [TaxUpdateController::class, 'store'])->name('update-save');
 Route::get('/tax-update/tax-consulting/{id}', [TaxUpdateController::class, 'discussionDetail'])->name('tax-consulting');
 
-Route::get('/news', [NewsController::class, 'index'])->name('news');
-Route::get('/news/category/{id}', [NewsController::class, 'sortByCategory'])->name('news-category');
-Route::get('/news/event/{id}', [NewsController::class, 'taxEvent'])->name('tax-event');
-Route::get('/news/{id}', [NewsController::class, 'detail'])->name('news-detail');
+// Route::get('/news', [NewsController::class, 'index'])->name('news');
+// Route::get('/news/category/{id}', [NewsController::class, 'sortByCategory'])->name('news-category');
+// Route::get('/news/event/{id}', [NewsController::class, 'taxEvent'])->name('tax-event');
+// Route::get('/news/{id}', [NewsController::class, 'detail'])->name('news-detail');
+
+Route::get('/articles', [ArticleController::class, 'index'])->name('articles');
+Route::get('/article/category/{id}', [ArticleController::class, 'sortByCategory'])->name('article-category');
+Route::get('/article/event/{id}', [ArticleController::class, 'taxEvent'])->name('tax-event');
+Route::get('/article/{id}', [ArticleController::class, 'detail'])->name('article-detail');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
@@ -68,7 +76,9 @@ Route::prefix('admin')
 ->group(function() {
     Route::resource('services', AdminServicesController::class);
     Route::resource('category', NewsCategoryController::class);
-    Route::resource('news', AdminNewsController::class);
+    Route::resource('article-category', ArticleCategoryController::class);
+    Route::resource('articles', AdminArticleController::class);
+    // Route::resource('news', AdminNewsController::class);
     Route::resource('event', TaxEventController::class);
     Route::resource('update', AdminTaxUpdateController::class);
     Route::resource('tax-update-category', TaxUpdateCategoryController::class);

@@ -15,9 +15,9 @@
         <div class="container">
             <div class="row">
                 <ul>
-                    @foreach ($newsCategories as $newsCategory)
+                    @foreach ($articleCategories as $articleCategory)
                         <li>
-                            <a href="{{ route('news-category', $newsCategory->slug) }}">{{ $newsCategory->title }}</a>
+                            <a href="{{ route('article-category', $articleCategory->slug) }}">{{ $articleCategory->title }}</a>
                         </li>
                     @endforeach
                 </ul>
@@ -71,28 +71,28 @@
                 <div class="col-12">
                     <div class="row">
                         <div class="header_container text-start mb-2" data-aos="fade-up">
-                            <h3>Latest News</h3>
+                            <h3>Latest Articles</h3>
                         </div>
                     </div>
                     <div class="row mb-2">
                         <div class="news_list">
                             @php $incrementCategory = 0 @endphp
-                            @forelse ($newses as $news)
+                            @forelse ($articles as $article)
                                 <div class="news_item" data-aos="zoom-in" data-aos-delay="{{ $incrementCategory+= 150 }}">
                                     <div class="news_image_container">
-                                        <a href="{{ route('news-detail',$news->slug) }}"><img src="{{ asset("storage/" . $news->photo) }}" alt="{{ $news->title }}"></a>
+                                        <a href="{{ route('article-detail',$article->slug) }}"><img src="{{ asset("storage/" . $article->photo) }}" alt="{{ $article->title }}"></a>
                                     </div>
                                     <div class="text_container">
-                                        <a href="{{ route('news-detail',$news->slug) }}">{!! str_limit($news->title, $limit = 61) !!}</a>
+                                        <a href="{{ route('article-detail',$article->slug) }}">{!! str_limit($article->title, $limit = 61) !!}</a>
                                         <div class="timestamp">
-                                            <a href="{{ route('news-category',$news->newsCategory->slug) }}" class="news_category">{{ $news->newsCategory->title }}</a>
-                                            <span>{{ $news->created_at->format('Y/m/d H:i') }} WIB</span>
+                                            <a href="{{ route('article-category',$article->articleCategory->slug) }}" class="news_category">{{ $article->articleCategory->title }}</a>
+                                            <span>{{ $article->created_at->format('Y/m/d H:i') }} WIB</span>
                                         </div>
                                     </div>
                                 </div>
                             @empty
                                 <div class="col-12">
-                                    There Is No News
+                                    There Is No Article
                                 </div>
                             @endforelse
                         </div>
