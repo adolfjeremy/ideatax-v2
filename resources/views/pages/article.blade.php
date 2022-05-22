@@ -85,7 +85,7 @@
                 <div class="col-12">
                     <div class="row">
                         <div class="header_container text-start mb-2" data-aos="fade-up">
-                            <h3>Latest News</h3>
+                            <h3>Latest Articles</h3>
                         </div>
                     </div>
                     <div class="row mb-2">
