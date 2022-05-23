@@ -6,13 +6,16 @@
 }
 
 #ourServices {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-image: url(../../images/hero_cta_min.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center bottom;
     position: relative;
     width: 100%;
-    max-height: calc(100vh - 92px);
+    height: calc(100vh - 92px);
 }
 
 #ourServices h1,

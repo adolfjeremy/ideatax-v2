@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-    <section id="aboutUs" class="section_gap">
+    <section id="aboutUs" class="section_gap overflow-hidden">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-6 px-md-4 image_container" data-aos="fade-right">
@@ -31,7 +31,7 @@
             </div>
         </div>
     </section>
-    <section id="whyUs" class="section_gap">
+    <section id="whyUs" class="section_gap overflow-hidden">
         <div class="container">
             <div class="row flex-row-reverse">
                 <div class="col-12 col-md-6 px-md-4 image_container" data-aos="fade-left" data-aos-delay="100">

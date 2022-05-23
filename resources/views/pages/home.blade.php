@@ -9,9 +9,9 @@
 @endsection
 
 @section('content')
-    <section class="hero_cta text-center">
+    <section class="hero_cta text-center py-5 px-0">
         <div class="overlay"></div>
-        <div class="container">
+        <div class="container py-5">
             @php $incrementCategory = 0 @endphp
             <h1 data-aos="fade-up" data-aos-delay="{{ $incrementCategory+= 100 }}">Dedicate Ourselves to Present Tax Solutions to You</h1>
             <p data-aos="fade-up" data-aos-delay="{{ $incrementCategory+= 100 }}">We provide you a comprehensive perspective, prudent and creative services to solve your tax challenge</p>
@@ -21,7 +21,7 @@
             </div>
         </div>
     </section>
-    <section id="aboutUs" class="section_gap">
+    <section id="aboutUs" class="section_gap overflow-hidden">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-6 px-md-4 image_container" data-aos="fade-right">
@@ -60,5 +60,5 @@
             </div>
         </div>
     </div>
-</section>
+    </section>
 @endsection
