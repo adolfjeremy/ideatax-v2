@@ -30,7 +30,8 @@ class CustomerQuestionRequest extends FormRequest
             'question'=> "required|string",
             'answer'=> "string",
             'photo' => 'image',
-            'status' => 'string'
+            'status' => 'string',
+            'tax_update_categories_id'=> "required|exists:tax_update_categories,id",
         ];
     }
 }

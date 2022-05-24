@@ -48,7 +48,7 @@ class TaxUpdateController extends Controller
         $taxUpdateCategory = TaxUpdateCategory::where('slug', $slug)->firstOrFail();
         $taxUpdates = TaxUpdate::where('tax_update_categories_id', $taxUpdateCategory->id)->latest()->paginate(20);
         $taxUpdateCarousels = TaxUpdate::where('tax_update_categories_id', $taxUpdateCategory->id)->latest()->take(5)->get();
-        $customerQuestions = CustomerQuestion::where('status', '=', 'ANSWERED')->paginate(20);
+        $customerQuestions = CustomerQuestion::where('status', '=', 'ANSWERED')->where('tax_update_categories_id', $taxUpdateCategory->id)->paginate(20);
         return view('pages.taxUpdate',[
             "taxUpdateCategories" => $taxUpdateCategories,
             "taxUpdateCategory" => $taxUpdateCategory,

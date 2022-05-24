@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CustomerQuestionRequest;
 use App\Models\CustomerQuestion;
+use App\Models\TaxUpdateCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
@@ -32,9 +33,11 @@ class DiscussionController extends Controller
     public function edit($id)
     {
         $item = CustomerQuestion::findOrFail($id);
+        $taxUpdateCategories = TaxUpdateCategory::all();
 
         return view('pages.admin.discussion.edit',[
             "item" => $item,
+            "taxUpdateCategories" => $taxUpdateCategories,
         ]);
     }
 

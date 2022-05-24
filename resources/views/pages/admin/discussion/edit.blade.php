@@ -60,6 +60,14 @@
                                             <input type="text" id="title" name="title" class="form-control w-100" value="{{ $item->title }}" required>
                                         </div>
                                         <div class="col-12 mb-3">
+                                            <label for="tax_update_categories_id" class="form-label">Select Category</label>
+                                            <select name="tax_update_categories_id" class="form-select">
+                                                @foreach ($taxUpdateCategories as $taxUpdateCategory)
+                                                    <option value="{{ $taxUpdateCategory->id }}">{{ $taxUpdateCategory->title }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="col-12 mb-3">
                                             <label for="photo" class="form-label">Thumbnail</label>
                                             @if ($item->photo)
                                                 <img src="{{ asset("storage/" . $item->photo) }}" class="img-preview img-fluid col-sm-5 my-2 d-block">
