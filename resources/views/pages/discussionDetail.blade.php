@@ -36,7 +36,7 @@
                         <span>{{ $customerQuestion->created_at->format('Y/m/d H:i') }} WIB</span>
                     </div>
                     <div class="row mt-2">
-                        <h5>Question:</h5>
+                        <h5>Question by {{ $customerQuestion->name }} :</h5>
                         <p class="news_body">{!! $customerQuestion->question !!}</p>
                     </div>
                     <div class="row mt-1">
@@ -90,7 +90,7 @@
                                         <a href="{{ route('tax-update-detail',$taxUpdate->slug) }}">{!! str_limit($taxUpdate->title,
                                             $limit = 61) !!}</a>
                                         <div class="timestamp">
-                                            <a href="" class="news_category">{{ $taxUpdate->taxUpdateCategory->title }}</a>
+                                            <a href="{{  route('tax-update-category',$taxUpdate->taxUpdateCategory->slug)  }}" class="news_category">{{ $taxUpdate->taxUpdateCategory->title }}</a>
                                             <span>{{ $taxUpdate->created_at->format('Y/m/d') }}</span>
                                         </div>
                                     </div>

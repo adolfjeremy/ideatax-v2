@@ -124,7 +124,7 @@
                                         <a href="{{ route('tax-update-detail',$taxUpdate->slug) }}">{!! str_limit($taxUpdate->title,
                                             $limit = 61) !!}</a>
                                         <div class="timestamp">
-                                            <a href="" class="news_category">{{ $taxUpdate->taxUpdateCategory->title }}</a>
+                                            <a href="{{  route('tax-update-category',$taxUpdate->taxUpdateCategory->slug)  }}" class="news_category">{{ $taxUpdate->taxUpdateCategory->title }}</a>
                                             <span>{{ $taxUpdate->created_at->format('Y/m/d') }}</span>
                                         </div>
                                     </div>
