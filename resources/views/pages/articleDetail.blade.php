@@ -109,10 +109,10 @@
                                     </a>
                                 </div>
                                 <div class="text_container">
-                                    <a href="{{ route('news-detail',$articleItem->slug) }}">{!! str_limit($articleItem->title,
+                                    <a href="{{ route('article-detail',$articleItem->slug) }}">{!! str_limit($articleItem->title,
                                         $limit = 61) !!}</a>
                                     <div class="timestamp">
-                                        <a href="" class="news_category">{{ $articleItem->articleCategory->title }}</a>
+                                        <a href="{{ route('article-category',$article->articleCategory->slug) }}" class="news_category">{{ $articleItem->articleCategory->title }}</a>
                                         <span>{{ $articleItem->created_at->format('d/m/Y H:i') }}</span>
                                     </div>
                                 </div>

@@ -31,7 +31,7 @@ class CustomerQuestionRequest extends FormRequest
             'answer'=> "string",
             'photo' => 'image',
             'status' => 'string',
-            'tax_update_categories_id'=> "required|exists:tax_update_categories,id",
+            'tax_update_categories_id'=> "nullable|exists:tax_update_categories,id",
         ];
     }
 }

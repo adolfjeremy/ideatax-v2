@@ -14,7 +14,7 @@ class AddTaxUpdateCategoriesIdFieldToCustomerQuestionsTable extends Migration
     public function up()
     {
         Schema::table('customer_questions', function (Blueprint $table) {
-            $table->integer('tax_update_categories_id');
+            $table->integer('tax_update_categories_id')->nullable();
         });
     }
 

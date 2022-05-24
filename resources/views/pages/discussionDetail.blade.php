@@ -119,6 +119,7 @@
                                         <a href=""><img src="{{ asset("storage/" . $customerQuestion->photo) }}" alt="" class="w-100"></a>
                                     </div>
                                     <div class="caption_container px-2">
+                                        <a href="{{ route('tax-update-category',$customerQuestion->taxUpdateCategory->slug) }}" class="text-warning">{{ $customerQuestion->taxUpdateCategory->title }}</a>
                                         <a href="">{{ $customerQuestion->title }}</a>
                                         <span>{{ $customerQuestion->created_at->format('Y/m/d H:i') }} WIB</span>
                                     </div>

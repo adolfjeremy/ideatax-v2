@@ -22,7 +22,7 @@
                 <div class="col-12 col-lg-6 ms-lg-auto" data-aos="fade-up" data-aos-delay="200">
                     <p>We are supported by professionals who are experts in their fields, to help you provide the
                         completion of your daily
-                        activities and provide you with a reliable, solution and comprehensive service.</p>
+                        activities and provide you with a reliable solution and comprehensive service.</p>
                 </div>
             </div>
         </div>
