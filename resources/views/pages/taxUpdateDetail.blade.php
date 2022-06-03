@@ -35,13 +35,20 @@
                         <h1>{{ $taxUpdate->title }}</h1>
                     </div>
                     <div class="row mt-2 d-flex flex-row">
-                        <p class="text-warning fs-6 fw-bolder">{{ $taxUpdate->taxUpdateCategory->title }} <span class="text-dark fw-normal">- {{ $taxUpdate->created_at->format('Y/m/d H:i') }} WIB</span></p>
+                        <div class="col-12">
+                            <a href="{{ route('tax-update-category',$taxUpdate->taxUpdateCategory->slug) }}" class="text-warning fs-6 fw-bolder">{{ $taxUpdate->taxUpdateCategory->title }}</a>
+                        <span class="text-dark fw-normal">- {{ $taxUpdate->created_at->format('Y/m/d H:i') }} WIB</span>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="news_body">{!! $taxUpdate->body !!}</div>
-                        <div class="mt-2">
-                            <a href="{{ asset("storage/" . $taxUpdate->pdf) }}" target="_blank" class="btn btn-md btn-warning rounded">Download</a>
-                        </div>
+                        @if ($taxUpdate->pdf)
+                            <div class="mt-2">
+                                <a href="{{ asset("storage/" . $taxUpdate->pdf) }}" target="_blank" class="btn btn-md btn-warning rounded">Download</a>
+                            </div>
+                        @else
+                            
+                        @endif
                     </div>
                 </div>
                 <div id="sideNews" class="col-12 col-lg-4">
@@ -125,7 +132,7 @@
                                             $limit = 61) !!}</a>
                                         <div class="timestamp">
                                             <a href="{{  route('tax-update-category',$taxUpdate->taxUpdateCategory->slug)  }}" class="news_category">{{ $taxUpdate->taxUpdateCategory->title }}</a>
-                                            <span>{{ $taxUpdate->created_at->format('Y/m/d') }}</span>
+                                            <span>{{ $taxUpdate->created_at->format('Y/m/d H:i') }} WIB</span>
                                         </div>
                                     </div>
                                 </div>
@@ -156,7 +163,7 @@
                                     <div class="caption_container px-2">
                                         <a href="{{ route('tax-update-category',$customerQuestion->taxUpdateCategory->slug) }}" class="text-warning">{{ $customerQuestion->taxUpdateCategory->title }}</a>
                                         <a href="">{{ $customerQuestion->title }}</a>
-                                        <span>{{ $customerQuestion->created_at->format('Y/m/d H:i') }} WIB</span>
+                                        <span>{{ $customerQuestion->created_at->format('Y/m/d') }} WIB</span>
                                     </div>
                                 </div>
                             @endforeach

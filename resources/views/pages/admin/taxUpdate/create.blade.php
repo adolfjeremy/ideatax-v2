@@ -47,7 +47,7 @@
                                         </div>
                                         <div class="col-12 mb-3">
                                             <label for="pdf" class="form-label">Attachment</label>
-                                            <input type="file" id="pdf" name="pdf" class="form-control w-100" required>
+                                            <input type="file" id="pdf" name="pdf" class="form-control w-100">
                                         </div>
                                         <div class="col-12 mb-3">
                                             <label for="body">Tax Update Body</label>
