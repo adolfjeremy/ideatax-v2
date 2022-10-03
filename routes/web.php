@@ -37,9 +37,9 @@ use App\Http\Controllers\RegisterController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/about', [AboutController::class, 'index'])->name('about');
-Route::get('/about/our-team', [AboutController::class, 'team'])->name('our-team');
-Route::get('/about/our-team/{id}', [AboutController::class, 'teamDetail'])->name('our-team-detail');
+// Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::get('/our-team', [AboutController::class, 'team'])->name('our-team');
+Route::get('/our-team/{id}', [AboutController::class, 'teamDetail'])->name('our-team-detail');
 
 Route::get('/our-services', [ServicesController::class, 'index'])->name('our-services');
 
@@ -67,8 +67,8 @@ Route::get('/login', [LoginController::class, 'index'])->name('login')->middlewa
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-// Route::get('/register', [RegisterController::class, 'index'])->name('register');
-// Route::post('/register', [RegisterController::class, 'store'])->name('register');
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::post('/register', [RegisterController::class, 'store'])->name('register');
 
 
 Route::prefix('admin')

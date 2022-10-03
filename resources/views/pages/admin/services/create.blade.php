@@ -32,9 +32,9 @@
                                             <label for="Name" class="form-label">Service Name</label>
                                             <input type="text" id="title" name="title" class="form-control w-100" required>
                                         </div>
-                                        <div class="col-12 mb-3">
+                                        <div class="col-12 mb-3 d-flex flex-column">
                                             <label for="description">Description</label>
-                                            <textarea name="description" id="editor"></textarea>
+                                            <textarea name="description" rows="10" ></textarea>
                                         </div>
                                         <div class="col-12">
                                             <button type="submit" class="btn btn-warning d-block w-100">Post Services</button>

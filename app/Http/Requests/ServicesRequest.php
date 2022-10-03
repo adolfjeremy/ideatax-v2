@@ -26,6 +26,7 @@ class ServicesRequest extends FormRequest
         return [
             'title'=> 'required|string',
             'description'=> 'required',
+            'excerpt' => 'string'
         ];
     }
 }

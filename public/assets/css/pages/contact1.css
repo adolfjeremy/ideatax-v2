@@ -1,0 +1,37 @@
+#contactUs {
+    color: #fff;
+}
+
+#contactUs * {
+    font-family: "Lato", sans-serif;
+}
+
+#contactUs h2 {
+    color: #fff;
+}
+
+#contactUs .contact-list {
+    background-color: #272e45;
+}
+
+#contactUs ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#contactUs ul a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#contactUs ul a:hover {
+    text-decoration: underline;
+    color: #ffc107;
+}
+
+@media (min-width: 480px) and (max-width: 991px) {
+    main {
+        min-height: 55vh;
+    }
+}

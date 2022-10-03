@@ -28,6 +28,11 @@ class TeamRequest extends FormRequest
             'position' => 'string|required',
             'photo' => 'image',
             'biography'=> "required|string",
+            'area_of_expertise'=> "required|string",
+            'profile_picture' => 'image',
+            'phone'=> 'string',
+            'email' => 'string',
+            'linkedin' => 'string'
         ];
     }
 }

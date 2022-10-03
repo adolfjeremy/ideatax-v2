@@ -19,7 +19,7 @@ class aboutController extends Controller
 
     public function team()
     {
-        $teams = Team::all();
+        $teams = Team::orderBy('name')->get();
 
         return view('pages.team',[
             "teams" => $teams,
@@ -29,7 +29,7 @@ class aboutController extends Controller
     public function teamDetail($id)
     {
         $team = Team::where('slug', $id)->firstOrFail();
-        $teams = Team::where('id', '!=', $team->id)->take(3)->get();
+        $teams = Team::where('id', '!=', $team->id)->orderBy('name')->get();
 
         return view('pages.teamDetail',[
             "team" => $team,

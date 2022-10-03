@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('page-style')
-    <link rel="stylesheet" href="/assets/css/pages/news.css">
+    <link rel="stylesheet" href="/assets/css/pages/news1.css">
 @endsection
 
 @section('title')
@@ -101,7 +101,7 @@
                                         <a href="{{ route('tax-update-detail',$taxUpdate->slug) }}"><img src="{{ asset("storage/" . $taxUpdate->photo) }}" alt="{{ $taxUpdate->title }}"></a>
                                     </div>
                                     <div class="text_container">
-                                        <a href="{{ route('tax-update-detail',$taxUpdate->slug) }}">{!! str_limit($taxUpdate->title, $limit = 61) !!}</a>
+                                        <a href="{{ route('tax-update-detail',$taxUpdate->slug) }}">{!! str_limit($taxUpdate->title, $limit = 60) !!}</a>
                                         <div class="timestamp">
                                             <a href="{{ route('tax-update-category',$taxUpdate->taxUpdateCategory->slug) }}" class="news_category">{{ $taxUpdate->taxUpdateCategory->title }}</a>
                                             <span>{{ $taxUpdate->created_at->format('Y/m/d H:i') }} WIB</span>

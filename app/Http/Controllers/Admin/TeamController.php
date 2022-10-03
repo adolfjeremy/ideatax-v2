@@ -55,6 +55,10 @@ class TeamController extends Controller
         {
             $data['photo'] = $request->file('photo')->store('team');
         }
+        if($request->file('profile_picture'))
+        {
+            $data['profile_picture'] = $request->file('profile_picture')->store('team-pp');
+        }
 
         $data['slug'] = Str::slug($request->name);
 
@@ -85,6 +89,15 @@ class TeamController extends Controller
                 Storage::delete($request->oldImage);
             }
             $data['photo'] = $request->file('photo')->store('team');
+        }
+
+        if($request->file('profile_picture'))
+        {
+            if($request->oldPp)
+            {
+                Storage::delete($request->oldPp);
+            }
+            $data['profile_picture'] = $request->file('profile_picture')->store('team-pp');
         }
         
         $data['slug'] = Str::slug($request->name);

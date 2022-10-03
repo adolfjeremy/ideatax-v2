@@ -51,6 +51,7 @@ class ServicesController extends Controller
     {
         $data = $request->all();
         $data['slug'] = Str::slug($request->title);
+        $data['excerpt'] = Str::limit($request->description, 130);
 
         Services::create($data);
 
@@ -70,6 +71,10 @@ class ServicesController extends Controller
     {
         $data = $request->all();
         $data['slug'] = Str::slug($request->title);
+        if($request->description)
+        {   
+            $data['excerpt'] = Str::limit($request->description, 130);
+        }
 
         $item = Services::findOrFail($id);
         $item->update($data);

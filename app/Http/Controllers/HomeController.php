@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $services = Services::take(3)->get();
+        $services = Services::all();
         return view('pages.home',[
             "services" => $services
         ]);

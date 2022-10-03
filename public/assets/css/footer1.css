@@ -1,0 +1,79 @@
+/* start of footer */
+
+footer {
+    padding: 50px 0 0 0;
+    background-color: #272e45;
+}
+
+footer h1,
+footer h2 {
+    color: #fff;
+}
+
+footer p,
+footer a {
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+    line-height: 35px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ffc107;
+}
+
+footer h1,
+footer h1 strong {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+footer strong {
+    color: #ffc107;
+    text-decoration: underline;
+}
+
+footer .email_phone {
+    font-size: 16px;
+    color: #fff;
+}
+
+footer .email_phone i {
+    font-size: 20px;
+}
+
+footer .address_item i {
+    font-size: 40px;
+    color: #fff;
+    font-weight: 300;
+}
+
+footer .address_item a {
+    line-height: 23px;
+    font-weight: 500;
+}
+
+footer .address_item h2 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+footer .social i {
+    font-size: 25px;
+}
+
+footer .copy_right {
+    margin-top: 20px;
+    border-top: 1px solid #fff;
+    padding: 10px 0;
+}
+
+footer .copy_right h4,
+footer .copy_right p {
+    color: #fff;
+    font-size: 17px;
+    margin: 0;
+}
+
+/* end of footer */

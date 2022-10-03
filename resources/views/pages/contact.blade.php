@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('page-style')
-    <link rel="stylesheet" href="assets/css/pages/contact.css">
+    <link rel="stylesheet" href="assets/css/pages/contact1.css">
 @endsection
 
 @section('title')
@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-<section id="contactUs" class="section_gap" data-aos="zoom-in">
+<section id="contactUs" class="py-5" data-aos="zoom-in">
     <div class="container">
         <div class="row d-flex align-items-center justify-content-center">
             <div class="col-12 col-md-7 mt-4 mt-md-0 text-start contact-list p-5">
@@ -24,7 +24,7 @@
                             </svg>
                         </div>
                         <div class="text">
-                            My Republic Plaza, Wing A, Zona 6, Green Office Park. Jl. BSD Grand Boulevard, BSD City, Desa Sampora, Kec Cisauk, Tangerang, Banten, 15345
+                            Menara Kuningan - Level 1 Unit B3 Jl. H. Rasuna Said Kav. 5 Karet Kuningan, Setiabudi South Jakarta.
                         </div>
                     </li>
                     <li class="mt-2 d-flex">
@@ -35,7 +35,7 @@
                             </svg>
                         </div>
                         <div class="text">
-                            <a href="tel:+622129490578">+(62)21 - 2949 0578</a>
+                            <a href="tel:0212528471">(021) 2528471</a>
                         </div>
                     </li>
                     <li class="mt-2 d-flex">

@@ -2,7 +2,7 @@
 
 
 @section('page-style')
-    <link rel="stylesheet" href="assets/css/pages/ourServices.css">
+    <link rel="stylesheet" href="/assets/css/pages/ourServices.1css">
 @endsection
 
 @section('title')
@@ -14,15 +14,13 @@
     <section id="ourServices" class="our_service_header section_gap">
         <div class="overlay"></div>
         <div class="container">
-            <div class="row mx-lg-5 position-relative">
-                <div class="col-12 text-start">
-                    <h1 data-aos="fade-up">what we do</h1>
-                    <h2 data-aos="fade-up" data-aos-delay="100">We provide the best service that focused on the best interests of the client</h2>
-                </div>
-                <div class="col-12 col-lg-6 ms-lg-auto" data-aos="fade-up" data-aos-delay="200">
-                    <p>We are supported by professionals who are experts in their fields, to help you provide the
-                        completion of your daily
-                        activities and provide you with a reliable solution and comprehensive service.</p>
+            <div class="row position-relative">
+                <div class="col-12 d-flex flex-column align-items-center justify-content-center">
+                    <h1 data-aos="flip-left">Our Services</h1>
+                    <div class="d-flex button-container" data-aos="flip-right" data-aos-delay="200">
+                        <a href="{{ route('contact') }}" class="btn btn-lg btn-warning">Get Started</a>
+                        <a href="{{ route('our-services') }}" class="btn btn-lg btn-outline-light ms-3">Our Services</a>
+                    </div>
                 </div>
             </div>
         </div>
