@@ -38,7 +38,7 @@
                                         </div>
                                         <div class="col-12 mb-3">
                                             <label for="phone" class="form-label">Phone Number</label>
-                                            <input type="text" id="phone" name="phone" class="form-control w-100">
+                                            <input type="tel" id="phone" name="phone" class="form-control w-100">
                                         </div>
                                         <div class="col-12 mb-3">
                                             <label for="email" class="form-label">Email</label>
@@ -64,7 +64,7 @@
                                         </div>
                                         <div class="col-12 mb-3">
                                             <label for="area_of_expertise">Area Of Expertise</label>
-                                            <textarea name="parea_of_expertise" id="editor2"></textarea>
+                                            <textarea name="area_of_expertise" id="editor2"></textarea>
                                         </div>
                                         <div class="col-12">
                                             <button type="submit" class="btn btn-warning d-block w-100">Save</button>

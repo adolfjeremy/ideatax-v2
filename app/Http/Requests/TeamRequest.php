@@ -30,8 +30,8 @@ class TeamRequest extends FormRequest
             'biography'=> "required|string",
             'area_of_expertise'=> "required|string",
             'profile_picture' => 'image',
-            'phone'=> 'string',
-            'email' => 'nullable | string',
+            'phone'=> 'nullable | numeric',
+            'email' => 'string',
             'linkedin' => 'nullable | string'
         ];
     }
