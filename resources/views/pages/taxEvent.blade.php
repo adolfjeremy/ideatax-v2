@@ -55,7 +55,7 @@
                                     </a>
                                 @empty
                                     <div class="tax_event_item text-center text-light">
-                                        No event at the moment
+                                        No other event at the moment
                                     </div>
                                 @endforelse
                             </div>

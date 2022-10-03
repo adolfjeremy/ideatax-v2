@@ -34,10 +34,10 @@
                     <div class="row mt-2 news_title">
                         <h1>{{ $taxUpdate->title }}</h1>
                     </div>
-                    <div class="row mt-2 d-flex flex-row">
+                    <div class="row mb-2 d-flex flex-row">
                         <div class="col-12">
                             <a href="{{ route('tax-update-category',$taxUpdate->taxUpdateCategory->slug) }}" class="text-warning fs-6 fw-bolder">{{ $taxUpdate->taxUpdateCategory->title }}</a>
-                        <span class="text-dark fw-normal">- {{ $taxUpdate->created_at->format('Y/m/d H:i') }} WIB</span>
+                        <span class="text-dark fw-light timestamp">- {{ $taxUpdate->created_at->format('Y/m/d H:i') }} WIB</span>
                         </div>
                     </div>
                     <div class="row">
