@@ -33,7 +33,7 @@
                     </div>
                     <div class="row mt-2 news_title">
                         <h1>{{ $customerQuestion->title }}</h1>
-                        <span>{{ $customerQuestion->created_at->format('Y/m/d H:i') }} WIB</span>
+                        <span class="timestamp" $customerQuestion->created_at->format('Y/m/d H:i') }} WIB</span>
                     </div>
                     <div class="row mt-2">
                         <h5>Question by {{ $customerQuestion->name }} :</h5>
