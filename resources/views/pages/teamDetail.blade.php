@@ -25,8 +25,10 @@
                     </div>
                     <div class="contacts">
                         <ul class="d-flex">
-                            <li><a href=""><i class="bi bi-telephone"></i></a></li>
-                            <li><a href=""><i class="bi bi-envelope"></i></a></li>
+                            @if ($team->phone)
+                                 <li><a href="tel:{{ $team->phone }}"><i class="bi bi-telephone"></i></a></li>
+                            @endif
+                            <li><a href="mailto:{{ $team->email }}"><i class="bi bi-envelope"></i></a></li>
                             @if ($team->linkedin)
                                 <li><a href="{{ $team->linkedin }}" target="_blank" rel="noopener"
                             rel=”noreferrer”><i class="bi bi-linkedin"></i></a></li>

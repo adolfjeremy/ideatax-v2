@@ -2,7 +2,7 @@
 
 
 @section('page-style')
-    <link rel="stylesheet" href="/assets/css/pages/ourServices.1css">
+    <link rel="stylesheet" href="/assets/css/pages/ourServices1.css">
 @endsection
 
 @section('title')
