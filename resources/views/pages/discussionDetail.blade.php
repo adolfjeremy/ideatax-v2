@@ -35,9 +35,9 @@
                         <h1>{{ $customerQuestion->title }}</h1>
                         <span class="timestamp" $customerQuestion->created_at->format('Y/m/d H:i') }} WIB</span>
                     </div>
-                    <div class="row mt-2">
+                    <div class="row mt-2 news_body">
                         <h5>Question by {{ $customerQuestion->name }} :</h5>
-                        <p class="news_body">{!! $customerQuestion->question !!}</p>
+                        <p>{!! $customerQuestion->question !!}</p>
                     </div>
                     <div class="row mt-1">
                         <h5>Answer:</h5>
