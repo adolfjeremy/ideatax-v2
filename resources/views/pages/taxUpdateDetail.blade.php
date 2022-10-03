@@ -37,7 +37,7 @@
                     <div class="row mb-2 d-flex flex-row">
                         <div class="col-12">
                             <a href="{{ route('tax-update-category',$taxUpdate->taxUpdateCategory->slug) }}" class="text-warning fs-6 fw-bolder">{{ $taxUpdate->taxUpdateCategory->title }}</a>
-                        <span class="text-dark fw-light timestamp">- {{ $taxUpdate->created_at->format('Y/m/d H:i') }} WIB</span>
+                        <span class="text-dark fw-normal timestamp">- {{ $taxUpdate->created_at->format('Y/m/d H:i') }} WIB</span>
                         </div>
                     </div>
                     <div class="row">

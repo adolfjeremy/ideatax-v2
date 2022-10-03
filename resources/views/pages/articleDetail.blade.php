@@ -37,7 +37,7 @@
                     <div class="row">
                         <div class="col-12">
                             <a href="{{ route('article-category',$article->articleCategory->slug) }}" class="text-warning fs-6 fw-bolder">{{ $article->articleCategory->title }}</a>
-                            <span class="text-dark fw-light timestamp">- {{ $article->created_at->format('d/m/Y HH:MM') }} WIB</span>
+                            <span class="text-dark fw-normal timestamp">- {{ $article->created_at->format('d/m/Y HH:MM') }} WIB</span>
                         </div>
                     </div>
                     <div class="row">
