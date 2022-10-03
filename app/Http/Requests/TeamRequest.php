@@ -31,8 +31,8 @@ class TeamRequest extends FormRequest
             'area_of_expertise'=> "required|string",
             'profile_picture' => 'image',
             'phone'=> 'string',
-            'email' => 'string',
-            'linkedin' => 'string'
+            'email' => 'nullable | string',
+            'linkedin' => 'nullable | string'
         ];
     }
 }

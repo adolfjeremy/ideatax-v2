@@ -39,7 +39,7 @@
                                         </div>
                                         <div class="col-12 mb-3">
                                             <label for="phone" class="form-label">Phone Number</label>
-                                            <input type="text" id="phone" name="phone" class="form-control w-100"  value="{{ $item->phone }}" required>
+                                            <input type="text" id="phone" name="phone" class="form-control w-100"  value="{{ $item->phone }}">
                                         </div>
                                         <div class="col-12 mb-3">
                                             <label for="email" class="form-label">Email</label>
