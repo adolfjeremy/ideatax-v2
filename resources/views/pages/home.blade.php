@@ -162,7 +162,7 @@
                     @foreach ($services as $service)
                         <div>
                             <div class="our_service_item d-block">
-                                <a href="{{ route('our-services') }}/#{{ $service->title }}" class="d-block">{!! str_limit($service->title, $limit = 25) !!}</a>
+                                <a href="{{ route('our-services') }}/#{{ $service->title }}" class="d-block" title="{{ $service->title }}">{!! str_limit($service->title, $limit = 25) !!}</a>
                                 <hr mb-3>
                                 <p>{{ $service->excerpt }}</p>
                             </div>

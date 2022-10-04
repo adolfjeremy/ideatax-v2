@@ -13,7 +13,7 @@
 
 @media (min-width: 900px) {
     .hero_cta {
-        height: calc(100vh - 142px);
+        height: calc(100vh - 132px);
         align-items: start;
     }
 }

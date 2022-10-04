@@ -20,7 +20,7 @@
 
 @media (min-width: 900px) {
     #ourServices {
-        height: calc(100vh - 142px);
+        height: calc(100vh - 132px);
     }
 }
 

@@ -1,3 +1,11 @@
+.admin-dashboard {
+    font-family: "Lato", sans-serif;
+}
+
+.admin-dashboard strong {
+    color: #ffc107;
+}
+
 .admin-dashboard #wrapper.toggled #sidebar-wrapper {
     margin-left: 0;
 }

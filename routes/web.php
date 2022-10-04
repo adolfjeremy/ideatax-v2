@@ -56,7 +56,7 @@ Route::get('/tax-update/tax-consulting/{id}', [TaxUpdateController::class, 'disc
 
 Route::get('/articles', [ArticleController::class, 'index'])->name('articles');
 Route::get('/articles/category/{id}', [ArticleController::class, 'sortByCategory'])->name('article-category');
-Route::get('/article/event/{id}', [ArticleController::class, 'taxEvent'])->name('tax-event');
+Route::get('/articles/event/{id}', [ArticleController::class, 'taxEvent'])->name('tax-event');
 Route::get('/articles/{id}', [ArticleController::class, 'detail'])->name('article-detail');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');

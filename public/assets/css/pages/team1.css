@@ -11,7 +11,7 @@
 
 @media (min-width: 900px) {
     .our_team_hero {
-        height: calc(100vh - 142px);
+        height: calc(100vh - 132px);
     }
 }
 
