@@ -4,23 +4,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("/assets/images/hero2.jpg");
+    background-image: url("/assets/images/hero_cta_min.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center top;
+    background-position: center bottom;
     position: relative;
 }
 
 @media (min-width: 900px) {
     .hero_cta {
-        height: calc(100vh - 132px);
-        align-items: start;
+        height: 70vh;
     }
 }
 
 @media (max-width: 1199px) {
     .hero_cta {
-        height: calc(100vh - 70px);
+        height: 70vh;
     }
 }
 
@@ -130,16 +129,41 @@
     padding-top: 50px;
 }
 
+.about_us .container {
+    position: relative;
+}
+
+.about_us .about_bg {
+    position: absolute;
+    inset: 0;
+    background-image: url("/assets/images/team1.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(5px);
+}
+
+.about_us .about_us_text {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 4px solid #021924;
+}
+
+.about_us .about_us_text:hover {
+    transition: all linear 250ms;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 4px solid #850e35;
+}
+
 .about_us h2 {
     font-size: 32px;
     font-weight: 800;
-    text-align: start;
+    text-align: center;
     margin-bottom: 20px;
 }
 
 .about_us p {
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 400;
     color: #111;
     line-height: 30px;
     margin: 0;
@@ -258,7 +282,7 @@
 /* start of value section */
 
 .our_value {
-    padding-top: 50px;
+    padding-top: 10px;
 }
 
 .our_value h4 {
@@ -268,7 +292,7 @@
 }
 
 .our_value p {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     color: #111;
     line-height: 30px;
@@ -277,62 +301,14 @@
 }
 
 .our_value h5 {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translatex(-50%);
     font-size: 26px;
     font-weight: 700;
     font-family: "Libre Baskerville", serif;
-    text-shadow: #00111a 0px 1px, #00111a 1px 0px, #00111a 2px 1px,
-        #00111a 3px 2px, #00111a 4px 3px, #00111a 5px 4px, #00111a 6px 5px,
-        #00111a 7px 6px, #00111a 8px 7px, #00111a 9px 8px, #00111a 10px 9px,
-        #00111a 11px 10px, #00111a 22px 11px, #00111a 13px 12px,
-        #00111a 14px 13px, #00111a 15px 14px, #00111a 16px 15px,
-        #00111a 17px 16px, #00111a 18px 17px, #00111a 19px 18px,
-        #00111a 20px 19px, #00111a 21px 20px, #00111a 22px 21px,
-        #00111a 23px 22px, #00111a 24px 23px, #00111a 25px 24px,
-        #00111a 26px 25px, #00111a 27px 26px, #00111a 28px 27px,
-        #00111a 29px 28px, #00111a 30px 29px, #00111a 31px 30px,
-        #00111a 32px 31px, #00111a 33px 32px, #00111a 34px 33px,
-        #00111a 35px 34px, #00111a 36px 35px, #00111a 37px 36px,
-        #00111a 38px 37px, #00111a 39px 38px, #00111a 40px 39px,
-        #00111a 41px 40px, #00111a 42px 41px, #00111a 43px 42px,
-        #00111a 44px 43px, #00111a 45px 44px, #00111a 46px 45px,
-        #00111a 47px 46px, #00111a 48px 47px, #00111a 49px 48px,
-        #00111a 50px 49px, #00111a 51px 50px, #00111a 52px 51px,
-        #00111a 53px 52px, #00111a 54px 53px, #00111a 55px 54px,
-        #00111a 56px 55px, #00111a 57px 56px, #00111a 58px 57px,
-        #00111a 59px 58px, #00111a 60px 59px, #00111a 61px 60px,
-        #00111a 62px 61px, #00111a 63px 62px, #00111a 64px 63px,
-        #00111a 65px 64px, #00111a 66px 65px, #00111a 67px 66px,
-        #00111a 68px 67px, #00111a 69px 68px, #00111a 70px 69px,
-        #00111a 71px 70px, #00111a 72px 71px, #00111a 73px 72px,
-        #00111a 74px 73px, #00111a 75px 74px, #00111a 76px 75px,
-        #00111a 77px 76px, #00111a 78px 77px, #00111a 79px 78px,
-        #00111a 80px 79px, #00111a 81px 80px, #00111a 82px 81px,
-        #00111a 83px 82px, #00111a 84px 83px, #00111a 85px 84px,
-        #00111a 86px 85px, #00111a 87px 86px, #00111a 88px 87px,
-        #00111a 89px 88px, #00111a 90px 89px, #00111a 91px 90px,
-        #00111a 92px 91px, #00111a 93px 92px, #00111a 94px 93px,
-        #00111a 95px 94px, #00111a 96px 95px, #00111a 97px 96px,
-        #00111a 98px 97px, #00111a 99px 98px, #00111a 100px 99px,
-        #00111a 101px 100px, #00111a 102px 101px, #00111a 103px 102px,
-        #00111a 104px 103px, #00111a 105px 104px, #00111a 106px 105px,
-        #00111a 107px 106px, #00111a 108px 107px, #00111a 109px 108px,
-        #00111a 110px 109px, #00111a 111px 110px, #00111a 112px 111px,
-        #00111a 113px 112px, #00111a 114px 113px, #00111a 115px 114px,
-        #00111a 116px 115px, #00111a 117px 116px, #00111a 118px 117px,
-        #00111a 119px 118px, #00111a 120px 119px, #00111a 121px 120px,
-        #00111a 122px 121px, #00111a 123px 122px, #00111a 124px 123px,
-        #00111a 125px 124px, #00111a 126px 125px, #00111a 127px 126px,
-        #00111a 128px 127px, #00111a 129px 128px, #00111a 130px 129px,
-        #00111a 131px 130px, #00111a 132px 131px, #00111a 133px 132px,
-        #00111a 134px 133px, #00111a 135px 134px, #00111a 136px 135px,
-        #00111a 137px 136px, #00111a 138px 137px, #00111a 139px 138px,
-        #00111a 140px 139px, #00111a 141px 140px, #00111a 142px 141px,
-        #00111a 143px 142px, #00111a 144px 143px, #00111a 145px 144px,
-        #00111a 146px 145px, #00111a 147px 146px, #00111a 148px 147px,
-        #00111a 149px 148px, #00111a 150px 149px, #00111a 151px 150px,
-        #00111a 152px 151px, #00111a 153px 152px, #00111a 154px 153px,
-        #00111a 155px 154px, #00111a 156px 155px, #00111a 157px 156px,
-        #00111a 158px 157px, #00111a 159px 158px, #00111a 160px 159px;
+    z-index: 10;
 }
 .value_list {
     display: grid;
@@ -342,10 +318,20 @@
     cursor: pointer;
 }
 
+@media (min-width: 576px) and (max-width: 991px) {
+    .value_list {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+    }
+}
+
 @media (min-width: 992px) {
     .value_list {
-        grid-template-columns: repeat(3, 1fr);
-        column-gap: 40px;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 20px;
+    }
+    .value_item:hover {
+        scale: 1.1;
     }
 }
 
@@ -355,11 +341,8 @@
     font-size: 40px;
     overflow: hidden;
     transition: all linear 250ms;
-    padding: 50px;
-    border-radius: 50px;
-}
-.value_item:hover {
-    scale: 1.1;
+    border-radius: 10px;
+    position: relative;
 }
 /* end of value section */
 
@@ -378,7 +361,7 @@
 
 .our_services .slider_outer {
     padding: 0;
-    background-color: #ecb365;
+    background-color: #1c6758;
 }
 
 .our_services_list {
@@ -570,6 +553,7 @@
     font-size: 14px;
     line-height: 25px;
     font-weight: 400;
+    color: #111;
 }
 
 .our_services_list .slick-center {

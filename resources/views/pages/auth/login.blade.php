@@ -1,7 +1,8 @@
 @extends('layouts.auth')
 
 @section('page-style')
-    <link rel="stylesheet" href="assets/css/pages/home.css">
+    <link rel="stylesheet" href="/assets/css/global1.css">
+    <link rel="stylesheet" href="/assets/css/pages/admin.css">
 @endsection
 
 @section('title')

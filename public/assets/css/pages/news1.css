@@ -22,11 +22,11 @@
 }
 
 #categoriesList ul li {
-    margin: 5px;
+    margin: 5px 10px;
 }
 #categoriesList ul li a {
-    font-family: "Lato", sans-serif;
-    font-size: 15px;
+    font-family: "arial", sans-serif;
+    font-size: 17px;
     font-weight: 600;
     line-height: 20px;
     color: #fff;
@@ -39,6 +39,7 @@
 
 #categoriesList ul li a:hover {
     text-decoration: underline;
+    color: #ffc107;
 }
 
 @media (min-width: 768px) {

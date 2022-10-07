@@ -2,8 +2,9 @@
     font-family: "Lato", sans-serif;
 }
 
-.admin-dashboard strong {
+strong {
     color: #ffc107;
+    text-decoration: underline;
 }
 
 .admin-dashboard #wrapper.toggled #sidebar-wrapper {

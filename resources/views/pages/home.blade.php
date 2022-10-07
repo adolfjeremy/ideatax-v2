@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('page-style')
-    <link rel="stylesheet" href="assets/css/pages/home1.css">
+    <link rel="stylesheet" href="assets/css/pages/home2.css">
 @endsection
 
 @section('title')
@@ -24,28 +24,14 @@
         </div>
     </section>
     <section class="about_us">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
+        <div class="container py-5">
+            <div class="about_bg"></div>
+            <div class="row text-center p-4 d-flex align-items-center justify-content-center">
+                <div class="col-12 col-lg-10 p-4 about_us_text" data-aos="zoom-in-right" data-aos-delay="150">
                     <h2 data-aos="zoom-in-right">About Us</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-lg-6" data-aos="zoom-in-right" data-aos-delay="150">
                     <p class="mb-2">&emsp;&emsp;We combine a long running experience in tax consulting and tax authority to deliver thorough
                         solutions to our clients. We also present essential approaches with problem-solving
                         capabilities imbued with a full commitment for the most polished quality of service for our clients.</p>
-                    <p>&emsp;&emsp;Ideatax presents a comprehensive, prudent, and creative services to solve your tax challenges. We focus on helping your business grow and achieve its goals. Our day-to-day activities focus on the way we maintain a strong relationship and your trust, as well as actively providing thoughtful tax solutions in helping you to manage your tax risks.</p>
-                </div>
-                <div class="col-12 col-lg-6" data-aos="zoom-in-left" data-aos-delay="150">
-                    <p class="mb-2">&emsp;&emsp;We understand your needs in mitigating complex set of tax-related
-                        challenges in
-                        business. Ideatax is equipped with a goal in mind of being the best tax consultant
-                        provider with a satisfactory and high-quality service to prioritize your trust.</p>
-                    <p>&emsp;&emsp;At Ideatax, we are building a community with a focus in providing comprehensive
-                        and
-                        trusted solutions of the problem you are facing. Ideatax is supported with ranges of
-                        professional experts to help you in your routines.</p>
                 </div>
             </div>
         </div>
@@ -106,7 +92,7 @@
             </div>
         </div>
     </section>
-    <section class="our_value pb-5 mt-2">
+    <section class="our_value pb-2 mt-2">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center" data-aos="zoom-out-right">
@@ -122,13 +108,24 @@
                 <div class="col-12">
                     <div class="value_list">
                         <div class="value_item text-center d-block" data-aos="zoom-in-down" data-aos-delay="100">
+                            <img src="/assets/images/trustworthy-min.jpg" alt="" class="w-100">
+                            <div class="overlay"></div>
                             <h5>Trustworthy</h5>
                         </div>
                         <div class="value_item text-center d-block" data-aos="zoom-in-down" data-aos-delay="150">
+                            <img src="/assets/images/professional-min.jpg" alt="" class="w-100">
+                            <div class="overlay"></div>
                             <h5>Professional</h5>
                         </div>
                         <div class="value_item text-center d-block" data-aos="zoom-in-down" data-aos-delay="200">
+                            <img src="/assets/images/creative-min.jpg" alt="" class="w-100">
+                            <div class="overlay"></div>
                             <h5>Creative</h5>
+                        </div>
+                        <div class="value_item text-center d-block" data-aos="zoom-in-down" data-aos-delay="200">
+                            <img src="/assets/images/prudent-min.jpg" alt="" class="w-100">
+                            <div class="overlay"></div>
+                            <h5>Prudent</h5>
                         </div>
                     </div>
                 </div>

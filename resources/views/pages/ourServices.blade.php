@@ -2,7 +2,7 @@
 
 
 @section('page-style')
-    <link rel="stylesheet" href="/assets/css/pages/ourServices1.css">
+    <link rel="stylesheet" href="/assets/css/pages/ourServices2.css">
 @endsection
 
 @section('title')
@@ -17,10 +17,6 @@
             <div class="row position-relative">
                 <div class="col-12 d-flex flex-column align-items-center justify-content-center">
                     <h1 data-aos="flip-left">Our Services</h1>
-                    <div class="d-flex button-container" data-aos="flip-right" data-aos-delay="200">
-                        <a href="{{ route('contact') }}" class="btn btn-lg btn-warning">Get Started</a>
-                        <a href="{{ route('our-services') }}" class="btn btn-lg btn-outline-light ms-3">Our Services</a>
-                    </div>
                 </div>
             </div>
         </div>

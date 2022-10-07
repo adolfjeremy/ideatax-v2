@@ -5,4 +5,4 @@
 <link rel="stylesheet" type="text/css" href="/assets/vendors/slick-1.8.1/slick/slick-theme.css" />
 <link rel="stylesheet" href="/assets/css/global1.css">
 <link rel="stylesheet" href="/assets/css/header1.css">
-<link rel="stylesheet" href="/assets/css/footer1.css">
+<link rel="stylesheet" href="/assets/css/footer2.css">
