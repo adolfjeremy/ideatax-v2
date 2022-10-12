@@ -118,12 +118,12 @@
                             <h5>Professional</h5>
                         </div>
                         <div class="value_item text-center d-block" data-aos="zoom-in-down" data-aos-delay="200">
-                            <img src="/assets/images/creative-min.jpg" alt="" class="w-100">
+                            <img src="/assets/images/prudent-min.jpg" alt="" class="w-100">
                             <div class="overlay"></div>
                             <h5>Creative</h5>
                         </div>
                         <div class="value_item text-center d-block" data-aos="zoom-in-down" data-aos-delay="200">
-                            <img src="/assets/images/prudent-min.jpg" alt="" class="w-100">
+                            <img src="/assets/images/creative-min.jpg" alt="" class="w-100">
                             <div class="overlay"></div>
                             <h5>Prudent</h5>
                         </div>
