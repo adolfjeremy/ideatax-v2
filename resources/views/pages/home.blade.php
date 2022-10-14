@@ -32,6 +32,11 @@
                     <p class="mb-2">&emsp;&emsp;We combine a long running experience in tax consulting and tax authority to deliver thorough
                         solutions to our clients. We also present essential approaches with problem-solving
                         capabilities imbued with a full commitment for the most polished quality of service for our clients.</p>
+                    @if($compro)
+                        <div class="mt-2 button-container">
+                            <a href="{{ asset("storage/" . $compro->compro) }}" target="_blank" class="btn btn-md btn-warning rounded">Company Profile</a>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

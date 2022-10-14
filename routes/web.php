@@ -6,6 +6,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\ArticleCategoryController;
 use App\Http\Controllers\Admin\ArticleController as AdminArticleController;
+use App\Http\Controllers\Admin\CompanyProfileController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ServicesController;
@@ -83,6 +84,7 @@ Route::prefix('admin')
     Route::resource('update', AdminTaxUpdateController::class);
     Route::resource('tax-update-category', TaxUpdateCategoryController::class);
     Route::resource('discussion', DiscussionController::class);
+    Route::resource('compro', CompanyProfileController::class);
     Route::resource('team', TeamController::class);
     Route::get('/answered', [DiscussionController::class, 'answered'])->name('answered');
 });

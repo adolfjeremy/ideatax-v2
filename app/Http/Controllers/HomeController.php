@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Services;
+use App\Models\companyProfile;
 
 class HomeController extends Controller
 {
@@ -15,8 +16,10 @@ class HomeController extends Controller
     public function index()
     {
         $services = Services::all();
+        $compro = companyProfile::orderBy('updated_at', 'desc')->first();
         return view('pages.home',[
-            "services" => $services
+            "services" => $services,
+            'compro' => $compro
         ]);
     }
 }

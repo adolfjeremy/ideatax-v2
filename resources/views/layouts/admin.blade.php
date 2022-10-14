@@ -25,6 +25,7 @@
                         <a href="{{ route('article-category.index') }}" class="list-group-item list-group-item-action{{ (request()->is('admin/article-category*') ? " active" : "") }}">Article Category</a>
                         <a href="{{ route('tax-update-category.index') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/tax-update-category*') ? " active" : "") }}">Tax Update Category</a>
                         <a href="{{ route('articles.index') }}" class="list-group-item list-group-item-action{{ (request()->is('admin/articles*') ? " active" : "") }}">Article</a>
+                        <a href="{{ route('compro.index') }}" class="list-group-item list-group-item-action{{ (request()->is('admin/compro*') ? " active" : "") }}">Company Profile</a>
                         <a href="{{ route('event.index') }}" class="list-group-item list-group-item-action{{ (request()->is('admin/event*') ? " active" : "") }}">Tax Event</a>
                         <a href="{{ route('update.index') }}" class="list-group-item list-group-item-action{{ (request()->is('admin/update*') ? " active" : "") }}">Tax Update</a>
                         <a href="{{ route('discussion.index') }}" class="list-group-item list-group-item-action{{ (request()->is('admin/discussion*') ? " active" : "") }}">Discussion</a>

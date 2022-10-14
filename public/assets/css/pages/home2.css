@@ -133,6 +133,10 @@
     position: relative;
 }
 
+.about_us .button-container a:hover {
+    background-color: #ffbf00 !important;
+}
+
 .about_us .about_bg {
     position: absolute;
     inset: 0;
