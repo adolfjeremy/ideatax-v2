@@ -19,7 +19,7 @@ class aboutController extends Controller
 
     public function team()
     {
-        $teams = Team::orderBy('name')->get();
+        $teams = Team::orderBy('id')->get();
 
         return view('pages.team',[
             "teams" => $teams,
