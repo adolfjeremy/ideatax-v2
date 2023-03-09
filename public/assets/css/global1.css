@@ -50,3 +50,15 @@ main {
     align-items: center;
     justify-content: center;
 }
+
+.contact_lead {
+    background-color: #850e35;
+}
+
+.contact_lead h2 {
+    color: #fff;
+}
+
+.contact_lead-button {
+    font-family: "Lato", sans-serif;
+}

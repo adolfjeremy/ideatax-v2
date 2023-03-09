@@ -17,7 +17,7 @@
             </div>
         </div>
     </section>
-    <section id="ourTeam" class="py-4 mt-5">
+    <section id="ourTeam" class="mt-5">
         <div class="container-fluid">
             <div class="row">
                 <div class="our_team_list pb-5 text-start" data-aos="zoom-in">

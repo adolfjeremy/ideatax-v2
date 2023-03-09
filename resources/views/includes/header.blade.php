@@ -31,7 +31,7 @@
                     <li class="nav-item">
                         <a href="{{ route('home') }}" class="nav-link{{ (request()->is('/*') ? " active" : "") }}">home</a>
                     </li>
-                    <li class="nav-item py-2">
+                    <li class="nav-item">
                         <a href="{{ route('our-team') }}" class="nav-link{{ (request()->is('our-team*') ? " active" : "") }}">team</a>
                     </li>
                     <li class="nav-item">
@@ -49,7 +49,7 @@
                 </ul>
             </nav>
             <nav class="social_container d-none d-xl-block">
-                <ul>
+                <ul class="d-flex align-items-center gap-1">
                     <li class="nav-item">
                         <a href="https://www.linkedin.com/in/ideatax/" target="_blank" rel="noopener noreferrer" class="nav--link" title="Linkedin"><i
                                 class="bi bi-linkedin me-2 fs-4 text"></i></i></a>
@@ -58,6 +58,10 @@
                         <a href="https://www.instagram.com/ideatax_idn/" target="_blank" rel="noopener noreferrer" class="nav-link" title="Instagram"><i
                                 class="bi bi-instagram me-2 fs-4 text"></i></a>
                     </li>
+                    <li class="nav-item">
+                        <a href="https://www.facebook.com/ideataxconsultant" target="_blank" rel="noopener noreferrer" class="nav--link" title="Facebook"><i
+                                class="bi bi-facebook me-2 fs-4 text"></i></i></a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -65,7 +69,7 @@
     <div class="mobile_nav d-block d-xl-none shadow-lg">
         <nav class="d-block p-1">
             <ul class="d-block mobile_top_bar">
-                <li class="nav-item py-2 d-flex align-items-start justify-content-start">
+                <li class="nav-item py-2 d-flex align-items-center justify-content-start">
                     <i class="bi bi-geo-alt-fill fs-5 text me-2"></i>
                     <a href="https://www.google.com/maps/place/Menara+Kuningan/@-6.218423,106.828485,17z/data=!3m1!4b1!4m5!3m4!1s0x2e69f3cbd9ee81e7:0x730534af13796af4!8m2!3d-6.2184283!4d106.8306737" target="_blank" rel="noopener noreferrer">Menara Kuningan - Level 1 Unit B3 Jl. H. Rasuna Said Kav. 5 Karet Kuningan,
                         Setiabudi
@@ -80,11 +84,13 @@
                         <a href="#">0812 8749 0887</a>
                     </div>
                 </li>
-                <li class="nav-item py-2 d-flex align-items-start justify-content-start">
+                <li class="nav-item py-2 d-flex align-items-center justify-content-start">
                     <a href="https://www.linkedin.com/in/ideatax/" target="_blank" rel="noopener noreferrer" class="nav--link" title="Linkedin"><i
                                 class="bi bi-linkedin me-2 fs-4 text"></i></i></a>
                     <a href="https://www.instagram.com/ideatax_idn/" target="_blank" rel="noopener noreferrer" class="nav-link" title="Instagram"><i
                     class="bi bi-instagram me-2 fs-4 text"></i></a>
+                    <a href="https://www.facebook.com/ideataxconsultant" target="_blank" rel="noopener noreferrer" class="nav--link" title="Facebook"><i
+                                class="bi bi-facebook me-2 fs-4 text"></i></i></a>
                 </li>
             </ul>
             <ul class="d-block p-1 border-top">

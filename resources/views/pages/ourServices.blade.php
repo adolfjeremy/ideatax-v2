@@ -21,7 +21,7 @@
             </div>
         </div>
     </section>
-        <section class="our_service_list section_gap">
+        <section class="our_service_list section_gap mt-5">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -53,5 +53,13 @@
                         </div>
                     </div>
                 </div>
+        </section>
+        <section class="contact_lead py-5 mt-5">
+            <div class="container">
+                <div class="col-12 d-flex align-items-center justify-content-between">
+                    <h2>Talk to us about your needs</h2>
+                    <a href="{{ route("contact") }}" class="contact_lead-button btn btn-warning fw-bold">Contact us</a>
+                </div>
+            </div>
         </section>
 @endsection

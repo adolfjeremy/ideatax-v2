@@ -12,6 +12,9 @@
                 <div class="email_phone align-items-start">
                     <a href="tel:0212528471" class=""><i class="bi bi-telephone me-3"></i>(021) 2528471</a>
                 </div>
+                <div class="email_phone align-items-start">
+                    <a href="tel:081287490887" class=""><i class="bi bi-phone me-3"></i>0812 8749 0887</a>
+                </div>
                 <div class="address_item d-flex flex-column">
                     <i class="bi bi-building"></i>
                     <h2>Menara Kuningan, South Jakarta, Indonesia</h2>
@@ -35,8 +38,8 @@
                 <div class="social col-6">
                     <ul>
                         <li><a href="https://www.linkedin.com/in/ideatax/" target="_blank" rel="noopener noreferrer" class="d-flex"><i class="bi bi-linkedin me-2"></i>Linkedin</a></li>
-                        <li class="mt-3"><a href="https://www.instagram.com/ideatax_idn/" target="_blank" rel="noopener noreferrer" class="d-flex"><i class="bi bi-instagram me-2"></i>Instagram</a>
-                        </li>
+                        <li class="mt-3"><a href="https://www.instagram.com/ideatax_idn/" target="_blank" rel="noopener noreferrer" class="d-flex"><i class="bi bi-instagram me-2"></i>Instagram</a></li>
+                        <li class="mt-3"><a href="https://www.facebook.com/ideataxconsultant" target="_blank" rel="noopener noreferrer" class="d-flex"><i class="bi bi-facebook me-2"></i>Facebook</a></li>
                     </ul>
                 </div>
             </div>

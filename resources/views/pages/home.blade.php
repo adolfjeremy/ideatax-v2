@@ -16,7 +16,7 @@
                 <div class="col-12 d-flex flex-column align-items-center justify-content-center">
                     <h1 data-aos="flip-left">We Provide Tax Solutions for You</h1>
                     <div class="d-flex button-container" data-aos="flip-right" data-aos-delay="200">
-                        <a href="{{ route('contact') }}" class="btn btn-lg btn-warning">Get Started</a>
+                        <a href="{{ route('contact') }}" class="btn btn-lg btn-warning">Contact Us</a>
                         <a href="{{ route('our-services') }}" class="btn btn-lg btn-outline-light ms-3">Our Services</a>
                     </div>
                 </div>
@@ -127,7 +127,7 @@
                             <div class="overlay"></div>
                             <h5>Creative</h5>
                         </div>
-                        <div class="value_item text-center d-block" data-aos="zoom-in-down" data-aos-delay="200">
+                        <div class="value_item text-center d-block" data-aos="zoom-in-down" data-aos-delay="250">
                             <img src="/assets/images/creative-min.jpg" alt="" class="w-100">
                             <div class="overlay"></div>
                             <h5>Prudent</h5>
@@ -171,6 +171,14 @@
                         </div>
                     @endforeach
                 </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact_lead py-5 mt-5">
+        <div class="container">
+            <div class="col-12 d-flex align-items-center justify-content-between">
+                <h2>Talk to us about your needs</h2>
+                <a href="{{ route("contact") }}" class="contact_lead-button btn btn-warning fw-bold">Contact us</a>
             </div>
         </div>
     </section>

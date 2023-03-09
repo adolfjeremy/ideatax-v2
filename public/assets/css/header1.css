@@ -148,7 +148,7 @@ header .reponsive_nav ul li {
 
 header .social_container ul li {
     display: block;
-    padding: 10px 15px;
+    padding: 10px 5px !important;
 }
 
 .social_container * {

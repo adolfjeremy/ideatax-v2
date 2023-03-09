@@ -62,7 +62,7 @@ Route::get('/articles/{id}', [ArticleController::class, 'detail'])->name('articl
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
-Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::get('/contact/send-mail', [ContactController::class, 'sendMail'])->name('send-mail');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login');

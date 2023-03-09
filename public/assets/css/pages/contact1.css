@@ -1,9 +1,61 @@
 #contactUs {
     color: #fff;
 }
-
-#contactUs * {
+#contactUs {
     font-family: "Lato", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("/assets/images/wall-min.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 100%;
+    height: 20vh;
+}
+
+#contactUs *,
+.address_form * {
+    font-family: "Lato", sans-serif;
+}
+
+.address_form-detail {
+    background-color: #021924;
+}
+
+.address_form h2,
+.address_form h3,
+.address_form h4 {
+    color: #fff;
+}
+
+.address_form h2 {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.address_form h3,
+.address_form h4 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.contact_detail svg,
+.contact_detail a,
+.address_detail p {
+    font-size: 15px;
+    color: #ffffffe8;
+    margin: 0;
+    font-weight: 400;
+}
+
+.contact_detail a:hover {
+    color: #fff;
+}
+
+.contact_detail a {
+    text-decoration: none;
 }
 
 #contactUs h2 {
@@ -12,6 +64,26 @@
 
 #contactUs .contact-list {
     background-color: #021924;
+}
+
+.contact_form {
+    background-color: #e8eaeb;
+}
+
+.contact_form textarea {
+    min-height: 100px !important;
+}
+
+.contact_form h5 {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.contact_form_button_container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 #contactUs ul {
