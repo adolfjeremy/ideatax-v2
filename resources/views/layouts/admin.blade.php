@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="/assets/vendors/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/global1.css">
+    <link rel="stylesheet" href="/assets/css/global2.css">
     <link rel="stylesheet" href="/assets/css/pages/admin.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.css"/>
 </head>

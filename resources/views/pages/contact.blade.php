@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('page-style')
-    <link rel="stylesheet" href="assets/css/pages/contact1.css">
+    <link rel="stylesheet" href="assets/css/pages/contact2.css">
 @endsection
 
 @section('title')
