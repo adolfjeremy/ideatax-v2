@@ -40,7 +40,7 @@
                 <p>Hello, is there anything we can help?</p>
             </div>
             <div class="floating_whatsapp_content p-3">
-                <a href="https://wa.me/send?phone=62811195708&text=Halo%20Ideatax" target="_blank" rel="noopener noreferrer" class="d-flex align-items-center justify-content-between w-100 p-2 floating_whatsapp_content_wrapper">
+                <a href="https://wa.me/62811195708?text=Hello%20Ideatax" target="_blank" rel="noopener noreferrer" class="d-flex align-items-center justify-content-between w-100 p-2 floating_whatsapp_content_wrapper">
                     <div class="d-flex align-items-center justify-content-start gap-2">
                         <i class="bi bi-whatsapp"></i>
                         <p class="m-0">Ideatax Admin</p>
