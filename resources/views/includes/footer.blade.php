@@ -13,7 +13,7 @@
                     <a href="tel:0212528471"><i class="bi bi-telephone me-3"></i>(021) 2528471</a>
                 </div>
                 <div class="email_phone align-items-start">
-                    <a href="tel:0811195708"><i class="bi bi-phone me-3"></i>0811 1957 08</a>
+                    <a href="tel:0811195708"><i class="bi bi-phone me-3"></i>0811 195 708</a>
                 </div>
                 <div class="address_item d-flex flex-column">
                     <i class="bi bi-buildings"></i>

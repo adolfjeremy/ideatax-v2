@@ -30,6 +30,140 @@ body {
 main {
     color: #111;
     overflow: hidden;
+    position: relative;
+}
+
+@keyframes rotateWa {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes moveUp {
+    from {
+        opacity: 0;
+        bottom: 0;
+    }
+    to {
+        opacity: 1;
+        bottom: 100px;
+    }
+}
+
+@keyframes moveDown {
+    from {
+        opacity: 1;
+        bottom: 100px;
+    }
+    to {
+        opacity: 0;
+        bottom: 0;
+    }
+}
+
+.floating_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: #25d366;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.floating_button i {
+    font-size: 30px;
+    color: #fff;
+}
+
+.rotateWa {
+    animation: rotateWa 250ms infinite linear;
+}
+
+.floating_whatsapp {
+    position: fixed;
+    right: 20px;
+    background-color: #fff;
+    box-shadow: 2px 2px 10px black;
+    z-index: 1000;
+    width: 350px;
+    @media (max-width: 576px) {
+        width: 80vw;
+        right: 0px;
+    }
+}
+
+@media (max-width: 576px) {
+    .floating_whatsapp {
+        width: 90vw;
+        right: 20px;
+    }
+}
+
+.moveUp {
+    animation: moveUp 250ms linear;
+    animation-fill-mode: forwards;
+}
+
+.moveDown {
+    animation: moveDown 250ms linear;
+    animation-fill-mode: backwards;
+}
+
+.floating_whatsapp_header {
+    display: flex;
+    align-items: center;
+    background-color: #25d366;
+    gap: 10px;
+}
+
+.floating_whatsapp_header p {
+    margin: 0;
+    color: #fff;
+    font-size: 17px;
+    font-family: "Lato", sans-serif;
+}
+
+.floating_whatsapp_header i {
+    font-size: 30px;
+    color: #fff;
+}
+
+.floating_whatsapp_content {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    gap: 10px;
+}
+
+.floating_whatsapp_content_wrapper {
+    background-color: #eeeeee;
+    border-radius: 10px;
+    border-left: 3px solid #25d366;
+    text-decoration: none;
+}
+
+.floating_whatsapp_content_wrapper:hover {
+    background-color: #dedbdb;
+}
+
+.floating_whatsapp_content_wrapper i {
+    font-size: 30px;
+    color: #25d366;
+}
+
+.floating_whatsapp_content_wrapper p {
+    font-size: 15px;
+    font-family: "Lato", sans-serif;
+    color: black;
 }
 
 .overlay {

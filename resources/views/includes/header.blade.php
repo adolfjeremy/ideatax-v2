@@ -14,7 +14,7 @@
                         <i class="bi bi-telephone-fill fs-5 text me-1"></i>
                         <a href="tel:0212528471">(021) 2528471</a>
                         <span class="mx-1">,</span>
-                        <a href="tel:0811195708">0811 1957 08</a>
+                        <a href="tel:0811195708">0811 195 708</a>
                     </div>
                 </div>
             </div>
@@ -29,22 +29,22 @@
             <nav class="reponsive_nav d-flex d-none d-xl-block">
                 <ul>
                     <li class="nav-item">
-                        <a href="{{ route('home') }}" class="nav-link{{ (request()->is('/*') ? " active" : "") }}">home</a>
+                        <a href="{{ route('home') }}" class="nav-link p-0{{ (request()->is('/*') ? " active" : "") }}">home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('our-team') }}" class="nav-link{{ (request()->is('our-team*') ? " active" : "") }}">team</a>
+                        <a href="{{ route('our-team') }}" class="nav-link p-0{{ (request()->is('our-team*') ? " active" : "") }}">team</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('our-services') }}" class="nav-link{{ (request()->is('our-services*') ? " active" : "") }}">our services</a>
+                        <a href="{{ route('our-services') }}" class="nav-link p-0{{ (request()->is('our-services*') ? " active" : "") }}">our services</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('update') }}" class="nav-link{{ (request()->is('tax-update*') ? " active" : "") }}">updates</a>
+                        <a href="{{ route('update') }}" class="nav-link p-0{{ (request()->is('tax-update*') ? " active" : "") }}">updates</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('articles') }}" class="nav-link{{ (request()->is('articles*') ? " active" : "") }}">articles</a>
+                        <a href="{{ route('articles') }}" class="nav-link p-0{{ (request()->is('articles*') ? " active" : "") }}">articles</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('contact') }}" class="nav-link{{ (request()->is('contact*') ? " active" : "") }}">contact us</a>
+                        <a href="{{ route('contact') }}" class="nav-link p-0{{ (request()->is('contact*') ? " active" : "") }}">contact us</a>
                     </li>
                 </ul>
             </nav>
@@ -81,7 +81,7 @@
                     <div>
                         <a href="tel:0212528471">(021) 2528471</a>
                         <span class="mx-1">,</span>
-                        <a href="tel:0811195708">0811 1957 08</a>
+                        <a href="tel:0811195708">0811 195 708</a>
                     </div>
                 </li>
                 <li class="nav-item py-2 d-flex align-items-center justify-content-start">

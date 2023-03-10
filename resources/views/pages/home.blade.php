@@ -99,11 +99,11 @@
     </section>
     <section class="our_value pb-2 mt-2">
         <div class="container">
-            <div class="row">
-                <div class="col-12 text-center" data-aos="zoom-out-right">
+            <div class="row" data-aos="zoom-in">
+                <div class="col-12 text-center">
                     <h4>Value</h4>
                 </div>
-                <div class="col-12 d-flex align-items-center justify-content-center text-center"data-aos="zoom-out-right" data-aos-delay="50">
+                <div class="col-12 d-flex align-items-center justify-content-center text-center">
                     <p>We strive to deliver the best service possible for our clients with the help of talents who
                         continually develop their
                         skills in improving the quality of our services. Take a look at our underlying values:</p>

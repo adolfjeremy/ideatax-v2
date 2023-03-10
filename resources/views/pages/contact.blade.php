@@ -36,7 +36,7 @@
                         </div>
                         <div class="contact_container d-flex justify-content-start align-items-center gap-2 mt-3">
                             <i class="bi bi-phone"></i>
-                            <a href="tel:0811195708">0811 1957 08</a>
+                            <a href="tel:0811195708">0811 195 708</a>
                         </div>
                     </div>
                     <div class="address_detail mt-4">
@@ -47,6 +47,11 @@
                 </div>
                 <div class="col-12 col-lg-8 py-3 px-5 contact_form">
                     <h5>Ask Any Question</h5>
+                        @if(session()->has('successAlert'))
+                        <div class="alert alert-success" role="alert">
+                            {{Session::get('successAlert')}}
+                        </div>
+                        @endif 
                     <form action="{{ route('send-mail') }}" method="GET"> 
                         <div class="form-floating mb-3">
                             <input type="text" name="name" class="form-control" id="name" placeholder="Full Name" required>
@@ -61,7 +66,7 @@
                             <label for="email">Email</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <textarea class="form-control" type="text" name="message" placeholder="Message" id="message" required></textarea>
+                            <textarea class="form-control" type="text" name="message" placeholder="Message" id="message"></textarea>
                             <label for="message">Message</label>
                         </div>
                         <div class="contact_form_button_container">
