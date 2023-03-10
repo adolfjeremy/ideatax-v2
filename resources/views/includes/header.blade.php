@@ -14,7 +14,7 @@
                         <i class="bi bi-telephone-fill fs-5 text me-1"></i>
                         <a href="tel:0212528471">(021) 2528471</a>
                         <span class="mx-1">,</span>
-                        <a href="tel:081287490887">0812 8749 0887</a>
+                        <a href="tel:0811195708">0811 1957 08</a>
                     </div>
                 </div>
             </div>
@@ -79,9 +79,9 @@
                 <li class="nav-item py-2 d-flex align-items-center justify-content-start contact">
                     <i class="bi bi-telephone-fill fs-5 text me-2"></i>
                     <div>
-                        <a href="#">(021) 2528471</a>
+                        <a href="tel:0212528471">(021) 2528471</a>
                         <span class="mx-1">,</span>
-                        <a href="#">0812 8749 0887</a>
+                        <a href="tel:0811195708">0811 1957 08</a>
                     </div>
                 </li>
                 <li class="nav-item py-2 d-flex align-items-center justify-content-start">

@@ -41,7 +41,7 @@
     font-weight: 600;
 }
 
-.contact_detail svg,
+.contact_detail i,
 .contact_detail a,
 .address_detail p {
     font-size: 15px;
@@ -51,7 +51,11 @@
 }
 
 .contact_detail a:hover {
-    color: #fff;
+    color: #ffc107;
+}
+
+.contact_container:hover i {
+    color: #ffc107;
 }
 
 .contact_detail a {
@@ -84,22 +88,6 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-}
-
-#contactUs ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-#contactUs ul a {
-    color: #fff;
-    text-decoration: none;
-}
-
-#contactUs ul a:hover {
-    text-decoration: underline;
-    color: #ffc107;
 }
 
 @media (min-width: 480px) and (max-width: 991px) {

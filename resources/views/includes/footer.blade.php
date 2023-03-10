@@ -10,13 +10,13 @@
                     <a href="mailto:contact@ideatax.id"><i class="bi bi-envelope me-3"></i>contact@ideatax.id</a>
                 </div>
                 <div class="email_phone align-items-start">
-                    <a href="tel:0212528471" class=""><i class="bi bi-telephone me-3"></i>(021) 2528471</a>
+                    <a href="tel:0212528471"><i class="bi bi-telephone me-3"></i>(021) 2528471</a>
                 </div>
                 <div class="email_phone align-items-start">
-                    <a href="tel:081287490887" class=""><i class="bi bi-phone me-3"></i>0812 8749 0887</a>
+                    <a href="tel:0811195708"><i class="bi bi-phone me-3"></i>0811 1957 08</a>
                 </div>
                 <div class="address_item d-flex flex-column">
-                    <i class="bi bi-building"></i>
+                    <i class="bi bi-buildings"></i>
                     <h2>Menara Kuningan, South Jakarta, Indonesia</h2>
                     <a href="https://www.google.com/maps/place/Menara+Kuningan/@-6.218423,106.828485,17z/data=!3m1!4b1!4m5!3m4!1s0x2e69f3cbd9ee81e7:0x730534af13796af4!8m2!3d-6.2184283!4d106.8306737" target="_blank" rel="noopener noreferrer">Menara Kuningan - Level 1 Unit B3 Jl. H. Rasuna Said Kav. 5
                         Karet Kuningan, Setiabudi,
