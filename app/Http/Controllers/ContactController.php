@@ -27,7 +27,7 @@ class ContactController extends Controller
         $custMessage = $req["message"];
         Mail::to("consultant@ideatax.id")->send(new CustomerQuestionMail($name, $email, $phone, $custMessage));
         return redirect()->back()->with([
-            'successAlert' => "Message send"
+            'successAlert' => "Message sent"
         ]);
     }
 }
