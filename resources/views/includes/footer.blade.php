@@ -37,7 +37,7 @@
                 </div>
                 <div class="social col-6">
                     <ul>
-                        <li><a href="https://www.linkedin.com/in/ideatax/" target="_blank" rel="noopener noreferrer" class="d-flex"><i class="bi bi-linkedin me-2"></i>Linkedin</a></li>
+                        <li><a href="https://www.linkedin.com/company/idea-tax/" target="_blank" rel="noopener noreferrer" class="d-flex"><i class="bi bi-linkedin me-2"></i>Linkedin</a></li>
                         <li class="mt-3"><a href="https://www.instagram.com/ideatax_idn/" target="_blank" rel="noopener noreferrer" class="d-flex"><i class="bi bi-instagram me-2"></i>Instagram</a></li>
                         <li class="mt-3"><a href="https://www.facebook.com/ideataxconsultant" target="_blank" rel="noopener noreferrer" class="d-flex"><i class="bi bi-facebook me-2"></i>Facebook</a></li>
                     </ul>

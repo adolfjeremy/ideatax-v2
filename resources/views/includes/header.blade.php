@@ -51,7 +51,7 @@
             <nav class="social_container d-none d-xl-block">
                 <ul class="d-flex align-items-center gap-1">
                     <li class="nav-item">
-                        <a href="https://www.linkedin.com/in/ideatax/" target="_blank" rel="noopener noreferrer" class="nav--link" title="Linkedin"><i
+                        <a href="https://www.linkedin.com/company/idea-tax/" target="_blank" rel="noopener noreferrer" class="nav--link" title="Linkedin"><i
                                 class="bi bi-linkedin me-2 fs-4 text"></i></i></a>
                     </li>
                     <li class="nav-item">
@@ -85,7 +85,7 @@
                     </div>
                 </li>
                 <li class="nav-item py-2 d-flex align-items-center justify-content-start">
-                    <a href="https://www.linkedin.com/in/ideatax/" target="_blank" rel="noopener noreferrer" class="nav--link" title="Linkedin"><i
+                    <a href="https://www.linkedin.com/company/idea-tax/" target="_blank" rel="noopener noreferrer" class="nav--link" title="Linkedin"><i
                                 class="bi bi-linkedin me-2 fs-4 text"></i></i></a>
                     <a href="https://www.instagram.com/ideatax_idn/" target="_blank" rel="noopener noreferrer" class="nav-link" title="Instagram"><i
                     class="bi bi-instagram me-2 fs-4 text"></i></a>
