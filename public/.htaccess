@@ -4,6 +4,8 @@
     </IfModule>
 
     RewriteEngine On
+    RewriteCond %{HTTP_HOST} ^ideatax.id [NC]
+    RewriteRule ^(.*)$ http://www.ideatax.id/$1 [L,R=301]
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
