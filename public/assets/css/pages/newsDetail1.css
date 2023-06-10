@@ -3,6 +3,12 @@
     font-size: 28px;
 }
 
+.news_item h3 {
+    font-size: 18px !important;
+    color: #272e45 !important;
+    font-weight: 400 !important;
+}
+
 .news_body strong {
     color: #000;
     text-decoration: none;
@@ -40,7 +46,8 @@
     height: 107px;
 }
 
-.news_detail_item a {
+.news_detail_item a,
+.news_detail_item h3 {
     color: #272e45;
     font-size: 16px;
     font-weight: 400;

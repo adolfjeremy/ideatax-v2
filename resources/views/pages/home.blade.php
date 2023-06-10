@@ -1,5 +1,9 @@
 @extends('layouts.main')
 
+@section('canonical')
+    <link rel="canonical" href="https://ideatax.id/">
+@endsection
+
 @section('page-style')
     <link rel="stylesheet" href="assets/css/pages/home2.css">
 @endsection
@@ -27,8 +31,8 @@
         <div class="container py-5">
             <div class="about_bg"></div>
             <div class="row text-center p-4 d-flex align-items-center justify-content-center">
-                <div class="col-12 col-lg-10 p-4 about_us_text" data-aos="zoom-in-right" data-aos-delay="150">
-                    <h2 data-aos="zoom-in-right">About Us</h2>
+                <div class="col-12 col-lg-10 p-4 about_us_text">
+                    <h2 >About Us</h2>
                     <p class="mb-2">&emsp;&emsp;We combine a long running experience in tax consulting and tax authority to deliver thorough
                         solutions to our clients. We also present essential approaches with problem-solving
                         capabilities imbued with a full commitment for the most polished quality of service for our clients.</p>
@@ -44,7 +48,7 @@
     <section class="why_ideatax pb-5">
         <div class="container">
             <div class="row text-center mb-4">
-                <h3 data-aos="zoom-in-right">Why Ideatax?</h3>
+                <h2 data-aos="zoom-in-right">Why Ideatax?</h2>
             </div>
             <div class="row">
                 <div class="reason_list text-center">
@@ -101,7 +105,7 @@
         <div class="container">
             <div class="row" data-aos="zoom-in">
                 <div class="col-12 text-center">
-                    <h4>Value</h4>
+                    <h2>Value</h2>
                 </div>
                 <div class="col-12 d-flex align-items-center justify-content-center text-center">
                     <p>We strive to deliver the best service possible for our clients with the help of talents who
@@ -113,22 +117,22 @@
                 <div class="col-12">
                     <div class="value_list">
                         <div class="value_item text-center d-block" data-aos="zoom-in-down" data-aos-delay="100">
-                            <img src="/assets/images/trustworthy-min.jpg" alt="" class="w-100">
+                            <img src="/assets/images/trustworthy-min.jpg" alt="Trustworthy" class="w-100">
                             <div class="overlay"></div>
-                            <h5>Trustworthy</h5>
+                            <h3>Trustworthy</h3>
                         </div>
                         <div class="value_item text-center d-block" data-aos="zoom-in-down" data-aos-delay="150">
-                            <img src="/assets/images/professional-min.jpg" alt="" class="w-100">
+                            <img src="/assets/images/professional-min.jpg" alt="Professional" class="w-100">
                             <div class="overlay"></div>
-                            <h5>Professional</h5>
+                            <h3>Professional</h3>
                         </div>
                         <div class="value_item text-center d-block" data-aos="zoom-in-down" data-aos-delay="200">
-                            <img src="/assets/images/prudent-min.jpg" alt="" class="w-100">
+                            <img src="/assets/images/prudent-min.jpg" alt="Creative" class="w-100">
                             <div class="overlay"></div>
-                            <h5>Creative</h5>
+                            <h3>Creative</h3>
                         </div>
                         <div class="value_item text-center d-block" data-aos="zoom-in-down" data-aos-delay="250">
-                            <img src="/assets/images/creative-min.jpg" alt="" class="w-100">
+                            <img src="/assets/images/creative-min.jpg" alt="Prudent" class="w-100">
                             <div class="overlay"></div>
                             <h5>Prudent</h5>
                         </div>
@@ -141,7 +145,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h4 data-aos="zoom-in-right">Meet Our Team</h4>
+                    <h2 data-aos="zoom-in-right">Meet Our Team</h2>
                 </div>
             </div>
             <div class="row overflow-hidden">
@@ -155,7 +159,7 @@
     <section class="our_services overflow-hidden">
         <div class="container">
             <div class="row text-center">
-                <h6 data-aos="zoom-in-right">Our Services</h6>
+                <h2 data-aos="zoom-in-right">Our Services</h2>
             </div>
         </div>
         <div class="container">
@@ -164,7 +168,9 @@
                     @foreach ($services as $service)
                         <div>
                             <div class="our_service_item d-block">
-                                <a href="{{ route('our-services') }}/#{{ $service->title }}" class="d-block" title="{{ $service->title }}">{!! str_limit($service->title, $limit = 25) !!}</a>
+                                <h3>
+                                    <a href="{{ route('our-services') }}/#{{ $service->title }}" class="d-block" title="{{ $service->title }}">{!! str_limit($service->title, $limit = 25) !!}</a>
+                                </h3>
                                 <hr mb-3>
                                 <p>{{ $service->excerpt }}</p>
                             </div>

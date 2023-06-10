@@ -37,7 +37,7 @@
                     <div class="row mb-2 d-flex flex-row">
                         <div class="col-12">
                             <a href="{{ route('tax-update-category',$taxUpdate->taxUpdateCategory->slug) }}" class="text-warning fs-6 fw-bolder">{{ $taxUpdate->taxUpdateCategory->title }}</a>
-                        <span class="text-dark fw-normal timestamp">- {{ $taxUpdate->created_at->format('Y/m/d H:i') }} WIB</span>
+                        <span class="text-dark fw-normal timestamp">- {{ $taxUpdate->created_at->format('d M, Y H:i') }} WIB</span>
                         </div>
                     </div>
                     <div class="row">
@@ -93,11 +93,11 @@
                                             </a>
                                         </div>
                                         <div class="text_container">
-                                            <a href="{{ route('tax-update-detail',$relatedUpdate->slug) }}">{!! str_limit($relatedUpdate->title,
-                                                $limit = 61) !!}</a>
+                                            <h3><a title="{{ $relatedUpdate->title }}" href="{{ route('tax-update-detail',$relatedUpdate->slug) }}">{!! str_limit($relatedUpdate->title,
+                                                $limit = 61) !!}</a></h3>
                                             <div class="timestamp">
                                                 <a href="{{ route('tax-update-category',$relatedUpdate->taxUpdateCategory->slug) }}" class="news_category">{{ $relatedUpdate->taxUpdateCategory->title }}</a>
-                                                <span>{{ $relatedUpdate->created_at->format('Y/m/d') }}</span>
+                                                <span>{{ $relatedUpdate->created_at->format('d M, Y') }}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -115,7 +115,7 @@
             <div id="newsContainer" class="row">
                 <div class="col-12">
                     <div class="row mt-5" data-aos="fade-up">
-                        <h3>Latest Updates</h3>
+                        <h2>Latest Updates</h2>
                     </div>
                     <div class="row mb-4">
                         <div class="news_list">
@@ -124,15 +124,15 @@
                                 <div class="news_item" data-aos="zoom-in" data-aos-delay="{{ $incrementCategory+= 150 }}">
                                     <div class="news_image_container">
                                         <a href="{{ route('tax-update-detail',$taxUpdate->slug) }}">
-                                            <img src="{{ asset("storage/" . $taxUpdate->photo) }}" alt="">
+                                            <img src="{{ asset("storage/" . $taxUpdate->photo) }}" alt="{{ $taxUpdate->title }}">
                                         </a>
                                     </div>
                                     <div class="text_container">
-                                        <a href="{{ route('tax-update-detail',$taxUpdate->slug) }}">{!! str_limit($taxUpdate->title,
-                                            $limit = 61) !!}</a>
+                                        <h3><a title="{{ $taxUpdate->title }}" href="{{ route('tax-update-detail',$taxUpdate->slug) }}">{!! str_limit($taxUpdate->title,
+                                            $limit = 61) !!}</a></h3>
                                         <div class="timestamp">
                                             <a href="{{  route('tax-update-category',$taxUpdate->taxUpdateCategory->slug)  }}" class="news_category">{{ $taxUpdate->taxUpdateCategory->title }}</a>
-                                            <span>{{ $taxUpdate->created_at->format('Y/m/d H:i') }} WIB</span>
+                                            <span>{{ $taxUpdate->created_at->format('d M, Y H:i') }} WIB</span>
                                         </div>
                                     </div>
                                 </div>
@@ -149,7 +149,7 @@
                 <div class="col-12">
                     <div class="row">
                         <div class="header_container text-start mb-2" data-aos="fade-up">
-                            <h3>Tax Consulting</h3>
+                            <h2>Tax Consulting</h2>
                         </div>
                     </div>
                     <div class="row mb-2">
@@ -158,12 +158,16 @@
                             @foreach ($customerQuestions as $customerQuestion)
                                 <div class="discussion_item" data-aos="zoom-in" data-aos-delay="{{ $incrementCategory+= 150 }}">
                                     <div class="image-container w-100">
-                                        <a href=""><img src="{{ asset("storage/" . $customerQuestion->photo) }}" alt="" class="w-100"></a>
+                                        <a href="{{ route('tax-consulting', $customerQuestion->slug) }}"><img src="{{ asset("storage/" . $customerQuestion->photo) }}" alt="{{ $customerQuestion->title }}" class="w-100"></a>
                                     </div>
                                     <div class="caption_container px-2">
-                                        <a href="{{ route('tax-update-category',$customerQuestion->taxUpdateCategory->slug) }}" class="text-warning">{{ $customerQuestion->taxUpdateCategory->title }}</a>
-                                        <a href="">{{ $customerQuestion->title }}</a>
-                                        <span>{{ $customerQuestion->created_at->format('Y/m/d') }} WIB</span>
+                                        <h3>
+                                            <a href="{{ route('tax-consulting', $customerQuestion->slug) }}">{{ $customerQuestion->title }}</a>
+                                        </h3>
+                                        <div class="timestamp">
+                                            <a href="{{ route('tax-update-category',$customerQuestion->taxUpdateCategory->slug) }}" class="text-warning">{{ $customerQuestion->taxUpdateCategory->title }}</a>
+                                            <span>{{ $customerQuestion->created_at->format('d M, Y H:i') }} WIB</span>
+                                        </div>
                                     </div>
                                 </div>
                             @endforeach

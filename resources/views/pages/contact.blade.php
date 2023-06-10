@@ -1,5 +1,9 @@
 @extends('layouts.main')
 
+@section('canonical')
+    <link rel="canonical" href="https://ideatax.id/contact">
+@endsection
+
 @section('page-style')
     <link rel="stylesheet" href="assets/css/pages/contact2.css">
 @endsection

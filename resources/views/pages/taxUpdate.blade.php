@@ -1,5 +1,9 @@
 @extends('layouts.main')
 
+@section('canonical')
+    <link rel="canonical" href="https://ideatax.id/tax-update">
+@endsection
+
 @section('page-style')
     <link rel="stylesheet" href="/assets/css/pages/news1.css">
 @endsection
@@ -89,7 +93,7 @@
                 <div class="col-12">
                     <div class="row">
                         <div class="header_container text-start mb-2" data-aos="fade-up">
-                            <h3>Latest Update</h3>
+                            <h1>Latest Update</h1>
                         </div>
                     </div>
                     <div class="row mb-2">
@@ -101,10 +105,10 @@
                                         <a href="{{ route('tax-update-detail',$taxUpdate->slug) }}"><img src="{{ asset("storage/" . $taxUpdate->photo) }}" alt="{{ $taxUpdate->title }}"></a>
                                     </div>
                                     <div class="text_container">
-                                        <a href="{{ route('tax-update-detail',$taxUpdate->slug) }}">{!! str_limit($taxUpdate->title, $limit = 60) !!}</a>
+                                        <h2><a href="{{ route('tax-update-detail',$taxUpdate->slug) }}">{!! str_limit($taxUpdate->title, $limit = 60) !!}</a></h2>
                                         <div class="timestamp">
                                             <a href="{{ route('tax-update-category',$taxUpdate->taxUpdateCategory->slug) }}" class="news_category">{{ $taxUpdate->taxUpdateCategory->title }}</a>
-                                            <span>{{ $taxUpdate->created_at->format('Y/m/d H:i') }} WIB</span>
+                                            <span>{{ $taxUpdate->created_at->format('d M, Y H:i') }} WIB</span>
                                         </div>
                                     </div>
                                 </div>
@@ -122,7 +126,7 @@
                 <div class="col-12">
                     <div class="row">
                         <div class="header_container text-start mb-2" data-aos="fade-up">
-                            <h3>Tax Consulting</h3>
+                            <h2>Tax Consulting</h2>
                         </div>
                     </div>
                     <div class="row mb-2">
@@ -134,9 +138,11 @@
                                         <a href="{{ route('tax-consulting', $customerQuestion->slug) }}"><img src="{{ asset("storage/" . $customerQuestion->photo) }}" alt="{{  $customerQuestion->title  }}" class="w-100"></a>
                                     </div>
                                     <div class="caption_container px-2">
-                                        <a href="{{ route('tax-update-category',$customerQuestion->taxUpdateCategory->slug) }}" class="text-warning">{{ $customerQuestion->taxUpdateCategory->title }}</a>
-                                        <a href="{{ route('tax-consulting', $customerQuestion->slug) }}">{{ $customerQuestion->title }}</a>
-                                        <span>{{ $customerQuestion->created_at->format('Y/m/d H:i') }} WIB</span>
+                                        <h3><a href="{{ route('tax-consulting', $customerQuestion->slug) }}">{{ $customerQuestion->title }}</a></h3>
+                                        <div class="timestamp">
+                                            <a href="{{ route('tax-update-category',$customerQuestion->taxUpdateCategory->slug) }}" class="text-warning">{{ $customerQuestion->taxUpdateCategory->title }}</a>
+                                            <span class="ms-1">{{ $customerQuestion->created_at->format('d M, Y H:i') }} WIB</span>
+                                        </div>
                                     </div>
                                 </div>
                             @empty

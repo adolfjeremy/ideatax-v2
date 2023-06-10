@@ -37,7 +37,7 @@
                     <div class="row">
                         <div class="col-12">
                             <a href="{{ route('article-category',$article->articleCategory->slug) }}" class="text-warning fs-6 fw-bolder">{{ $article->articleCategory->title }}</a>
-                            <span class="text-dark fw-normal timestamp">- {{ $article->created_at->format('d/m/Y H:m') }} WIB</span>
+                            <span class="text-dark fw-normal timestamp">- {{ $article->created_at->format('d M, Y H:m') }} WIB</span>
                         </div>
                     </div>
                     <div class="row">
@@ -53,8 +53,8 @@
                             <div class="tax_event_list">
                                 @forelse ($taxEvents as $taxEvent)
                                 <a href="{{ route('tax-event', $taxEvent->slug) }}" class="tax_event_item">
-                                    <h4>{!! str_limit($taxEvent->title, $limit = 50) !!}</h4>
-                                    <span>{{ $taxEvent->created_at }}</span>
+                                    <h3>{!! str_limit($taxEvent->title, $limit = 50) !!}</h3>
+                                    <span>{{ $taxEvent->created_at->format('d M, Y') }}</span>
                                 </a>
                                 @empty
                                 <div class="tax_event_item text-center text-light">
@@ -74,15 +74,17 @@
                                 <div class="news_detail_item">
                                     <div class="news_image_container">
                                         <a href="{{ route('article-detail',$relatedArticle->slug) }}">
-                                            <img src="{{ asset("storage/" . $relatedArticle->photo) }}" alt="">
+                                            <img src="{{ asset("storage/" . $relatedArticle->photo) }}" alt="{{ $relatedArticle->title }}">
                                         </a>
                                     </div>
                                     <div class="text_container">
-                                        <a href="{{ route('article-detail',$relatedArticle->slug) }}">{!! str_limit($relatedArticle->title,
+                                        <h3>
+                                            <a href="{{ route('article-detail',$relatedArticle->slug) }}">{!! str_limit($relatedArticle->title,
                                             $limit = 61) !!}</a>
+                                        </h3>
                                         <div class="timestamp">
                                             <a href="{{ route('article-category',$article->articleCategory->slug) }}" class="news_category">{{ $relatedArticle->articleCategory->title }}</a>
-                                            <span>{{ $relatedArticle->created_at->format('d/m/Y H:i') }}</span>
+                                            <span>{{ $relatedArticle->created_at->format('d M, Y') }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -99,7 +101,7 @@
             <div id="newsContainer" class="row mb-5 mt-3">
                 <div class="col-12">
                     <div class="row mt-3" data-aos="fade-up">
-                        <h3>Latest Article</h3>
+                        <h2>Latest Article</h2>
                     </div>
                     <div class="row mb-4">
                         <div class="news_list">
@@ -108,15 +110,17 @@
                             <div class="news_item" data-aos="zoom-in" data-aos-delay="{{ $incrementCategory+= 150 }}">
                                 <div class="news_image_container">
                                     <a href="{{ route('article-detail',$articleItem->slug) }}">
-                                        <img src="{{ asset("storage/" . $articleItem->photo) }}" alt="">
+                                        <img src="{{ asset("storage/" . $articleItem->photo) }}" alt="{{ $articleItem->title }}">
                                     </a>
                                 </div>
                                 <div class="text_container">
-                                    <a href="{{ route('article-detail',$articleItem->slug) }}">{!! str_limit($articleItem->title,
+                                    <h3>
+                                        <a href="{{ route('article-detail',$articleItem->slug) }}">{!! str_limit($articleItem->title,
                                         $limit = 61) !!}</a>
+                                    </h3>
                                     <div class="timestamp">
                                         <a href="{{ route('article-category',$article->articleCategory->slug) }}" class="news_category">{{ $articleItem->articleCategory->title }}</a>
-                                        <span>{{ $articleItem->created_at->format('d/m/Y H:i') }}</span>
+                                        <span>{{ $articleItem->created_at->format('d M, Y H:i') }} WIB</span>
                                     </div>
                                 </div>
                             </div>

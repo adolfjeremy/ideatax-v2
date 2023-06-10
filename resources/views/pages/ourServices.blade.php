@@ -1,5 +1,9 @@
 @extends('layouts.main')
 
+@section('canonical')
+    <link rel="canonical" href="https://ideatax.id/our-services">
+@endsection
+
 
 @section('page-style')
     <link rel="stylesheet" href="/assets/css/pages/ourServices2.css">
@@ -25,7 +29,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h3>our areas of experties</h3>
+                        <h2>our areas of experties</h2>
                     </div>
                 </div>
                 <div class="row">
@@ -34,12 +38,12 @@
                             @php $incrementCategory = 0 @endphp
                             @forelse ($services as $service)
                             <div class="accordion-item" data-aos="fade-up" data-aos-delay="{{ $incrementCategory+= 100 }}">
-                                <h2 class="accordion-header" id="{{ $service->title }}">
+                                <h3 class="accordion-header" id="{{ $service->title }}">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#{{ $service->slug }}" aria-expanded="false" aria-controls="{{ $service->slug }}">
                                         {{ $service->title }}
                                     </button>
-                                </h2>
+                                </h3>
                                 <div id="{{ $service->slug }}" class="accordion-collapse collapse" aria-labelledby="{{ $service->title }}"
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body py-1">

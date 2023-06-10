@@ -44,11 +44,11 @@
             <div class="row">
                 <div class="col-12 col-lg-9 px-3 team_detail">
                     <div class="row d-flex d-flex-column align-items-start justify-content-center text-start">
-                        <h3>Biography</h3>
+                        <h2>Biography</h2>
                         <div>{!! $team->biography !!}</div>
                     </div>
                     <div class="row d-flex d-flex-column align-items-start justify-content-center text-start mt-4">
-                        <h4>Area of Expertise</h4>
+                        <h2>Area of Expertise</h2>
                         <div>{!! $team->area_of_expertise !!}</div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                             <div class="team_item mt-4 mt-lg-0">
                                 <a href="{{ route('our-team-detail', $teamItem->slug) }}" class="profile_image_container profile_detail" style="background-image: url('{{ asset("storage/" . $teamItem->profile_picture) }}')"></a>
                                 <a href="{{ route('our-team-detail', $teamItem->slug) }}" class="name_container mt-2">
-                                    <h5 class="m-0">{{ $teamItem->name }}</h5>
+                                    <h2 class="m-0">{{ $teamItem->name }}</h2>
                                     <p class="m-0">{{ $teamItem->position }}</p>
                                 </a>
                             </div>

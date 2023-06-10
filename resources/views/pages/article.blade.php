@@ -1,5 +1,9 @@
 @extends('layouts.main')
 
+@section('canonical')
+    <link rel="canonical" href="https://ideatax.id/articles">
+@endsection
+
 @section('page-style')
     <link rel="stylesheet" href="/assets/css/pages/news1.css">
 @endsection
@@ -65,8 +69,8 @@
                         <div class="tax_event_list">
                             @forelse ($taxEvents as $taxEvent)
                                 <a href="{{ route('tax-event', $taxEvent->slug) }}" class="tax_event_item">
-                                    <h4>{!! str_limit($taxEvent->title, $limit = 50) !!}</h4>
-                                    <span>{{ $taxEvent->created_at->format('Y/m/d') }}</span>
+                                    <h3>{!! str_limit($taxEvent->title, $limit = 50) !!}</h2>
+                                    <span>{{ $taxEvent->created_at->format('d M, Y') }}</span>
                                 </a>
                             @empty
                                 <div class="tax_event_item text-center text-light">
@@ -85,7 +89,7 @@
                 <div class="col-12">
                     <div class="row">
                         <div class="header_container text-start mb-2" data-aos="fade-up">
-                            <h3>Latest Articles</h3>
+                            <h1>Latest Articles</h1>
                         </div>
                     </div>
                     <div class="row mb-2">
@@ -97,10 +101,12 @@
                                         <a href="{{ route('article-detail',$article->slug) }}"><img src="{{ asset("storage/" . $article->photo) }}" alt="{{ $article->title }}"></a>
                                     </div>
                                     <div class="text_container">
-                                        <a href="{{ route('article-detail',$article->slug) }}">{!! str_limit($article->title, $limit = 61) !!}</a>
+                                        <h3>
+                                            <a href="{{ route('article-detail',$article->slug) }}">{!! str_limit($article->title, $limit = 61) !!}</a>
+                                        </h3>
                                         <div class="timestamp">
                                             <a href="{{ route('article-category',$article->articleCategory->slug) }}" class="news_category">{{ $article->articleCategory->title }}</a>
-                                            <span>{{ $article->created_at->format('Y/m/d H:i') }} WIB</span>
+                                            <span>{{ $article->created_at->format('d M, Y H:i') }} WIB</span>
                                         </div>
                                     </div>
                                 </div>

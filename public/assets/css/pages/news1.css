@@ -112,7 +112,7 @@ a {
     background-color: #373e57;
 }
 
-.tax_event_item h4 {
+.tax_event_item h3 {
     font-size: 1rem;
     color: #fff;
 }
@@ -125,7 +125,8 @@ a {
     color: #272e45;
 }
 
-#newsContainer h3 {
+#newsContainer h1,
+#newsContainer h2 {
     font-size: 20px;
     font-weight: 700;
 }
@@ -191,23 +192,25 @@ a {
     border-bottom: 2px solid #272e45;
 }
 
-.news_item a {
-    font-size: 18px;
-    color: #272e45;
+.news_item a,
+.news_item h2 {
+    font-size: 18px !important;
+    color: #272e45 !important;
+    font-weight: 400 !important;
 }
 
 .news_item .news_category {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 700;
     color: #ffc107 !important;
 }
 
 .news_item a:hover {
-    color: #ffc107;
+    color: #ffc107 !important;
 }
 
 .news_item .text_container span {
-    font-size: 15px;
+    font-size: 14px;
     color: #272e45;
 }
 .news_item .text_container span:first-child {
@@ -276,7 +279,8 @@ a {
     justify-content: flex-start;
 }
 
-.discussion_item .caption_container a {
+.discussion_item .caption_container a,
+.discussion_item .caption_container h3 {
     font-size: 16px;
     font-weight: 500;
     text-align: left;

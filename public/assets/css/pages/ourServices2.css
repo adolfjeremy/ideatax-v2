@@ -98,13 +98,13 @@
     border-radius: 0 !important;
 }
 
-.accordion h2 {
+.accordion h3 {
     margin: 0;
     padding: 10px 0;
     font-family: "Lato", sans-serif;
 }
 
-.our_service_list h3 {
+.our_service_list h2 {
     font-size: 22px;
     padding: 20px;
     font-weight: 700;
@@ -112,7 +112,7 @@
     font-family: "Lato", sans-serif;
 }
 
-.accordion h2 button {
+.accordion h3 button {
     font-size: 28px;
     font-weight: 600;
     text-transform: uppercase;
@@ -146,11 +146,12 @@
         font-size: 20px;
     }
 
-    .our_service_list h3 {
+    .our_service_list h2 {
         font-size: 28px;
+        text-transform: uppercase;
     }
 
-    .accordion h2 button {
+    .accordion h3 button {
         font-size: 34px;
     }
 

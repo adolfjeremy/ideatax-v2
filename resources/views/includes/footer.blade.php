@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-3 d-flex flex-column align-items-start">
-                <h1>Idea<strong>tax</strong></h1>
+                <h2>Idea<strong>tax</strong></h2>
                 <p>Get in touch with us to discuss your requirements and hire our services.</p>
             </div>
             <div class="col-12 col-md-4 d-flex flex-column mt-5 mt-md-0">
@@ -46,7 +46,7 @@
         </div>
         <div class="row">
             <div class="col-12 text-center copy_right">
-                <h6>&copy; Idea<strong>tax</strong> 2022</h6>
+                <h2>&copy; Idea<strong>tax</strong> 2022</h2>
                 <p>Developed by <a href="https://github.com/adolfjeremy" target="_blank" rel="noopener noreferrer">Jeremy</a>
                 </p>
             </div>

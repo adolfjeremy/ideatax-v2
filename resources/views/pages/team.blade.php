@@ -1,5 +1,9 @@
 @extends('layouts.main')
 
+@section('canonical')
+    <link rel="canonical" href="https://ideatax.id/our-team">
+@endsection
+
 @section('page-style')
     <link rel="stylesheet" href="/assets/css/pages/team2.css">
 @endsection
@@ -13,7 +17,7 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="col-12 d-flex flex-column align-items-center justify-content-center">
-                <h2 data-aos="flip-left">Meet Our Team</h2>
+                <h1 data-aos="flip-left">Meet Our Team</h1>
             </div>
         </div>
     </section>
