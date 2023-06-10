@@ -42,6 +42,14 @@
     <section class="our_team_description py-4" data-aos="fade-down">
         <div class="container">
             <div class="row">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb breadcrumb-custom">
+                        <li class="breadcrumb-item breadcrumb-cst"><a href="{{ route("our-team") }}">Team</a></li>
+                        <li class="breadcrumb-item breadcrumb-cst active" aria-current="page">{{ $team->name }}</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="row">
                 <div class="col-12 col-lg-9 px-3 team_detail">
                     <div class="row d-flex d-flex-column align-items-start justify-content-center text-start">
                         <h2>Biography</h2>

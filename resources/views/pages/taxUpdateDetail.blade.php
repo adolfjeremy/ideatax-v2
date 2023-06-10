@@ -27,6 +27,15 @@
     <section id="newsDetail" class="mt-4">
         <div class="container">
             <div class="row">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb breadcrumb-custom">
+                        <li class="breadcrumb-item breadcrumb-cst"><a href="{{ route("update") }}">Tax Update</a></li>
+                        <li class="breadcrumb-item breadcrumb-cst"><a href="{{ route('tax-update-category',$taxUpdate->taxUpdateCategory->slug) }}">{{ $taxUpdate->taxUpdateCategory->title }}</a></li>
+                        <li class="breadcrumb-item breadcrumb-cst active" aria-current="page">Detail</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="row">
                 <div class="col-12 col-lg-8">
                     <div class="row">
                         <img src="{{ asset("storage/" . $taxUpdate->photo) }}" alt="{{ $taxUpdate->title }}" class="w-100">

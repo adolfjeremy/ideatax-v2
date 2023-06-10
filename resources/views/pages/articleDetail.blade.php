@@ -27,6 +27,15 @@
     <section id="newsDetail" class="mt-4">
         <div class="container">
             <div class="row">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb breadcrumb-custom">
+                        <li class="breadcrumb-item breadcrumb-cst"><a href="{{ route("articles") }}">Articles</a></li>
+                        <li class="breadcrumb-item breadcrumb-cst"><a href="{{ route('article-category',$article->articleCategory->slug) }}">{{ $article->articleCategory->title }}</a></li>
+                        <li class="breadcrumb-item breadcrumb-cst active" aria-current="page">Detail</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="row">
                 <div class="col-12 col-lg-8">
                     <div class="row">
                         <img src="{{ asset("storage/" . $article->photo) }}" alt="{{ $article->title }}" class="w-100">

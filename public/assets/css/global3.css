@@ -200,3 +200,19 @@ main {
 .contact_lead-button {
     font-family: "Lato", sans-serif;
 }
+
+.breadcrumb-cst,
+.breadcrumb-cst a {
+    font-size: 14px !important;
+    color: #272e45 !important;
+    font-weight: 500 !important;
+    font-family: "Lato", sans-serif;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+.breadcrumb-cst:hover,
+.breadcrumb-cst a:hover,
+.breadcrumb-custom .active {
+    color: #ffc107 !important;
+}

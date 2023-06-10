@@ -48,13 +48,15 @@ class ArticleController extends Controller
         $articles = Article::where('article_categories_id', $articleCategory->id)->latest()->paginate(20);
         $articleCarousels = Article::where('article_categories_id', $articleCategory->id)->latest()->take(5)->get();
         $taxEvents = TaxEvent::latest()->take(5)->get();
+        $currentCategory = $articleCategory->title;
 
-        return view('pages.article',[
+        return view('pages.articleCategory',[
             "articleCategories" => $articleCategories,
             "articleCategory" => $articleCategory,
             "articleCarousels" => $articleCarousels,
             "articles" => $articles,
             "taxEvents" => $taxEvents,
+            "currentCategory" => $currentCategory,
         ]);
     }
 
