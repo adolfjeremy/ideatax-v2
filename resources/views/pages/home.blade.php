@@ -30,7 +30,7 @@
     <section class="about_us">
         <div class="container py-5">
             <div class="about_bg"></div>
-            <div class="row text-center p-4 d-flex align-items-center justify-content-center">
+            <div class="row text-center p-4 d-flex align-items-center justify-content-center position-relative">
                 <div class="col-12 col-lg-10 p-4 about_us_text">
                     <h2 >About Us</h2>
                     <p class="mb-2">&emsp;&emsp;We combine a long running experience in tax consulting and tax authority to deliver thorough
@@ -116,25 +116,25 @@
             <div class="row">
                 <div class="col-12">
                     <div class="value_list">
-                        <div class="value_item text-center d-block" data-aos="zoom-in-down" data-aos-delay="100">
+                        <div class="value_item text-center d-block">
                             <img src="/assets/images/trustworthy-min.jpg" alt="Trustworthy" class="w-100">
                             <div class="overlay"></div>
                             <h3>Trustworthy</h3>
                         </div>
-                        <div class="value_item text-center d-block" data-aos="zoom-in-down" data-aos-delay="150">
+                        <div class="value_item text-center d-block">
                             <img src="/assets/images/professional-min.jpg" alt="Professional" class="w-100">
                             <div class="overlay"></div>
                             <h3>Professional</h3>
                         </div>
-                        <div class="value_item text-center d-block" data-aos="zoom-in-down" data-aos-delay="200">
+                        <div class="value_item text-center d-block">
                             <img src="/assets/images/prudent-min.jpg" alt="Creative" class="w-100">
                             <div class="overlay"></div>
                             <h3>Creative</h3>
                         </div>
-                        <div class="value_item text-center d-block" data-aos="zoom-in-down" data-aos-delay="250">
+                        <div class="value_item text-center d-block">
                             <img src="/assets/images/creative-min.jpg" alt="Prudent" class="w-100">
                             <div class="overlay"></div>
-                            <h5>Prudent</h5>
+                            <h3>Prudent</h3>
                         </div>
                     </div>
                 </div>
