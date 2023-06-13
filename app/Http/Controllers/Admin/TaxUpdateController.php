@@ -9,7 +9,7 @@ use App\Http\Requests\TaxUpdateRequest;
 use Illuminate\Support\Str;
 use Yajra\DataTables\Facades\DataTables;
 use App\Models\TaxUpdateCategory;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class TaxUpdateController extends Controller
@@ -63,6 +63,7 @@ class TaxUpdateController extends Controller
     public function store(TaxUpdateRequest $request)
     {
         $data = $request->all();
+        $data['user_id'] = Auth::user()->id;
         
         if($request->file('photo'))
         {
@@ -98,6 +99,8 @@ class TaxUpdateController extends Controller
         $data = $request->all();
 
         $item = TaxUpdate::findOrFail($id);
+        
+        $data['user_id'] = Auth::user()->id;
         
         if($request->file('photo'))
         {

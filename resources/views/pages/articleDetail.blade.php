@@ -48,6 +48,11 @@
                             <a href="{{ route('article-category',$article->articleCategory->slug) }}" class="text-warning fs-6 fw-bolder">{{ $article->articleCategory->title }}</a>
                             <span class="text-dark fw-normal timestamp">- {{ $article->created_at->format('d M, Y H:m') }} WIB</span>
                         </div>
+                        <div class="col-12">
+                            @if ($article->user)
+                            <p class="author">Written by: {{ $article->user->name }}</p>
+                            @endif
+                        </div>
                     </div>
                     <div class="row">
                         <div class="news_body">{!! $article->body !!}</div>

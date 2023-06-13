@@ -46,7 +46,12 @@
                     <div class="row mb-2 d-flex flex-row">
                         <div class="col-12">
                             <a href="{{ route('tax-update-category',$taxUpdate->taxUpdateCategory->slug) }}" class="text-warning fs-6 fw-bolder">{{ $taxUpdate->taxUpdateCategory->title }}</a>
-                        <span class="text-dark fw-normal timestamp">- {{ $taxUpdate->created_at->format('d M, Y H:i') }} WIB</span>
+                            <span class="text-dark fw-normal timestamp">- {{ $taxUpdate->created_at->format('d M, Y H:i') }} WIB</span>
+                        </div>
+                        <div class="col-12">
+                            @if ($taxUpdate->user)
+                            <p class="author">Written by: {{ $taxUpdate->user->name }}</p>
+                            @endif
                         </div>
                     </div>
                     <div class="row">

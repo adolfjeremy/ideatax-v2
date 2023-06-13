@@ -216,3 +216,12 @@ main {
 .breadcrumb-custom .active {
     color: #ffc107 !important;
 }
+
+.author {
+    font-size: 14px;
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 0;
+    font-weight: 400;
+    font-family: "Lato", sans-serif;
+}

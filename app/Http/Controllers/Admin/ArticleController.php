@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
@@ -59,6 +60,8 @@ class ArticleController extends Controller
 
     public function store(ArticleRequest $request) {
         $data = $request->all();
+        
+        $data['user_id'] = Auth::user()->id;
 
         if($request->file('photo'))
         {
@@ -87,6 +90,9 @@ class ArticleController extends Controller
         $data = $request->all();
 
         $item = Article::findOrFail($id);
+
+        
+        $data['user_id'] = Auth::user()->id;
 
         if($request->file('photo'))
         {

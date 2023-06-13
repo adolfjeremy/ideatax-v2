@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Yajra\DataTables\Facades\DataTables;
-use App\Http\Requests\TaxEventRequest;
 use App\Models\TaxEvent;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\TaxEventRequest;
 use Illuminate\Support\Facades\Storage;
+use Yajra\DataTables\Facades\DataTables;
 
 class TaxEventController extends Controller
 {
@@ -51,6 +52,7 @@ class TaxEventController extends Controller
 
     public function store(TaxEventRequest $request) {
         $data = $request->all();
+        $data['user_id'] = Auth::user()->id;
 
         if($request->file('photo'))
         {
@@ -76,6 +78,7 @@ class TaxEventController extends Controller
         $data = $request->all();
         
         $item = TaxEvent::findOrFail($id);
+        $data['user_id'] = Auth::user()->id;
 
         if($request->file('photo'))
         {

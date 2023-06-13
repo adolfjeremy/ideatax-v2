@@ -29,6 +29,7 @@ class TaxUpdateRequest extends FormRequest
             'body'=> "required|string",
             'pdf' => "mimetypes:application/pdf",
             'tax_update_categories_id'=> "required|exists:tax_update_categories,id",
+            'user_id'=> "exists:users,id",
         ];
     }
 }

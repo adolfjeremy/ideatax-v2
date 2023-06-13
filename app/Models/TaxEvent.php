@@ -9,6 +9,11 @@ class TaxEvent extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'title','slug', 'photo', 'body',
+        'title','slug', 'photo', 'body', 'user_id'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, "user_id", "id");
+    }
 }
