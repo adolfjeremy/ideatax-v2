@@ -57,7 +57,7 @@
                         <div class="row">
                             <div class="tax_event_list">
                                 @forelse ($taxEvents as $taxEventItem)
-                                    <a href="{{ route('tax-event', $taxEvent->slug) }}" class="tax_event_item">
+                                    <a href="{{ route('tax-event', $taxEventItem->slug) }}" class="tax_event_item">
                                         <h3>{!! str_limit($taxEventItem->title, $limit = 50) !!}</h3>
                                         <span>{{ $taxEventItem->created_at->format('d M, Y') }}</span>
                                     </a>
