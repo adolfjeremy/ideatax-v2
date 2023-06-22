@@ -3,6 +3,7 @@
         <div class="row">
             <div class="col-12 col-md-3 d-flex flex-column align-items-start">
                 <h2>Idea<strong>tax</strong></h2>
+                <p class="m-0 fw-semibold">PT Ide Solid Indonesia</p>
                 <p>Get in touch with us to discuss your requirements and hire our services.</p>
             </div>
             <div class="col-12 col-md-4 d-flex flex-column mt-5 mt-md-0">
