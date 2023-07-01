@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("/assets/images/wall-min.jpg");
+    background-image: url("/assets/images/wall-min.webp");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -168,7 +168,7 @@
 .our_team_detail {
     font-family: "Lato", sans-serif;
     position: relative;
-    background-image: url("/assets/images/team-detail.jpg");
+    background-image: url("/assets/images/team-detail.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

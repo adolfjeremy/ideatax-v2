@@ -131,22 +131,22 @@
                 <div class="col-12">
                     <div class="value_list">
                         <div class="value_item text-center d-block">
-                            <img src="/assets/images/trustworthy-min.jpg" alt="Trustworthy" class="w-100">
+                            <img src="/assets/images/trustworthy-min.webp" alt="Trustworthy" class="w-100">
                             <div class="overlay"></div>
                             <h3>Trustworthy</h3>
                         </div>
                         <div class="value_item text-center d-block">
-                            <img src="/assets/images/professional-min.jpg" alt="Professional" class="w-100">
+                            <img src="/assets/images/professional-min.webp" alt="Professional" class="w-100">
                             <div class="overlay"></div>
                             <h3>Professional</h3>
                         </div>
                         <div class="value_item text-center d-block">
-                            <img src="/assets/images/prudent-min.jpg" alt="Creative" class="w-100">
+                            <img src="/assets/images/prudent-min.webp" alt="Creative" class="w-100">
                             <div class="overlay"></div>
                             <h3>Creative</h3>
                         </div>
                         <div class="value_item text-center d-block">
-                            <img src="/assets/images/creative-min.jpg" alt="Prudent" class="w-100">
+                            <img src="/assets/images/creative-min.webp" alt="Prudent" class="w-100">
                             <div class="overlay"></div>
                             <h3>Prudent</h3>
                         </div>
@@ -164,7 +164,7 @@
             </div>
             <div class="row overflow-hidden">
                 <div class="col-12 team_image">
-                    <img src="/assets/images/about.jpg" alt="ideatax team" title="ideatax" class="w-100">
+                    <img src="/assets/images/about.webp" alt="ideatax team" title="ideatax" class="w-100">
                     <a href="{{ route('our-team') }}"></a>
                 </div>
             </div>
