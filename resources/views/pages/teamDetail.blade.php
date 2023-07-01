@@ -14,11 +14,11 @@
         <div class="container">
             <div class="row align-items-center justify-content-center justify-content-md-start">
                 <div class="col-6 col-md-3">
-                    <div class="our_team_detail_image" data-aos="fade-right">
+                    <div class="our_team_detail_image">
                         <img src="{{ asset("storage/" . $team->profile_picture) }}" alt="{{ $team->name }} Profile Picture" title="{{ $team->name }}" class="w-100">
                     </div>
                 </div>
-                <div class="col-12 col-md-3 name_contacts align-items-center align-items-md-start" data-aos="fade-right" data-aos-delay="100">
+                <div class="col-12 col-md-3 name_contacts align-items-center align-items-md-start">
                     <div class="name_position text-center text-md-start">
                         <h1>{{ $team->name }}</h1>
                         <span>{{ $team->position }}</span>
@@ -39,7 +39,7 @@
             </div>
         </div>
     </section>
-    <section class="our_team_description py-4" data-aos="fade-down">
+    <section class="our_team_description py-4">
         <div class="container">
             <div class="row">
                 <nav aria-label="breadcrumb">

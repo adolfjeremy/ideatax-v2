@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Ideatax | Edit Article Category
+    Ideatax | Edit {{ $item->title }} Page Meta Tag
 @endsection
 
 @section('content')

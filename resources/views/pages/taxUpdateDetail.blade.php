@@ -93,14 +93,14 @@
                     </div>
                     <div id="newsContainer" class="row mt-4 mb-1 related">
                         <div class="col-12">
-                            <div class="row" data-aos="fade-up">
+                            <div class="row">
                                 <h2>Related Updates</h2>
                             </div>
                             <div class="row mt-3">
                                 <div class="news_detail_list">
                                     @php $incrementCategory = 0 @endphp
                                     @forelse ($relatedUpdates as $relatedUpdate)
-                                    <div class="news_detail_item" data-aos="zoom-in" data-aos-delay="{{ $incrementCategory+= 150 }}">
+                                    <div class="news_detail_item">
                                         <div class="news_image_container">
                                             <a href="{{ route('tax-update-detail',$relatedUpdate->slug) }}">
                                                 <img src="{{ asset("storage/" . $relatedUpdate->photo) }}" alt="{{ $relatedUpdate->title }}">
@@ -128,14 +128,14 @@
             </div>
             <div id="newsContainer" class="row">
                 <div class="col-12">
-                    <div class="row mt-5" data-aos="fade-up">
+                    <div class="row mt-5">
                         <h2>Latest Updates</h2>
                     </div>
                     <div class="row mb-4">
                         <div class="news_list">
                             @php $incrementCategory = 0 @endphp
                             @forelse ($taxUpdates as $taxUpdate)
-                                <div class="news_item" data-aos="zoom-in" data-aos-delay="{{ $incrementCategory+= 150 }}">
+                                <div class="news_item">
                                     <div class="news_image_container">
                                         <a href="{{ route('tax-update-detail',$taxUpdate->slug) }}">
                                             <img src="{{ asset("storage/" . $taxUpdate->photo) }}" alt="{{ $taxUpdate->title }}">
@@ -162,7 +162,7 @@
             <div id="newsContainer" class="row mb-4 mt-3">
                 <div class="col-12">
                     <div class="row">
-                        <div class="header_container text-start mb-2" data-aos="fade-up">
+                        <div class="header_container text-start mb-2">
                             <h2>Tax Consulting</h2>
                         </div>
                     </div>
@@ -170,7 +170,7 @@
                         <div class="discussion_list">
                             @php $incrementCategory = 0 @endphp
                             @foreach ($customerQuestions as $customerQuestion)
-                                <div class="discussion_item" data-aos="zoom-in" data-aos-delay="{{ $incrementCategory+= 150 }}">
+                                <div class="discussion_item">
                                     <div class="image-container w-100">
                                         <a href="{{ route('tax-consulting', $customerQuestion->slug) }}"><img src="{{ asset("storage/" . $customerQuestion->photo) }}" alt="{{ $customerQuestion->title }}" class="w-100"></a>
                                     </div>

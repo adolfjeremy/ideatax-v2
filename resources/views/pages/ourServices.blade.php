@@ -36,7 +36,7 @@
         <div class="container">
             <div class="row position-relative">
                 <div class="col-12 d-flex flex-column align-items-center justify-content-center">
-                    <h1 data-aos="flip-left">Our Services</h1>
+                    <h1>Our Services</h1>
                 </div>
             </div>
         </div>
@@ -53,7 +53,7 @@
                         <div class="accordion" id="accordionExample">
                             @php $incrementCategory = 0 @endphp
                             @forelse ($services as $service)
-                            <div class="accordion-item" data-aos="fade-up" data-aos-delay="{{ $incrementCategory+= 100 }}">
+                            <div class="accordion-item">
                                 <h3 class="accordion-header" id="{{ $service->title }}">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#{{ $service->slug }}" aria-expanded="false" aria-controls="{{ $service->slug }}">

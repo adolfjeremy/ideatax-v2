@@ -32,8 +32,8 @@
         <div class="container py-5">
             <div class="row">
                 <div class="col-12 d-flex flex-column align-items-center justify-content-center">
-                    <h1 data-aos="flip-left">We Provide Tax Solutions for You</h1>
-                    <div class="d-flex button-container" data-aos="flip-right" data-aos-delay="200">
+                    <h1>We Provide Tax Solutions for You</h1>
+                    <div class="d-flex button-container">
                         <a href="{{ route('contact') }}" class="btn btn-lg btn-warning">Contact Us</a>
                         <a href="{{ route('our-services') }}" class="btn btn-lg btn-outline-light ms-3">Our Services</a>
                     </div>
@@ -62,38 +62,38 @@
     <section class="why_ideatax pb-5">
         <div class="container">
             <div class="row text-center mb-4">
-                <h2 data-aos="zoom-in-right">Why Ideatax?</h2>
+                <h2>Why Ideatax?</h2>
             </div>
             <div class="row">
                 <div class="reason_list text-center">
-                    <div class="reason_item p-4 d-flex flex-column align-items-center justify-content-center" data-aos="zoom-in-up" data-aos-delay="100">
+                    <div class="reason_item p-4 d-flex flex-column align-items-center justify-content-center">
                         <div class="quote_image">
                             <i class="bi bi-quote text-light fs-1 text"></i>
                         </div>
                         <p>Possesses a blend of years of experiences in tax consulting and tax authority for
                             comprehensive solutions.</p>
                     </div>
-                    <div class="reason_item p-4 d-flex flex-column align-items-center justify-content-center" data-aos="zoom-in-up" data-aos-delay="150">
+                    <div class="reason_item p-4 d-flex flex-column align-items-center justify-content-center">
                         <div class="quote_image">
                             <i class="bi bi-quote text-light fs-1 text"></i>
                         </div>
                         <p>Provides integrated approaches in mitigating tax-related problems.</p>
                     </div>
-                    <div class="reason_item p-4 d-flex flex-column align-items-center justify-content-center" data-aos="zoom-in-up" data-aos-delay="200">
+                    <div class="reason_item p-4 d-flex flex-column align-items-center justify-content-center">
                         <div class="quote_image">
                             <i class="bi bi-quote text-light fs-1 text"></i>
                         </div>
                         <p>Knowledgeable in Compliance Risk Management system used by Directorate General of Taxes.
                         </p>
                     </div>
-                    <div class="reason_item p-4 d-flex flex-column align-items-center justify-content-center" data-aos="zoom-in-up" data-aos-delay="250">
+                    <div class="reason_item p-4 d-flex flex-column align-items-center justify-content-center">
                         <div class="quote_image">
                             <i class="bi bi-quote text-light fs-1 text"></i>
                         </div>
                         <p>One of leading consultants related to foreign investment in Indonesia.
                         </p>
                     </div>
-                    <div class="reason_item p-4 d-flex flex-column align-items-center justify-content-center" data-aos="zoom-in-up" data-aos-delay="300">
+                    <div class="reason_item p-4 d-flex flex-column align-items-center justify-content-center">
                         <div class="quote_image">
                             <i class="bi bi-quote text-light fs-1 text"></i>
                         </div>
@@ -102,7 +102,7 @@
                             low level of compliance towards the taxation system in Indonesia.
                         </p>
                     </div>
-                    <div class="reason_item p-4 d-flex flex-column align-items-center justify-content-center" data-aos="zoom-in-up" data-aos-delay="350">
+                    <div class="reason_item p-4 d-flex flex-column align-items-center justify-content-center">
                         <div class="quote_image">
                             <i class="bi bi-quote text-light fs-1 text"></i>
                         </div>
@@ -117,7 +117,7 @@
     </section>
     <section class="our_value pb-2 mt-2">
         <div class="container">
-            <div class="row" data-aos="zoom-in">
+            <div class="row">
                 <div class="col-12 text-center">
                     <h2>Value</h2>
                 </div>
@@ -159,11 +159,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h2 data-aos="zoom-in-right">Meet Our Team</h2>
+                    <h2>Meet Our Team</h2>
                 </div>
             </div>
             <div class="row overflow-hidden">
-                <div class="col-12 team_image" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="200" data-aos-offset="0">
+                <div class="col-12 team_image">
                     <img src="/assets/images/about.jpg" alt="ideatax team" title="ideatax" class="w-100">
                     <a href="{{ route('our-team') }}"></a>
                 </div>
@@ -173,7 +173,7 @@
     <section class="our_services overflow-hidden">
         <div class="container">
             <div class="row text-center">
-                <h2 data-aos="zoom-in-right">Our Services</h2>
+                <h2>Our Services</h2>
             </div>
         </div>
         <div class="container">

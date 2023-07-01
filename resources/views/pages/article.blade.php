@@ -102,7 +102,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="row">
-                        <div class="header_container text-start mb-2" data-aos="fade-up">
+                        <div class="header_container text-start mb-2">
                             <h1>Latest Articles</h1>
                         </div>
                     </div>
@@ -110,7 +110,7 @@
                         <div class="news_list">
                             @php $incrementCategory = 0 @endphp
                             @forelse ($articles as $article)
-                                <div class="news_item" data-aos="zoom-in" data-aos-delay="{{ $incrementCategory+= 150 }}">
+                                <div class="news_item">
                                     <div class="news_image_container">
                                         <a href="{{ route('article-detail',$article->slug) }}"><img src="{{ asset("storage/" . $article->photo) }}" alt="{{ $article->title }}"></a>
                                     </div>

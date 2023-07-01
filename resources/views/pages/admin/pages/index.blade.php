@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Ideatax | Article
+    Ideatax | Pages
 @endsection
 
 @section('content')

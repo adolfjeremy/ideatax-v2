@@ -32,7 +32,7 @@
         <div class="container">
             <div class="row position-relative">
                 <div class="col-12 d-flex flex-column align-items-center justify-content-center">
-                    <h1 data-aos="flip-left">Contact Us</h1>
+                    <h1>Contact Us</h1>
                 </div>
             </div>
         </div>

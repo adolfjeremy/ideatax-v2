@@ -114,14 +114,14 @@
             </div>
             <div id="newsContainer" class="row mb-5 mt-3">
                 <div class="col-12">
-                    <div class="row mt-3" data-aos="fade-up">
+                    <div class="row mt-3">
                         <h2>Latest Article</h2>
                     </div>
                     <div class="row mb-4">
                         <div class="news_list">
                             @php $incrementCategory = 0 @endphp
                             @forelse ($articles as $articleItem)
-                            <div class="news_item" data-aos="zoom-in" data-aos-delay="{{ $incrementCategory+= 150 }}">
+                            <div class="news_item">
                                 <div class="news_image_container">
                                     <a href="{{ route('article-detail',$articleItem->slug) }}">
                                         <img src="{{ asset("storage/" . $articleItem->photo) }}" alt="{{ $articleItem->title }}">
