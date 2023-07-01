@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Page;
 use App\Models\Article;
-use App\Models\ArticleCategory;
 use App\Models\TaxEvent;
+use Illuminate\Http\Request;
+use App\Models\ArticleCategory;
 
 class ArticleController extends Controller
 {
@@ -15,11 +16,13 @@ class ArticleController extends Controller
         $articleCarousels = Article::latest()->take(5)->get();
         $taxEvents = TaxEvent::latest()->take(5)->get();
         $articles = Article::latest()->paginate(20);
+        $page = Page::findOrFail(5);
         return view('pages.article',[
             "articleCategories" => $articleCategories,
             "articles" => $articles,
             "articleCarousels" => $articleCarousels,
             "taxEvents" => $taxEvents,
+            "page" => $page
         ]);
     }
 

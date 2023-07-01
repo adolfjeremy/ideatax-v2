@@ -22,6 +22,7 @@ use App\Http\Controllers\Admin\ServicesController as AdminServicesController;
 use App\Http\Controllers\Admin\TaxUpdateController as AdminTaxUpdateController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\Admin\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,11 +51,6 @@ Route::get('/tax-update/{id}', [TaxUpdateController::class, 'detail'])->name('ta
 Route::post('/tax-update/save', [TaxUpdateController::class, 'store'])->name('update-save');
 Route::get('/tax-update/tax-consulting/{id}', [TaxUpdateController::class, 'discussionDetail'])->name('tax-consulting');
 
-// Route::get('/news', [NewsController::class, 'index'])->name('news');
-// Route::get('/news/category/{id}', [NewsController::class, 'sortByCategory'])->name('news-category');
-// Route::get('/news/event/{id}', [NewsController::class, 'taxEvent'])->name('tax-event');
-// Route::get('/news/{id}', [NewsController::class, 'detail'])->name('news-detail');
-
 Route::get('/articles', [ArticleController::class, 'index'])->name('articles');
 Route::get('/articles/category/{id}', [ArticleController::class, 'sortByCategory'])->name('article-category');
 Route::get('/articles/event/{id}', [ArticleController::class, 'taxEvent'])->name('tax-event');
@@ -75,11 +71,11 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::prefix('admin')
 ->middleware(['auth', 'admin'])
 ->group(function() {
+    Route::resource('pages', PagesController::class);
     Route::resource('services', AdminServicesController::class);
     Route::resource('category', NewsCategoryController::class);
     Route::resource('article-category', ArticleCategoryController::class);
     Route::resource('articles', AdminArticleController::class);
-    // Route::resource('news', AdminNewsController::class);
     Route::resource('event', TaxEventController::class);
     Route::resource('update', AdminTaxUpdateController::class);
     Route::resource('tax-update-category', TaxUpdateCategoryController::class);

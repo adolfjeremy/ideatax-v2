@@ -22,6 +22,7 @@
                         <img src="/assets/images/admin.png" alt="" class="my-4">
                     </div>
                     <div class="list-group list-group-flush">
+                        <a href="{{ route("pages.index") }}" class="list-group-item list-group-item-action{{ (request()->is('admin/pages*') ? " active" : "") }}">Static Pages</a>
                         <a href="{{ route('article-category.index') }}" class="list-group-item list-group-item-action{{ (request()->is('admin/article-category*') ? " active" : "") }}">Article Category</a>
                         <a href="{{ route('tax-update-category.index') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/tax-update-category*') ? " active" : "") }}">Tax Update Category</a>
                         <a href="{{ route('articles.index') }}" class="list-group-item list-group-item-action{{ (request()->is('admin/articles*') ? " active" : "") }}">Article</a>

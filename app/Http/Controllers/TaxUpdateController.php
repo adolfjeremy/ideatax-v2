@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CustomerQuestionRequest;
-use App\Models\CustomerQuestion;
+use App\Models\Page;
 use App\Models\TaxUpdate;
-use App\Models\TaxUpdateCategory;
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Models\CustomerQuestion;
+use App\Models\TaxUpdateCategory;
+use App\Http\Requests\CustomerQuestionRequest;
 
 class TaxUpdateController extends Controller
 {
@@ -17,11 +18,14 @@ class TaxUpdateController extends Controller
         $taxUpdateCarousels = TaxUpdate::latest()->take(5)->get();
         $taxUpdates = TaxUpdate::latest()->paginate(20);
         $customerQuestions = CustomerQuestion::where('status', '=', 'ANSWERED')->paginate(20);
+        
+        $page = Page::findOrFail(4);
         return view('pages.taxUpdate',[
             "taxUpdateCategories" => $taxUpdateCategories,
             "taxUpdateCarousels" => $taxUpdateCarousels,
             "taxUpdates" => $taxUpdates,
             "customerQuestions" => $customerQuestions,
+            "page" => $page
         ]);
     }
 

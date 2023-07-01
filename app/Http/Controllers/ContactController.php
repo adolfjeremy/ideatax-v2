@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Page;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 use App\Mail\CustomerQuestionMail;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -15,7 +16,11 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('pages.contact');
+        
+        $page = Page::findOrFail(6);
+        return view('pages.contact', [
+            "page" => $page
+        ]);
     }
 
     public function sendMail(Request $request)

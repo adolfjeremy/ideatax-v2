@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Page;
 use App\Models\Team;
 use Illuminate\Http\Request;
 
@@ -20,9 +21,11 @@ class aboutController extends Controller
     public function team()
     {
         $teams = Team::orderBy('id')->get();
+        $page = Page::findOrFail(2);
 
         return view('pages.team',[
             "teams" => $teams,
+            "page" => $page
         ]);
     }
 

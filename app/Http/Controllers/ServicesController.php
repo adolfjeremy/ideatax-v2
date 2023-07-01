@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Page;
 use App\Models\Services;
+use Illuminate\Http\Request;
 
 class ServicesController extends Controller
 {
@@ -15,8 +16,10 @@ class ServicesController extends Controller
     public function index()
     {
         $services = Services::get();
+        $page = Page::findOrFail(3);
         return view('pages.ourServices',[
-            'services' => $services
+            'services' => $services,
+            'page' => $page
         ]);
     }
 }

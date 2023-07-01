@@ -146,6 +146,10 @@ strong {
     border-radius: 8px;
 }
 
+.discussion_item:hover {
+    background-color: #1d2133;
+}
+
 .discussion_item h4 {
     font-size: 18px;
     font-weight: 600;

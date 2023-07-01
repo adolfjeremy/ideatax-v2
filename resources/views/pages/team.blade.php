@@ -8,8 +8,22 @@
     <link rel="stylesheet" href="/assets/css/pages/team2.css">
 @endsection
 
+@section('meta')
+    @if ($page->description)
+        <meta name="description" content="{{ $page->description }}">
+        <meta property="og:description" content="{{ $page->description }}">
+    @else
+        <meta name="description" content="With the rapid development of business, we understand your need to overcome the difficulties and complexity of the challenges you may face in business, especially related to taxation. Ideatax comes with the vision of becoming a leading tax consulting company, by providing high-quality services, and upholding the trust you have given us.">
+        <meta property="og:description" content="With the rapid development of business, we understand your need to overcome the difficulties and complexity of the challenges you may face in business, especially related to taxation. Ideatax comes with the vision of becoming a leading tax consulting company, by providing high-quality services, and upholding the trust you have given us.">
+    @endif
+    
+    <meta property="og:title" content="{{ $page->SEO_title }}">
+    <meta property="og:url" content="https://ideatax.id/our-team">
+    <meta property="og:type" content="article">
+@endsection
+
 @section('title')
-    Our Team | Ideatax
+    {{ $page->SEO_title }}
 @endsection
 
 @section('content')
