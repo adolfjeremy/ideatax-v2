@@ -1,12 +1,25 @@
 @extends('layouts.main')
 
+@section('canonical')
+    <link rel="canonical" href="https://ideatax.id/articles/{{ $article->slug }}">
+@endsection
+
 @section('page-style')
     <link rel="stylesheet" href="/assets/css/pages/news1.css">
     <link rel="stylesheet" href="/assets/css/pages/newsDetail1.css">
 @endsection
 
+@section('meta')
+    <meta name="description" content="{{ $article->description }}">
+    <meta property="og:description" content="{{ $article->description }}">
+    <meta property="og:title" content="{{ $article->SEO_title }}">
+    <meta property="og:url" content="https://ideatax.id/articles/{{ $article->slug }}">
+    <meta property="og:type" content="article">
+@endsection
+
+
 @section('title')
-    {{ $article->title }} | Ideatax
+    {{ $article->title }}
 @endsection
 
     

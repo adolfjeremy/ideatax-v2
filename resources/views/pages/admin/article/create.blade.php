@@ -29,8 +29,20 @@
                                     <form action="{{ route('articles.store') }}" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         <div class="col-12 mb-3">
-                                            <label for="Name" class="form-label">Article Title</label>
+                                            <label for="title" class="form-label">Article Title Id</label>
                                             <input type="text" id="title" name="title" class="form-control w-100" required>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label for="title_eng" class="form-label">Article Title Eng</label>
+                                            <input type="text" id="title_eng" name="title_eng" class="form-control w-100" required>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label for="SEO_title" class="form-label">SEO Title Id</label>
+                                            <input type="text" id="SEO_title" name="SEO_title" class="form-control w-100" required>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label for="SEO_title_eng" class="form-label">SEO Title Eng</label>
+                                            <input type="text" id="SEO_title_eng" name="SEO_title_eng" class="form-control w-100" required>
                                         </div>
                                         <div class="col-12 mb-3">
                                             <label for="article_categories_id" class="form-label">Select Category</label>
@@ -48,6 +60,18 @@
                                         <div class="col-12 mb-3">
                                             <label for="body">Article Body</label>
                                             <textarea name="body" id="editor"></textarea>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label for="body_eng">Article Body Eng</label>
+                                            <textarea name="body_eng" id="editor2"></textarea>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label for="description" class="form-label">Meta Description Id</label>
+                                            <textarea name="description" id="description" class="form-control w-100" cols="30" rows="5" required></textarea>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label for="description_eng" class="form-label">Meta Description Eng</label>
+                                            <textarea name="description_eng" id="description_eng" class="form-control w-100" cols="30" rows="5" required></textarea>
                                         </div>
                                         <div class="col-12">
                                             <button type="submit" class="btn btn-warning d-block w-100">Post Article</button>
@@ -67,6 +91,7 @@
     <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
     <script>
         CKEDITOR.replace('editor');
+        CKEDITOR.replace('editor2');
     </script>
     <script>
         function previewImage() {

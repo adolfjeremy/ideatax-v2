@@ -5,8 +5,21 @@
     <link rel="stylesheet" href="/assets/css/pages/newsDetail1.css">
 @endsection
 
+@section('canonical')
+    <link rel="canonical" href="https://ideatax.id/articles/{{ $taxEvent->slug }}">
+@endsection
+
+@section('meta')
+    <meta name="description" content="{{ $taxEvent->description }}">
+    <meta property="og:description" content="{{ $taxEvent->description }}">
+    <meta property="og:title" content="{{ $taxEvent->SEO_title }}">
+    <meta property="og:url" content="https://ideatax.id/articles/event/{{ $taxEvent->slug }}">
+    <meta property="og:type" content="article">
+@endsection
+
+
 @section('title')
-    {{ $taxEvent->title }} | Ideatax
+    {{ $taxEvent->title }}
 @endsection
 
     
