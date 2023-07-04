@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Page;
 use App\Models\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class aboutController extends Controller
 {
@@ -39,4 +40,9 @@ class aboutController extends Controller
             "teams" => $teams,
         ]);
     }
+    public function redirectJonathan()
+    {
+        return Redirect::to('/our-team/jonathan-nainggolan', 301);
+    }
+
 }

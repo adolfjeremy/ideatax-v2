@@ -42,6 +42,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/our-team', [AboutController::class, 'team'])->name('our-team');
 Route::get('/our-team/{id}', [AboutController::class, 'teamDetail'])->name('our-team-detail');
+Route::get('/our-team/jonathan', [AboutController::class, 'redirectJonathan']);
 
 Route::get('/our-services', [ServicesController::class, 'index'])->name('our-services');
 
