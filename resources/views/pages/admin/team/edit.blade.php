@@ -70,12 +70,35 @@
                                             <input type="file" id="profile_picture" name="profile_picture" class="form-control w-100" value="{{ $item->profile_picture }}" onchange="previewImage()">
                                         </div>
                                         <div class="col-12 mb-3">
-                                            <label for="biography">Biography</label>
+                                            <label for="biography">Biography Id</label>
                                             <textarea name="biography" id="editor">{!! $item->biography !!}</textarea>
+                                        </div><div class="col-12 mb-3">
+                                            <label for="biography_eng">Biography Eng</label>
+                                            <textarea name="biography_eng" id="editor3">{!! $item->biography_eng !!}</textarea>
                                         </div>
                                         <div class="col-12 mb-3">
-                                            <label for="area_of_expertise">Area of Expertise</label>
+                                            <label for="area_of_expertise">Area of Expertise Id</label>
                                             <textarea name="area_of_expertise" id="editor2">{!! $item->area_of_expertise !!}</textarea>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label for="area_of_expertise_eng">Area of Expertise Eng</label>
+                                            <textarea name="area_of_expertise_eng" id="editor4">{!! $item->area_of_expertise_eng !!}</textarea>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label for="SEO_title" class="form-label">SEO Title Id</label>
+                                            <input type="text" id="SEO_title" name="SEO_title" class="form-control w-100" value="{{ $item->SEO_title }}" required>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label for="SEO_title_eng" class="form-label">SEO Title Eng</label>
+                                            <input type="text" id="SEO_title_eng" name="SEO_title_eng" class="form-control w-100" value="{{ $item->SEO_title_eng }}" required>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label for="description" class="form-label">Meta Description Id</label>
+                                            <textarea name="description" id="description" class="form-control w-100" cols="30" rows="5" required>{{ $item->description }}</textarea>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label for="description_eng" class="form-label">Meta Description Eng</label>
+                                            <textarea name="description_eng" id="description_eng" class="form-control w-100" cols="30" rows="5" required>{{ $item->description_eng }}</textarea>
                                         </div>
                                         <div class="col-12">
                                             <button type="submit" class="btn btn-warning d-block w-100">Save</button>
@@ -96,5 +119,7 @@
     <script>
         CKEDITOR.replace('editor');
         CKEDITOR.replace('editor2');
+        CKEDITOR.replace('editor3');
+        CKEDITOR.replace('editor4');
     </script>
 @endpush

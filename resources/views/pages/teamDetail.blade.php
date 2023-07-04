@@ -4,8 +4,17 @@
     <link rel="stylesheet" href="/assets/css/pages/team2.css">
 @endsection
 
+@section('meta')
+    <meta name="description" content="{{ $team->description_eng }}">
+    <meta property="og:description" content="{{ $team->description_eng }}">
+    <meta property="og:title" content="{{ $team->SEO_title_eng }}">
+    <meta property="og:url" content="https://ideatax.id/our-team/{{ $team->slug }}">
+    <meta property="og:type" content="article">
+@endsection
+
+
 @section('title')
-    {{ $team->name }} | Ideatax
+    {{ $team->SEO_title_eng }}
 @endsection
 
 @section('content')

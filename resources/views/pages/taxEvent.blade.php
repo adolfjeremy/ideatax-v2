@@ -6,20 +6,20 @@
 @endsection
 
 @section('canonical')
-    <link rel="canonical" href="https://ideatax.id/articles/{{ $taxEvent->slug }}">
+    <link rel="canonical" href="https://ideatax.id/articles/event/{{ $taxEvent->slug }}">
 @endsection
 
 @section('meta')
-    <meta name="description" content="{{ $taxEvent->description }}">
-    <meta property="og:description" content="{{ $taxEvent->description }}">
-    <meta property="og:title" content="{{ $taxEvent->SEO_title }}">
+    <meta name="description" content="{{ $taxEvent->description_eng }}">
+    <meta property="og:description" content="{{ $taxEvent->description_eng }}">
+    <meta property="og:title" content="{{ $taxEvent->SEO_title_eng }}">
     <meta property="og:url" content="https://ideatax.id/articles/event/{{ $taxEvent->slug }}">
     <meta property="og:type" content="article">
 @endsection
 
 
 @section('title')
-    {{ $taxEvent->title }}
+    {{ $taxEvent->title_eng }}
 @endsection
 
     

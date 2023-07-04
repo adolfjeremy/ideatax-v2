@@ -10,20 +10,20 @@
 
 @section('meta')
     @if ($page->description)
-        <meta name="description" content="{{ $page->description }}">
-        <meta property="og:description" content="{{ $page->description }}">
+        <meta name="description" content="{{ $page->description_eng }}">
+        <meta property="og:description" content="{{ $page->description_eng }}">
     @else
         <meta name="description" content="We combine a long running experience in tax consulting and tax authority to deliver thorough solutions to our clients. We also present essential approaches with problem-solving capabilities imbued with a full commitment for the most polished quality of service for our clients. Ideatax presents a comprehensive, prudent, and creative services to solve your tax challenges. We focus on helping your business grow and achieve its goals. Our day-to-day activities focus on the way we maintain a strong relationship and your trust, as well as actively providing thoughtful tax solutions in helping you to manage your tax risks.">
         <meta property="og:description" content="We combine a long running experience in tax consulting and tax authority to deliver thorough solutions to our clients. We also present essential approaches with problem-solving capabilities imbued with a full commitment for the most polished quality of service for our clients. Ideatax presents a comprehensive, prudent, and creative services to solve your tax challenges. We focus on helping your business grow and achieve its goals. Our day-to-day activities focus on the way we maintain a strong relationship and your trust, as well as actively providing thoughtful tax solutions in helping you to manage your tax risks.">
     @endif
     
-    <meta property="og:title" content="{{ $page->SEO_title }}">
+    <meta property="og:title" content="{{ $page->SEO_title_eng }}">
     <meta property="og:url" content="https://ideatax.id">
     <meta property="og:type" content="website">
 @endsection
 
 @section('title')
-    {{ $page->SEO_title }}
+    {{ $page->SEO_title_eng }}
 @endsection
 
 @section('content')

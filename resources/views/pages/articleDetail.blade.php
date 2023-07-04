@@ -10,16 +10,16 @@
 @endsection
 
 @section('meta')
-    <meta name="description" content="{{ $article->description }}">
-    <meta property="og:description" content="{{ $article->description }}">
-    <meta property="og:title" content="{{ $article->SEO_title }}">
+    <meta name="description" content="{{ $article->description_eng }}">
+    <meta property="og:description" content="{{ $article->description_eng }}">
+    <meta property="og:title" content="{{ $article->SEO_title_eng }}">
     <meta property="og:url" content="https://ideatax.id/articles/{{ $article->slug }}">
     <meta property="og:type" content="article">
 @endsection
 
 
 @section('title')
-    {{ $article->title }}
+    {{ $article->title_eng }}
 @endsection
 
     

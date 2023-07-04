@@ -10,20 +10,20 @@
 
 @section('meta')
     @if ($page->description)
-        <meta name="description" content="{{ $page->description }}">
-        <meta property="og:description" content="{{ $page->description }}">
+        <meta name="description" content="{{ $page->description_eng }}">
+        <meta property="og:description" content="{{ $page->description_eng }}">
     @else
         <meta name="description" content="We always aspire to provide the best service that is always focused on the best interests of the client. We also always prioritize the development of our talents so that they can continue to be relevant in existing changes to improve services to clients.">
         <meta property="og:description" content="We always aspire to provide the best service that is always focused on the best interests of the client. We also always prioritize the development of our talents so that they can continue to be relevant in existing changes to improve services to clients.">
     @endif
     
-    <meta property="og:title" content="{{ $page->SEO_title }}">
+    <meta property="og:title" content="{{ $page->SEO_title_eng }}">
     <meta property="og:url" content="https://ideatax.id/articles">
     <meta property="og:type" content="article">
 @endsection
 
 @section('title')
-    {{ $page->SEO_title }}
+    {{ $page->SEO_title_eng }}
 @endsection
 
     

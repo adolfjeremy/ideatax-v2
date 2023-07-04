@@ -36,6 +36,7 @@ use App\Http\Controllers\Admin\PagesController;
 */
 
 
+Route::redirect('/our-team/jonathan', 'our-team/jonathan-nainggolan', 301);
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
