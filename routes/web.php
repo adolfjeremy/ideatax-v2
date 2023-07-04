@@ -36,11 +36,10 @@ use App\Http\Controllers\Admin\PagesController;
 */
 
 
-Route::redirect('/our-team/jonathan', 'our-team/jonathan-nainggolan', 301);
+Route::redirect('/our-team/jonathan', '/jonathan-nainggolan', 301);
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-// Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/our-team', [AboutController::class, 'team'])->name('our-team');
 Route::get('/our-team/{id}', [AboutController::class, 'teamDetail'])->name('our-team-detail');
 
