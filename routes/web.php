@@ -41,7 +41,6 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/our-team', [AboutController::class, 'team'])->name('our-team');
 Route::get('/our-team/{id}', [AboutController::class, 'teamDetail'])->name('our-team-detail');
-Route::get('/our-team/jonathan', [AboutController::class, 'redirectJonathan']);
 
 Route::get('/our-services', [ServicesController::class, 'index'])->name('our-services');
 
@@ -61,7 +60,7 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/contact/send-mail', [ContactController::class, 'sendMail'])->name('send-mail');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
-Route::post('/login', [LoginController::class, 'authenticate'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Route::get('/register', [RegisterController::class, 'index'])->name('register');
@@ -94,6 +93,5 @@ Route::prefix('admin')
 Route::get('sitemap', function() {
     return redirect(url('qbc/sitemap.xml'));
 });
-
 
 

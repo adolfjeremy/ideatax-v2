@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /our-team/jonathan  
 Sitemap: https://ideatax.id/qbc/sitemap.xml

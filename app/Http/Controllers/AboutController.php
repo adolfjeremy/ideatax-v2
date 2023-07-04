@@ -40,9 +40,5 @@ class aboutController extends Controller
             "teams" => $teams,
         ]);
     }
-    public function redirectJonathan()
-    {
-        return Redirect::to('/our-team/jonathan-nainggolan', 301);
-    }
 
 }
