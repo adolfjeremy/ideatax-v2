@@ -42,7 +42,7 @@ class aboutController extends Controller
     }
     public function redirectJonathan()
     {
-        return Redirect::to('/jonathan-nainggolan', 301);
+        return Redirect::to('/our-team/jonathan-nainggolan', 301);
     }
 
 }
