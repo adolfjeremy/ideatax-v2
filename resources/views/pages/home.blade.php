@@ -131,22 +131,22 @@
                 <div class="col-12">
                     <div class="value_list">
                         <div class="value_item text-center d-block">
-                            <img src="/assets/images/trustworthy-min.webp" alt="Trustworthy" class="w-100">
+                            <img src="/assets/images/trustworthy.webp" alt="Trustworthy" class="w-100">
                             <div class="overlay"></div>
                             <h3>Trustworthy</h3>
                         </div>
                         <div class="value_item text-center d-block">
-                            <img src="/assets/images/professional-min.webp" alt="Professional" class="w-100">
+                            <img src="/assets/images/professional.webp" alt="Professional" class="w-100">
                             <div class="overlay"></div>
                             <h3>Professional</h3>
                         </div>
                         <div class="value_item text-center d-block">
-                            <img src="/assets/images/prudent-min.webp" alt="Creative" class="w-100">
+                            <img src="/assets/images/prudent.webp" alt="Creative" class="w-100">
                             <div class="overlay"></div>
                             <h3>Creative</h3>
                         </div>
                         <div class="value_item text-center d-block">
-                            <img src="/assets/images/creative-min.webp" alt="Prudent" class="w-100">
+                            <img src="/assets/images/creative.webp" alt="Prudent" class="w-100">
                             <div class="overlay"></div>
                             <h3>Prudent</h3>
                         </div>
