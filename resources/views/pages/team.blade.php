@@ -9,21 +9,28 @@
 @endsection
 
 @section('meta')
-    @if ($page->description)
+    @if(Config::get('languages')[App::getLocale()] == "EN")
         <meta name="description" content="{{ $page->description_eng }}">
         <meta property="og:description" content="{{ $page->description_eng }}">
-    @else
-        <meta name="description" content="With the rapid development of business, we understand your need to overcome the difficulties and complexity of the challenges you may face in business, especially related to taxation. Ideatax comes with the vision of becoming a leading tax consulting company, by providing high-quality services, and upholding the trust you have given us.">
-        <meta property="og:description" content="With the rapid development of business, we understand your need to overcome the difficulties and complexity of the challenges you may face in business, especially related to taxation. Ideatax comes with the vision of becoming a leading tax consulting company, by providing high-quality services, and upholding the trust you have given us.">
+        <meta property="og:title" content="{{ $page->SEO_title_eng }}">
     @endif
-    
-    <meta property="og:title" content="{{ $page->SEO_title_eng }}">
+        
+    @if(Config::get('languages')[App::getLocale()] == "ID")
+        <meta name="description" content="{{ $page->description }}">
+        <meta property="og:description" content="{{ $page->description }}">
+        <meta property="og:title" content="{{ $page->SEO_title }}">
+    @endif
     <meta property="og:url" content="https://ideatax.id/our-team">
     <meta property="og:type" content="article">
 @endsection
 
 @section('title')
-    {{ $page->SEO_title_eng }}
+    @if (Config::get('languages')[App::getLocale()] == "EN")
+        {{ $page->SEO_title_eng }}
+    @endif
+    @if (Config::get('languages')[App::getLocale()] == "ID")
+        {{ $page->SEO_title }}
+    @endif
 @endsection
 
 @section('content')

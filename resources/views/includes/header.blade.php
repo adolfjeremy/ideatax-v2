@@ -10,11 +10,25 @@
                             South Jakarta
                         </a>
                     </div>
-                    <div class="phone d-flex align-items-center">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <div class="phone d-flex align-items-center">
                         <i class="bi bi-telephone-fill fs-5 text me-1"></i>
                         <a href="tel:0212528471">(021) 2528471</a>
                         <span class="mx-1">,</span>
                         <a href="tel:0811195708">0811 195 708</a>
+                        </div>
+                        <div class="dropdown ms-3">
+                            <a class="btn btn-warning dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {{Config::get('languages')[App::getLocale()]}}
+                            </a>
+                            <ul class="dropdown-menu" style="min-width: 4em !important">
+                                @foreach (Config::get('languages') as $lang => $language)
+                                    @if ($lang != App::getLocale())
+                                            <li><a class="dropdown-item" href="{{ route('lang.switch', $lang) }}"> {{$language}}</a></li>
+                                    @endif
+                                @endforeach
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -93,6 +107,18 @@
                                 class="bi bi-facebook me-2 fs-4 text"></i></i></a>
                 </li>
             </ul>
+            <div class="nav-item dropdown mb-2">
+                <a class="btn btn-warning dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{Config::get('languages')[App::getLocale()]}}
+                </a>
+                <ul class="dropdown-menu" style="min-width: 3em !important">
+                    @foreach (Config::get('languages') as $lang => $language)
+                        @if ($lang != App::getLocale())
+                                <li><a class="dropdown-item" href="{{ route('lang.switch', $lang) }}"> {{$language}}</a></li>
+                        @endif
+                    @endforeach
+                </ul>
+            </div>
             <ul class="d-block p-1 border-top">
                 <li>
                     <a href="/" class="navbar_brand">Idea<strong>tax</strong></a>

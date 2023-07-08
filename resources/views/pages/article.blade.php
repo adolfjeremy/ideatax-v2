@@ -9,21 +9,28 @@
 @endsection
 
 @section('meta')
-    @if ($page->description)
+    @if(Config::get('languages')[App::getLocale()] == "EN")
         <meta name="description" content="{{ $page->description_eng }}">
         <meta property="og:description" content="{{ $page->description_eng }}">
-    @else
-        <meta name="description" content="We always aspire to provide the best service that is always focused on the best interests of the client. We also always prioritize the development of our talents so that they can continue to be relevant in existing changes to improve services to clients.">
-        <meta property="og:description" content="We always aspire to provide the best service that is always focused on the best interests of the client. We also always prioritize the development of our talents so that they can continue to be relevant in existing changes to improve services to clients.">
+        <meta property="og:title" content="{{ $page->SEO_title_eng }}">
     @endif
-    
-    <meta property="og:title" content="{{ $page->SEO_title_eng }}">
+        
+    @if(Config::get('languages')[App::getLocale()] == "ID")
+        <meta name="description" content="{{ $page->description }}">
+        <meta property="og:description" content="{{ $page->description }}">
+        <meta property="og:title" content="{{ $page->SEO_title }}">
+    @endif
     <meta property="og:url" content="https://ideatax.id/articles">
     <meta property="og:type" content="article">
 @endsection
 
 @section('title')
-    {{ $page->SEO_title_eng }}
+    @if (Config::get('languages')[App::getLocale()] == "EN")
+        {{ $page->SEO_title_eng }}
+    @endif
+    @if (Config::get('languages')[App::getLocale()] == "ID")
+        {{ $page->SEO_title }}
+    @endif
 @endsection
 
     
@@ -51,7 +58,16 @@
                                 <div class="carousel-item @if ($loop->first)active @endif">
                                     <a href="{{ route('article-detail',$articleCarousel->slug) }}"><img src="{{ asset("storage/" . $articleCarousel->photo) }}" class="d-block w-100" alt="{{ $articleCarousel->title }}"></a>
                                     <div class="carousel-caption d-none d-md-block">
-                                        <h5><a href="{{ route('article-detail',$articleCarousel->slug) }}">{{ $articleCarousel->title }}</a></h5>
+                                        <h5>
+                                            <a href="{{ route('article-detail',$articleCarousel->slug) }}">
+                                                @if (Config::get('languages')[App::getLocale()] == "EN")
+                                                    {{ $articleCarousel->title_eng }}
+                                                @endif
+                                                @if (Config::get('languages')[App::getLocale()] == "ID")
+                                                    {{ $articleCarousel->title }}
+                                                @endif
+                                            </a>
+                                        </h5>
                                     </div>
                                 </div>
                             @empty
@@ -83,7 +99,14 @@
                         <div class="tax_event_list">
                             @forelse ($taxEvents as $taxEvent)
                                 <a href="{{ route('tax-event', $taxEvent->slug) }}" class="tax_event_item">
-                                    <h3>{!! str_limit($taxEvent->title, $limit = 50) !!}</h2>
+                                    <h3>
+                                        @if (Config::get('languages')[App::getLocale()] == "EN")
+                                            {!! str_limit($taxEvent->title_eng, $limit = 50) !!}
+                                        @endif
+                                        @if (Config::get('languages')[App::getLocale()] == "ID")
+                                            {!! str_limit($taxEvent->title, $limit = 50) !!}
+                                        @endif
+                                    </h2>
                                     <span>{{ $taxEvent->created_at->format('d M, Y') }}</span>
                                 </a>
                             @empty
@@ -108,7 +131,6 @@
                     </div>
                     <div class="row mb-2">
                         <div class="news_list">
-                            @php $incrementCategory = 0 @endphp
                             @forelse ($articles as $article)
                                 <div class="news_item">
                                     <div class="news_image_container">
@@ -116,7 +138,14 @@
                                     </div>
                                     <div class="text_container">
                                         <h3>
-                                            <a href="{{ route('article-detail',$article->slug) }}">{!! str_limit($article->title, $limit = 61) !!}</a>
+                                            <a href="{{ route('article-detail',$article->slug) }}">
+                                                @if (Config::get('languages')[App::getLocale()] == "EN")
+                                                    {!! str_limit($article->title_eng, $limit = 61) !!}
+                                                @endif
+                                                @if (Config::get('languages')[App::getLocale()] == "ID")
+                                                    {!! str_limit($article->title, $limit = 61) !!}
+                                                @endif
+                                            </a>
                                         </h3>
                                         <div class="timestamp">
                                             <a href="{{ route('article-category',$article->articleCategory->slug) }}" class="news_category">{{ $article->articleCategory->title }}</a>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AboutController;
@@ -36,6 +37,9 @@ use App\Http\Controllers\Admin\PagesController;
 */
 
 
+
+// Route::get('lang/{locale}', [LocalizationController::class , 'lang'])->name('locale');
+Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LocalizationController@switchLang']);
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 

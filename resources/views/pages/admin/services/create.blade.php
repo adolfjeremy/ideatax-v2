@@ -29,12 +29,20 @@
                                     <form action="{{ route('services.store') }}" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         <div class="col-12 mb-3">
-                                            <label for="Name" class="form-label">Service Name</label>
+                                            <label for="title" class="form-label">Service Name Id</label>
                                             <input type="text" id="title" name="title" class="form-control w-100" required>
                                         </div>
+                                        <div class="col-12 mb-3">
+                                            <label for="title_eng" class="form-label">Service Name Eng</label>
+                                            <input type="text" id="title_eng" name="title_eng" class="form-control w-100" required>
+                                        </div>
                                         <div class="col-12 mb-3 d-flex flex-column">
-                                            <label for="description">Description</label>
-                                            <textarea name="description" rows="10" ></textarea>
+                                            <label for="description">Description Id</label>
+                                            <textarea name="description" rows="10" required></textarea>
+                                        </div>
+                                        <div class="col-12 mb-3 d-flex flex-column">
+                                            <label for="description_eng">Description Eng</label>
+                                            <textarea name="description_eng" rows="10" required></textarea>
                                         </div>
                                         <div class="col-12">
                                             <button type="submit" class="btn btn-warning d-block w-100">Post Services</button>

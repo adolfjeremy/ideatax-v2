@@ -9,21 +9,28 @@
 @endsection
 
 @section('meta')
-    @if ($page->description)
+    @if(Config::get('languages')[App::getLocale()] == "EN")
         <meta name="description" content="{{ $page->description_eng }}">
         <meta property="og:description" content="{{ $page->description_eng }}">
-    @else
-        <meta name="description" content="We always aspire to provide the best service that is always focused on the best interests of the client. We also always prioritize the development of our talents so that they can continue to be relevant in existing changes to improve services to clients.">
-        <meta property="og:description" content="We always aspire to provide the best service that is always focused on the best interests of the client. We also always prioritize the development of our talents so that they can continue to be relevant in existing changes to improve services to clients.">
+        <meta property="og:title" content="{{ $page->SEO_title_eng }}">
     @endif
-    
-    <meta property="og:title" content="{{ $page->SEO_title_eng }}">
+        
+    @if(Config::get('languages')[App::getLocale()] == "ID")
+        <meta name="description" content="{{ $page->description }}">
+        <meta property="og:description" content="{{ $page->description }}">
+        <meta property="og:title" content="{{ $page->SEO_title }}">
+    @endif
     <meta property="og:url" content="https://ideatax.id/tax-update">
     <meta property="og:type" content="article">
 @endsection
 
 @section('title')
-    {{ $page->SEO_title_eng }}
+    @if (Config::get('languages')[App::getLocale()] == "EN")
+        {{ $page->SEO_title_eng }}
+    @endif
+    @if (Config::get('languages')[App::getLocale()] == "ID")
+        {{ $page->SEO_title }}
+    @endif
 @endsection
 
     
@@ -51,7 +58,16 @@
                                 <div class="carousel-item @if ($loop->first)active @endif">
                                     <a href="{{ route('tax-update-detail',$taxUpdateCarousel->slug) }}"><img src="{{ asset("storage/" . $taxUpdateCarousel->photo) }}" class="d-block w-100" alt="{{ $taxUpdateCarousel->title }}"></a>
                                     <div class="carousel-caption d-block">
-                                        <h5><a href="{{ route('tax-update-detail',$taxUpdateCarousel->slug) }}">{{ $taxUpdateCarousel->title }}</a></h5>
+                                        <h5>
+                                            <a href="{{ route('tax-update-detail',$taxUpdateCarousel->slug) }}">
+                                                @if (Config::get('languages')[App::getLocale()] == "EN")
+                                                    {{ $taxUpdateCarousel->title_eng }}
+                                                @endif
+                                                @if (Config::get('languages')[App::getLocale()] == "ID")
+                                                    {{ $taxUpdateCarousel->title }}
+                                                @endif
+                                            </a>
+                                        </h5>
                                     </div>
                                 </div>
                             @empty
@@ -77,23 +93,23 @@
                 </div>
                 <div id="customerQuestions" class="col-12 col-lg-4 mt-4 my-lg-0">
                     <div class="row text-center header">
-                        <h2 class="py-3">Inquiry Form</h2>
+                        <h2 class="py-3">{{ __('home.question') }}</h2>
                     </div>
                     <div class="row d-flex justify-content-center">
                         <form action="{{ route('update-save') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="col-12 my-3">
-                                <input type="text" id="name" name="name" class="form-control w-100" placeholder="Name" required>
+                                <input type="text" id="name" name="name" class="form-control w-100" placeholder="{{ __('home.name') }}" required>
                             </div>
                             <div class="col-12 mb-3">
                                 <input type="email" id="email" name="email" class="form-control w-100" placeholder="Email" required>
                             </div>
                             <input type="hidden" id="status" name="status" class="form-control w-100" value="UNANSWERED" required>
                             <div class="col-12 mb-3 d-flex flex-column">
-                                <textarea name="question" id="editor" class="form-control w-100" placeholder="Question" required></textarea>
+                                <textarea name="question" id="editor" class="form-control w-100" placeholder="{{ __('home.ask') }}" required></textarea>
                             </div>
                             <div class="col-12 mb-3">
-                                <button type="submit" class="btn btn-warning d-block w-100">Submit</button>
+                                <button type="submit" class="btn btn-warning d-block w-100">{{ __('home.askButton') }}</button>
                             </div>
                         </form>
                     </div>
@@ -119,7 +135,16 @@
                                         <a href="{{ route('tax-update-detail',$taxUpdate->slug) }}"><img src="{{ asset("storage/" . $taxUpdate->photo) }}" alt="{{ $taxUpdate->title }}"></a>
                                     </div>
                                     <div class="text_container">
-                                        <h2><a href="{{ route('tax-update-detail',$taxUpdate->slug) }}">{!! str_limit($taxUpdate->title, $limit = 60) !!}</a></h2>
+                                        <h2>
+                                            <a href="{{ route('tax-update-detail',$taxUpdate->slug) }}">
+                                                @if (Config::get('languages')[App::getLocale()] == "EN")
+                                                    {!! str_limit($taxUpdate->title_eng, $limit = 60) !!}
+                                                @endif
+                                                @if (Config::get('languages')[App::getLocale()] == "ID")
+                                                    {!! str_limit($taxUpdate->title, $limit = 60) !!}
+                                                @endif
+                                            </a>
+                                        </h2>
                                         <div class="timestamp">
                                             <a href="{{ route('tax-update-category',$taxUpdate->taxUpdateCategory->slug) }}" class="news_category">{{ $taxUpdate->taxUpdateCategory->title }}</a>
                                             <span>{{ $taxUpdate->created_at->format('d M, Y H:i') }} WIB</span>
@@ -147,7 +172,7 @@
                         <div class="discussion_list">
                             @php $incrementCategory = 0 @endphp
                             @forelse ($customerQuestions as $customerQuestion)
-                                <div class="discussion_item"
+                                <div class="discussion_item">
                                     <div class="image-container w-100">
                                         <a href="{{ route('tax-consulting', $customerQuestion->slug) }}"><img src="{{ asset("storage/" . $customerQuestion->photo) }}" alt="{{  $customerQuestion->title  }}" class="w-100"></a>
                                     </div>

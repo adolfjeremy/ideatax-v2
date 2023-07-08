@@ -10,15 +10,29 @@
 @endsection
 
 @section('meta')
-    <meta name="description" content="{{ $taxUpdate->description_eng }}">
-    <meta property="og:description" content="{{ $taxUpdate->description_eng }}">
-    <meta property="og:title" content="{{ $taxUpdate->SEO_title_eng }}">
+    @if(Config::get('languages')[App::getLocale()] == "EN")
+        <meta name="description" content="{{ $taxUpdate->description_eng }}">
+        <meta property="og:description" content="{{ $taxUpdate->description_eng }}">
+        <meta property="og:title" content="{{ $taxUpdate->SEO_title_eng }}">
+    @endif
+        
+    @if(Config::get('languages')[App::getLocale()] == "ID")
+        <meta name="description" content="{{ $taxUpdate->description }}">
+        <meta property="og:description" content="{{ $taxUpdate->description }}">
+        <meta property="og:title" content="{{ $taxUpdate->SEO_title }}">
+    @endif
+    
     <meta property="og:url" content="https://ideatax.id/tax-update/{{ $taxUpdate->slug }}">
     <meta property="og:type" content="article">
 @endsection
 
 @section('title')
-    {{ $taxUpdate->SEO_title_eng }}
+    @if (Config::get('languages')[App::getLocale()] == "EN")
+        {{ $taxUpdate->SEO_title_eng }}
+    @endif
+    @if (Config::get('languages')[App::getLocale()] == "ID")
+        {{ $taxUpdate->SEO_title }}
+    @endif
 @endsection
 
     
@@ -53,7 +67,14 @@
                         <img src="{{ asset("storage/" . $taxUpdate->photo) }}" alt="{{ $taxUpdate->title }}" class="w-100">
                     </div>
                     <div class="row mt-2 news_title">
-                        <h1>{{ $taxUpdate->title }}</h1>
+                        <h1>
+                            @if (Config::get('languages')[App::getLocale()] == "EN")
+                                {{ $taxUpdate->title_eng }}
+                            @endif
+                            @if (Config::get('languages')[App::getLocale()] == "ID")
+                                {{ $taxUpdate->title }}
+                            @endif
+                        </h1>
                     </div>
                     <div class="row mb-2 d-flex flex-row">
                         <div class="col-12">
@@ -62,12 +83,21 @@
                         </div>
                         <div class="col-12">
                             @if ($taxUpdate->user)
-                            <p class="author">Written by: {{ $taxUpdate->user->name }}</p>
+                            <p class="author">
+                                {{ __('home.written') }} {{ $taxUpdate->user->name }}
+                            </p>
                             @endif
                         </div>
                     </div>
                     <div class="row">
-                        <div class="news_body">{!! $taxUpdate->body !!}</div>
+                        <div class="news_body">
+                            @if (Config::get('languages')[App::getLocale()] == "EN")
+                                {!! $taxUpdate->body_eng !!}
+                            @endif
+                            @if (Config::get('languages')[App::getLocale()] == "ID")
+                                {!! $taxUpdate->body !!}
+                            @endif
+                        </div>
                         @if ($taxUpdate->pdf)
                             <div class="mt-2">
                                 <a href="{{ asset("storage/" . $taxUpdate->pdf) }}" target="_blank" class="btn btn-md btn-warning rounded">Download</a>
@@ -81,23 +111,23 @@
                     <div class="row">
                         <div id="customerQuestions" class="col-12">
                             <div class="row text-center header">
-                                <h2 class="py-3">Inquiry Form</h2>
+                                <h2 class="py-3">{{ __('home.question') }}</h2>
                             </div>
                             <div class="row d-flex justify-content-center">
                                 <form action="{{ route('update-save') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="col-12 my-3">
-                                        <input type="text" id="name" name="name" class="form-control w-100" placeholder="Name" required>
+                                        <input type="text" id="name" name="name" class="form-control w-100" placeholder="{{ __('home.name') }}" required>
                                     </div>
                                     <div class="col-12 mb-3">
                                         <input type="email" id="email" name="email" class="form-control w-100" placeholder="Email" required>
                                     </div>
                                     <input type="hidden" id="status" name="status" class="form-control w-100" value="UNANSWERED" required>
                                     <div class="col-12 mb-3 d-flex flex-column">
-                                        <textarea name="question" id="editor" class="form-control w-100" placeholder="Question" required></textarea>
+                                        <textarea name="question" id="editor" class="form-control w-100" placeholder="{{ __('home.ask') }}" required></textarea>
                                     </div>
                                     <div class="col-12 mb-3">
-                                        <button type="submit" class="btn btn-warning d-block w-100">Submit</button>
+                                        <button type="submit" class="btn btn-warning d-block w-100">{{ __('home.askButton') }}</button>
                                     </div>
                                 </form>
                             </div>
@@ -110,7 +140,6 @@
                             </div>
                             <div class="row mt-3">
                                 <div class="news_detail_list">
-                                    @php $incrementCategory = 0 @endphp
                                     @forelse ($relatedUpdates as $relatedUpdate)
                                     <div class="news_detail_item">
                                         <div class="news_image_container">
@@ -119,8 +148,16 @@
                                             </a>
                                         </div>
                                         <div class="text_container">
-                                            <h3><a title="{{ $relatedUpdate->title }}" href="{{ route('tax-update-detail',$relatedUpdate->slug) }}">{!! str_limit($relatedUpdate->title,
-                                                $limit = 61) !!}</a></h3>
+                                            <h3>
+                                                <a href="{{ route('tax-update-detail',$relatedUpdate->slug) }}">
+                                                    @if (Config::get('languages')[App::getLocale()] == "EN")
+                                                        {!! str_limit($relatedUpdate->title_eng,$limit = 61) !!}
+                                                    @endif
+                                                    @if (Config::get('languages')[App::getLocale()] == "ID")
+                                                        {!! str_limit($relatedUpdate->title,$limit = 61) !!}
+                                                    @endif
+                                                </a>
+                                            </h3>
                                             <div class="timestamp">
                                                 <a href="{{ route('tax-update-category',$relatedUpdate->taxUpdateCategory->slug) }}" class="news_category">{{ $relatedUpdate->taxUpdateCategory->title }}</a>
                                                 <span>{{ $relatedUpdate->created_at->format('d M, Y') }}</span>
@@ -154,8 +191,21 @@
                                         </a>
                                     </div>
                                     <div class="text_container">
-                                        <h3><a title="{{ $taxUpdate->title }}" href="{{ route('tax-update-detail',$taxUpdate->slug) }}">{!! str_limit($taxUpdate->title,
-                                            $limit = 61) !!}</a></h3>
+                                        <h3>
+                                            <a title="@if (Config::get('languages')[App::getLocale()] == "EN")
+                                                    {{ $taxUpdate->title_eng }}
+                                                @endif
+                                                @if (Config::get('languages')[App::getLocale()] == "ID")
+                                                    {{ $taxUpdate->title }}
+                                                @endif" href="{{ route('tax-update-detail',$taxUpdate->slug) }}">
+                                                @if (Config::get('languages')[App::getLocale()] == "EN")
+                                                    {!! str_limit($taxUpdate->title_eng,$limit = 61) !!}
+                                                @endif
+                                                @if (Config::get('languages')[App::getLocale()] == "ID")
+                                                    {!! str_limit($taxUpdate->title,$limit = 61) !!}
+                                                @endif
+                                            </a>
+                                        </h3>
                                         <div class="timestamp">
                                             <a href="{{  route('tax-update-category',$taxUpdate->taxUpdateCategory->slug)  }}" class="news_category">{{ $taxUpdate->taxUpdateCategory->title }}</a>
                                             <span>{{ $taxUpdate->created_at->format('d M, Y H:i') }} WIB</span>

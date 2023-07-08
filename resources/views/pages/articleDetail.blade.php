@@ -10,16 +10,29 @@
 @endsection
 
 @section('meta')
-    <meta name="description" content="{{ $article->description_eng }}">
-    <meta property="og:description" content="{{ $article->description_eng }}">
-    <meta property="og:title" content="{{ $article->SEO_title_eng }}">
+    @if(Config::get('languages')[App::getLocale()] == "EN")
+        <meta name="description" content="{{ $article->description_eng }}">
+        <meta property="og:description" content="{{ $article->description_eng }}">
+        <meta property="og:title" content="{{ $article->SEO_title_eng }}">
+    @endif
+        
+    @if(Config::get('languages')[App::getLocale()] == "ID")
+        <meta name="description" content="{{ $article->description }}">
+        <meta property="og:description" content="{{ $article->description }}">
+        <meta property="og:title" content="{{ $article->SEO_title }}">
+    @endif
     <meta property="og:url" content="https://ideatax.id/articles/{{ $article->slug }}">
     <meta property="og:type" content="article">
 @endsection
 
 
 @section('title')
-    {{ $article->title_eng }}
+    @if (Config::get('languages')[App::getLocale()] == "EN")
+        {{ $article->title_eng }}
+    @endif
+    @if (Config::get('languages')[App::getLocale()] == "ID")
+        {{ $article->title }}
+    @endif
 @endsection
 
     
@@ -63,12 +76,19 @@
                         </div>
                         <div class="col-12">
                             @if ($article->user)
-                            <p class="author">Written by: {{ $article->user->name }}</p>
+                            <p class="author">{{ __('home.written') }} {{ $article->user->name }}</p>
                             @endif
                         </div>
                     </div>
                     <div class="row">
-                        <div class="news_body">{!! $article->body !!}</div>
+                        <div class="news_body">
+                            @if (Config::get('languages')[App::getLocale()] == "EN")
+                                {!! $article->body_eng !!}
+                            @endif
+                            @if (Config::get('languages')[App::getLocale()] == "ID")
+                                {!! $article->body !!}
+                            @endif
+                        </div>
                     </div>
                 </div>
                 <div id="sideNews" class="col-12 col-lg-4">
@@ -80,7 +100,14 @@
                             <div class="tax_event_list">
                                 @forelse ($taxEvents as $taxEvent)
                                 <a href="{{ route('tax-event', $taxEvent->slug) }}" class="tax_event_item">
-                                    <h3>{!! str_limit($taxEvent->title, $limit = 50) !!}</h3>
+                                    <h3>
+                                        @if (Config::get('languages')[App::getLocale()] == "EN")
+                                            {!! str_limit($taxEvent->title_eng, $limit = 50) !!}
+                                        @endif
+                                        @if (Config::get('languages')[App::getLocale()] == "ID")
+                                            {!! str_limit($taxEvent->title, $limit = 50) !!}
+                                        @endif
+                                    </h3>
                                     <span>{{ $taxEvent->created_at->format('d M, Y') }}</span>
                                 </a>
                                 @empty
@@ -106,8 +133,14 @@
                                     </div>
                                     <div class="text_container">
                                         <h3>
-                                            <a href="{{ route('article-detail',$relatedArticle->slug) }}">{!! str_limit($relatedArticle->title,
-                                            $limit = 61) !!}</a>
+                                            <a href="{{ route('article-detail',$relatedArticle->slug) }}">
+                                                @if (Config::get('languages')[App::getLocale()] == "EN")
+                                                    {!! str_limit($relatedArticle->title_eng, $limit = 61) !!}
+                                                @endif
+                                                @if (Config::get('languages')[App::getLocale()] == "ID")
+                                                    {!! str_limit($relatedArticle->title, $limit = 61) !!}
+                                                @endif
+                                            </a>
                                         </h3>
                                         <div class="timestamp">
                                             <a href="{{ route('article-category',$article->articleCategory->slug) }}" class="news_category">{{ $relatedArticle->articleCategory->title }}</a>
@@ -132,7 +165,6 @@
                     </div>
                     <div class="row mb-4">
                         <div class="news_list">
-                            @php $incrementCategory = 0 @endphp
                             @forelse ($articles as $articleItem)
                             <div class="news_item">
                                 <div class="news_image_container">
@@ -142,8 +174,14 @@
                                 </div>
                                 <div class="text_container">
                                     <h3>
-                                        <a href="{{ route('article-detail',$articleItem->slug) }}">{!! str_limit($articleItem->title,
-                                        $limit = 61) !!}</a>
+                                        <a href="{{ route('article-detail',$articleItem->slug) }}">
+                                            @if (Config::get('languages')[App::getLocale()] == "EN")
+                                                {!! str_limit($article->title_eng, $limit = 61) !!}
+                                            @endif
+                                            @if (Config::get('languages')[App::getLocale()] == "ID")
+                                                {!! str_limit($article->title, $limit = 61) !!}
+                                            @endif
+                                        </a>
                                     </h3>
                                     <div class="timestamp">
                                         <a href="{{ route('article-category',$article->articleCategory->slug) }}" class="news_category">{{ $articleItem->articleCategory->title }}</a>

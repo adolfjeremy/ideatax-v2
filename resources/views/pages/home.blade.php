@@ -9,21 +9,28 @@
 @endsection
 
 @section('meta')
-    @if ($page->description)
+    @if(Config::get('languages')[App::getLocale()] == "EN")
         <meta name="description" content="{{ $page->description_eng }}">
         <meta property="og:description" content="{{ $page->description_eng }}">
-    @else
-        <meta name="description" content="We combine a long running experience in tax consulting and tax authority to deliver thorough solutions to our clients. We also present essential approaches with problem-solving capabilities imbued with a full commitment for the most polished quality of service for our clients. Ideatax presents a comprehensive, prudent, and creative services to solve your tax challenges. We focus on helping your business grow and achieve its goals. Our day-to-day activities focus on the way we maintain a strong relationship and your trust, as well as actively providing thoughtful tax solutions in helping you to manage your tax risks.">
-        <meta property="og:description" content="We combine a long running experience in tax consulting and tax authority to deliver thorough solutions to our clients. We also present essential approaches with problem-solving capabilities imbued with a full commitment for the most polished quality of service for our clients. Ideatax presents a comprehensive, prudent, and creative services to solve your tax challenges. We focus on helping your business grow and achieve its goals. Our day-to-day activities focus on the way we maintain a strong relationship and your trust, as well as actively providing thoughtful tax solutions in helping you to manage your tax risks.">
+        <meta property="og:title" content="{{ $page->SEO_title_eng }}">
     @endif
-    
-    <meta property="og:title" content="{{ $page->SEO_title_eng }}">
+        
+    @if(Config::get('languages')[App::getLocale()] == "ID")
+        <meta name="description" content="{{ $page->description }}">
+        <meta property="og:description" content="{{ $page->description }}">
+        <meta property="og:title" content="{{ $page->SEO_title }}">
+    @endif
     <meta property="og:url" content="https://ideatax.id">
     <meta property="og:type" content="website">
 @endsection
 
 @section('title')
-    {{ $page->SEO_title_eng }}
+    @if (Config::get('languages')[App::getLocale()] == "EN")
+        {{ $page->SEO_title_eng }}
+    @endif
+    @if (Config::get('languages')[App::getLocale()] == "ID")
+        {{ $page->SEO_title }}
+    @endif
 @endsection
 
 @section('content')
@@ -32,10 +39,10 @@
         <div class="container py-5">
             <div class="row">
                 <div class="col-12 d-flex flex-column align-items-center justify-content-center">
-                    <h1>We Provide Tax Solutions for You</h1>
+                    <h1>{{ __('home.hero') }}</h1>
                     <div class="d-flex button-container">
-                        <a href="{{ route('contact') }}" class="btn btn-lg btn-warning">Contact Us</a>
-                        <a href="{{ route('our-services') }}" class="btn btn-lg btn-outline-light ms-3">Our Services</a>
+                        <a href="{{ route('contact') }}" class="btn btn-lg btn-warning">{{ __('home.contactButton') }}</a>
+                        <a href="{{ route('our-services') }}" class="btn btn-lg btn-outline-light ms-3">{{ __('home.service') }}</a>
                     </div>
                 </div>
             </div>
@@ -46,13 +53,11 @@
             <div class="about_bg"></div>
             <div class="row text-center p-4 d-flex align-items-center justify-content-center position-relative">
                 <div class="col-12 col-lg-10 p-4 about_us_text">
-                    <h2 >About Us</h2>
-                    <p class="mb-2">&emsp;&emsp;We combine a long running experience in tax consulting and tax authority to deliver thorough
-                        solutions to our clients. We also present essential approaches with problem-solving
-                        capabilities imbued with a full commitment for the most polished quality of service for our clients.</p>
+                    <h2>{{ __('home.aboutHeader') }}</h2>
+                    <p class="mb-2">&emsp;&emsp;{{ __('home.about') }}</p>
                     @if($compro)
                         <div class="mt-2 button-container">
-                            <a href="{{ asset("storage/" . $compro->compro) }}" target="_blank" class="btn btn-md btn-warning rounded">Company Profile</a>
+                            <a href="{{ asset("storage/" . $compro->compro) }}" target="_blank" class="btn btn-md btn-warning rounded">{{ __('home.aboutButton') }}</a>
                         </div>
                     @endif
                 </div>
@@ -62,55 +67,18 @@
     <section class="why_ideatax pb-5">
         <div class="container">
             <div class="row text-center mb-4">
-                <h2>Why Ideatax?</h2>
+                <h2>{{ __('home.whyHeader') }}</h2>
             </div>
             <div class="row">
                 <div class="reason_list text-center">
+                    @foreach(__('reason') as $key => $value)
                     <div class="reason_item p-4 d-flex flex-column align-items-center justify-content-center">
                         <div class="quote_image">
                             <i class="bi bi-quote text-light fs-1 text"></i>
                         </div>
-                        <p>Possesses a blend of years of experiences in tax consulting and tax authority for
-                            comprehensive solutions.</p>
+                        <p>{{ $value }}</p>
                     </div>
-                    <div class="reason_item p-4 d-flex flex-column align-items-center justify-content-center">
-                        <div class="quote_image">
-                            <i class="bi bi-quote text-light fs-1 text"></i>
-                        </div>
-                        <p>Provides integrated approaches in mitigating tax-related problems.</p>
-                    </div>
-                    <div class="reason_item p-4 d-flex flex-column align-items-center justify-content-center">
-                        <div class="quote_image">
-                            <i class="bi bi-quote text-light fs-1 text"></i>
-                        </div>
-                        <p>Knowledgeable in Compliance Risk Management system used by Directorate General of Taxes.
-                        </p>
-                    </div>
-                    <div class="reason_item p-4 d-flex flex-column align-items-center justify-content-center">
-                        <div class="quote_image">
-                            <i class="bi bi-quote text-light fs-1 text"></i>
-                        </div>
-                        <p>One of leading consultants related to foreign investment in Indonesia.
-                        </p>
-                    </div>
-                    <div class="reason_item p-4 d-flex flex-column align-items-center justify-content-center">
-                        <div class="quote_image">
-                            <i class="bi bi-quote text-light fs-1 text"></i>
-                        </div>
-                        <p>Experienced in using regulatory compliance in resolving client's tax-related issues
-                            which were identified of having a
-                            low level of compliance towards the taxation system in Indonesia.
-                        </p>
-                    </div>
-                    <div class="reason_item p-4 d-flex flex-column align-items-center justify-content-center">
-                        <div class="quote_image">
-                            <i class="bi bi-quote text-light fs-1 text"></i>
-                        </div>
-                        <p>Proven record in transfer pricing documentation to successfully resolving numerous
-                            transfer pricing dispute from
-                            various industries.
-                        </p>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -119,36 +87,34 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h2>Value</h2>
+                    <h2>{{ __('home.valueHeader') }}</h2>
                 </div>
                 <div class="col-12 d-flex align-items-center justify-content-center text-center">
-                    <p>We strive to deliver the best service possible for our clients with the help of talents who
-                        continually develop their
-                        skills in improving the quality of our services. Take a look at our underlying values:</p>
+                    <p>{{ __('home.value') }}:</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
                     <div class="value_list">
                         <div class="value_item text-center d-block">
-                            <img src="/assets/images/trustworthy.webp" alt="Trustworthy" class="w-100">
+                            <img src="/assets/images/trustworthy.webp" alt="{{ __('value.one') }}" class="w-100">
                             <div class="overlay"></div>
-                            <h3>Trustworthy</h3>
+                            <h3>{{ __('value.one') }}</h3>
                         </div>
                         <div class="value_item text-center d-block">
-                            <img src="/assets/images/professional.webp" alt="Professional" class="w-100">
+                            <img src="/assets/images/professional.webp" alt="{{ __('value.two') }}" class="w-100">
                             <div class="overlay"></div>
-                            <h3>Professional</h3>
+                            <h3>{{ __('value.two') }}</h3>
                         </div>
                         <div class="value_item text-center d-block">
-                            <img src="/assets/images/prudent.webp" alt="Creative" class="w-100">
+                            <img src="/assets/images/prudent.webp" alt="{{ __('value.three') }}" class="w-100">
                             <div class="overlay"></div>
-                            <h3>Creative</h3>
+                            <h3>{{ __('value.three') }}</h3>
                         </div>
                         <div class="value_item text-center d-block">
-                            <img src="/assets/images/creative.webp" alt="Prudent" class="w-100">
+                            <img src="/assets/images/creative.webp" alt="{{ __('value.four') }}" class="w-100">
                             <div class="overlay"></div>
-                            <h3>Prudent</h3>
+                            <h3>{{ __('value.four') }}</h3>
                         </div>
                     </div>
                 </div>
@@ -159,7 +125,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h2>Meet Our Team</h2>
+                    <h2>{{ __('home.teamHeader') }}</h2>
                 </div>
             </div>
             <div class="row overflow-hidden">
@@ -173,7 +139,7 @@
     <section class="our_services overflow-hidden">
         <div class="container">
             <div class="row text-center">
-                <h2>Our Services</h2>
+                <h2>{{ __('home.service') }}</h2>
             </div>
         </div>
         <div class="container">
@@ -183,10 +149,20 @@
                         <div>
                             <div class="our_service_item d-block">
                                 <h3>
-                                    <a href="{{ route('our-services') }}/#{{ $service->title }}" class="d-block" title="{{ $service->title }}">{!! str_limit($service->title, $limit = 25) !!}</a>
+                                    @if (Config::get('languages')[App::getLocale()] == "EN")
+                                        <a href="{{ route('our-services') }}/#{{ $service->title }}" class="d-block" title="{{ $service->title_eng }}">{!! str_limit($service->title_eng, $limit = 25) !!}</a>
+                                    @endif
+                                    @if (Config::get('languages')[App::getLocale()] == "ID")
+                                        <a href="{{ route('our-services') }}/#{{ $service->title }}" class="d-block" title="{{ $service->title }}">{!! str_limit($service->title, $limit = 25) !!}</a>
+                                    @endif
                                 </h3>
                                 <hr mb-3>
-                                <p>{{ $service->excerpt }}</p>
+                                @if (Config::get('languages')[App::getLocale()] == "EN")
+                                    <p>{{ $service->excerpt }}</p>
+                                @endif
+                                @if (Config::get('languages')[App::getLocale()] == "ID")
+                                    <p>{{ $service->excerpt_eng }}</p>
+                                @endif
                             </div>
                         </div>
                     @endforeach
@@ -197,8 +173,8 @@
     <section class="contact_lead py-5 mt-5">
         <div class="container">
             <div class="col-12 d-flex align-items-center justify-content-between">
-                <h2>Talk to us about your needs</h2>
-                <a href="{{ route("contact") }}" class="contact_lead-button btn btn-warning fw-bold">Contact us</a>
+                <h2>{{ __('home.contact') }}</h2>
+                <a href="{{ route("contact") }}" class="contact_lead-button btn btn-warning fw-bold">{{ __('home.contactButton') }}</a>
             </div>
         </div>
     </section>

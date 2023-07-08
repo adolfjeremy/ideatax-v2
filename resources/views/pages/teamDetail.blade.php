@@ -5,16 +5,30 @@
 @endsection
 
 @section('meta')
-    <meta name="description" content="{{ $team->description_eng }}">
-    <meta property="og:description" content="{{ $team->description_eng }}">
-    <meta property="og:title" content="{{ $team->SEO_title_eng }}">
+    @if(Config::get('languages')[App::getLocale()] == "EN")
+        <meta name="description" content="{{ $team->description_eng }}">
+        <meta property="og:description" content="{{ $team->description_eng }}">
+        <meta property="og:title" content="{{ $team->SEO_title_eng }}">
+    @endif
+        
+    @if(Config::get('languages')[App::getLocale()] == "ID")
+        <meta name="description" content="{{ $team->description }}">
+        <meta property="og:description" content="{{ $team->description }}">
+        <meta property="og:title" content="{{ $team->SEO_title }}">
+    @endif
     <meta property="og:url" content="https://ideatax.id/our-team/{{ $team->slug }}">
     <meta property="og:type" content="article">
 @endsection
 
 
 @section('title')
-    {{ $team->SEO_title_eng }}
+    @if (Config::get('languages')[App::getLocale()] == "EN")
+        {{ $team->SEO_title_eng }}
+    @endif
+    @if (Config::get('languages')[App::getLocale()] == "ID")
+        {{ $team->SEO_title }}
+    @endif
+    
 @endsection
 
 @section('content')
@@ -62,11 +76,21 @@
                 <div class="col-12 col-lg-9 px-3 team_detail">
                     <div class="row d-flex d-flex-column align-items-start justify-content-center text-start">
                         <h2>Biography</h2>
-                        <div>{!! $team->biography !!}</div>
+                        @if (Config::get('languages')[App::getLocale()] == "EN")
+                            <div>{!! $team->biography_eng !!}</div>
+                        @endif
+                        @if (Config::get('languages')[App::getLocale()] == "ID")
+                            <div>{!! $team->biography !!}</div>
+                        @endif
                     </div>
                     <div class="row d-flex d-flex-column align-items-start justify-content-center text-start mt-4">
                         <h2>Area of Expertise</h2>
-                        <div>{!! $team->area_of_expertise !!}</div>
+                        @if (Config::get('languages')[App::getLocale()] == "EN")
+                            <div>{!! $team->area_of_expertise_eng !!}</div>
+                        @endif
+                        @if (Config::get('languages')[App::getLocale()] == "ID")
+                            <div>{!! $team->area_of_expertise !!}</div>
+                        @endif
                     </div>
                 </div>
                 <div class="col-12 col-lg-3">

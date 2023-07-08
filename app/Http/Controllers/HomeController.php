@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Services;
-use App\Models\companyProfile;
 use App\Models\Page;
+use App\Models\Services;
+use Illuminate\Http\Request;
+use App\Models\companyProfile;
 
 class HomeController extends Controller
 {
