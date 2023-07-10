@@ -17,6 +17,11 @@ return [
     'name'=> 'Name',
     'ask'=> 'Question',
     'askButton'=> 'Submit',
-    'written' => 'Writter:'
+    'written' => 'Writter:',
+    'askany' => 'Ask Any Question',
+    'fullname' => 'Full Name',
+    'phone' => 'Phone Number',
+    'message' => 'Message',
+    'send' => 'Send Message',
 
 ];

@@ -9,21 +9,29 @@
 @endsection
 
 @section('meta')
-    @if ($page->description)
+    @if(Config::get('languages')[App::getLocale()] == "EN")
         <meta name="description" content="{{ $page->description_eng }}">
         <meta property="og:description" content="{{ $page->description_eng }}">
-    @else
-        <meta name="description" content="We always aspire to provide the best service that is always focused on the best interests of the client. We also always prioritize the development of our talents so that they can continue to be relevant in existing changes to improve services to clients.">
-        <meta property="og:description" content="We always aspire to provide the best service that is always focused on the best interests of the client. We also always prioritize the development of our talents so that they can continue to be relevant in existing changes to improve services to clients.">
+        <meta property="og:title" content="{{ $page->SEO_title_eng }}">
+    @endif
+        
+    @if(Config::get('languages')[App::getLocale()] == "ID")
+        <meta name="description" content="{{ $page->description }}">
+        <meta property="og:description" content="{{ $page->description }}">
+        <meta property="og:title" content="{{ $page->SEO_title }}">
     @endif
     
-    <meta property="og:title" content="{{ $page->SEO_title_eng }}">
     <meta property="og:url" content="https://ideatax.id/contact">
     <meta property="og:type" content="article">
 @endsection
 
 @section('title')
-    {{ $page->SEO_title_eng }}
+    @if (Config::get('languages')[App::getLocale()] == "EN")
+        {{ $page->SEO_title_eng }}
+    @endif
+    @if (Config::get('languages')[App::getLocale()] == "ID")
+        {{ $page->SEO_title }}
+    @endif
 @endsection
 
 @section('content')
@@ -32,7 +40,7 @@
         <div class="container">
             <div class="row position-relative">
                 <div class="col-12 d-flex flex-column align-items-center justify-content-center">
-                    <h1>Contact Us</h1>
+                    <h1>{{ __('home.contactButton') }}</h1>
                 </div>
             </div>
         </div>
@@ -64,7 +72,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-lg-8 py-3 px-5 contact_form">
-                    <h5>Ask Any Question</h5>
+                    <h5>{{ __('home.askany') }}</h5>
                         @if(session()->has('successAlert'))
                         <div class="alert alert-success" role="alert">
                             {{Session::get('successAlert')}}
@@ -73,11 +81,11 @@
                     <form action="{{ route('send-mail') }}" method="GET"> 
                         <div class="form-floating mb-3">
                             <input type="text" name="name" class="form-control" id="name" placeholder="Full Name" required>
-                            <label for="name">Full Name</label>
+                            <label for="name">{{ __('home.fullname') }}</label>
                         </div>
                         <div class="form-floating mb-3">
                             <input type="tel" name="phone_number" class="form-control" id="tel" placeholder="Phone Number" required>
-                            <label for="tel">Phone Number</label>
+                            <label for="tel">{{ __('home.phone') }}</label>
                         </div>
                         <div class="form-floating mb-3">
                             <input type="email" name="email" class="form-control" id="email" placeholder="Email" required>
@@ -85,10 +93,10 @@
                         </div>
                         <div class="form-floating mb-3">
                             <textarea class="form-control" type="text" name="message" placeholder="Message" id="message"></textarea>
-                            <label for="message">Message</label>
+                            <label for="message">{{ __('home.message') }}</label>
                         </div>
                         <div class="contact_form_button_container">
-                            <button type="submit" class="btn btn-success">Send Message</button>
+                            <button type="submit" class="btn btn-success">{{ __('home.send') }}</button>
                         </div>
                     </form>
                 </div>

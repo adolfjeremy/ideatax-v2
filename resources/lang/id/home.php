@@ -17,6 +17,11 @@ return [
     'name'=> 'Nama',
     'ask'=> 'Pertanyaan',
     'askButton'=> 'Kirim',
-    'written' => 'Penulis:'
+    'written' => 'Penulis:',
+    'askany' => 'Tanya Apa Saja',
+    'fullname' => 'Nama Lengkap',
+    'phone' => 'Nomor Telepon',
+    'message' => 'Pesan',
+    'send' => 'Kirim Pesan',
 
 ];

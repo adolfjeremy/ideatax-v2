@@ -67,7 +67,14 @@
                         <img src="{{ asset("storage/" . $article->photo) }}" alt="{{ $article->title }}" class="w-100">
                     </div>
                     <div class="row mt-2 news_title">
-                        <h1>{{ $article->title }}</h1>
+                        <h1>
+                            @if (Config::get('languages')[App::getLocale()] == "EN")
+                                {{ $article->title_eng }}
+                            @endif
+                            @if (Config::get('languages')[App::getLocale()] == "ID")
+                                {{ $article->title }}
+                            @endif
+                        </h1>
                     </div>
                     <div class="row">
                         <div class="col-12">

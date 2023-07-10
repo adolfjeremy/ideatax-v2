@@ -10,16 +10,29 @@
 @endsection
 
 @section('meta')
-    <meta name="description" content="{{ $taxEvent->description_eng }}">
-    <meta property="og:description" content="{{ $taxEvent->description_eng }}">
-    <meta property="og:title" content="{{ $taxEvent->SEO_title_eng }}">
+    @if(Config::get('languages')[App::getLocale()] == "EN")
+        <meta name="description" content="{{ $taxEvent->description_eng }}">
+        <meta property="og:description" content="{{ $taxEvent->description_eng }}">
+        <meta property="og:title" content="{{ $taxEvent->SEO_title_eng }}">
+    @endif
+        
+    @if(Config::get('languages')[App::getLocale()] == "ID")
+        <meta name="description" content="{{ $taxEvent->description }}">
+        <meta property="og:description" content="{{ $taxEvent->description }}">
+        <meta property="og:title" content="{{ $taxEvent->SEO_title }}">
+    @endif
     <meta property="og:url" content="https://ideatax.id/articles/event/{{ $taxEvent->slug }}">
     <meta property="og:type" content="article">
 @endsection
 
 
 @section('title')
-    {{ $taxEvent->title_eng }}
+    @if (Config::get('languages')[App::getLocale()] == "EN")
+        {{ $taxEvent->title_eng }}
+    @endif
+    @if (Config::get('languages')[App::getLocale()] == "ID")
+        {{ $taxEvent->title }}
+    @endif
 @endsection
 
     
@@ -53,13 +66,26 @@
                         <img src="{{ asset("storage/" . $taxEvent->photo) }}" alt="{{ $taxEvent->title }}" class="w-100">
                     </div>
                     <div class="row news_title mt-3">
-                        <h1>{{ $taxEvent->title }}</h1>
+                        <h1>
+                            @if (Config::get('languages')[App::getLocale()] == "EN")
+                                {{ $taxEvent->title_eng }}
+                            @endif
+                            @if (Config::get('languages')[App::getLocale()] == "ID")
+                                {{ $taxEvent->title }}
+                            @endif
+                        </h1>
                     </div>
                     <div class="row">
                         <p>{{ $taxEvent->created_at->format('d M, Y H:i') }} WIB</p>
                     </div>
                     <div class="row mt-2">
-                        <div>{!! $taxEvent->body !!}</div>
+                        @if (Config::get('languages')[App::getLocale()] == "EN")
+                            <div>{!! $taxEvent->body_eng !!}</div>
+                        @endif
+                        @if (Config::get('languages')[App::getLocale()] == "ID")
+                            <div>{!! $taxEvent->body !!}</div>
+                        @endif
+                        
                     </div>
                 </div>
                 <div id="taxEvent" class="col-12 col-lg-4 tax_event_container">
@@ -71,7 +97,15 @@
                             <div class="tax_event_list">
                                 @forelse ($taxEvents as $taxEventItem)
                                     <a href="{{ route('tax-event', $taxEventItem->slug) }}" class="tax_event_item">
-                                        <h3>{!! str_limit($taxEventItem->title, $limit = 50) !!}</h3>
+                                        <h3>
+                                            @if (Config::get('languages')[App::getLocale()] == "EN")
+                                                {!! str_limit($taxEventItem->title_eng, $limit = 50) !!}
+                                            @endif
+                                            @if (Config::get('languages')[App::getLocale()] == "ID")
+                                                {!! str_limit($taxEventItem->title, $limit = 50) !!}
+                                            @endif
+                                            
+                                        </h3>
                                         <span>{{ $taxEventItem->created_at->format('d M, Y') }}</span>
                                     </a>
                                 @empty
