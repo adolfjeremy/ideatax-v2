@@ -1,17 +1,17 @@
 <?php
 
 return [
-    'hero' => 'Kami Menyediakan Solusi Pajak untuk Anda',
+    'hero' => 'Kami menyediakan solusi pajak untuk Anda',
     'aboutHeader' => 'Tentang Kami',
-    'aboutButton' => 'Profile Perusahaan',
-    'about' => 'Kami menggabungkan pengalaman yang panjang dalam konsultasi pajak dan otoritas pajak untuk memberikan solusi menyeluruh kepada klien-klien kami. Kami juga menyajikan pendekatan yang penting dengan kemampuan dalam memecahkan masalah, yang dilandasi dengan komitmen penuh untuk memberikan layanan berkualitas terbaik bagi klien-klien kami.',
+    'aboutButton' => 'Profil Perusahaan',
+    'about' => 'Kami memadukan pengalaman jangka panjang dalam bidang konsultasi dan otoritas perpajakan untuk memberikan solusi yang menyeluruh kepada klien kami. Kami juga menyajikan pendekatan terpadu dengan kemampuan pemecahan masalah yang disertai dengan komitmen penuh untuk kualitas layanan terbaik bagi klien kami.',
     'whyHeader' => 'Kenapa Ideatax?',
     'valueHeader' => 'Nilai',
-    'value' => 'Kami berupaya untuk memberikan pelayanan terbaik yang mungkin bagi klien-klien kami dengan bantuan talenta-talenta yang terus mengembangkan keterampilan mereka dalam meningkatkan kualitas layanan kami. Mari lihat nilai-nilai dasar yang kami pegang:',
-    'teamHeader' => 'Tim Kami',
+    'value' => 'Kami berusaha untuk memberikan layanan terbaik bagi klien dengan bantuan para talenta yang terus mengembangkan keterampilan mereka dalam meningkatkan kualitas layanan kami. Berikut adalah nilai-nilai dasar dari layanan kami:',
+    'teamHeader' => 'Anggota Tim Kami',
     'service' => 'Layanan Kami',
     'serviceSub' => 'Bidang Keahlian Kami',
-    'contact' => 'Hubungi kami mengenai kebutuhan Anda',
+    'contact' => 'Sampaikan kebutuhan Anda kepada kami',
     'contactButton' => 'Hubungi Kami',
     'question' => 'Form Pertanyaan',
     'name'=> 'Nama',
@@ -23,5 +23,6 @@ return [
     'phone' => 'Nomor Telepon',
     'message' => 'Pesan',
     'send' => 'Kirim Pesan',
+    'footer' => 'Hubungi kami untuk mendiskusikan kebutuhan Anda dan menggunakan jasa kami.',
 
 ];

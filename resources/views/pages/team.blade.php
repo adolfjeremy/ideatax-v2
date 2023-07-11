@@ -38,7 +38,7 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="col-12 d-flex flex-column align-items-center justify-content-center">
-                <h1>Meet Our Team</h1>
+                <h1>{{ __('home.teamHeader') }}</h1>
             </div>
         </div>
     </section>

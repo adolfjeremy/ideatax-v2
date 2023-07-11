@@ -23,5 +23,6 @@ return [
     'phone' => 'Phone Number',
     'message' => 'Message',
     'send' => 'Send Message',
+    'footer' => 'Get in touch with us to discuss your requirements and hire our services.',
 
 ];

@@ -64,11 +64,11 @@
                                             <input type="file" id="photo" name="photo" class="form-control w-100" value="{{ $item->photo }}" onchange="previewImage()">
                                         </div>
                                         <div class="col-12 mb-3">
-                                            <label for="body">article Body</label>
+                                            <label for="body">article Body Id</label>
                                             <textarea name="body" id="editor">{!! $item->body !!}</textarea>
                                         </div>
                                         <div class="col-12 mb-3">
-                                            <label for="body">article Body</label>
+                                            <label for="body">article Body Eng</label>
                                             <textarea name="body" id="editor2">{!! $item->body_eng !!}</textarea>
                                         </div>
                                         <div class="col-12 mb-3">

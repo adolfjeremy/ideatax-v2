@@ -58,7 +58,7 @@
                                             <input type="file" id="photo" name="photo" class="form-control w-100" onchange="previewImage()" required>
                                         </div>
                                         <div class="col-12 mb-3">
-                                            <label for="body">Article Body</label>
+                                            <label for="body">Article Body Id</label>
                                             <textarea name="body" id="editor"></textarea>
                                         </div>
                                         <div class="col-12 mb-3">
