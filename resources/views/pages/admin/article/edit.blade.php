@@ -68,8 +68,8 @@
                                             <textarea name="body" id="editor">{!! $item->body !!}</textarea>
                                         </div>
                                         <div class="col-12 mb-3">
-                                            <label for="body">article Body Eng</label>
-                                            <textarea name="body" id="editor2">{!! $item->body_eng !!}</textarea>
+                                            <label for="body_eng">article Body Eng</label>
+                                            <textarea name="body_eng" id="editor2">{!! $item->body_eng !!}</textarea>
                                         </div>
                                         <div class="col-12 mb-3">
                                             <label for="description" class="form-label">Meta Description Id</label>
