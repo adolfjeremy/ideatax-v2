@@ -161,7 +161,7 @@
                                     <p>{{ $service->excerpt_eng }}</p>
                                 @endif
                                 @if (session()->get('applocale') == "id")
-                                    <p>{{ $service->excerpt_id }}</p>
+                                    <p>{{ $service->excerpt }}</p>
                                 @endif
                             </div>
                         </div>
