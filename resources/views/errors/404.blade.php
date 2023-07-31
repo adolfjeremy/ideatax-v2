@@ -9,7 +9,7 @@
     <title>Page Not Found | Ideatax</title>
 </head>
 <body>
-    @include('includes.header')
+    {{-- @include('includes.header') --}}
     <main>
         <section class="error-page">
         <div class="container">
