@@ -40,7 +40,7 @@
         height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
-    @include('includes.header')
+    {{-- @include('includes.header') --}}
     <main>
         @yield('content')
         <div class="floating_button" title="contact us via whatsapp">

@@ -150,7 +150,7 @@
                             <div class="our_service_item d-block">
                                 <h3>
                                     @if (Config::get('languages')[App::getLocale()] == "EN")
-                                        <a href="{{ route('our-services') }}/#{{ $service->title }}" class="d-block" title="{{ $service->title_eng }}">{!! str_limit($service->title_eng, $limit = 25) !!}</a>
+                                        <a href="{{ route('our-services') }}/#{{ $service->title_eng }}" class="d-block" title="{{ $service->title_eng }}">{!! str_limit($service->title_eng, $limit = 25) !!}</a>
                                     @endif
                                     @if (Config::get('languages')[App::getLocale()] == "ID")
                                         <a href="{{ route('our-services') }}/#{{ $service->title }}" class="d-block" title="{{ $service->title }}">{!! str_limit($service->title, $limit = 25) !!}</a>
