@@ -21,7 +21,7 @@ class Localization
             App::setLocale(Session()->get('applocale'));
         }
         else {
-            App::setLocale(config('app.fallback_locale'));
+            App::setLocale("id");
         }
         return $next($request);
     }
