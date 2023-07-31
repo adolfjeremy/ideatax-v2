@@ -17,18 +17,6 @@
                         <span class="mx-1">,</span>
                         <a href="tel:0811195708">0811 195 708</a>
                         </div>
-                        <div class="dropdown ms-3">
-                            <a class="btn btn-warning dropdown-toggle text-uppercase" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {{session()->get('applocale')}}
-                            </a>
-                            <ul class="dropdown-menu" style="min-width: 4em !important">
-                                @if (session()->get('applocale') == "id")
-                                    <li><a class="dropdown-item" href="{{ route('switchLang', "en") }}">EN</a></li>
-                                @else
-                                    <li><a class="dropdown-item" href="{{ route('switchLang', "id") }}">ID</a></li>
-                                @endif
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -107,18 +95,6 @@
                                 class="bi bi-facebook me-2 fs-4 text"></i></i></a>
                 </li>
             </ul>
-            <div class="nav-item dropdown mb-2">
-                <a class="btn btn-warning dropdown-toggle text-uppercase" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    {{session()->get('applocale')}}
-                </a>
-                <ul class="dropdown-menu" style="min-width: 4em !important">
-                    @if (session()->get('applocale') == "id")
-                        <li><a class="dropdown-item" href="{{ route('switchLang', "en") }}">EN</a></li>
-                    @else
-                        <li><a class="dropdown-item" href="{{ route('switchLang', "id") }}">ID</a></li>
-                    @endif
-                </ul>
-            </div>
             <ul class="d-block p-1 border-top">
                 <li>
                     <a href="/" class="navbar_brand">Idea<strong>tax</strong></a>

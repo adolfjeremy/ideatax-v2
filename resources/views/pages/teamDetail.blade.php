@@ -5,13 +5,13 @@
 @endsection
 
 @section('meta')
-    @if(Config::get('languages')[App::getLocale()] == "EN")
+    @if(session()->get('applocale') == "en")
         <meta name="description" content="{{ $team->description_eng }}">
         <meta property="og:description" content="{{ $team->description_eng }}">
         <meta property="og:title" content="{{ $team->SEO_title_eng }}">
     @endif
         
-    @if(Config::get('languages')[App::getLocale()] == "ID")
+    @if(session()->get('applocale') == "id")
         <meta name="description" content="{{ $team->description }}">
         <meta property="og:description" content="{{ $team->description }}">
         <meta property="og:title" content="{{ $team->SEO_title }}">
@@ -22,10 +22,10 @@
 
 
 @section('title')
-    @if (Config::get('languages')[App::getLocale()] == "EN")
+    @if (session()->get('applocale') == "en")
         {{ $team->SEO_title_eng }}
     @endif
-    @if (Config::get('languages')[App::getLocale()] == "ID")
+    @if (session()->get('applocale') == "id")
         {{ $team->SEO_title }}
     @endif
     
@@ -76,19 +76,19 @@
                 <div class="col-12 col-lg-9 px-3 team_detail">
                     <div class="row d-flex d-flex-column align-items-start justify-content-center text-start">
                         <h2>Biography</h2>
-                        @if (Config::get('languages')[App::getLocale()] == "EN")
+                        @if (session()->get('applocale') == "en")
                             <div>{!! $team->biography_eng !!}</div>
                         @endif
-                        @if (Config::get('languages')[App::getLocale()] == "ID")
+                        @if (session()->get('applocale') == "id")
                             <div>{!! $team->biography !!}</div>
                         @endif
                     </div>
                     <div class="row d-flex d-flex-column align-items-start justify-content-center text-start mt-4">
                         <h2>Area of Expertise</h2>
-                        @if (Config::get('languages')[App::getLocale()] == "EN")
+                        @if (session()->get('applocale') == "en")
                             <div>{!! $team->area_of_expertise_eng !!}</div>
                         @endif
-                        @if (Config::get('languages')[App::getLocale()] == "ID")
+                        @if (session()->get('applocale') == "id")
                             <div>{!! $team->area_of_expertise !!}</div>
                         @endif
                     </div>

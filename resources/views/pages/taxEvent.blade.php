@@ -10,13 +10,13 @@
 @endsection
 
 @section('meta')
-    @if(Config::get('languages')[App::getLocale()] == "EN")
+    @if(session()->get('applocale') == "en")
         <meta name="description" content="{{ $taxEvent->description_eng }}">
         <meta property="og:description" content="{{ $taxEvent->description_eng }}">
         <meta property="og:title" content="{{ $taxEvent->SEO_title_eng }}">
     @endif
         
-    @if(Config::get('languages')[App::getLocale()] == "ID")
+    @if(session()->get('applocale') == "id")
         <meta name="description" content="{{ $taxEvent->description }}">
         <meta property="og:description" content="{{ $taxEvent->description }}">
         <meta property="og:title" content="{{ $taxEvent->SEO_title }}">
@@ -27,10 +27,10 @@
 
 
 @section('title')
-    @if (Config::get('languages')[App::getLocale()] == "EN")
+    @if (session()->get('applocale') == "en")
         {{ $taxEvent->title_eng }}
     @endif
-    @if (Config::get('languages')[App::getLocale()] == "ID")
+    @if (session()->get('applocale') == "id")
         {{ $taxEvent->title }}
     @endif
 @endsection
@@ -67,10 +67,10 @@
                     </div>
                     <div class="row news_title mt-3">
                         <h1>
-                            @if (Config::get('languages')[App::getLocale()] == "EN")
+                            @if (session()->get('applocale') == "en")
                                 {{ $taxEvent->title_eng }}
                             @endif
-                            @if (Config::get('languages')[App::getLocale()] == "ID")
+                            @if (session()->get('applocale') == "id")
                                 {{ $taxEvent->title }}
                             @endif
                         </h1>
@@ -79,10 +79,10 @@
                         <p>{{ $taxEvent->created_at->format('d M, Y H:i') }} WIB</p>
                     </div>
                     <div class="row mt-2">
-                        @if (Config::get('languages')[App::getLocale()] == "EN")
+                        @if (session()->get('applocale') == "en")
                             <div>{!! $taxEvent->body_eng !!}</div>
                         @endif
-                        @if (Config::get('languages')[App::getLocale()] == "ID")
+                        @if (session()->get('applocale') == "id")
                             <div>{!! $taxEvent->body !!}</div>
                         @endif
                         
@@ -98,10 +98,10 @@
                                 @forelse ($taxEvents as $taxEventItem)
                                     <a href="{{ route('tax-event', $taxEventItem->slug) }}" class="tax_event_item">
                                         <h3>
-                                            @if (Config::get('languages')[App::getLocale()] == "EN")
+                                            @if (session()->get('applocale') == "en")
                                                 {!! str_limit($taxEventItem->title_eng, $limit = 50) !!}
                                             @endif
-                                            @if (Config::get('languages')[App::getLocale()] == "ID")
+                                            @if (session()->get('applocale') == "id")
                                                 {!! str_limit($taxEventItem->title, $limit = 50) !!}
                                             @endif
                                             

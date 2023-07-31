@@ -11,13 +11,13 @@
 
 
 @section('meta')
-    @if(Config::get('languages')[App::getLocale()] == "EN")
+    @if(session()->get('applocale') == "en")
         <meta name="description" content="{{ $page->description_eng }}">
         <meta property="og:description" content="{{ $page->description_eng }}">
         <meta property="og:title" content="{{ $page->SEO_title_eng }}">
     @endif
         
-    @if(Config::get('languages')[App::getLocale()] == "ID")
+    @if(session()->get('applocale') == "id")
         <meta name="description" content="{{ $page->description }}">
         <meta property="og:description" content="{{ $page->description }}">
         <meta property="og:title" content="{{ $page->SEO_title }}">
@@ -28,10 +28,10 @@
 
 
 @section('title')
-    @if (Config::get('languages')[App::getLocale()] == "EN")
+    @if (session()->get('applocale') == "en")
         {{ $page->SEO_title_eng }}
     @endif
-    @if (Config::get('languages')[App::getLocale()] == "ID")
+    @if (session()->get('applocale') == "id")
         {{ $page->SEO_title }}
     @endif
 @endsection
@@ -63,10 +63,10 @@
                                 <h3 class="accordion-header" id="{{ $service->title }}">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#{{ $service->slug }}" aria-expanded="false" aria-controls="{{ $service->slug }}">
-                                        @if (Config::get('languages')[App::getLocale()] == "EN")
+                                        @if (session()->get('applocale') == "en")
                                             {{ $service->title_eng }}
                                         @endif
-                                        @if (Config::get('languages')[App::getLocale()] == "ID")
+                                        @if (session()->get('applocale') == "id")
                                             {{ $service->title }}
                                         @endif
                                     </button>
@@ -74,10 +74,10 @@
                                 <div id="{{ $service->slug }}" class="accordion-collapse collapse" aria-labelledby="{{ $service->title }}"
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body py-1">
-                                        @if (Config::get('languages')[App::getLocale()] == "EN")
+                                        @if (session()->get('applocale') == "en")
                                             {!! $service->description_eng !!}
                                         @endif
-                                        @if (Config::get('languages')[App::getLocale()] == "ID")
+                                        @if (session()->get('applocale') == "id")
                                             {!! $service->description !!}
                                         @endif
                                     </div>

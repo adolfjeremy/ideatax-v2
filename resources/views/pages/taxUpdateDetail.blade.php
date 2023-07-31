@@ -10,13 +10,13 @@
 @endsection
 
 @section('meta')
-    @if(Config::get('languages')[App::getLocale()] == "EN")
+    @if(session()->get('applocale') == "en")
         <meta name="description" content="{{ $taxUpdate->description_eng }}">
         <meta property="og:description" content="{{ $taxUpdate->description_eng }}">
         <meta property="og:title" content="{{ $taxUpdate->SEO_title_eng }}">
     @endif
         
-    @if(Config::get('languages')[App::getLocale()] == "ID")
+    @if(session()->get('applocale') == "id")
         <meta name="description" content="{{ $taxUpdate->description }}">
         <meta property="og:description" content="{{ $taxUpdate->description }}">
         <meta property="og:title" content="{{ $taxUpdate->SEO_title }}">
@@ -27,10 +27,10 @@
 @endsection
 
 @section('title')
-    @if (Config::get('languages')[App::getLocale()] == "EN")
+    @if (session()->get('applocale') == "en")
         {{ $taxUpdate->SEO_title_eng }}
     @endif
-    @if (Config::get('languages')[App::getLocale()] == "ID")
+    @if (session()->get('applocale') == "id")
         {{ $taxUpdate->SEO_title }}
     @endif
 @endsection
@@ -68,10 +68,10 @@
                     </div>
                     <div class="row mt-2 news_title">
                         <h1>
-                            @if (Config::get('languages')[App::getLocale()] == "EN")
+                            @if (session()->get('applocale') == "en")
                                 {{ $taxUpdate->title_eng }}
                             @endif
-                            @if (Config::get('languages')[App::getLocale()] == "ID")
+                            @if (session()->get('applocale') == "id")
                                 {{ $taxUpdate->title }}
                             @endif
                         </h1>
@@ -91,10 +91,10 @@
                     </div>
                     <div class="row">
                         <div class="news_body">
-                            @if (Config::get('languages')[App::getLocale()] == "EN")
+                            @if (session()->get('applocale') == "en")
                                 {!! $taxUpdate->body_eng !!}
                             @endif
-                            @if (Config::get('languages')[App::getLocale()] == "ID")
+                            @if (session()->get('applocale') == "id")
                                 {!! $taxUpdate->body !!}
                             @endif
                         </div>
@@ -150,10 +150,10 @@
                                         <div class="text_container">
                                             <h3>
                                                 <a href="{{ route('tax-update-detail',$relatedUpdate->slug) }}">
-                                                    @if (Config::get('languages')[App::getLocale()] == "EN")
+                                                    @if (session()->get('applocale') == "en")
                                                         {!! str_limit($relatedUpdate->title_eng,$limit = 61) !!}
                                                     @endif
-                                                    @if (Config::get('languages')[App::getLocale()] == "ID")
+                                                    @if (session()->get('applocale') == "id")
                                                         {!! str_limit($relatedUpdate->title,$limit = 61) !!}
                                                     @endif
                                                 </a>
@@ -192,16 +192,16 @@
                                     </div>
                                     <div class="text_container">
                                         <h3>
-                                            <a title="@if (Config::get('languages')[App::getLocale()] == "EN")
+                                            <a title="@if (session()->get('applocale') == "en")
                                                     {{ $taxUpdate->title_eng }}
                                                 @endif
-                                                @if (Config::get('languages')[App::getLocale()] == "ID")
+                                                @if (session()->get('applocale') == "id")
                                                     {{ $taxUpdate->title }}
                                                 @endif" href="{{ route('tax-update-detail',$taxUpdate->slug) }}">
-                                                @if (Config::get('languages')[App::getLocale()] == "EN")
+                                                @if (session()->get('applocale') == "en")
                                                     {!! str_limit($taxUpdate->title_eng,$limit = 61) !!}
                                                 @endif
-                                                @if (Config::get('languages')[App::getLocale()] == "ID")
+                                                @if (session()->get('applocale') == "id")
                                                     {!! str_limit($taxUpdate->title,$limit = 61) !!}
                                                 @endif
                                             </a>

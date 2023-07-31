@@ -9,13 +9,13 @@
 @endsection
 
 @section('meta')
-    @if(Config::get('languages')[App::getLocale()] == "EN")
+    @if(session()->get('applocale') == "en")
         <meta name="description" content="{{ $page->description_eng }}">
         <meta property="og:description" content="{{ $page->description_eng }}">
         <meta property="og:title" content="{{ $page->SEO_title_eng }}">
     @endif
         
-    @if(Config::get('languages')[App::getLocale()] == "ID")
+    @if(session()->get('applocale') == "id")
         <meta name="description" content="{{ $page->description }}">
         <meta property="og:description" content="{{ $page->description }}">
         <meta property="og:title" content="{{ $page->SEO_title }}">
@@ -25,10 +25,10 @@
 @endsection
 
 @section('title')
-    @if (Config::get('languages')[App::getLocale()] == "EN")
+    @if (session()->get('applocale') == "en")
         {{ $page->SEO_title_eng }}
     @endif
-    @if (Config::get('languages')[App::getLocale()] == "ID")
+    @if (session()->get('applocale') == "id")
         {{ $page->SEO_title }}
     @endif
 @endsection
@@ -60,10 +60,10 @@
                                     <div class="carousel-caption d-none d-md-block">
                                         <h5>
                                             <a href="{{ route('article-detail',$articleCarousel->slug) }}">
-                                                @if (Config::get('languages')[App::getLocale()] == "EN")
+                                                @if (session()->get('applocale') == "en")
                                                     {{ $articleCarousel->title_eng }}
                                                 @endif
-                                                @if (Config::get('languages')[App::getLocale()] == "ID")
+                                                @if (session()->get('applocale') == "id")
                                                     {{ $articleCarousel->title }}
                                                 @endif
                                             </a>
@@ -100,10 +100,10 @@
                             @forelse ($taxEvents as $taxEvent)
                                 <a href="{{ route('tax-event', $taxEvent->slug) }}" class="tax_event_item">
                                     <h3>
-                                        @if (Config::get('languages')[App::getLocale()] == "EN")
+                                        @if (session()->get('applocale') == "en")
                                             {!! str_limit($taxEvent->title_eng, $limit = 50) !!}
                                         @endif
-                                        @if (Config::get('languages')[App::getLocale()] == "ID")
+                                        @if (session()->get('applocale') == "id")
                                             {!! str_limit($taxEvent->title, $limit = 50) !!}
                                         @endif
                                     </h2>
@@ -139,10 +139,10 @@
                                     <div class="text_container">
                                         <h3>
                                             <a href="{{ route('article-detail',$article->slug) }}">
-                                                @if (Config::get('languages')[App::getLocale()] == "EN")
+                                                @if (session()->get('applocale') == "en")
                                                     {!! str_limit($article->title_eng, $limit = 61) !!}
                                                 @endif
-                                                @if (Config::get('languages')[App::getLocale()] == "ID")
+                                                @if (session()->get('applocale') == "id")
                                                     {!! str_limit($article->title, $limit = 61) !!}
                                                 @endif
                                             </a>

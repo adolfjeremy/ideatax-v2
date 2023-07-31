@@ -10,13 +10,13 @@
 @endsection
 
 @section('meta')
-    @if(Config::get('languages')[App::getLocale()] == "EN")
+    @if(session()->get('applocale') == "en")
         <meta name="description" content="{{ $article->description_eng }}">
         <meta property="og:description" content="{{ $article->description_eng }}">
         <meta property="og:title" content="{{ $article->SEO_title_eng }}">
     @endif
         
-    @if(Config::get('languages')[App::getLocale()] == "ID")
+    @if(session()->get('applocale') == "id")
         <meta name="description" content="{{ $article->description }}">
         <meta property="og:description" content="{{ $article->description }}">
         <meta property="og:title" content="{{ $article->SEO_title }}">
@@ -27,10 +27,10 @@
 
 
 @section('title')
-    @if (Config::get('languages')[App::getLocale()] == "EN")
+    @if (session()->get('applocale') == "en")
         {{ $article->title_eng }}
     @endif
-    @if (Config::get('languages')[App::getLocale()] == "ID")
+    @if (session()->get('applocale') == "id")
         {{ $article->title }}
     @endif
 @endsection
@@ -68,10 +68,10 @@
                     </div>
                     <div class="row mt-2 news_title">
                         <h1>
-                            @if (Config::get('languages')[App::getLocale()] == "EN")
+                            @if (session()->get('applocale') == "en")
                                 {{ $article->title_eng }}
                             @endif
-                            @if (Config::get('languages')[App::getLocale()] == "ID")
+                            @if (session()->get('applocale') == "id")
                                 {{ $article->title }}
                             @endif
                         </h1>
@@ -89,10 +89,10 @@
                     </div>
                     <div class="row">
                         <div class="news_body">
-                            @if (Config::get('languages')[App::getLocale()] == "EN")
+                            @if (session()->get('applocale') == "en")
                                 {!! $article->body_eng !!}
                             @endif
-                            @if (Config::get('languages')[App::getLocale()] == "ID")
+                            @if (session()->get('applocale') == "id")
                                 {!! $article->body !!}
                             @endif
                         </div>
@@ -108,10 +108,10 @@
                                 @forelse ($taxEvents as $taxEvent)
                                 <a href="{{ route('tax-event', $taxEvent->slug) }}" class="tax_event_item">
                                     <h3>
-                                        @if (Config::get('languages')[App::getLocale()] == "EN")
+                                        @if (session()->get('applocale') == "en")
                                             {!! str_limit($taxEvent->title_eng, $limit = 50) !!}
                                         @endif
-                                        @if (Config::get('languages')[App::getLocale()] == "ID")
+                                        @if (session()->get('applocale') == "id")
                                             {!! str_limit($taxEvent->title, $limit = 50) !!}
                                         @endif
                                     </h3>
@@ -141,10 +141,10 @@
                                     <div class="text_container">
                                         <h3>
                                             <a href="{{ route('article-detail',$relatedArticle->slug) }}">
-                                                @if (Config::get('languages')[App::getLocale()] == "EN")
+                                                @if (session()->get('applocale') == "en")
                                                     {!! str_limit($relatedArticle->title_eng, $limit = 61) !!}
                                                 @endif
-                                                @if (Config::get('languages')[App::getLocale()] == "ID")
+                                                @if (session()->get('applocale') == "id")
                                                     {!! str_limit($relatedArticle->title, $limit = 61) !!}
                                                 @endif
                                             </a>
@@ -182,10 +182,10 @@
                                 <div class="text_container">
                                     <h3>
                                         <a href="{{ route('article-detail',$articleItem->slug) }}">
-                                            @if (Config::get('languages')[App::getLocale()] == "EN")
+                                            @if (session()->get('applocale') == "en")
                                                 {!! str_limit($article->title_eng, $limit = 61) !!}
                                             @endif
-                                            @if (Config::get('languages')[App::getLocale()] == "ID")
+                                            @if (session()->get('applocale') == "id")
                                                 {!! str_limit($article->title, $limit = 61) !!}
                                             @endif
                                         </a>

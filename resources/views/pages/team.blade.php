@@ -9,13 +9,13 @@
 @endsection
 
 @section('meta')
-    @if(Config::get('languages')[App::getLocale()] == "EN")
+    @if(session()->get('applocale') == "en")
         <meta name="description" content="{{ $page->description_eng }}">
         <meta property="og:description" content="{{ $page->description_eng }}">
         <meta property="og:title" content="{{ $page->SEO_title_eng }}">
     @endif
         
-    @if(Config::get('languages')[App::getLocale()] == "ID")
+    @if(session()->get('applocale') == "id")
         <meta name="description" content="{{ $page->description }}">
         <meta property="og:description" content="{{ $page->description }}">
         <meta property="og:title" content="{{ $page->SEO_title }}">
@@ -25,10 +25,10 @@
 @endsection
 
 @section('title')
-    @if (Config::get('languages')[App::getLocale()] == "EN")
+    @if (session()->get('applocale') == "en")
         {{ $page->SEO_title_eng }}
     @endif
-    @if (Config::get('languages')[App::getLocale()] == "ID")
+    @if (session()->get('applocale') == "id")
         {{ $page->SEO_title }}
     @endif
 @endsection
