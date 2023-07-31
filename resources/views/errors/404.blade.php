@@ -40,7 +40,7 @@
         </div>
     </main>
     
-    {{-- @include('includes.footer') --}}
+    @include('includes.footer')
     
     @include('includes.script')
     <script src="/assets/js/floatingButton.js"></script>
