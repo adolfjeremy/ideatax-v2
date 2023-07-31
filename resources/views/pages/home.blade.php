@@ -9,13 +9,13 @@
 @endsection
 
 @section('meta')
-    @if(Config::get('languages')[App::getLocale()] == "EN")
+    @if(session()->get('applocale') == "en")
         <meta name="description" content="{{ $page->description_eng }}">
         <meta property="og:description" content="{{ $page->description_eng }}">
         <meta property="og:title" content="{{ $page->SEO_title_eng }}">
     @endif
         
-    @if(Config::get('languages')[App::getLocale()] == "ID")
+    @if(session()->get('applocale') == "id")
         <meta name="description" content="{{ $page->description }}">
         <meta property="og:description" content="{{ $page->description }}">
         <meta property="og:title" content="{{ $page->SEO_title }}">
@@ -25,10 +25,10 @@
 @endsection
 
 @section('title')
-    @if (Config::get('languages')[App::getLocale()] == "EN")
+    @if (session()->get('applocale') == "en")
         {{ $page->SEO_title_eng }}
     @endif
-    @if (Config::get('languages')[App::getLocale()] == "ID")
+    @if (session()->get('applocale') == "id")
         {{ $page->SEO_title }}
     @endif
 @endsection
@@ -149,18 +149,18 @@
                         <div>
                             <div class="our_service_item d-block">
                                 <h3>
-                                    @if (Config::get('languages')[App::getLocale()] == "EN")
+                                    @if (session()->get('applocale') == "en")
                                         <a href="{{ route('our-services') }}/#{{ $service->title_eng }}" class="d-block" title="{{ $service->title_eng }}">{!! str_limit($service->title_eng, $limit = 25) !!}</a>
                                     @endif
-                                    @if (Config::get('languages')[App::getLocale()] == "ID")
+                                    @if (session()->get('applocale') == "id")
                                         <a href="{{ route('our-services') }}/#{{ $service->title }}" class="d-block" title="{{ $service->title }}">{!! str_limit($service->title, $limit = 25) !!}</a>
                                     @endif
                                 </h3>
                                 <hr mb-3>
-                                @if (Config::get('languages')[App::getLocale()] == "EN")
+                                @if (session()->get('applocale') == "en")
                                     <p>{{ $service->excerpt }}</p>
                                 @endif
-                                @if (Config::get('languages')[App::getLocale()] == "ID")
+                                @if (session()->get('applocale') == "id")
                                     <p>{{ $service->excerpt_eng }}</p>
                                 @endif
                             </div>

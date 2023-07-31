@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{strtolower(Config::get('languages')[App::getLocale()])}}">
+<html lang="{{strtolower(session()->get('applocale'))}}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
