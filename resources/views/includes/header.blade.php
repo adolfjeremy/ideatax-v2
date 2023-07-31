@@ -26,11 +26,13 @@
                                 @endif
                             </a>
                             <ul class="dropdown-menu" style="min-width: 4em !important">
-                                @if (session()->get('applocale') == "id")
+                                <li><a class="dropdown-item" href="">EN</a></li>
+                                <li><a class="dropdown-item" href="">ID</a></li>
+                                {{-- @if (session()->get('applocale') == "id")
                                     <li><a class="dropdown-item" href="{{ route('switchLang', "en") }}">EN</a></li>
                                 @else
                                     <li><a class="dropdown-item" href="{{ route('switchLang', "id") }}">ID</a></li>
-                                @endif
+                                @endif --}}
                             </ul>
                         </div>
                     </div>
