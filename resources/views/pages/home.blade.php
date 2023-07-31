@@ -158,10 +158,10 @@
                                 </h3>
                                 <hr mb-3>
                                 @if (session()->get('applocale') == "en")
-                                    <p>{{ $service->excerpt }}</p>
+                                    <p>{{ $service->excerpt_eng }}</p>
                                 @endif
                                 @if (session()->get('applocale') == "id")
-                                    <p>{{ $service->excerpt_eng }}</p>
+                                    <p>{{ $service->excerpt_id }}</p>
                                 @endif
                             </div>
                         </div>
