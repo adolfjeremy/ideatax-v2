@@ -19,7 +19,7 @@
                         </div>
                         <div class="dropdown ms-3">
                             <a class="btn btn-warning dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {{Config::get('languages')[App::getLocale()]}}
+                                {{session()->get('applocale')}}
                             </a>
                             <ul class="dropdown-menu" style="min-width: 4em !important">
                                 @foreach (Config::get('languages') as $lang => $language)
@@ -109,7 +109,7 @@
             </ul>
             <div class="nav-item dropdown mb-2">
                 <a class="btn btn-warning dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    {{Config::get('languages')[App::getLocale()]}}
+                    {{session()->get('applocale')}}
                 </a>
                 <ul class="dropdown-menu" style="min-width: 3em !important">
                     @foreach (Config::get('languages') as $lang => $language)

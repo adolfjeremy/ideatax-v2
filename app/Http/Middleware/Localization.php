@@ -17,7 +17,7 @@ class Localization
      */
     public function handle($request, Closure $next)
     {
-        if (Session()->has('applocale') AND array_key_exists(Session()->get('applocale'), config('languages'))) {
+        if (Session()->has('applocale') ) {
             App::setLocale(Session()->get('applocale'));
         }
         else {
