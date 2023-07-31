@@ -19,7 +19,11 @@
                         </div>
                         <div class="dropdown ms-3">
                             <a class="btn btn-warning dropdown-toggle text-uppercase" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {{session()->get('applocale')}}
+                                @if (session()->get('applocale'))
+                                    {{session()->get('applocale')}}
+                                @else
+                                    ID
+                                @endif
                             </a>
                             <ul class="dropdown-menu" style="min-width: 4em !important">
                                 @if (session()->get('applocale') == "id")
@@ -80,7 +84,7 @@
             </nav>
         </div>
     </div>
-    <div class="mobile_nav d-block d-xl-none shadow-lg">
+    {{-- <div class="mobile_nav d-block d-xl-none shadow-lg">
         <nav class="d-block p-1">
             <ul class="d-block mobile_top_bar">
                 <li class="nav-item py-2 d-flex align-items-center justify-content-start">
@@ -143,5 +147,5 @@
                 </li>
             </ul>
         </nav>
-    </div>
+    </div> --}}
 </header>
