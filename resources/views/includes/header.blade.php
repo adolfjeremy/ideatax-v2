@@ -17,7 +17,7 @@
                         <span class="mx-1">,</span>
                         <a href="tel:0811195708">0811 195 708</a>
                         </div>
-                        {{-- <div class="dropdown ms-3">
+                        <div class="dropdown ms-3">
                             <a class="btn btn-warning dropdown-toggle text-uppercase" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 @if (session()->get('applocale'))
                                     {{session()->get('applocale')}}
@@ -25,14 +25,14 @@
                                     ID
                                 @endif
                             </a>
-                            <ul class="dropdown-menu" style="min-width: 4em !important">
+                            {{-- <ul class="dropdown-menu" style="min-width: 4em !important">
                                 @if (session()->get('applocale') == "id")
                                     <li><a class="dropdown-item" href="{{ route('lang.switch', "en") }}">EN</a></li>
                                 @else
                                     <li><a class="dropdown-item" href="{{ route('lang.switch', "id") }}">ID</a></li>
                                 @endif
-                            </ul>
-                        </div> --}}
+                            </ul> --}}
+                        </div>
                     </div>
                 </div>
             </div>
