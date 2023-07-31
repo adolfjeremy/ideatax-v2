@@ -38,9 +38,10 @@ use App\Http\Controllers\Admin\PagesController;
 
 
 
-// Route::get('lang/{locale}', [LocalizationController::class , 'lang'])->name('locale');
-Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LocalizationController@switchLang']);
+// // Route::get('lang/{locale}', [LocalizationController::class , 'lang'])->name('locale');
+// Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LocalizationController@switchLang']);
 
+Route::get('lang/{lang}', [LocalizationController::class, 'switchLang'])->name('switchLang');
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/our-team', [AboutController::class, 'team'])->name('our-team');

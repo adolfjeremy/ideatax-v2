@@ -25,13 +25,13 @@
                                     ID
                                 @endif
                             </a>
-                            {{-- <ul class="dropdown-menu" style="min-width: 4em !important">
+                            <ul class="dropdown-menu" style="min-width: 4em !important">
                                 @if (session()->get('applocale') == "id")
-                                    <li><a class="dropdown-item" href="{{ route('lang.switch', "en") }}">EN</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('switchLang', "en") }}">EN</a></li>
                                 @else
-                                    <li><a class="dropdown-item" href="{{ route('lang.switch', "id") }}">ID</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('switchLang', "id") }}">ID</a></li>
                                 @endif
-                            </ul> --}}
+                            </ul>
                         </div>
                     </div>
                 </div>
