@@ -20,7 +20,8 @@
     margin: 0;
 }
 
-.news_body p {
+.news_body p,
+.news_body li {
     font-size: 14px;
     font-weight: 500;
     color: #111;
