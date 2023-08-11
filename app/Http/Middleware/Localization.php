@@ -23,7 +23,7 @@ class Localization
         }
         else {
             App::setLocale("id");
-            Session::put('applocale', "id");
+            Session::put('applocale', "en");
         }
         return $next($request);
     }
