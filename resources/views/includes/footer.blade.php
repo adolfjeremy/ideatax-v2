@@ -11,7 +11,7 @@
                     <a href="mailto:contact@ideatax.id"><i class="bi bi-envelope me-3"></i>contact@ideatax.id</a>
                 </div>
                 <div class="email_phone align-items-start">
-                    <a href="tel:0212528471"><i class="bi bi-telephone me-3"></i>(021) 2528471</a>
+                    <a href="tel:+622125196082"><i class="bi bi-telephone me-3"></i>+622125196082</a>
                 </div>
                 <div class="email_phone align-items-start">
                     <a href="tel:0811195708"><i class="bi bi-phone me-3"></i>0811 195 708</a>

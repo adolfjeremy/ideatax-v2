@@ -58,7 +58,7 @@
                         </div>
                         <div class="contact_container d-flex justify-content-start align-items-center gap-2 mt-3">
                             <i class="bi bi-telephone"></i>
-                            <a href="tel:0212528471">(021) 2528471</a>
+                            <a href="tel:+622125196082">+622125196082</a>
                         </div>
                         <div class="contact_container d-flex justify-content-start align-items-center gap-2 mt-3">
                             <i class="bi bi-phone"></i>

@@ -138,7 +138,14 @@
                                         <a href="{{ route('article-detail',$article->slug) }}"><img src="{{ asset("storage/" . $article->photo) }}" alt="{{ $article->title }}"></a>
                                     </div>
                                     <div class="text_container">
-                                        <a href="{{ route('article-detail',$article->slug) }}">{!! str_limit($article->title, $limit = 61) !!}</a>
+                                        <a href="{{ route('article-detail',$article->slug) }}">
+                                            @if (session()->get('applocale') == "en")
+                                                {!! str_limit($article->title_eng, $limit = 61) !!}
+                                            @endif
+                                            @if (session()->get('applocale') == "id")
+                                                {!! str_limit($article->title, $limit = 61) !!}
+                                            @endif
+                                        </a>
                                         <div class="timestamp">
                                             <a href="{{ route('article-category',$article->articleCategory->slug) }}" class="news_category">{{ $article->articleCategory->title }}</a>
                                             <span>{{ $article->created_at->format('d M, Y H:i') }} WIB</span>
