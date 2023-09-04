@@ -8,8 +8,29 @@
     <link rel="stylesheet" href="/assets/css/pages/news1.css">
 @endsection
 
+@section('meta')
+    @if(session()->get('applocale') == "en")
+        <meta name="description" content="{{ $taxUpdateCategory->description_eng }}">
+        <meta property="og:description" content="{{ $taxUpdateCategory->description_eng }}">
+        <meta property="og:title" content="{{ $taxUpdateCategory->seo_title_eng }}">
+    @endif
+        
+    @if(session()->get('applocale') == "id")
+        <meta name="description" content="{{ $taxUpdateCategory->description }}">
+        <meta property="og:description" content="{{ $taxUpdateCategory->description }}">
+        <meta property="og:title" content="{{ $taxUpdateCategory->seo_title }}">
+    @endif
+    <meta property="og:url" content="https://ideatax.id/articles">
+    <meta property="og:type" content="article">
+@endsection
+
 @section('title')
-    Tax Updates | Ideatax
+    @if (session()->get('applocale') == "en")
+        {{ $taxUpdateCategory->seo_title_eng }}
+    @endif
+    @if (session()->get('applocale') == "id")
+        {{ $taxUpdateCategory->seo_title }}
+    @endif
 @endsection
 
     

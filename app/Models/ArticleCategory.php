@@ -9,7 +9,7 @@ class ArticleCategory extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'title','slug',
+        'title','slug', 'seo_title', 'seo_title_eng', 'description', 'description_eng'
     ];
 
     public function post()

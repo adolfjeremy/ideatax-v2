@@ -8,10 +8,30 @@
     <link rel="stylesheet" href="/assets/css/pages/news1.css">
 @endsection
 
-@section('title')
-    Articles | Ideatax
+@section('meta')
+    @if(session()->get('applocale') == "en")
+        <meta name="description" content="{{ $articleCategory->description_eng }}">
+        <meta property="og:description" content="{{ $articleCategory->description_eng }}">
+        <meta property="og:title" content="{{ $articleCategory->seo_title_eng }}">
+    @endif
+        
+    @if(session()->get('applocale') == "id")
+        <meta name="description" content="{{ $articleCategory->description }}">
+        <meta property="og:description" content="{{ $articleCategory->description }}">
+        <meta property="og:title" content="{{ $articleCategory->seo_title }}">
+    @endif
+    <meta property="og:url" content="https://ideatax.id/articles">
+    <meta property="og:type" content="article">
 @endsection
 
+@section('title')
+    @if (session()->get('applocale') == "en")
+        {{ $articleCategory->seo_title_eng }}
+    @endif
+    @if (session()->get('applocale') == "id")
+        {{ $articleCategory->seo_title }}
+    @endif
+@endsection
     
 @section('content')
     <section id="categoriesList">
