@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
-Allow: /our-team/jonathan-nainggolan
-Disallow: /our-team/jonathan/  
+Disallow: https://ideatax.id/our-team/jonathan
+Allow: https://ideatax.id/our-team/jonathan-nainggolan
 Sitemap: https://ideatax.id/qbc/sitemap.xml
