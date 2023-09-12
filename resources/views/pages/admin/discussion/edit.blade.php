@@ -52,12 +52,20 @@
                                         </div>
                                         
                                         <div class="col-12 mb-3">
-                                            <label for="question">Question</label>
+                                            <label for="question">Question Id</label>
                                             <textarea name="question" id="question" class="form-control w-100" style="height: 170px">{!! $item->question !!}</textarea>
                                         </div>
                                         <div class="col-12 mb-3">
-                                            <label for="title" class="form-label">Post Title</label>
+                                            <label for="question_eng">Question Eng</label>
+                                            <textarea name="question_eng" id="question_eng" class="form-control w-100" style="height: 170px">{!! $item->question_eng !!}</textarea>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label for="title" class="form-label">Post Title Id</label>
                                             <input type="text" id="title" name="title" class="form-control w-100" value="{{ $item->title }}" required>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label for="title_e g" class="form-label">Post Title Eng</label>
+                                            <input type="text" id="title_eng" name="title_eng" class="form-control w-100" value="{{ $item->title_eng }}" required>
                                         </div>
                                         <div class="col-12 mb-3">
                                             <label for="tax_update_categories_id" class="form-label">Select Category</label>
@@ -78,8 +86,28 @@
                                             <input type="file" id="photo" name="photo" class="form-control w-100" value="{{ $item->photo }}" onchange="previewImage()">
                                         </div>
                                         <div class="col-12 mb-3">
-                                            <label for="answer">Answer</label>
+                                            <label for="answer">Answer Id</label>
                                             <textarea name="answer" id="answer">{!! $item->answer !!}</textarea>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label for="answer_eng">Answer Eng</label>
+                                            <textarea name="answer_eng" id="answer_eng">{!! $item->answer_eng !!}</textarea>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label for="seo_title" class="form-label">SEO Title Id</label>
+                                            <input type="text" id="seo_title" name="seo_title" class="form-control w-100" value="{{ $item->seo_title }}" required>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label for="seo_title_eng" class="form-label">SEO Title Eng</label>
+                                            <input type="text" id="seo_title_eng" name="seo_title_eng" class="form-control w-100" value="{{ $item->seo_title_eng }}" required>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label for="description" class="form-label">Meta Description Id</label>
+                                            <textarea name="description" id="description" class="form-control w-100" cols="30" rows="5" required>{{ $item->description }}</textarea>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label for="description_eng" class="form-label">Meta Description Eng</label>
+                                            <textarea name="description_eng" id="description_eng" class="form-control w-100" cols="30" rows="5" required>{{ $item->description_eng }}</textarea>
                                         </div>
                                         <div class="col-12">
                                             <button type="submit" class="btn btn-warning d-block w-100">Post Answer</button>
@@ -99,6 +127,7 @@
     <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
     <script>
         CKEDITOR.replace('answer');
+        CKEDITOR.replace('answer_eng');
     </script>
     <script>
         function previewImage() {

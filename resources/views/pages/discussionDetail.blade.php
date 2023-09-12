@@ -5,8 +5,29 @@
     <link rel="stylesheet" href="/assets/css/pages/newsDetail1.css">
 @endsection
 
+@section('meta')
+    @if(session()->get('applocale') == "en")
+        <meta name="description" content="{{ $customerQuestion->description_eng }}">
+        <meta property="og:description" content="{{ $customerQuestion->description_eng }}">
+        <meta property="og:title" content="{{ $customerQuestion->SEO_title_eng }}">
+    @endif
+        
+    @if(session()->get('applocale') == "id")
+        <meta name="description" content="{{ $customerQuestion->description }}">
+        <meta property="og:description" content="{{ $customerQuestion->description }}">
+        <meta property="og:title" content="{{ $customerQuestion->seo_title }}">
+    @endif
+    <meta property="og:url" content="https://ideatax.id/articles">
+    <meta property="og:type" content="article">
+@endsection
+
 @section('title')
-    {{ $customerQuestion->title }} | Ideatax
+    @if (session()->get('applocale') == "en")
+        {{ $customerQuestion->seo_title_eng }}
+    @endif
+    @if (session()->get('applocale') == "id")
+        {{ $customerQuestion->seo_title }}
+    @endif
 @endsection
 
     
@@ -46,35 +67,47 @@
                         <span class="timestamp">{{ $customerQuestion->created_at->format('d M, Y H:i') }} WIB</span>
                     </div>
                     <div class="row mt-2 news_body">
-                        <h5>Question by {{ $customerQuestion->name }} :</h5>
-                        <p>{!! $customerQuestion->question !!}</p>
+                        @if (session()->get('applocale') == "en")
+                            <h5>Question by {{ $customerQuestion->name }} :</h5>
+                            <p>{!! $customerQuestion->question_eng !!}</p>
+                        @endif
+                        @if (session()->get('applocale') == "id")
+                            <h5>Pertanyaan oleh {{ $customerQuestion->name }} :</h5>
+                            <p>{!! $customerQuestion->question !!}</p>
+                        @endif                        
                     </div>
                     <div class="row mt-1">
-                        <h5>Answer:</h5>
-                        <div class="news_body">{!! $customerQuestion->answer !!}</div>
+                         @if (session()->get('applocale') == "en")
+                            <h5>Answer:</h5>
+                            <div class="news_body">{!! $customerQuestion->answer_eng !!}</div>
+                        @endif
+                        @if (session()->get('applocale') == "id")
+                            <h5>Jawaban:</h5>
+                            <div class="news_body">{!! $customerQuestion->answer_eng !!}</div>
+                        @endif    
                     </div>
                 </div>
                 <div id="sideNews" class="col-12 col-lg-4">
                     <div class="row inquiry-form">
-                        <div id="customerQuestions" class="col-12">
+                         <div id="customerQuestions" class="col-12">
                             <div class="row text-center header">
-                                <h2 class="py-3">Inquiry Form</h2>
+                                <h2 class="py-3">{{ __('home.question') }}</h2>
                             </div>
                             <div class="row d-flex justify-content-center">
                                 <form action="{{ route('update-save') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="col-12 my-3">
-                                        <input type="text" id="name" name="name" class="form-control w-100" placeholder="Name" required>
+                                        <input type="text" id="name" name="name" class="form-control w-100" placeholder="{{ __('home.name') }}" required>
                                     </div>
                                     <div class="col-12 mb-3">
                                         <input type="email" id="email" name="email" class="form-control w-100" placeholder="Email" required>
                                     </div>
                                     <input type="hidden" id="status" name="status" class="form-control w-100" value="UNANSWERED" required>
                                     <div class="col-12 mb-3 d-flex flex-column">
-                                        <textarea name="question" id="editor" class="form-control w-100" placeholder="Question" required></textarea>
+                                        <textarea name="question" id="editor" class="form-control w-100" placeholder="{{ __('home.ask') }}" required></textarea>
                                     </div>
                                     <div class="col-12 mb-3">
-                                        <button type="submit" class="btn btn-warning d-block w-100">Submit</button>
+                                        <button type="submit" class="btn btn-warning d-block w-100">{{ __('home.askButton') }}</button>
                                     </div>
                                 </form>
                             </div>
@@ -84,22 +117,34 @@
             </div>
             <div id="newsContainer" class="row">
                 <div class="col-12">
-                    <div class="row mt-3">
+                    <div class="row mt-5">
                         <h2>Latest Updates</h2>
                     </div>
                     <div class="row mb-4">
                         <div class="news_list">
+                            @php $incrementCategory = 0 @endphp
                             @forelse ($taxUpdates as $taxUpdate)
                                 <div class="news_item">
                                     <div class="news_image_container">
                                         <a href="{{ route('tax-update-detail',$taxUpdate->slug) }}">
-                                            <img src="{{ asset("storage/" . $taxUpdate->photo) }}" alt="">
+                                            <img src="{{ asset("storage/" . $taxUpdate->photo) }}" alt="{{ $taxUpdate->title }}">
                                         </a>
                                     </div>
                                     <div class="text_container">
                                         <h3>
-                                            <a href="{{ route('tax-update-detail',$taxUpdate->slug) }}">{!! str_limit($taxUpdate->title,
-                                            $limit = 61) !!}</a>
+                                            <a title="@if (session()->get('applocale') == "en")
+                                                    {{ $taxUpdate->title_eng }}
+                                                @endif
+                                                @if (session()->get('applocale') == "id")
+                                                    {{ $taxUpdate->title }}
+                                                @endif" href="{{ route('tax-update-detail',$taxUpdate->slug) }}">
+                                                @if (session()->get('applocale') == "en")
+                                                    {!! str_limit($taxUpdate->title_eng,$limit = 61) !!}
+                                                @endif
+                                                @if (session()->get('applocale') == "id")
+                                                    {!! str_limit($taxUpdate->title,$limit = 61) !!}
+                                                @endif
+                                            </a>
                                         </h3>
                                         <div class="timestamp">
                                             <a href="{{  route('tax-update-category',$taxUpdate->taxUpdateCategory->slug)  }}" class="news_category">{{ $taxUpdate->taxUpdateCategory->title }}</a>
@@ -109,7 +154,7 @@
                                 </div>
                             @empty
                                 <div class="col-12">
-                                    No Other Updates
+                                    There Is No Other Updates
                                 </div>
                             @endforelse
                         </div>
@@ -128,11 +173,16 @@
                             @forelse ($customerQuestions as $customerQuestion)
                                 <div class="discussion_item">
                                     <div class="image-container w-100">
-                                        <a href=""><img src="{{ asset("storage/" . $customerQuestion->photo) }}" alt="" class="w-100"></a>
+                                        <a href="{{ route('tax-consulting', $customerQuestion->slug) }}"><img src="{{ asset("storage/" . $customerQuestion->photo) }}" alt="" class="w-100"></a>
                                     </div>
                                     <div class="caption_container px-2">
                                         <h3>
-                                            <a href="">{{ $customerQuestion->title }}</a>
+                                            @if (session()->get('applocale') == "en")
+                                            <a href="{{ route('tax-consulting', $customerQuestion->slug) }}">{!! str_limit($customerQuestion->title_eng,$limit = 61) !!}</a>
+                                            @endif
+                                            @if (session()->get('applocale') == "id")
+                                            <a href="{{ route('tax-consulting', $customerQuestion->slug) }}">{!! str_limit($customerQuestion->title,$limit = 61) !!}</a>
+                                            @endif
                                         </h3>
                                         <div class="timestamp">
                                             <a href="{{ route('tax-update-category',$customerQuestion->taxUpdateCategory->slug) }}" class="text-warning">{{ $customerQuestion->taxUpdateCategory->title }}</a>

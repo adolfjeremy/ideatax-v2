@@ -1,15 +1,15 @@
 @extends('layouts.admin')
 
 @section('title')
-    Ideatax | Discussion
+    Ideatax | Tax Consultation
 @endsection
 
 @section('content')
     <section class="section-content">
         <div class="container-fluid">
             <div class="dashboard-heading">
-                <h2 class="dashboard-title">Discussion</h2>
-                <p class="dashboard-subtitle">Manage Customer Question</p>
+                <h2 class="dashboard-title">Tax Consultation</h2>
+                <p class="dashboard-subtitle">Manage Tax Consultation</p>
                 <div class="row">
                     <div class="col-12">
                         <a href="{{ route('discussion.index') }}" class="btn btn-warning">Unanswered Questions</a>

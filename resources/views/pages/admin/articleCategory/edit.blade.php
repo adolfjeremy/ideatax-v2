@@ -47,7 +47,7 @@
                                         </div>
                                         <div class="col-12 mb-3">
                                             <label for="description_eng" class="form-label">Meta Description Eng</label>
-                                            <textarea name="description_eng" id="description_eng" class="form-control w-100" cols="30" rows="5" required></textarea>
+                                            <textarea name="description_eng" id="description_eng" class="form-control w-100" cols="30" rows="5" required>{{ $item->description_eng }}</textarea>
                                         </div>
                                         <div class="col-12">
                                             <button type="submit" class="btn btn-warning d-block w-100">Save Article Category</button>

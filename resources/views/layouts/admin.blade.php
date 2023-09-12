@@ -29,7 +29,7 @@
                         <a href="{{ route('compro.index') }}" class="list-group-item list-group-item-action{{ (request()->is('admin/compro*') ? " active" : "") }}">Company Profile</a>
                         <a href="{{ route('event.index') }}" class="list-group-item list-group-item-action{{ (request()->is('admin/event*') ? " active" : "") }}">Tax Event</a>
                         <a href="{{ route('update.index') }}" class="list-group-item list-group-item-action{{ (request()->is('admin/update*') ? " active" : "") }}">Tax Update</a>
-                        <a href="{{ route('discussion.index') }}" class="list-group-item list-group-item-action{{ (request()->is('admin/discussion*') ? " active" : "") }}">Discussion</a>
+                        <a href="{{ route('discussion.index') }}" class="list-group-item list-group-item-action{{ (request()->is('admin/discussion*') ? " active" : "") }}">Tax Consultation</a>
                         <a href="{{ route('services.index') }}" class="list-group-item list-group-item-action{{ (request()->is('admin/services*') ? " active" : "") }}">Services</a>
                         <a href="{{ route('team.index') }}" class="list-group-item list-group-item-action{{ (request()->is('admin/team*') ? " active" : "") }}">Team</a>
                         @can('super_admin')
