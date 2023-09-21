@@ -183,10 +183,10 @@
                                     <h3>
                                         <a href="{{ route('article-detail',$articleItem->slug) }}">
                                             @if (session()->get('applocale') == "en")
-                                                {!! str_limit($article->title_eng, $limit = 61) !!}
+                                                {!! str_limit($articleItem->title_eng, $limit = 61) !!}
                                             @endif
                                             @if (session()->get('applocale') == "id")
-                                                {!! str_limit($article->title, $limit = 61) !!}
+                                                {!! str_limit($articleItem->title, $limit = 61) !!}
                                             @endif
                                         </a>
                                     </h3>

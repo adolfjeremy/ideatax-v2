@@ -130,7 +130,14 @@
                                     </div>
                                     <div class="text_container">
                                         <h3>
-                                            <a href="{{ route('article-detail',$article->slug) }}">{!! str_limit($article->title, $limit = 61) !!}</a>
+                                            <a href="{{ route('article-detail',$article->slug) }}">
+                                                @if (session()->get('applocale') == "en")
+                                                    {!! str_limit($article->title_eng, $limit = 61) !!}
+                                                @endif
+                                                @if (session()->get('applocale') == "id")
+                                                    {!! str_limit($article->title, $limit = 61) !!}
+                                                @endif
+                                            </a>
                                         </h3>
                                         <div class="timestamp">
                                             <a href="{{ route('article-category',$article->articleCategory->slug) }}" class="news_category">{{ $article->articleCategory->title }}</a>
