@@ -115,7 +115,6 @@
 .accordion h3 button {
     font-size: 28px;
     font-weight: 600;
-    text-transform: uppercase;
 }
 
 .accordion-button:not(.collapsed) {
