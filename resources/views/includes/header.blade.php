@@ -124,13 +124,18 @@
                 <ul class="dropdown-menu" style="min-width: 4em !important">
                     @if (session()->get('applocale') == "id")
                         <li>
-                            <a class="dropdown-item" href="{{ route('switchLang', "en") }}">
-                                <span>EN</span>
-                                <img src="/assets/images/gb.svg" alt="">
+                            <a class="dropdown-item d-flex align-items-center justify-content-between" href="{{ route('switchLang', "en") }}">
+                                <span>English</span>
+                                <img class="lang-flag shadow ms-1" src="/assets/images/gb.svg" alt="english flag">
                             </a>
                         </li>
                     @else
-                        <li><a class="dropdown-item" href="{{ route('switchLang', "id") }}">ID</a></li>
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center justify-content-between" href="{{ route('switchLang', "id") }}">
+                                <span>Indonesia</span>
+                                <img class="lang-flag shadow ms-1" src="/assets/images/id.svg" alt="english flag">
+                            </a>
+                        </li>
                     @endif
                 </ul>
             </div>
