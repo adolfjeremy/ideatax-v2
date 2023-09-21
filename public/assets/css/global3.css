@@ -33,6 +33,10 @@ main {
     position: relative;
 }
 
+.lang-flag {
+    width: 30px;
+}
+
 @keyframes rotateWa {
     from {
         transform: rotate(0deg);
