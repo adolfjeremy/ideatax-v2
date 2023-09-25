@@ -7,6 +7,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\ArticleCategoryController;
 use App\Http\Controllers\Admin\ArticleController as AdminArticleController;
+use App\Http\Controllers\Admin\CareersAdminController;
 use App\Http\Controllers\Admin\CompanyProfileController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ContactController;
@@ -24,6 +25,7 @@ use App\Http\Controllers\Admin\TaxUpdateController as AdminTaxUpdateController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Admin\PagesController;
+use App\Http\Controllers\CareersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,6 +62,9 @@ Route::get('/articles/category/{id}', [ArticleController::class, 'sortByCategory
 Route::get('/articles/event/{id}', [ArticleController::class, 'taxEvent'])->name('tax-event');
 Route::get('/articles/{id}', [ArticleController::class, 'detail'])->name('article-detail');
 
+Route::get('/careers', [CareersController::class, 'index'])->name('careers');
+Route::get('/careers/{id}', [CareersController::class, 'show'])->name('careers-detail');
+
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 Route::get('/contact/send-mail', [ContactController::class, 'sendMail'])->name('send-mail');
@@ -76,6 +81,7 @@ Route::prefix('admin')
 ->middleware(['auth', 'admin'])
 ->group(function() {
     Route::resource('pages', PagesController::class);
+    Route::resource('career', CareersAdminController::class);
     Route::resource('services', AdminServicesController::class);
     Route::resource('category', NewsCategoryController::class);
     Route::resource('article-category', ArticleCategoryController::class);

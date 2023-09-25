@@ -7,4 +7,5 @@ return [
     'updates' => 'Pembaruan Pajak',
     'articles' => 'Artikel',
     'contact' => 'Hubungi Kami',
+    'karir' => 'Karir'
 ];

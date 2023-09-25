@@ -1,0 +1,78 @@
+.career_page .heading {
+    margin-top: 5rem;
+}
+
+.career_page h1 {
+    font-weight: 600;
+    line-height: 58px;
+    letter-spacing: 0.5px;
+    color: #272e45;
+}
+
+.career_page p {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+}
+
+.job_openings {
+    background-color: #1e27391a;
+    padding: 40px 0;
+}
+
+.card {
+    border-radius: 3px;
+    padding: 40px 30px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: 2px 1px 15px 1px rgb(168, 166, 166);
+    transition: ease-in 100ms;
+}
+
+.card h2 {
+    font-size: 18px;
+    text-align: left;
+    font-weight: 600;
+    color: #272e45;
+}
+
+.card span {
+    font-size: 13px;
+    font-weight: 600;
+    margin: 15px 0 0 0;
+    color: rgb(17, 17, 17);
+}
+
+.career-detail h2 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 38px;
+    margin: 0 0 23px 0;
+    padding: 10px 0 0 0;
+    color: #272e45;
+}
+
+.career-detail p,
+.career-detail li {
+    line-height: 24px;
+    font-size: 15px;
+    margin: 0;
+    font-family: "Lato", sans-serif;
+}
+
+::placeholder,
+label {
+    font-family: "Lato", sans-serif;
+    color: rgb(153, 153, 153);
+}
+
+.apply-form button {
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+}

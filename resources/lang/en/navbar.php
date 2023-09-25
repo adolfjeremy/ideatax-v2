@@ -7,4 +7,5 @@ return [
     'updates' => 'Updates',
     'articles' => 'Articles',
     'contact' => 'Contact Us',
+    'career' => 'Career'
 ];
