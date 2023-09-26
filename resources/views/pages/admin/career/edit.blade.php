@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Ideatax | Create New Article
+    Ideatax | Edit Job Opening
 @endsection
 
 @section('content')
@@ -61,7 +61,7 @@
                                         </div>
                                         <div class="col-12 mb-3">
                                             <label for="skill" class="form-label">Required Skills Id</label>
-                                            <textarea name="skill" id="skill" class="form-control w-100" cols="20" rows="5">{!! $item->skill !!}/textarea>
+                                            <textarea name="skill" id="skill" class="form-control w-100" cols="20" rows="5">{!! $item->skill !!}</textarea>
                                             <small>*leave blank if not necessary</small>
                                         </div>
                                         <div class="col-12 mb-3">
@@ -92,7 +92,7 @@
                                             </textarea>
                                         </div>
                                         <div class="col-12">
-                                            <button type="submit" class="btn btn-warning d-block w-100">Post Article</button>
+                                            <button type="submit" class="btn btn-warning d-block w-100">Post</button>
                                         </div>
                                     </form>
                                 </div>

@@ -6,6 +6,7 @@ use App\Models\Career;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CareerRequest;
 use Yajra\DataTables\Facades\DataTables;
 
 class CareersAdminController extends Controller
@@ -61,7 +62,7 @@ class CareersAdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) {
+    public function store(CareerRequest $request) {
         $data = $request->all();
 
         $data['slug'] = Str::slug($request->title);
@@ -103,7 +104,7 @@ class CareersAdminController extends Controller
      * @param  \App\Models\career  $career
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CareerRequest $request, $id)
     {
         $data = $request->all();
 

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Ideatax | Create New Article
+    Ideatax | Create New Job Opening
 @endsection
 
 @section('content')
@@ -85,7 +85,7 @@
                                             <textarea name="description_eng" id="description_eng" class="form-control w-100" cols="30" rows="5"></textarea>
                                         </div>
                                         <div class="col-12">
-                                            <button type="submit" class="btn btn-warning d-block w-100">Post Article</button>
+                                            <button type="submit" class="btn btn-warning d-block w-100">Post</button>
                                         </div>
                                     </form>
                                 </div>
