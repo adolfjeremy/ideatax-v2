@@ -40,7 +40,6 @@ class CareerApplicationMail extends Mailable
      */
     public function build()
     {
-        $file = asset(`storage/$this->resume`);
         return $this->view('pages.applicantMailView')
                     ->subject("(NO REPLY) Job application - ($this->position)");
     }
