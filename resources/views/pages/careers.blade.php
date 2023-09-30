@@ -1,7 +1,36 @@
 @extends('layouts.main')
 
+@section('canonical')
+    <link rel="canonical" href="https://ideatax.id/careers">
+@endsection
+
 @section('page-style')
     <link rel="stylesheet" href="/assets/css/pages/careers.css">
+@endsection
+
+@section('meta')
+    @if(session()->get('applocale') == "en")
+        <meta name="description" content="{{ $page->description_eng }}">
+        <meta property="og:description" content="{{ $page->description_eng }}">
+        <meta property="og:title" content="{{ $page->SEO_title_eng }}">
+    @endif
+        
+    @if(session()->get('applocale') == "id")
+        <meta name="description" content="{{ $page->description }}">
+        <meta property="og:description" content="{{ $page->description }}">
+        <meta property="og:title" content="{{ $page->SEO_title }}">
+    @endif
+    <meta property="og:url" content="https://ideatax.id/careers">
+    <meta property="og:type" content="careers">
+@endsection
+
+@section('title')
+    @if (session()->get('applocale') == "en")
+        {{ $page->SEO_title_eng }}
+    @endif
+    @if (session()->get('applocale') == "id")
+        {{ $page->SEO_title }}
+    @endif
 @endsection
 
 @section('content')

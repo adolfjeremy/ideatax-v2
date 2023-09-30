@@ -15,7 +15,7 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        $services = Services::orderBy('order', 'ASC')->get();
+        $services = Services::orderBy('id', 'ASC')->get();
         $page = Page::findOrFail(3);
         return view('pages.ourServices',[
             'services' => $services,
