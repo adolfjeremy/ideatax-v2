@@ -53,6 +53,8 @@ class ServicesController extends Controller
         $data['slug'] = Str::slug($request->title);
         $data['excerpt'] = Str::limit($request->description, 130);
         $data['excerpt_eng'] = Str::limit($request->description_eng, 130);
+        $servicesCount = Services::all()->count();
+        $data['order'] = $servicesCount + 1;        
 
         Services::create($data);
 
@@ -62,7 +64,6 @@ class ServicesController extends Controller
     public function edit($id)
     {
         $item = Services::findOrFail($id);
-
         return view('pages.admin.services.edit',[
             'item' => $item
         ]);
@@ -70,8 +71,13 @@ class ServicesController extends Controller
 
     public function update(ServicesRequest $request, $id)
     {
+
         $data = $request->all();
         $data['slug'] = Str::slug($request->title);
+
+        $item = Services::findOrFail($id);
+
+        
         if($request->description)
         {   
             $data['excerpt'] = Str::limit($request->description, 130);
@@ -82,7 +88,15 @@ class ServicesController extends Controller
             $data['excerpt_eng'] = Str::limit($request->description_eng, 130);
         }
 
-        $item = Services::findOrFail($id);
+        if($request->order)
+        {
+            $sameOrder = Services::where('order', $request->order)->first();
+            if($sameOrder->order)
+            {
+                $sameOrder->update(['order' => $item->order]);
+            }
+        }
+
         $item->update($data);
 
         return redirect()->route('services.index');

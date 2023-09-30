@@ -21,7 +21,7 @@
                     <table class="table table-hover scroll-horizontal-vertical w-100" id="crudTable">
                         <thead>
                             <tr>
-                                <th>id</th>
+                                <th>No.</th>
                                 <th>Title</th>
                                 <th>Slug</th>
                                 <th>Action</th>
@@ -46,7 +46,7 @@
                 url: '{!! url()->current() !!}',
             },
             columns: [
-                { data: 'id', name: 'id' },
+                { data: 'order', name: 'order' },
                 { data: 'title', name: 'title' },
                 { data: 'slug', name: 'slug' },
                 {

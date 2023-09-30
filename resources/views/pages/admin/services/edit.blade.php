@@ -29,8 +29,13 @@
                                     <form action="{{ route('services.update',$item->id) }}" method="POST" enctype="multipart/form-data">
                                         @method("PUT")
                                         @csrf
+                                        <input type="hidden" name="currentOrder" class="form-control w-100" value="{{ $item->order }}" required>
                                         <div class="col-12 mb-3">
-                                            <label for="Name" class="form-label">Service Name Id</label>
+                                            <label for="order" class="form-label">No</label>
+                                            <input type="text" id="order" name="order" class="form-control w-100" value="{{ $item->order }}" required>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label for="title" class="form-label">Service Name Id</label>
                                             <input type="text" id="title" name="title" class="form-control w-100" value="{{ $item->title }}" required>
                                         </div>
                                         <div class="col-12 mb-3">
