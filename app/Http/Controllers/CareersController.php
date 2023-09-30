@@ -18,7 +18,7 @@ class CareersController extends Controller
         ]);
     }
 
-    public function show($id)
+    public function detail($id)
     {
         $career = Career::where('slug', $id)->firstOrFail();
         return view('pages.careerDetail', [

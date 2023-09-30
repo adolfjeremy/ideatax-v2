@@ -65,7 +65,7 @@ Route::get('/articles/event/{id}', [ArticleController::class, 'taxEvent'])->name
 Route::get('/articles/{id}', [ArticleController::class, 'detail'])->name('article-detail');
 
 Route::get('/careers', [CareersController::class, 'index'])->name('careers');
-Route::get('/careers/{id}', [CareersController::class, 'show'])->name('careers-detail');
+Route::get('/careers/{id}', [CareersController::class, 'detail'])->name('careers-detail');
 Route::post('/careers', [ApplicantController::class, 'store'])->name('careers-post');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
