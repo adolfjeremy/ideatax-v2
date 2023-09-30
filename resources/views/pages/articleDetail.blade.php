@@ -94,17 +94,19 @@
                     </div>
                 </div>
                 <div id="sideNews" class="col-12 col-lg-4">
-                    <div class="col-12 d-block d-lg-none">
-                        <div class="row mt-4 mb-1">
-                            <h2>Author</h2>
+                    @if ($article->author_id)
+                        <div class="col-12 d-block d-lg-none">
+                            <div class="row mt-4 mb-1">
+                                <h2>Author</h2>
+                            </div>
+                            <div class="row author">
+                                <img src="{{ asset("storage/" . $article->author->image) }}"class="author_image" alt="author image">
+                                <h3>{{$article->author->name}}</p>
+                                <p>{{ $article->author->position }}</p>
+                                <p>{{ $article->author->email }}</p>
+                            </div>
                         </div>
-                        <div class="row author">
-                            <img src="{{ asset("storage/" . $article->author->image) }}"class="author_image" alt="author image">
-                            <h3>{{$article->author->name}}</p>
-                            <p>{{ $article->author->position }}</p>
-                            <p>{{ $article->author->email }}</p>
-                        </div>
-                    </div>
+                    @endif
                     <div class="col-12">
                         <div class="row py-1">
                             <h2>Latest Event</h2>
@@ -131,17 +133,19 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 d-none d-lg-block">
-                        <div class="row mt-4 mb-1">
-                            <h2>Author</h2>
+                    @if ($article->author_id)
+                        <div class="col-12 d-none d-lg-block">
+                            <div class="row mt-4 mb-1">
+                                <h2>Author</h2>
+                            </div>
+                            <div class="row author">
+                                <img src="{{ asset("storage/" . $article->author->image) }}"class="author_image" alt="author image">
+                                <h3>{{$article->author->name}}</p>
+                                <p>{{ $article->author->position }}</p>
+                                <p>{{ $article->author->email }}</p>
+                            </div>
                         </div>
-                        <div class="row author">
-                            <img src="{{ asset("storage/" . $article->author->image) }}"class="author_image" alt="author image">
-                            <h3>{{$article->author->name}}</p>
-                            <p>{{ $article->author->position }}</p>
-                            <p>{{ $article->author->email }}</p>
-                        </div>
-                    </div>
+                    @endif
                     <div class="col-12 related">
                         <div class="row mt-4 mb-1">
                             <h2>Related Article</h2>

@@ -221,15 +221,6 @@ main {
     color: #ffc107 !important;
 }
 
-/* .author {
-    font-size: 14px;
-    margin: 0;
-    margin-bottom: 20px;
-    padding: 0;
-    font-weight: 400;
-    font-family: "Lato", sans-serif;
-} */
-
 .author_image {
     width: 150px;
 }
@@ -244,6 +235,6 @@ main {
 .author p {
     font-size: 15px;
     font-weight: 400;
-    margin: 0;
+    margin: 4px 0 0 0;
     color: gray;
 }
