@@ -23,7 +23,7 @@ class ApplicantController extends Controller
         $data = $request->all();
         $data['resume'] = $request->file('resume')->store('applicant');
         $position = Career::where('id', $data['career_id'])->firstOrFail();
-        Mail::to("adolf.jer@gmail.com")->send(new CareerApplicationMail($data['name'], $position->title, $data['email'], $data['phone'], $data['coverLetter'], $data['resume']));
+        Mail::to("consultant@ideatax.id")->send(new CareerApplicationMail($data['name'], $position->title, $data['email'], $data['phone'], $data['coverLetter'], $data['resume']));
         Applicant::create($data);
 
         return redirect()->back()->with([
