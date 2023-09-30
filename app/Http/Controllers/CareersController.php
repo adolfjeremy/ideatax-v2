@@ -11,7 +11,7 @@ class CareersController extends Controller
     public function index()
     {
         $careers = Career::all();
-        $page = Page::findOrFail(8);
+        $page = Page::findOrFail(7);
         return view('pages.careers', [
             'careers' => $careers,
             'page' => $page
