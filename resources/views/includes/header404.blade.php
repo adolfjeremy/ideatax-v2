@@ -46,9 +46,6 @@
                         <a href="{{ route('articles') }}" class="nav-link p-0{{ (request()->is('articles*') ? " active" : "") }}">articles</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('careers') }}" class="nav-link p-0{{ (request()->is('careers*') ? " active" : "") }}">career</a>
-                    </li>
-                    <li class="nav-item">
                         <a href="{{ route('contact') }}" class="nav-link p-0{{ (request()->is('contact*') ? " active" : "") }}">contact us</a>
                     </li>
                 </ul>
@@ -116,9 +113,6 @@
                 </li>
                 <li class="nav-item py-2">
                     <a href="{{ route('articles') }}" class="nav-link{{ (request()->is('articles*') ? " active" : "") }}">articles</a>
-                </li>
-                <li class="nav-item py-2">
-                    <a href="{{ route('careers') }}" class="nav-link{{ (request()->is('careers*') ? " active" : "") }}">career</a>
                 </li>
                 <li class="nav-item py-2">
                     <a href="{{ route('contact') }}" class="nav-link{{ (request()->is('contact*') ? " active" : "") }}">contact us</a>
