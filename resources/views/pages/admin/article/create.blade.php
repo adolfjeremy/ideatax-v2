@@ -58,6 +58,15 @@
                                             <input type="file" id="photo" name="photo" class="form-control w-100" onchange="previewImage()" required>
                                         </div>
                                         <div class="col-12 mb-3">
+                                            <label for="author_id" class="form-label">Select Author</label>
+                                            <select name="author_id" class="form-select">
+                                                <option value="">Select Author</option>
+                                                @foreach ($authors as $author)
+                                                    <option value="{{ $author->id }}">{{ $author->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="col-12 mb-3">
                                             <label for="body">Article Body Id</label>
                                             <textarea name="body" id="editor"></textarea>
                                         </div>

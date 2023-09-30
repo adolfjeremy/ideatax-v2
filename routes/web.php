@@ -7,6 +7,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\ArticleCategoryController;
 use App\Http\Controllers\Admin\ArticleController as AdminArticleController;
+use App\Http\Controllers\Admin\AuthorController;
 use App\Http\Controllers\Admin\CareersAdminController;
 use App\Http\Controllers\Admin\CompanyProfileController;
 use App\Http\Controllers\LoginController;
@@ -94,6 +95,7 @@ Route::prefix('admin')
     Route::resource('discussion', DiscussionController::class);
     Route::resource('compro', CompanyProfileController::class);
     Route::resource('team', TeamController::class);
+    Route::resource('author', AuthorController::class);
     Route::get('/answered', [DiscussionController::class, 'answered'])->name('answered');
 });
 

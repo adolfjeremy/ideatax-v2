@@ -9,12 +9,29 @@ class Article extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'title','slug', 'photo', 'body', 'article_categories_id', 'user_id', 'title_eng', 'SEO_title', 'SEO_title_eng', 'body_eng', 'description', 'description_eng'
+        'title',
+        'slug', 
+        'photo', 
+        'body', 
+        'article_categories_id', 
+        'user_id', 
+        'title_eng', 
+        'SEO_title', 
+        'SEO_title_eng', 
+        'body_eng', 
+        'description', 
+        'description_eng', 
+        'author_id'
     ];
 
     public function articleCategory()
     {
         return $this->belongsTo(ArticleCategory::class, "article_categories_id", "id");
+    }
+
+    public function author()
+    {
+        return $this->belongsTo(Author::class, "author_id", "id");
     }
 
     public function user()

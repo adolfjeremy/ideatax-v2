@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ArticleRequest;
 use App\Models\Article;
 use App\Models\ArticleCategory;
+use App\Models\Author;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Facades\Storage;
@@ -52,9 +53,11 @@ class ArticleController extends Controller
 
     public function create() {
         $articleCategories = ArticleCategory::all();
+        $authors = Author::all();
 
         return view('pages.admin.article.create', [
-            'articleCategories' => $articleCategories
+            'articleCategories' => $articleCategories,
+            'authors' => $authors,
         ]);
     }
 
@@ -77,10 +80,12 @@ class ArticleController extends Controller
     public function edit($id)
     {
         $item = Article::findOrFail($id);
+        $authors = Author::all();
         $articleCategories = ArticleCategory::all();
 
         return view('pages.admin.article.edit',[
             'item' => $item,
+            'authors' => $authors,
             'articleCategories' => $articleCategories,
         ]);
     }
@@ -91,7 +96,6 @@ class ArticleController extends Controller
 
         $item = Article::findOrFail($id);
 
-        
         $data['user_id'] = Auth::user()->id;
 
         if($request->file('photo'))

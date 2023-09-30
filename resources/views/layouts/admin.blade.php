@@ -24,6 +24,7 @@
                     <div class="list-group list-group-flush">
                         <a href="{{ route("pages.index") }}" class="list-group-item list-group-item-action{{ (request()->is('admin/pages*') ? " active" : "") }}">Static Pages</a>
                         <a href="{{ route("career.index") }}" class="list-group-item list-group-item-action{{ (request()->is('admin/career*') ? " active" : "") }}">Career</a>
+                        <a href="{{ route("author.index") }}" class="list-group-item list-group-item-action{{ (request()->is('admin/author*') ? " active" : "") }}">Author</a>
                         <a href="{{ route('article-category.index') }}" class="list-group-item list-group-item-action{{ (request()->is('admin/article-category*') ? " active" : "") }}">Article Category</a>
                         <a href="{{ route('tax-update-category.index') }}" class="list-group-item list-group-item-action {{ (request()->is('admin/tax-update-category*') ? " active" : "") }}">Tax Update Category</a>
                         <a href="{{ route('articles.index') }}" class="list-group-item list-group-item-action{{ (request()->is('admin/articles*') ? " active" : "") }}">Article</a>

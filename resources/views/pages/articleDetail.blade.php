@@ -81,11 +81,6 @@
                             <a href="{{ route('article-category',$article->articleCategory->slug) }}" class="text-warning fs-6 fw-bolder">{{ $article->articleCategory->title }}</a>
                             <span class="text-dark fw-normal timestamp">- {{ $article->created_at->format('d M, Y H:m') }} WIB</span>
                         </div>
-                        <div class="col-12">
-                            @if ($article->user)
-                            <p class="author">{{ __('home.written') }} {{ $article->user->name }}</p>
-                            @endif
-                        </div>
                     </div>
                     <div class="row">
                         <div class="news_body">
@@ -99,6 +94,17 @@
                     </div>
                 </div>
                 <div id="sideNews" class="col-12 col-lg-4">
+                    <div class="col-12 d-block d-lg-none">
+                        <div class="row mt-4 mb-1">
+                            <h2>Author</h2>
+                        </div>
+                        <div class="row author">
+                            <img src="{{ asset("storage/" . $article->author->image) }}"class="author_image" alt="author image">
+                            <h3>{{$article->author->name}}</p>
+                            <p>{{ $article->author->position }}</p>
+                            <p>{{ $article->author->email }}</p>
+                        </div>
+                    </div>
                     <div class="col-12">
                         <div class="row py-1">
                             <h2>Latest Event</h2>
@@ -123,6 +129,17 @@
                                 </div>
                                 @endforelse
                             </div>
+                        </div>
+                    </div>
+                    <div class="col-12 d-none d-lg-block">
+                        <div class="row mt-4 mb-1">
+                            <h2>Author</h2>
+                        </div>
+                        <div class="row author">
+                            <img src="{{ asset("storage/" . $article->author->image) }}"class="author_image" alt="author image">
+                            <h3>{{$article->author->name}}</p>
+                            <p>{{ $article->author->position }}</p>
+                            <p>{{ $article->author->email }}</p>
                         </div>
                     </div>
                     <div class="col-12 related">

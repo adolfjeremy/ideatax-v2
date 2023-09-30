@@ -29,7 +29,7 @@ class ArticleController extends Controller
     public function detail($id)
     {
         $articleCategories = ArticleCategory::all();
-        $article = Article::where('slug', $id)->firstOrFail();
+        $article = Article::where('slug', $id)->with('author')->firstOrFail();
         $articles = Article::where('id', '!=' ,$article->id)->latest()->take(10)->get();
         $taxEvents = TaxEvent::latest()->take(5)->get();
         

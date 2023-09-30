@@ -54,6 +54,15 @@
                                             </select>
                                         </div>
                                         <div class="col-12 mb-3">
+                                            <label for="author_id" class="form-label">Select Author</label>
+                                            <select name="author_id" value class="form-select">
+                                                <option value="">Select Author</option>
+                                                @foreach ($authors as $author)
+                                                    <option value="{{ $author->id }}" {{ $item->author_id == $author->id ? 'selected' : "" }}>{{ $author->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="col-12 mb-3">
                                             <label for="photo" class="form-label">Thumbnail</label>
                                             @if ($item->photo)
                                                 <img src="{{ asset("storage/" . $item->photo) }}" class="img-preview img-fluid col-sm-5 my-2 d-block">

@@ -23,26 +23,26 @@
     padding: 40px 0;
 }
 
-.card {
+.career_item {
     border-radius: 3px;
     padding: 40px 30px;
     text-decoration: none;
     cursor: pointer;
 }
 
-.card:hover {
+.career_item:hover {
     box-shadow: 2px 1px 15px 1px rgb(168, 166, 166);
     transition: ease-in 100ms;
 }
 
-.card h2 {
+.career_item h2 {
     font-size: 18px;
     text-align: left;
     font-weight: 600;
     color: #272e45;
 }
 
-.card span {
+.career_item span {
     font-size: 13px;
     font-weight: 600;
     margin: 15px 0 0 0;
@@ -80,4 +80,25 @@ label,
 
 .form_validation small {
     font-size: 14px;
+}
+
+.emptycard {
+    font-family: "Lato", sans-serif;
+}
+
+.emptycard h2 {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.emptycard a {
+    color: #272e45;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.emptycard p {
+    line-height: 24px;
+    font-size: 16px;
+    margin: 0;
 }
