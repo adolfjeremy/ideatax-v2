@@ -67,7 +67,8 @@
 }
 
 ::placeholder,
-label {
+label,
+.form_validation small {
     font-family: "Lato", sans-serif;
     color: rgb(153, 153, 153);
 }
@@ -75,4 +76,8 @@ label {
 .apply-form button {
     font-family: "Lato", sans-serif;
     font-weight: 600;
+}
+
+.form_validation small {
+    font-size: 14px;
 }

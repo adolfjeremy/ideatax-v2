@@ -25,6 +25,7 @@ use App\Http\Controllers\Admin\TaxUpdateController as AdminTaxUpdateController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Admin\PagesController;
+use App\Http\Controllers\ApplicantController;
 use App\Http\Controllers\CareersController;
 
 /*
@@ -64,6 +65,7 @@ Route::get('/articles/{id}', [ArticleController::class, 'detail'])->name('articl
 
 Route::get('/careers', [CareersController::class, 'index'])->name('careers');
 Route::get('/careers/{id}', [CareersController::class, 'show'])->name('careers-detail');
+Route::post('/careers', [ApplicantController::class, 'store'])->name('careers-post');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 

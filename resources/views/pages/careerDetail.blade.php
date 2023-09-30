@@ -48,9 +48,27 @@
                         <div class="col-12 d-flex align-items-center justify-content-center">
                             <h2>{{ __('careers.apply') }}</h2>
                         </div>
+                        <div class="col-12">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach    
+                                </ul>    
+                            </div>                        
+                        @endif
+                        </div>
                         <div class="col-12 px-4">
-                            <form class="apply-form" action="{{ route('update-save') }}" method="POST" enctype="multipart/form-data">
+                            @if(session()->has('successAlert'))
+                                <div class="alert alert-success" role="alert">
+                                    {{Session::get('successAlert')}}
+                                </div>
+                            @endif 
+                            <form class="apply-form" action="{{ route('careers-post') }}" method="POST" enctype="multipart/form-data">
                             @csrf
+                                
+                                <input type="hidden" id="career_id" name="career_id" value="{{ $career->id }}">
                                 <div class="col-12 my-3">
                                     <input type="text" id="name" name="name" class="form-control w-100" placeholder="{{ __('careers.formname') }}" required>
                                 </div>
@@ -60,12 +78,16 @@
                                 <div class="col-12 mb-3">
                                     <input type="text" id="phone" name="phone" class="form-control w-100" placeholder="{{ __('careers.formphone') }}" required>
                                 </div>
-                                <div class="col-12 mb-3 d-flex flex-column">
-                                    <textarea name="question" id="editor" class="form-control w-100" rows="5" placeholder="Cover Letter*" required></textarea>
+                                <div class="col-12 mb-3">
+                                    <textarea name="coverLetter" id="coverLetter" class="form-control w-100" rows="5" placeholder="Cover Letter*" required></textarea>
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="cv" class="mb-2">Upload CV/Resume*</label>
-                                    <input type="file" id="cv" name="cv" class="form-control w-100" required>
+                                    <input type="file" id="resume" name="resume" class="form-control w-100" accept="application/pdf" required>
+                                    <div class="form_validation d-flex flex-column">
+                                        <small>allowed type: pdf</small>
+                                        <small>max size: 200kb</small>
+                                    </div>
                                 </div>
                                 <div class="col-12 mb-3">
                                     <button type="submit" class="btn btn-warning d-block w-100">{{ __('home.askButton') }}</button>
