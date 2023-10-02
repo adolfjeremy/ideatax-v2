@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Psr\Http\Message\UriInterface;
 use Spatie\Sitemap\SitemapGenerator;
 
 class GenerateSitemap extends Command
@@ -40,6 +41,10 @@ class GenerateSitemap extends Command
     {
         // modify this to your own needs
         SitemapGenerator::create(config('app.url'))
+            ->shouldCrawl(function (UriInterface $url) {
+                return strpos($url->getPath(), '/storage') === false;
+                return strpos($url->getPath(), '/lang') === false;
+            })
             ->writeToFile(public_path('/qbc/sitemap.xml'));
     }
 }
