@@ -52,7 +52,7 @@ class GenerateSitemap extends Command
             }
 
             return $url;
-            if ($url->segment(1) === null) {
+            if ($url->segment(1) === "/") {
                 $url->setPriority(1)
                     ->setLastModificationDate(Carbon::today());
             }
