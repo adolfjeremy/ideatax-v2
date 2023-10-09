@@ -42,7 +42,7 @@
                     <h1>{{ $career->title }}</h1>
                 </div>
             </div>
-            <div class="row career-detail mt-4">
+            <div class="row career-detail mt-4 mb-5">
                 @if(session()->get('applocale') == "en")
                     <div class="col-12 col-lg-7">
                         <div class="row">
