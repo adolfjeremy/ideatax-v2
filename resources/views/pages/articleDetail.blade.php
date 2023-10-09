@@ -28,10 +28,10 @@
 
 @section('title')
     @if (session()->get('applocale') == "en")
-        {{ $article->title_eng }}
+        {{ $article->SEO_title_eng}}
     @endif
     @if (session()->get('applocale') == "id")
-        {{ $article->title }}
+        {{ $article->SEO_title }}
     @endif
 @endsection
 
