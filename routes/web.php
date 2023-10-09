@@ -41,9 +41,17 @@ use App\Http\Controllers\CareersController;
 */
 
 
+Route::prefix('id')
+    ->middleware('changeLocal')
+    ->group(function () {
+        Route::get('/', [HomeController::class, 'index'])->name('home.id');
+        Route::get('/our-team', [AboutController::class, 'team'])->name('our-team.id');
+        Route::get('/our-team/{id}', [AboutController::class, 'teamDetail'])->name('our-team-detail.id');
+        Route::get('/our-services', [ServicesController::class, 'index'])->name('our-services.id');
+        Route::get('/contact', [ContactController::class, 'index'])->name('contact.id');
+    });
 
-// // Route::get('lang/{locale}', [LocalizationController::class , 'lang'])->name('locale');
-// Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LocalizationController@switchLang']);
+
 
 Route::get('lang/{lang}', [LocalizationController::class, 'switchLang'])->name('switchLang');
 Route::get('/', [HomeController::class, 'index'])->name('home');

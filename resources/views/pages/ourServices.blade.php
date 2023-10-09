@@ -11,13 +11,13 @@
 
 
 @section('meta')
-    @if(session()->get('applocale') == "en")
+    @if(app()->getLocale() == "en")
         <meta name="description" content="{{ $page->description_eng }}">
         <meta property="og:description" content="{{ $page->description_eng }}">
         <meta property="og:title" content="{{ $page->SEO_title_eng }}">
     @endif
         
-    @if(session()->get('applocale') == "id")
+    @if(app()->getLocale() == "id")
         <meta name="description" content="{{ $page->description }}">
         <meta property="og:description" content="{{ $page->description }}">
         <meta property="og:title" content="{{ $page->SEO_title }}">
@@ -28,10 +28,10 @@
 
 
 @section('title')
-    @if (session()->get('applocale') == "en")
+    @if (app()->getLocale() == "en")
         {{ $page->SEO_title_eng }}
     @endif
-    @if (session()->get('applocale') == "id")
+    @if (app()->getLocale() == "id")
         {{ $page->SEO_title }}
     @endif
 @endsection
@@ -63,10 +63,10 @@
                                 <h3 class="accordion-header" id="{{ $service->title }}">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#{{ $service->slug }}" aria-expanded="false" aria-controls="{{ $service->slug }}">
-                                        @if (session()->get('applocale') == "en")
+                                        @if (app()->getLocale() == "en")
                                             {{ $service->title_eng }}
                                         @endif
-                                        @if (session()->get('applocale') == "id")
+                                        @if (app()->getLocale() == "id")
                                             {{ $service->title }}
                                         @endif
                                     </button>
@@ -74,10 +74,10 @@
                                 <div id="{{ $service->slug }}" class="accordion-collapse collapse" aria-labelledby="{{ $service->title }}"
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body py-1">
-                                        @if (session()->get('applocale') == "en")
+                                        @if (app()->getLocale() == "en")
                                             {!! $service->description_eng !!}
                                         @endif
-                                        @if (session()->get('applocale') == "id")
+                                        @if (app()->getLocale() == "id")
                                             {!! $service->description !!}
                                         @endif
                                     </div>
@@ -94,7 +94,7 @@
             <div class="container">
                 <div class="col-12 d-flex align-items-center justify-content-between">
                     <h2>{{ __('home.contact') }}</h2>
-                    <a href="{{ route("contact") }}" class="contact_lead-button btn btn-warning fw-bold">{{ __('home.contactButton') }}</a>
+                    <a href="{{ app()->getLocale() == "en" ? route("contact") : route("contact.id") }}" class="contact_lead-button btn btn-warning fw-bold">{{ __('home.contactButton') }}</a>
                 </div>
             </div>
         </section>

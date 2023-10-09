@@ -33,6 +33,14 @@ main {
     position: relative;
 }
 
+header .dropdown-menu .active {
+    background-color: #ffc107;
+}
+
+header .dropdown-menu span {
+    color: #272e45 !important;
+}
+
 .lang-flag {
     width: 30px;
 }
