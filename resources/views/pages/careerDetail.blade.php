@@ -27,7 +27,7 @@
 
 @section('title')
     @if (session()->get('applocale') == "en")
-        {{ $career->seo_title }}
+        {{ $career->seo_title_eng }}
     @endif
     @if (session()->get('applocale') == "id")
         {{ $career->seo_title }}
