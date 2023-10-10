@@ -70,7 +70,7 @@
                 @if (app()->getLocale() == "id")
                     @include('includes/navbarID')
                 @else
-                    @include('includes/navbarEn')
+                    @include('includes/navbarEN')
                 @endif
             </nav>
             <nav class="social_container d-none d-xl-block">
