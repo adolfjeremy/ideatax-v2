@@ -66,13 +66,13 @@
             <button id="hamburgerButton" class="d-block d-xl-none">
                 <div class="inner-line"></div>
             </button>
-            {{-- <nav class="reponsive_nav d-flex d-none d-xl-block">
+            <nav class="reponsive_nav d-flex d-none d-xl-block">
                 @if (app()->getLocale() == "id")
                     @include('includes/navbarID')
                 @else
                     @include('includes/navbarEn')
                 @endif
-            </nav> --}}
+            </nav>
             <nav class="social_container d-none d-xl-block">
                 <ul class="d-flex align-items-center gap-1">
                     <li class="nav-item">
