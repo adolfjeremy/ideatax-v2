@@ -29,7 +29,11 @@ class ArticleController extends Controller
     public function detail($id)
     {
         $articleCategories = ArticleCategory::all();
-        $article = Article::where('slug', $id)->with('author')->firstOrFail();
+        if(app()->getLocale() == "en") {
+            $article = Article::where('slug_eng', $id)->with('author')->firstOrFail();
+        } else {
+            $article = Article::where('slug', $id)->with('author')->firstOrFail();
+        }
         $articles = Article::where('id', '!=' ,$article->id)->latest()->take(10)->get();
         $taxEvents = TaxEvent::latest()->take(5)->get();
         
@@ -66,7 +70,13 @@ class ArticleController extends Controller
     public function taxEvent($id)
     {
         $articleCategories = ArticleCategory::all();
-        $taxEvent = TaxEvent::where('slug', $id)->firstOrFail();
+
+        if(app()->getLocale() == "en") {
+
+            $taxEvent = TaxEvent::where('slug_eng', $id)->firstOrFail();
+        } else {
+            $taxEvent = TaxEvent::where('slug', $id)->firstOrFail();
+        }
         $taxEvents = TaxEvent::where('id', '!=', $taxEvent->id)->latest()->take(5)->get();
         $articles = Article::latest()->paginate(20);
         

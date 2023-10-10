@@ -9,13 +9,13 @@
 @endsection
 
 @section('meta')
-    @if(session()->get('applocale') == "en")
+    @if(app()->getLocale() == "en")
         <meta name="description" content="{{ $career->description_eng }}">
         <meta property="og:description" content="{{ $career->description_eng }}">
         <meta property="og:title" content="{{ $career->SEO_title_eng }}">
     @endif
         
-    @if(session()->get('applocale') == "id")
+    @if(app()->getLocale() == "id")
         <meta name="description" content="{{ $career->description }}">
         <meta property="og:description" content="{{ $career->description }}">
         <meta property="og:title" content="{{ $career->SEO_title }}">
@@ -26,10 +26,10 @@
 
 
 @section('title')
-    @if (session()->get('applocale') == "en")
+    @if (app()->getLocale() == "en")
         {{ $career->seo_title_eng }}
     @endif
-    @if (session()->get('applocale') == "id")
+    @if (app()->getLocale() == "id")
         {{ $career->seo_title }}
     @endif
 @endsection
@@ -75,7 +75,6 @@
                         @endif
                     </div>
                 @endif
-                    
                 @if(session()->get('applocale') == "id")
                     <div class="col-12 col-lg-7">
                         <div class="row">

@@ -5,13 +5,13 @@
 @endsection
 
 @section('meta')
-    @if(session()->get('applocale') == "en")
+    @if(app()->getLocale() == "en")
         <meta name="description" content="{{ $team->description_eng }}">
         <meta property="og:description" content="{{ $team->description_eng }}">
         <meta property="og:title" content="{{ $team->SEO_title_eng }}">
     @endif
         
-    @if(session()->get('applocale') == "id")
+    @if(app()->getLocale() == "id")
         <meta name="description" content="{{ $team->description }}">
         <meta property="og:description" content="{{ $team->description }}">
         <meta property="og:title" content="{{ $team->SEO_title }}">
@@ -22,10 +22,10 @@
 
 
 @section('title')
-    @if (session()->get('applocale') == "en")
+    @if (app()->getLocale() == "en")
         {{ $team->SEO_title_eng }}
     @endif
-    @if (session()->get('applocale') == "id")
+    @if (app()->getLocale() == "id")
         {{ $team->SEO_title }}
     @endif
     
@@ -67,7 +67,7 @@
             <div class="row">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb breadcrumb-custom">
-                        <li class="breadcrumb-item breadcrumb-cst"><a href="{{ route("our-team") }}">Team</a></li>
+                        <li class="breadcrumb-item breadcrumb-cst"><a href="{{ app()->getLocale() == "en" ? route('our-team') : route('our-team.id') }}">Team</a></li>
                         <li class="breadcrumb-item breadcrumb-cst active" aria-current="page">{{ $team->name }}</li>
                     </ol>
                 </nav>
@@ -76,19 +76,19 @@
                 <div class="col-12 col-lg-9 px-3 team_detail">
                     <div class="row d-flex d-flex-column align-items-start justify-content-center text-start">
                         <h2>Biography</h2>
-                        @if (session()->get('applocale') == "en")
+                        @if (app()->getLocale() == "en")
                             <div>{!! $team->biography_eng !!}</div>
                         @endif
-                        @if (session()->get('applocale') == "id")
+                        @if (app()->getLocale() == "id")
                             <div>{!! $team->biography !!}</div>
                         @endif
                     </div>
                     <div class="row d-flex d-flex-column align-items-start justify-content-center text-start mt-4">
                         <h2>Area of Expertise</h2>
-                        @if (session()->get('applocale') == "en")
+                        @if (app()->getLocale() == "en")
                             <div>{!! $team->area_of_expertise_eng !!}</div>
                         @endif
-                        @if (session()->get('applocale') == "id")
+                        @if (app()->getLocale() == "id")
                             <div>{!! $team->area_of_expertise !!}</div>
                         @endif
                     </div>
@@ -97,8 +97,8 @@
                     <div class="team_list">
                         @foreach ($teams as $teamItem)
                             <div class="team_item mt-4 mt-lg-0">
-                                <a href="{{ route('our-team-detail', $teamItem->slug) }}" class="profile_image_container profile_detail" style="background-image: url('{{ asset("storage/" . $teamItem->profile_picture) }}')"></a>
-                                <a href="{{ route('our-team-detail', $teamItem->slug) }}" class="name_container mt-2">
+                                <a href="{{ app()->getLocale() == "en" ? route('our-team-detail', $teamItem->slug) : route('our-team-detail.id', $teamItem->slug) }}" class="profile_image_container profile_detail" style="background-image: url('{{ asset("storage/" . $teamItem->profile_picture) }}')"></a>
+                                <a href="{{ app()->getLocale() == "en" ? route('our-team-detail', $teamItem->slug) : route('our-team-detail.id', $teamItem->slug) }}" class="name_container mt-2">
                                     <h2 class="m-0">{{ $teamItem->name }}</h2>
                                     <p class="m-0">{{ $teamItem->position }}</p>
                                 </a>

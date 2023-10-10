@@ -41,9 +41,35 @@ use App\Http\Controllers\CareersController;
 */
 
 
+Route::prefix('id')
+    ->middleware('changeLocal')
+    ->group(function () {
+        Route::get('/', [HomeController::class, 'index'])->name('home.id');
+        
+        Route::get('/our-team', [AboutController::class, 'team'])->name('our-team.id');
+        Route::get('/our-team/{id}', [AboutController::class, 'teamDetail'])->name('our-team-detail.id');
 
-// // Route::get('lang/{locale}', [LocalizationController::class , 'lang'])->name('locale');
-// Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LocalizationController@switchLang']);
+        Route::get('/our-services', [ServicesController::class, 'index'])->name('our-services.id');
+
+        Route::get('/tax-update', [TaxUpdateController::class, 'index'])->name('update.id');
+        Route::get('/tax-update/category/{id}', [TaxUpdateController::class, 'sortByCategory'])->name('tax-update-category.id');
+        Route::get('/tax-update/{id}', [TaxUpdateController::class, 'detail'])->name('tax-update-detail.id');
+        Route::post('/tax-update/save', [TaxUpdateController::class, 'store'])->name('update-save');
+        Route::get('/tax-update/tax-consulting/{id}', [TaxUpdateController::class, 'discussionDetail'])->name('tax-consulting.id');
+
+        Route::get('/articles', [ArticleController::class, 'index'])->name('articles.id');
+        Route::get('/articles/category/{id}', [ArticleController::class, 'sortByCategory'])->name('article-category.id');
+        Route::get('/articles/event/{id}', [ArticleController::class, 'taxEvent'])->name('tax-event.id');
+        Route::get('/articles/{id}', [ArticleController::class, 'detail'])->name('article-detail.id');
+
+        Route::get('/careers', [CareersController::class, 'index'])->name('careers.id');
+        Route::get('/careers/{id}', [CareersController::class, 'detail'])->name('careers-detail.id');
+        Route::post('/careers', [ApplicantController::class, 'store'])->name('careers-post.id');
+
+        Route::get('/contact', [ContactController::class, 'index'])->name('contact.id');
+    });
+
+
 
 Route::get('lang/{lang}', [LocalizationController::class, 'switchLang'])->name('switchLang');
 Route::get('/', [HomeController::class, 'index'])->name('home');

@@ -9,13 +9,13 @@
 @endsection
 
 @section('meta')
-    @if(session()->get('applocale') == "en")
+    @if(app()->getLocale() == "en")
         <meta name="description" content="{{ $page->description_eng }}">
         <meta property="og:description" content="{{ $page->description_eng }}">
         <meta property="og:title" content="{{ $page->SEO_title_eng }}">
     @endif
         
-    @if(session()->get('applocale') == "id")
+    @if(app()->getLocale() == "id")
         <meta name="description" content="{{ $page->description }}">
         <meta property="og:description" content="{{ $page->description }}">
         <meta property="og:title" content="{{ $page->SEO_title }}">
@@ -25,10 +25,10 @@
 @endsection
 
 @section('title')
-    @if (session()->get('applocale') == "en")
+    @if (app()->getLocale() == "en")
         {{ $page->SEO_title_eng }}
     @endif
-    @if (session()->get('applocale') == "id")
+    @if (app()->getLocale() == "id")
         {{ $page->SEO_title }}
     @endif
 @endsection
@@ -149,20 +149,17 @@
                         <div>
                             <div class="our_service_item d-block">
                                 <h3>
-                                    @if (session()->get('applocale') == "en")
+                                    @if (app()->getLocale() == "en")
                                         <a href="{{ route('our-services') }}/#{{ $service->title_eng }}" class="d-block" title="{{ $service->title_eng }}">{!! str_limit($service->title_eng, $limit = 25) !!}</a>
+                                        <hr mb-3>
+                                        <p>{{ $service->excerpt_eng }}</p>
                                     @endif
-                                    @if (session()->get('applocale') == "id")
-                                        <a href="{{ route('our-services') }}/#{{ $service->title }}" class="d-block" title="{{ $service->title }}">{!! str_limit($service->title, $limit = 25) !!}</a>
+                                    @if (app()->getLocale() == "id")
+                                        <a href="{{ route('our-services.id') }}/#{{ $service->title }}" class="d-block" title="{{ $service->title }}">{!! str_limit($service->title, $limit = 25) !!}</a>
+                                        <hr mb-3>
+                                        <p>{{ $service->excerpt }}</p>
                                     @endif
                                 </h3>
-                                <hr mb-3>
-                                @if (session()->get('applocale') == "en")
-                                    <p>{{ $service->excerpt_eng }}</p>
-                                @endif
-                                @if (session()->get('applocale') == "id")
-                                    <p>{{ $service->excerpt }}</p>
-                                @endif
                             </div>
                         </div>
                     @endforeach
@@ -174,7 +171,7 @@
         <div class="container">
             <div class="col-12 d-flex align-items-center justify-content-between">
                 <h2>{{ __('home.contact') }}</h2>
-                <a href="{{ route("contact") }}" class="contact_lead-button btn btn-warning fw-bold">{{ __('home.contactButton') }}</a>
+                <a href="{{ app()->getLocale() == "en" ? route("contact") : route("contact.id") }}" class="contact_lead-button btn btn-warning fw-bold">{{ __('home.contactButton') }}</a>
             </div>
         </div>
     </section>

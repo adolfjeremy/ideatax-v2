@@ -9,13 +9,13 @@
 @endsection
 
 @section('meta')
-    @if(session()->get('applocale') == "en")
+    @if(app()->getLocale() == "en")
         <meta name="description" content="{{ $articleCategory->description_eng }}">
         <meta property="og:description" content="{{ $articleCategory->description_eng }}">
         <meta property="og:title" content="{{ $articleCategory->seo_title_eng }}">
     @endif
         
-    @if(session()->get('applocale') == "id")
+    @if(app()->getLocale() == "id")
         <meta name="description" content="{{ $articleCategory->description }}">
         <meta property="og:description" content="{{ $articleCategory->description }}">
         <meta property="og:title" content="{{ $articleCategory->seo_title }}">
@@ -25,10 +25,10 @@
 @endsection
 
 @section('title')
-    @if (session()->get('applocale') == "en")
+    @if (app()->getLocale() == "en")
         {{ $articleCategory->seo_title_eng }}
     @endif
-    @if (session()->get('applocale') == "id")
+    @if (app()->getLocale() == "id")
         {{ $articleCategory->seo_title }}
     @endif
 @endsection
@@ -40,7 +40,7 @@
                 <ul>
                     @foreach ($articleCategories as $articleCategory)
                         <li>
-                            <a href="{{ route('article-category', $articleCategory->slug) }}">{{ $articleCategory->title }}</a>
+                            <a href="{{ app()->getLocale() == "en" ? route('article-category', $articleCategory->slug) : route('article-category.id', $articleCategory->slug) }}">{{ app()->getLocale() == "en" ? $articleCategory->title_eng : $articleCategory->title }}</a>
                         </li>
                     @endforeach
                 </ul>
@@ -52,7 +52,7 @@
             <div class="row">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb breadcrumb-custom">
-                        <li class="breadcrumb-item breadcrumb-cst"><a href="{{ route("articles") }}">Articles</a></li>
+                        <li class="breadcrumb-item breadcrumb-cst"><a href="{{ app()->getLocale() == "en" ? route("articles") : route("articles.id") }}">Articles</a></li>
                         <li class="breadcrumb-item breadcrumb-cst active" aria-current="page">{{ $currentCategory }}</li>
                     </ol>
                 </nav>
@@ -63,9 +63,13 @@
                         <div class="carousel-inner">
                             @forelse ($articleCarousels as $articleCarousel)
                                 <div class="carousel-item @if ($loop->first)active @endif">
-                                    <a href="{{ route('article-detail',$articleCarousel->slug) }}"><img src="{{ asset("storage/" . $articleCarousel->photo) }}" class="d-block w-100" alt="{{ $articleCarousel->title }}"></a>
+                                    <a href="{{ app()->getLocale() == "en" ? route('article-detail',$articleCarousel->slug_eng) : route('article-detail.id',$articleCarousel->slug) }}"><img src="{{ asset("storage/" . $articleCarousel->photo) }}" class="d-block w-100" alt="{{ app()->getLocale() == "en" ? $articleCarousel->title_eng : $articleCarousel->title }}"></a>
                                     <div class="carousel-caption d-none d-md-block">
-                                        <h5><a href="{{ route('article-detail',$articleCarousel->slug) }}">{{ $articleCarousel->title }}</a></h5>
+                                        <h5>
+                                            <a href="{{ app()->getLocale() == "en" ? route('article-detail',$articleCarousel->slug_eng) : route('article-detail.id',$articleCarousel->slug) }}">
+                                            {{ app()->getLocale() == "en" ? $articleCarousel->title_eng : $articleCarousel->title }}
+                                            </a>
+                                        </h5>
                                     </div>
                                 </div>
                             @empty
@@ -96,7 +100,7 @@
                     <div class="row">
                         <div class="tax_event_list">
                             @forelse ($taxEvents as $taxEvent)
-                                <a href="{{ route('tax-event', $taxEvent->slug) }}" class="tax_event_item">
+                                <a href="{{ app()->getLocale() == "en" ? route('tax-event', $taxEvent->slug_eng) : route('tax-event.id', $taxEvent->slug) }}" class="tax_event_item">
                                     <h3>{!! str_limit($taxEvent->title, $limit = 50) !!}</h2>
                                     <span>{{ $taxEvent->created_at->format('d M, Y') }}</span>
                                 </a>
@@ -122,25 +126,24 @@
                     </div>
                     <div class="row mb-2">
                         <div class="news_list">
-                            @php $incrementCategory = 0 @endphp
                             @forelse ($articles as $article)
                                 <div class="news_item">
                                     <div class="news_image_container">
-                                        <a href="{{ route('article-detail',$article->slug) }}"><img src="{{ asset("storage/" . $article->photo) }}" alt="{{ $article->title }}"></a>
+                                        <a href="{{ app()->getLocale() == "en" ? route('article-detail',$article->slug_eng) : route('article-detail.id',$article->slug) }}"><img src="{{ asset("storage/" . $article->photo) }}" alt="{{ app()->getLocale() == "en" ? $article->title_eng : $article->title }}"></a>
                                     </div>
                                     <div class="text_container">
                                         <h3>
-                                            <a href="{{ route('article-detail',$article->slug) }}">
-                                                @if (session()->get('applocale') == "en")
+                                            <a href="{{ app()->getLocale() == "en" ? route('article-detail',$article->slug_eng) : route('article-detail.id',$article->slug) }}">
+                                                @if (app()->getLocale() == "en")
                                                     {!! str_limit($article->title_eng, $limit = 61) !!}
                                                 @endif
-                                                @if (session()->get('applocale') == "id")
+                                                @if (app()->getLocale() == "id")
                                                     {!! str_limit($article->title, $limit = 61) !!}
                                                 @endif
                                             </a>
                                         </h3>
                                         <div class="timestamp">
-                                            <a href="{{ route('article-category',$article->articleCategory->slug) }}" class="news_category">{{ $article->articleCategory->title }}</a>
+                                            <a href="{{ app()->getLocale() == "en" ? route('article-category',$article->articleCategory->slug) :route('article-category.id',$article->articleCategory->slug) }}" class="news_category">{{ $article->articleCategory->title }}</a>
                                             <span>{{ $article->created_at->format('d M, Y H:i') }} WIB</span>
                                         </div>
                                     </div>
