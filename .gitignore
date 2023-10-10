@@ -3,6 +3,7 @@
 /public/myteam
 /public/reimbursement
 /public/storage
+/public/qbc
 /storage/*.key
 /vendor
 .env
