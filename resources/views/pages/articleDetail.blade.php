@@ -28,10 +28,10 @@
 
 @section('title')
     @if (app()->getLocale() == "en")
-        {{ $article->title_eng }}
+        {{ $article->SEO_title_eng}}
     @endif
     @if (app()->getLocale() == "id")
-        {{ $article->title }}
+        {{ $article->SEO_title}}
     @endif
 @endsection
 

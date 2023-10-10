@@ -27,10 +27,10 @@
 
 @section('title')
     @if (app()->getLocale() == "en")
-        {{ $career->title_eng }}
+        {{ $career->seo_title_eng }}
     @endif
     @if (app()->getLocale() == "id")
-        {{ $career->title }}
+        {{ $career->seo_title }}
     @endif
 @endsection
 
@@ -43,36 +43,70 @@
                 </div>
             </div>
             <div class="row career-detail mt-4 mb-4">
-                <div class="col-12 col-lg-7">
-                    <div class="row">
-                        <div class="col-12">
-                            <h2>{{ __('careers.desc') }}</h2>
-                            <div>{!! $career->jobdesc !!}</div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <h2>{{ __('careers.quali') }}</h2>
-                            <div>{!! $career->qualification !!}</div>
-                        </div>
-                    </div>
-                    @if ($career->skill)
+                @if(session()->get('applocale') == "en")
+                    <div class="col-12 col-lg-7">
                         <div class="row">
                             <div class="col-12">
-                                <h2>{{ __('careers.skill') }}</h2>
-                                <div>{!! $career->skill !!}</div>
+                                <h2>{{ __('careers.desc') }}</h2>
+                                <div>{!! $career->jobdesc_eng !!}</div>
                             </div>
                         </div>
-                    @endif
-                    @if ($career->course)
                         <div class="row">
                             <div class="col-12">
-                                <h2>{{ __('careers.course') }}</h2>
-                                <div>{!! $career->course !!}</div>
+                                <h2>{{ __('careers.quali') }}</h2>
+                                <div>{!! $career->qualification_eng !!}</div>
                             </div>
                         </div>
-                    @endif
-                </div>
+                        @if ($career->skill_eng)
+                            <div class="row">
+                                <div class="col-12">
+                                    <h2>{{ __('careers.skill') }}</h2>
+                                    <div>{!! $career->skill_eng !!}</div>
+                                </div>
+                            </div>
+                        @endif
+                        @if ($career->course_eng)
+                            <div class="row">
+                                <div class="col-12">
+                                    <h2>{{ __('careers.course') }}</h2>
+                                    <div>{!! $career->course_eng !!}</div>
+                                </div>
+                            </div>
+                        @endif
+                    </div>
+                @endif
+                @if(session()->get('applocale') == "id")
+                    <div class="col-12 col-lg-7">
+                        <div class="row">
+                            <div class="col-12">
+                                <h2>{{ __('careers.desc') }}</h2>
+                                <div>{!! $career->jobdesc !!}</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <h2>{{ __('careers.quali') }}</h2>
+                                <div>{!! $career->qualification !!}</div>
+                            </div>
+                        </div>
+                        @if ($career->skill)
+                            <div class="row">
+                                <div class="col-12">
+                                    <h2>{{ __('careers.skill') }}</h2>
+                                    <div>{!! $career->skill !!}</div>
+                                </div>
+                            </div>
+                        @endif
+                        @if ($career->course)
+                            <div class="row">
+                                <div class="col-12">
+                                    <h2>{{ __('careers.course') }}</h2>
+                                    <div>{!! $career->course !!}</div>
+                                </div>
+                            </div>
+                        @endif
+                    </div>
+                @endif
                 <div class="col-12 col-lg-5">
                     <div class="row gap-2">
                         <div class="col-12 d-flex align-items-center justify-content-center">
