@@ -9,7 +9,7 @@ class TaxEvent extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'title','slug', 'photo', 'body', 'user_id', 'title_eng', 'SEO_title', 'SEO_title_eng', 'body_eng', 'description', 'description_eng'
+        'title','slug', 'slug_eng', 'photo', 'body', 'user_id', 'title_eng', 'SEO_title', 'SEO_title_eng', 'body_eng', 'description', 'description_eng'
     ];
 
     public function user()

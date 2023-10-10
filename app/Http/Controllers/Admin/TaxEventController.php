@@ -60,6 +60,8 @@ class TaxEventController extends Controller
         }
 
         $data['slug'] = Str::slug($request->title);
+        $data['slug_eng'] = Str::slug($request->title_eng);
+
         TaxEvent::create($data);
 
         return redirect()->route('event.index');
@@ -90,6 +92,8 @@ class TaxEventController extends Controller
         }
 
         $data['slug'] = Str::slug($request->title);
+        $data['slug_eng'] = Str::slug($request->title_eng);
+        
         $item->update($data);
 
         return redirect()->route('event.index');
