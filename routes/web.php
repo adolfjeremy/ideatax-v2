@@ -54,7 +54,6 @@ Route::prefix('id')
         Route::get('/tax-update', [TaxUpdateController::class, 'index'])->name('update.id');
         Route::get('/tax-update/category/{id}', [TaxUpdateController::class, 'sortByCategory'])->name('tax-update-category.id');
         Route::get('/tax-update/{id}', [TaxUpdateController::class, 'detail'])->name('tax-update-detail.id');
-        Route::post('/tax-update/save', [TaxUpdateController::class, 'store'])->name('update-save');
         Route::get('/tax-update/tax-consulting/{id}', [TaxUpdateController::class, 'discussionDetail'])->name('tax-consulting.id');
 
         Route::get('/articles', [ArticleController::class, 'index'])->name('articles.id');
