@@ -152,11 +152,11 @@
                     @endif
                 </ul>
             </div>
-            {{-- @if (app()->getLocale() === "id")
+            @if (app()->getLocale() === "id")
                 @include('includes/mobileNavbarID')
             @else
                 @include('includes/mobileNavbarEN')
-            @endif --}}
+            @endif
         </nav>
     </div>
 </header>
