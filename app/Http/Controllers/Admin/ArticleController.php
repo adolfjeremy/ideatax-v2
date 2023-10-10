@@ -72,6 +72,8 @@ class ArticleController extends Controller
         }
 
         $data['slug'] = Str::slug($request->title);
+        $data['slug_eng'] = Str::slug($request->title_eng);
+        
         Article::create($data);
 
         return redirect()->route('articles.index');
@@ -108,6 +110,7 @@ class ArticleController extends Controller
         }
         
         $data['slug'] = Str::slug($request->title);
+        $data['slug_eng'] = Str::slug($request->title_eng);
 
         $item->update($data);
 
