@@ -76,7 +76,6 @@ class TaxUpdateController extends Controller
         }
 
         $data['slug'] = Str::slug($request->title);
-        $data['slug_eng'] = Str::slug($request->title_eng);
         
         TaxUpdate::create($data);
 
@@ -122,7 +121,6 @@ class TaxUpdateController extends Controller
         }
 
         $data['slug'] = Str::slug($request->title);
-        $data['slug_eng'] = Str::slug($request->title_eng);
 
         $item->update($data);
         return redirect()->route('update.index');
