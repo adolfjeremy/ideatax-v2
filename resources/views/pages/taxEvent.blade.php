@@ -10,13 +10,13 @@
 @endsection
 
 @section('meta')
-    @if(session()->get('applocale') == "en")
+    @if(app()->getLocale() == "en")
         <meta name="description" content="{{ $taxEvent->description_eng }}">
         <meta property="og:description" content="{{ $taxEvent->description_eng }}">
         <meta property="og:title" content="{{ $taxEvent->SEO_title_eng }}">
     @endif
         
-    @if(session()->get('applocale') == "id")
+    @if(app()->getLocale() == "id")
         <meta name="description" content="{{ $taxEvent->description }}">
         <meta property="og:description" content="{{ $taxEvent->description }}">
         <meta property="og:title" content="{{ $taxEvent->SEO_title }}">
@@ -27,11 +27,11 @@
 
 
 @section('title')
-    @if (session()->get('applocale') == "en")
-        {{ $taxEvent->title_eng }}
+    @if (app()->getLocale() == "en")
+        {{ $taxEvent->SEO_title_eng }}
     @endif
-    @if (session()->get('applocale') == "id")
-        {{ $taxEvent->title }}
+    @if (app()->getLocale() == "id")
+        {{ $taxEvent->SEO_title }}
     @endif
 @endsection
 
@@ -55,7 +55,7 @@
             <div class="row">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb breadcrumb-custom">
-                        <li class="breadcrumb-item breadcrumb-cst"><a href="{{ route("articles") }}">Articles</a></li>
+                        <li class="breadcrumb-item breadcrumb-cst"><a href="{{ app()->getLocale() == "en" ? route("articles") : route("articles.id") }}">Articles</a></li>
                         <li class="breadcrumb-item breadcrumb-cst active" aria-current="page">Tax Event</li>
                     </ol>
                 </nav>
@@ -63,14 +63,14 @@
             <div class="row">
                 <div class="col-12 col-lg-8">
                     <div class="row">
-                        <img src="{{ asset("storage/" . $taxEvent->photo) }}" alt="{{ $taxEvent->title }}" class="w-100">
+                        <img src="{{ asset("storage/" . $taxEvent->photo) }}" alt="{{ app()->getLocale() == "en" ? $taxEvent->title_eng : $taxEvent->title }}" class="w-100">
                     </div>
                     <div class="row news_title mt-3">
                         <h1>
-                            @if (session()->get('applocale') == "en")
+                            @if (app()->getLocale() == "en")
                                 {{ $taxEvent->title_eng }}
                             @endif
-                            @if (session()->get('applocale') == "id")
+                            @if (app()->getLocale() == "id")
                                 {{ $taxEvent->title }}
                             @endif
                         </h1>
@@ -79,10 +79,10 @@
                         <p>{{ $taxEvent->created_at->format('d M, Y H:i') }} WIB</p>
                     </div>
                     <div class="row mt-2">
-                        @if (session()->get('applocale') == "en")
+                        @if (app()->getLocale() == "en")
                             <div>{!! $taxEvent->body_eng !!}</div>
                         @endif
-                        @if (session()->get('applocale') == "id")
+                        @if (app()->getLocale() == "id")
                             <div>{!! $taxEvent->body !!}</div>
                         @endif
                         
@@ -96,12 +96,12 @@
                         <div class="row">
                             <div class="tax_event_list">
                                 @forelse ($taxEvents as $taxEventItem)
-                                    <a href="{{ route('tax-event', $taxEventItem->slug) }}" class="tax_event_item">
+                                    <a href="{{ app()->getLocale() == "en" ? route('tax-event', $taxEventItem->slug_eng) : route('tax-event.id', $taxEventItem->slug) }}" class="tax_event_item">
                                         <h3>
-                                            @if (session()->get('applocale') == "en")
+                                            @if (app()->getLocale() == "en")
                                                 {!! str_limit($taxEventItem->title_eng, $limit = 50) !!}
                                             @endif
-                                            @if (session()->get('applocale') == "id")
+                                            @if (app()->getLocale() == "id")
                                                 {!! str_limit($taxEventItem->title, $limit = 50) !!}
                                             @endif
                                             
@@ -135,19 +135,19 @@
                             @forelse ($articles as $article)
                                 <div class="news_item">
                                     <div class="news_image_container">
-                                        <a href="{{ route('article-detail',$article->slug) }}"><img src="{{ asset("storage/" . $article->photo) }}" alt="{{ $article->title }}"></a>
+                                        <a href="{{ app()->getLocale() == "en" ? route('article-detail',$article->slug_eng) : route('article-detail.id',$article->slug) }}"><img src="{{ asset("storage/" . $article->photo) }}" alt="{{ app()->getLocale() == "en" ? $article->title_eng : $article->title }}"></a>
                                     </div>
                                     <div class="text_container">
-                                        <a href="{{ route('article-detail',$article->slug) }}">
-                                            @if (session()->get('applocale') == "en")
+                                        <a href="{{ app()->getLocale() == "en" ? route('article-detail',$article->slug_eng) : route('article-detail.id',$article->slug) }}">
+                                            @if (app()->getLocale() == "en")
                                                 {!! str_limit($article->title_eng, $limit = 61) !!}
                                             @endif
-                                            @if (session()->get('applocale') == "id")
+                                            @if (app()->getLocale() == "id")
                                                 {!! str_limit($article->title, $limit = 61) !!}
                                             @endif
                                         </a>
                                         <div class="timestamp">
-                                            <a href="{{ route('article-category',$article->articleCategory->slug) }}" class="news_category">{{ $article->articleCategory->title }}</a>
+                                            <a href="{{ app()->getLocale() == "en" ? route('article-category',$article->articleCategory->slug) : route('article-category.id',$article->articleCategory->slug) }}" class="news_category">{{ $article->articleCategory->title }}</a>
                                             <span>{{ $article->created_at->format('d M, Y H:i') }} WIB</span>
                                         </div>
                                     </div>

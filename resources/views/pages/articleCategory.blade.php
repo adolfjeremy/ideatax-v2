@@ -100,7 +100,7 @@
                     <div class="row">
                         <div class="tax_event_list">
                             @forelse ($taxEvents as $taxEvent)
-                                <a href="{{ route('tax-event', $taxEvent->slug) }}" class="tax_event_item">
+                                <a href="{{ app()->getLocale() == "en" ? route('tax-event', $taxEvent->slug_eng) : route('tax-event.id', $taxEvent->slug) }}" class="tax_event_item">
                                     <h3>{!! str_limit($taxEvent->title, $limit = 50) !!}</h2>
                                     <span>{{ $taxEvent->created_at->format('d M, Y') }}</span>
                                 </a>

@@ -28,12 +28,12 @@
             <div class="col-12 col-md-5 d-flex mt-5 mt-md-0">
                 <div class="nav col-6">
                     <ul>
-                        <li><a href="{{ route('home') }}">Home</a></li>
-                        <li><a href="{{ route('our-team') }}">Team</a></li>
-                        <li><a href="{{ route('our-services') }}">Our Services</a></li>
-                        <li><a href="{{ route('update') }}">Updates</a></li>
-                        <li><a href="{{ route('articles') }}">Articles</a></li>
-                        <li><a href="{{ route('contact') }}">Contact Us</a></li>
+                        <li><a href="{{ app()->getLocale() == "en" ? route('home') : route('home.id') }}">Home</a></li>
+                        <li><a href="{{ app()->getLocale() == "en" ? route('our-team') : route('our-team.id') }}">Team</a></li>
+                        <li><a href="{{ app()->getLocale() == "en" ? route('our-services') : route('our-services.id') }}">Our Services</a></li>
+                        <li><a href="{{ app()->getLocale() == "en" ? route('update') : route('update.id') }}">Updates</a></li>
+                        <li><a href="{{ app()->getLocale() == "en" ? route('articles') : route('articles.id') }}">Articles</a></li>
+                        <li><a href="{{ app()->getLocale() == "en" ? route('contact') : route('contact.id') }}">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="social col-6">

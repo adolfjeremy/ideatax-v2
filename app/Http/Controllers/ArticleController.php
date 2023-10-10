@@ -70,7 +70,13 @@ class ArticleController extends Controller
     public function taxEvent($id)
     {
         $articleCategories = ArticleCategory::all();
-        $taxEvent = TaxEvent::where('slug', $id)->firstOrFail();
+
+        if(app()->getLocale() == "en") {
+
+            $taxEvent = TaxEvent::where('slug_eng', $id)->firstOrFail();
+        } else {
+            $taxEvent = TaxEvent::where('slug', $id)->firstOrFail();
+        }
         $taxEvents = TaxEvent::where('id', '!=', $taxEvent->id)->latest()->take(5)->get();
         $articles = Article::latest()->paginate(20);
         

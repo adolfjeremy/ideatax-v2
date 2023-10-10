@@ -114,7 +114,7 @@
                         <div class="row">
                             <div class="tax_event_list">
                                 @forelse ($taxEvents as $taxEvent)
-                                <a href="{{ route('tax-event', $taxEvent->slug) }}" class="tax_event_item">
+                                <a href="{{ app()->getLocale() == "en" ? route('tax-event', $taxEvent->slug_eng) : route('tax-event.id', $taxEvent->slug) }}" class="tax_event_item">
                                     <h3>
                                         @if (app()->getLocale() == "en")
                                             {!! str_limit($taxEvent->title_eng, $limit = 50) !!}

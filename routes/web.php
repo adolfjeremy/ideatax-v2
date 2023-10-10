@@ -45,6 +45,7 @@ Route::prefix('id')
     ->middleware('changeLocal')
     ->group(function () {
         Route::get('/', [HomeController::class, 'index'])->name('home.id');
+        
         Route::get('/our-team', [AboutController::class, 'team'])->name('our-team.id');
         Route::get('/our-team/{id}', [AboutController::class, 'teamDetail'])->name('our-team-detail.id');
 
