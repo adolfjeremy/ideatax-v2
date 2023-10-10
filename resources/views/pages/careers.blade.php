@@ -9,13 +9,13 @@
 @endsection
 
 @section('meta')
-    @if(session()->get('applocale') == "en")
+    @if(app()->getLocale() == "en")
         <meta name="description" content="{{ $page->description_eng }}">
         <meta property="og:description" content="{{ $page->description_eng }}">
         <meta property="og:title" content="{{ $page->SEO_title_eng }}">
     @endif
         
-    @if(session()->get('applocale') == "id")
+    @if(app()->getLocale() == "id")
         <meta name="description" content="{{ $page->description }}">
         <meta property="og:description" content="{{ $page->description }}">
         <meta property="og:title" content="{{ $page->SEO_title }}">
@@ -25,10 +25,10 @@
 @endsection
 
 @section('title')
-    @if (session()->get('applocale') == "en")
+    @if (app()->getLocale() == "en")
         {{ $page->SEO_title_eng }}
     @endif
-    @if (session()->get('applocale') == "id")
+    @if (app()->getLocale() == "id")
         {{ $page->SEO_title }}
     @endif
 @endsection
@@ -49,7 +49,7 @@
             <div class="row">
                 @forelse ($careers as $career)
                     <div class="col-12 col-md-3 col-lg-4 mt-2 mb-2">
-                        <a href="{{ route('careers-detail',$career->slug) }}" class="card career_item">
+                        <a href="{{ app()->getLocale() == "en" ? route('careers-detail',$career->slug) : route('careers-detail.id',$career->slug) }}" class="card career_item">
                             <h2>
                                 {{ $career->title }}
                             </h2>
@@ -60,16 +60,16 @@
                     <div class="col-12 py-5 emptycard card">
                         <div class="row">
                             <div class="col-12 text-center">
-                                @if(session()->get('applocale') == "en")
+                                @if(app()->getLocale() == "en")
                                 <h2>No Current Job Openings</h2>
                                 @endif
-                                 @if(session()->get('applocale') == "id")
+                                 @if(app()->getLocale() == "id")
                                 <h2>Tidak Ada Lowongan Pekerjaan Saat Ini</h2>
                                 @endif
                             </div>
                         </div>
                         <div class="row px-lg-5 mt-4">
-                            @if(session()->get('applocale') == "en")
+                            @if(app()->getLocale() == "en")
                                 <div class="col-12 px-lg-5">
                                     <p>Thank you for visiting our career page. Currently, we do not have any job openings available. However, we're always on the lookout for talented individuals who are passionate about tax to join our team.</p>
                                     <P>At Ideatax, we believe in the power of talent, and we encourage you to stay connected with us. By doing so, you'll be among the first to know when new opportunities arise.</P>
@@ -85,7 +85,7 @@
                                     <p>We appreciate your interest in joining the Ideatax team and look forward to the possibility of working together in the future. In the meantime, if you have any questions or would like to learn more about our company, please don't hesitate to <a href="{{ route('contact') }}">contact us.</a></p>
                                 </div>
                             @endif
-                            @if(session()->get('applocale') == "id")
+                            @if(app()->getLocale() == "id")
                                 <div class="col-12 px-lg-5">
                                     <p>Terima kasih telah mengunjungi halaman karier kami. Saat ini, kami tidak memiliki lowongan pekerjaan yang tersedia. Namun, kami selalu mencari individu berbakat yang bersemangat tentang perpajakan untuk bergabung dengan tim kami.</p>
                                     <P>Di Ideatax, kami percaya pada kekuatan talenta, dan kami mendorong Anda untuk tetap terhubung dengan kami. Dengan melakukannya, Anda akan menjadi salah satu yang pertama tahu ketika ada peluang baru muncul.</P>

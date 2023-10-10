@@ -32,7 +32,12 @@ class TaxUpdateController extends Controller
     public function detail($id)
     {
         $taxUpdateCategories = TaxUpdateCategory::all();
-        $taxUpdate = TaxUpdate::where('slug', $id)->with('user')->firstOrFail();
+        
+        if(app()->getLocale() == 'id') {
+            $taxUpdate = TaxUpdate::where('slug', $id)->with('user')->firstOrFail();
+        } else {
+            $taxUpdate = TaxUpdate::where('slug_eng', $id)->with('user')->firstOrFail();
+        }
         $relatedUpdates = TaxUpdate::where('tax_update_categories_id', '=' ,$taxUpdate->tax_update_categories_id)->where('id', '!=' ,$taxUpdate->id)->latest()->take(5)->get();
         $taxUpdates = TaxUpdate::where('id', '!=' ,$taxUpdate->id)->latest()->paginate(20);
         $customerQuestions = CustomerQuestion::where('status', '=', 'ANSWERED')->paginate(20);
@@ -70,7 +75,7 @@ class TaxUpdateController extends Controller
         $data['slug'] = Str::slug($request->name);
         CustomerQuestion::create($data);
 
-        return redirect()->route('update');
+        return redirect()->back();
     }
 
     public function discussionDetail($id) {

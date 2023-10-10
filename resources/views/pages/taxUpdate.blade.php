@@ -9,13 +9,13 @@
 @endsection
 
 @section('meta')
-    @if(session()->get('applocale') == "en")
+    @if(app()->getLocale() == "en")
         <meta name="description" content="{{ $page->description_eng }}">
         <meta property="og:description" content="{{ $page->description_eng }}">
         <meta property="og:title" content="{{ $page->SEO_title_eng }}">
     @endif
         
-    @if(session()->get('applocale') == "id")
+    @if(app()->getLocale() == "id")
         <meta name="description" content="{{ $page->description }}">
         <meta property="og:description" content="{{ $page->description }}">
         <meta property="og:title" content="{{ $page->SEO_title }}">
@@ -25,10 +25,10 @@
 @endsection
 
 @section('title')
-    @if (session()->get('applocale') == "en")
+    @if (app()->getLocale() == "en")
         {{ $page->SEO_title_eng }}
     @endif
-    @if (session()->get('applocale') == "id")
+    @if (app()->getLocale() == "id")
         {{ $page->SEO_title }}
     @endif
 @endsection
@@ -41,7 +41,7 @@
                 <ul>
                     @foreach ($taxUpdateCategories as $taxUpdateCategory)
                         <li>
-                            <a href="{{ route('tax-update-category', $taxUpdateCategory->slug) }}">{{ $taxUpdateCategory->title }}</a>
+                            <a href="{{ app()->getLocale() == "en" ? route('tax-update-category', $taxUpdateCategory->slug) : route('tax-update-category.id', $taxUpdateCategory->slug) }}">{{ $taxUpdateCategory->title }}</a>
                         </li>
                     @endforeach
                 </ul>
@@ -56,14 +56,14 @@
                         <div class="carousel-inner">
                             @forelse ( $taxUpdateCarousels as  $taxUpdateCarousel)
                                 <div class="carousel-item @if ($loop->first)active @endif">
-                                    <a href="{{ route('tax-update-detail',$taxUpdateCarousel->slug) }}"><img src="{{ asset("storage/" . $taxUpdateCarousel->photo) }}" class="d-block w-100" alt="{{ $taxUpdateCarousel->title }}"></a>
+                                    <a href="{{ app()->getLocale() == "en" ? route('tax-update-detail',$taxUpdateCarousel->slug_eng) : route('tax-update-detail.id',$taxUpdateCarousel->slug) }}"><img src="{{ asset("storage/" . $taxUpdateCarousel->photo) }}" class="d-block w-100" alt="{{ $taxUpdateCarousel->title }}"></a>
                                     <div class="carousel-caption d-block">
                                         <h5>
-                                            <a href="{{ route('tax-update-detail',$taxUpdateCarousel->slug) }}">
-                                                @if (session()->get('applocale') == "en")
+                                            <a href="{{ app()->getLocale() == "en" ? route('tax-update-detail',$taxUpdateCarousel->slug_eng) : route('tax-update-detail.id',$taxUpdateCarousel->slug) }}">
+                                                @if (app()->getLocale() == "en")
                                                     {{ $taxUpdateCarousel->title_eng }}
                                                 @endif
-                                                @if (session()->get('applocale') == "id")
+                                                @if (app()->getLocale() == "id")
                                                     {{ $taxUpdateCarousel->title }}
                                                 @endif
                                             </a>
@@ -132,21 +132,21 @@
                             @forelse ($taxUpdates as $taxUpdate)
                                 <div class="news_item">
                                     <div class="news_image_container">
-                                        <a href="{{ route('tax-update-detail',$taxUpdate->slug) }}"><img src="{{ asset("storage/" . $taxUpdate->photo) }}" alt="{{ $taxUpdate->title }}"></a>
+                                        <a href="{{ app()->getLocale() == "en" ? route('tax-update-detail',$taxUpdate->slug_eng) : route('tax-update-detail.id',$taxUpdate->slug) }}"><img src="{{ asset("storage/" . $taxUpdate->photo) }}" alt="{{ $taxUpdate->title }}"></a>
                                     </div>
                                     <div class="text_container">
                                         <h2>
-                                            <a href="{{ route('tax-update-detail',$taxUpdate->slug) }}">
-                                                @if (session()->get('applocale') == "en")
+                                            <a href="{{ app()->getLocale() == "en" ? route('tax-update-detail',$taxUpdate->slug_eng) : route('tax-update-detail.id',$taxUpdate->slug) }}">
+                                                @if (app()->getLocale() == "en")
                                                     {!! str_limit($taxUpdate->title_eng, $limit = 60) !!}
                                                 @endif
-                                                @if (session()->get('applocale') == "id")
+                                                @if (app()->getLocale() == "id")
                                                     {!! str_limit($taxUpdate->title, $limit = 60) !!}
                                                 @endif
                                             </a>
                                         </h2>
                                         <div class="timestamp">
-                                            <a href="{{ route('tax-update-category',$taxUpdate->taxUpdateCategory->slug) }}" class="news_category">{{ $taxUpdate->taxUpdateCategory->title }}</a>
+                                            <a href="{{ app()->getLocale() == "en" ? route('tax-update-category',$taxUpdate->taxUpdateCategory->slug) : route('tax-update-category.id',$taxUpdate->taxUpdateCategory->slug) }}" class="news_category">{{ $taxUpdate->taxUpdateCategory->title }}</a>
                                             <span>{{ $taxUpdate->created_at->format('d M, Y H:i') }} WIB</span>
                                         </div>
                                     </div>
@@ -177,10 +177,10 @@
                                     </div>
                                     <div class="caption_container px-2">
                                         <h3>
-                                            @if (session()->get('applocale') == "en")
+                                            @if (app()->getLocale() == "en")
                                             <a href="{{ route('tax-consulting', $customerQuestion->slug) }}">{!! str_limit($customerQuestion->title_eng,$limit = 61) !!}</a>
                                             @endif
-                                            @if (session()->get('applocale') == "id")
+                                            @if (app()->getLocale() == "id")
                                             <a href="{{ route('tax-consulting', $customerQuestion->slug) }}">{!! str_limit($customerQuestion->title,$limit = 61) !!}</a>
                                             @endif
                                         </h3>

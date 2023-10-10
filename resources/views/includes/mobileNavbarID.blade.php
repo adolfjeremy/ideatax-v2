@@ -12,15 +12,15 @@
         <a href="{{ route('our-services.id') }}" class="nav-link{{ (request()->is('id/our-services*') ? " active" : "") }}">our services</a>
     </li>
     <li class="nav-item py-2">
-        <a href="{{ route('update') }}" class="nav-link{{ (request()->is('tax-update*') ? " active" : "") }}">updates</a>
+        <a href="{{ route('update.id') }}" class="nav-link{{ (request()->is('id/tax-update*') ? " active" : "") }}">updates</a>
     </li>
     <li class="nav-item py-2">
         <a href="{{ route('articles') }}" class="nav-link{{ (request()->is('articles*') ? " active" : "") }}">articles</a>
     </li>
     <li class="nav-item py-2">
-            <a href="{{ route('careers') }}" class="nav-link{{ (request()->is('careers*') ? " active" : "") }}">career</a>
+            <a href="{{ route('careers.id') }}" class="nav-link{{ (request()->is('id/careers*') ? " active" : "") }}">career</a>
     </li>
     <li class="nav-item py-2">
-        <a href="{{ route('contact') }}" class="nav-link{{ (request()->is('contact*') ? " active" : "") }}">contact us</a>
+        <a href="{{ route('contact.id') }}" class="nav-link{{ (request()->is('id/contact*') ? " active" : "") }}">contact us</a>
     </li>
 </ul>
