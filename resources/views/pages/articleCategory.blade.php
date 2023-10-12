@@ -40,7 +40,7 @@
                 <ul>
                     @foreach ($articleCategories as $articleCategory)
                         <li>
-                            <a href="{{ app()->getLocale() == "en" ? route('article-category', $articleCategory->slug) : route('article-category.id', $articleCategory->slug) }}">{{ app()->getLocale() == "en" ? $articleCategory->title_eng : $articleCategory->title }}</a>
+                            <a href="{{ app()->getLocale() == "en" ? route('article-category', $articleCategory->slug) : route('article-category.id', $articleCategory->slug) }}">{{ $articleCategory->title }}</a>
                         </li>
                     @endforeach
                 </ul>
