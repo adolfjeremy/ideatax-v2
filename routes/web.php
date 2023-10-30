@@ -26,6 +26,7 @@ use App\Http\Controllers\Admin\TaxUpdateController as AdminTaxUpdateController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Admin\PagesController;
+use App\Http\Controllers\Admin\PhotoGalleryController;
 use App\Http\Controllers\ApplicantController;
 use App\Http\Controllers\CareersController;
 
@@ -110,6 +111,7 @@ Route::prefix('admin')
 ->group(function() {
     Route::resource('pages', PagesController::class);
     Route::resource('career', CareersAdminController::class);
+    Route::resource('life-at-ideatax', PhotoGalleryController::class);
     Route::resource('services', AdminServicesController::class);
     Route::resource('category', NewsCategoryController::class);
     Route::resource('article-category', ArticleCategoryController::class);
