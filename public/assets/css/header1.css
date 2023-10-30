@@ -135,9 +135,17 @@ header .reponsive_nav ul li {
     font-weight: 300;
 }
 
+.nav-link:focus {
+    color: #ffc107 !important;
+}
+
 .reponsive_nav ul li .active,
 .mobile_nav ul li .active {
     color: #ffc107 !important;
+}
+
+.dropdown-mobile-custom .dropdown-menu {
+    margin-left: 15px !important;
 }
 
 .reponsive_nav ul li a:hover,
