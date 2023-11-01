@@ -5,7 +5,7 @@
 @endsection
 
 @section('page-style')
-    <link rel="stylesheet" href="/assets/css/pages/team2.css">
+    <link rel="stylesheet" href="/assets/css/pages/team3.css">
 @endsection
 
 @section('meta')
