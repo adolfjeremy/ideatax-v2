@@ -40,7 +40,7 @@
         height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
-    {{-- @include('includes.header') --}}
+    @include('includes.header')
     <main>
         @yield('content')
         <div class="floating_button" title="contact us via whatsapp">
@@ -62,7 +62,7 @@
             </div>
         </div>
     </main>
-    {{-- @include('includes.footer') --}}
+    @include('includes.footer')
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     @include('includes.script')
     <script src="/assets/js/floatingButton.js"></script>
