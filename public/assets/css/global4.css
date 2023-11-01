@@ -33,8 +33,12 @@ main {
     position: relative;
 }
 
-header .dropdown-menu .active {
+header .dropdown-menu-custom .active {
     background-color: #ffc107;
+}
+
+header .dropdown-menu .on {
+    color: #ffc107 !important;
 }
 
 header .dropdown-menu span {

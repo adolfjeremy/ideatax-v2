@@ -21,7 +21,7 @@
                             <a class="btn btn-warning dropdown-toggle text-uppercase" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 {{app()->getLocale()}}
                             </a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu dropdown-menu-custom">
                                 @if (app()->getLocale() == "id")
                                     <li>
                                         <a class="dropdown-item d-flex align-items-center justify-content-between" href="{{ route('home') }}">

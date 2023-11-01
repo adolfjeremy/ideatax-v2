@@ -97,22 +97,22 @@
                 <div class="col-12">
                     <div class="value_list">
                         <div class="value_item text-center d-block">
-                            <img src="/assets/images/trustworthy.webp" alt="{{ __('value.one') }}" class="w-100">
+                            <img src="/assets/images/trustworthy.jpg" alt="{{ __('value.one') }}" class="w-100">
                             <div class="overlay"></div>
                             <h3>{{ __('value.one') }}</h3>
                         </div>
                         <div class="value_item text-center d-block">
-                            <img src="/assets/images/professional.webp" alt="{{ __('value.two') }}" class="w-100">
+                            <img src="/assets/images/professional.jpg" alt="{{ __('value.two') }}" class="w-100">
                             <div class="overlay"></div>
                             <h3>{{ __('value.two') }}</h3>
                         </div>
                         <div class="value_item text-center d-block">
-                            <img src="/assets/images/prudent.webp" alt="{{ __('value.three') }}" class="w-100">
+                            <img src="/assets/images/prudent.jpg" alt="{{ __('value.three') }}" class="w-100">
                             <div class="overlay"></div>
                             <h3>{{ __('value.three') }}</h3>
                         </div>
                         <div class="value_item text-center d-block">
-                            <img src="/assets/images/creative.webp" alt="{{ __('value.four') }}" class="w-100">
+                            <img src="/assets/images/creative.jpg" alt="{{ __('value.four') }}" class="w-100">
                             <div class="overlay"></div>
                             <h3>{{ __('value.four') }}</h3>
                         </div>

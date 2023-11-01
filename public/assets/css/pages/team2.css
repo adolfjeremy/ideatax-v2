@@ -92,7 +92,7 @@
 }
 
 .our_team_list {
-    width: 80%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,7 +101,7 @@
 }
 
 .our_team_item {
-    flex: 0 0 19%;
+    flex: 0 0 14%;
     box-shadow: 1px 1px 10px #111;
     transition: all linear 300ms;
     background-position: center center;
@@ -112,7 +112,7 @@
 }
 
 .our_team_item:hover {
-    flex: 0 0 22%;
+    flex: 0 0 17%;
 }
 
 @media (max-width: 480px) {

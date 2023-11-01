@@ -18,7 +18,8 @@
     margin: 0;
 }
 
-.job_openings {
+.job_openings,
+.image-gallery {
     background-color: #1e27391a;
     padding: 40px 0;
 }
@@ -101,4 +102,66 @@ label,
     line-height: 24px;
     font-size: 16px;
     margin: 0;
+}
+
+.image-list {
+    display: grid;
+    column-gap: 10px;
+    row-gap: 10px;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 820px) {
+    .image-list {
+        display: grid;
+        column-gap: 10px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .image-list {
+        display: grid;
+        column-gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.image-item {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    cursor: pointer;
+}
+
+.image-item_title {
+    position: absolute;
+    color: white;
+    width: 100%;
+    text-align: center;
+    bottom: 50%;
+    transform: translateY(50%);
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+.image-item:hover .overlay-cust {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(39, 46, 69, 0.7);
+    transition: 100ms ease-in-out;
+}
+
+.image-item:hover .image-item_title {
+    display: block;
+    z-index: 100;
+    transition: 200ms ease-in-out;
+}
+
+.zoomable-image {
+    max-height: calc(100vh - 100px);
 }

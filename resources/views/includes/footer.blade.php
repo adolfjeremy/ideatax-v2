@@ -33,6 +33,8 @@
                         <li><a href="{{ app()->getLocale() == "en" ? route('our-services') : route('our-services.id') }}">Our Services</a></li>
                         <li><a href="{{ app()->getLocale() == "en" ? route('update') : route('update.id') }}">Updates</a></li>
                         <li><a href="{{ app()->getLocale() == "en" ? route('articles') : route('articles.id') }}">Articles</a></li>
+                        <li><a href="{{ app()->getLocale() == "en" ? route('careers') : route('careers.id') }}">Career</a></li>
+                        <li><a href="{{ app()->getLocale() == "en" ? route('life-at-ideatax') : route('life-at-ideatax.id') }}">Life at ideatax</a></li>
                         <li><a href="{{ app()->getLocale() == "en" ? route('contact') : route('contact.id') }}">Contact Us</a></li>
                     </ul>
                 </div>
@@ -47,7 +49,7 @@
         </div>
         <div class="row">
             <div class="col-12 text-center copy_right">
-                <h2>&copy; Idea<strong>tax</strong> 2022</h2>
+                <h2>&copy; Idea<strong>tax</strong> 2023</h2>
                 <p>Developed by <a href="https://github.com/adolfjeremy" target="_blank" rel="noopener noreferrer">Jeremy</a>
                 </p>
             </div>
