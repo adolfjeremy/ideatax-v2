@@ -69,7 +69,7 @@
                 @foreach ($images as $image)
                     <div class="modal zoomable fade" id="exampleModal{{ $incrementCategory +=1 }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog  modal-dialog-centered">
-                            <img src="{{ asset("storage/" . $image->image) }}" class="w-100 zoomable-image" alt="">
+                            <img src="{{ asset("storage/" . $image->image) }}" class="w-100 zoomable-image" alt="{{ $image->title }}">
                         </div>
                     </div>
                 @endforeach
