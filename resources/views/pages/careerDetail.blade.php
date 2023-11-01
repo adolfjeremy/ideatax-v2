@@ -150,7 +150,7 @@
                                     <input type="file" id="resume" name="resume" class="form-control w-100" accept="application/pdf" required>
                                     <div class="form_validation d-flex flex-column">
                                         <small>allowed type: pdf</small>
-                                        <small>max size: 200kb</small>
+                                        <small>max size: 2Mb</small>
                                     </div>
                                 </div>
                                 <div class="col-12 mb-3">

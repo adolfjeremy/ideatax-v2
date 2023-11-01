@@ -64,6 +64,7 @@ Route::prefix('id')
 
         Route::get('/careers', [CareersController::class, 'index'])->name('careers.id');
         Route::get('/careers/{id}', [CareersController::class, 'detail'])->name('careers-detail.id');
+        Route::get('/life-at-ideatax', [CareersController::class, 'lifeAtIdeatax'])->name('life-at-ideatax.id');
         Route::post('/careers', [ApplicantController::class, 'store'])->name('careers-post.id');
 
         Route::get('/contact', [ContactController::class, 'index'])->name('contact.id');
@@ -92,6 +93,7 @@ Route::get('/articles/{id}', [ArticleController::class, 'detail'])->name('articl
 
 Route::get('/careers', [CareersController::class, 'index'])->name('careers');
 Route::get('/careers/{id}', [CareersController::class, 'detail'])->name('careers-detail');
+Route::get('/life-at-ideatax', [CareersController::class, 'lifeAtIdeatax'])->name('life-at-ideatax');
 Route::post('/careers', [ApplicantController::class, 'store'])->name('careers-post');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');

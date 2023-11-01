@@ -27,7 +27,7 @@ class ApplicantRequest extends FormRequest
             'name'=> "required",
             'email'=> ['required', 'string', 'email:dns', 'max:255'], 
             'coverLetter' => "required",
-            'resume' => "required|mimes:pdf|max:200",
+            'resume' => "required|mimes:pdf|max:2024",
             'career_id'=> "required|exists:careers,id",
         ];
     }

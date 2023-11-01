@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("/assets/images/hero_cta.webp");
+    background-image: url("/assets/images/hero_cta.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center bottom;
@@ -140,7 +140,7 @@
 .about_us .about_bg {
     position: absolute;
     inset: 0;
-    background-image: url("/assets/images/team1.webp");
+    background-image: url("/assets/images/team1.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

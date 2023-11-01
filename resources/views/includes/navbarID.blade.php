@@ -15,14 +15,14 @@
         <a href="{{ route('articles.id') }}" class="nav-link p-0{{ (request()->is('id/articles*') ? " active" : "") }}">articles</a>
     </li>
     <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle {{ (request()->is('id/careers*') ? " active" : "") }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <a class="nav-link dropdown-toggle {{ (request()->is('id/careers*') ? " active" : "") }}{{ (request()->is('id/life-at-ideatax*') ? " active" : "") }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         Career
         </a>
         <ul class="dropdown-menu">
         <li>
             <a href="{{ route('careers.id') }}" class="dropdown-item nav-link p-0{{ (request()->is('id/careers*') ? " on" : "") }}">career</a>
         </li>
-        <li><a class="dropdown-item p-0" href="#">Life at Ideatax</a></li>
+        <li><a class="dropdown-item p-0{{ (request()->is('id/life-at-ideatax*') ? " on" : "") }}" href="{{ route('life-at-ideatax.id') }}">Life at Ideatax</a></li>
         </ul>
     </li>
     <li class="nav-item">
