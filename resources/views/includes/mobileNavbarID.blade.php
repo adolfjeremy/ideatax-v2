@@ -25,7 +25,7 @@
         <li>
             <a href="{{ route('careers.id') }}" class="dropdown-item nav-link py-2{{ (request()->is('id/careers*') ? " on" : "") }}">career</a>
         </li>
-        <li><a class="dropdown-item py-2{{ (request()->is('id/life-at-ideatax*') ? " on" : "") }}" href="{{ route('life-at-ideatax.id') }}">Life at IdeataxAction</a></li>
+        <li><a class="dropdown-item py-2{{ (request()->is('id/life-at-ideatax*') ? " on" : "") }}" href="{{ route('life-at-ideatax.id') }}">Life at Ideatax</a></li>
         </ul>
     </li>
     <li class="nav-item py-2">
