@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Page;
 use App\Models\Article;
+use App\Models\Services;
 use App\Models\TaxEvent;
 use Illuminate\Http\Request;
 use App\Models\ArticleCategory;
@@ -17,12 +18,14 @@ class ArticleController extends Controller
         $taxEvents = TaxEvent::latest()->take(5)->get();
         $articles = Article::latest()->paginate(20);
         $page = Page::findOrFail(5);
+        $services = Services::get();
         return view('pages.article',[
             "articleCategories" => $articleCategories,
             "articles" => $articles,
             "articleCarousels" => $articleCarousels,
             "taxEvents" => $taxEvents,
-            "page" => $page
+            "page" => $page,
+            "services" => $services
         ]);
     }
 
@@ -39,12 +42,15 @@ class ArticleController extends Controller
         
         $relatedArticles = Article::where('article_categories_id', '=' ,$article->article_categories_id)->where('id', '!=' ,$article->id)->latest()->take(3)->get();
         
+        $services = Services::get();
+        
         return view('pages.articleDetail', [
             "articleCategories" => $articleCategories,
             "article" => $article,
             "relatedArticles" => $relatedArticles,
             "articles" => $articles,
-            "taxEvents" => $taxEvents
+            "taxEvents" => $taxEvents,
+            "services" => $services
         ]);
     }
 

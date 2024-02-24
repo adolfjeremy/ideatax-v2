@@ -165,4 +165,5 @@
             </div>
         </div>
     </section>
+    @include('includes.consultation')
 @endsection

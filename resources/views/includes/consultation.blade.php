@@ -36,7 +36,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="date" class="form-label fw-bold">Set meeting
-                                Schedule
+                                schedule
                             </label>
                             <input type="datetime-local" class="form-control" id="date">
                         </div>
