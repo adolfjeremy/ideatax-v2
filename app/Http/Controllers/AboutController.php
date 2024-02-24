@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Page;
+use App\Models\Services;
 use App\Models\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -34,10 +35,12 @@ class aboutController extends Controller
     {
         $team = Team::where('slug', $id)->firstOrFail();
         $teams = Team::where('id', '!=', $team->id)->orderBy('name')->get();
+        $services = Services::get();
 
         return view('pages.teamDetail',[
             "team" => $team,
             "teams" => $teams,
+            "services" => $services
         ]);
     }
 

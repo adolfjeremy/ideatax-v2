@@ -43,7 +43,7 @@
         </div>
     </section>
     <section id="ourTeam" class="mt-5">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="our_team_list pb-5 text-start">
                     @php $incrementCategory = 0 @endphp
@@ -51,6 +51,7 @@
                         <div class="our_team_item" style="background-image: url('{{ asset("storage/" . $team->photo) }}')">
                             <a href="{{ app()->getLocale() == "en" ? route('our-team-detail', $team->slug) : route('our-team-detail.id', $team->slug) }}"></a>
                             <p>{{ $team->name }}</p>
+                            <p>{{ $team->position }}</p>
                         </div>
                     @endforeach
                 </div>
