@@ -33,6 +33,10 @@ main {
     position: relative;
 }
 
+a {
+    text-decoration: none;
+}
+
 header .dropdown-menu-custom .active {
     background-color: #ffc107;
 }

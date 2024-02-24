@@ -51,11 +51,24 @@
         <section class="our_service_list section_gap mt-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 subtitle">
                         <h2>{{ __('home.serviceSub') }}</h2>
                     </div>
                 </div>
-                <div class="row">
+                @foreach ($services as $service)
+                <div class="row our_service_item py-2">
+                    <div class="col-12 col-md-4">
+                        <img src="/assets/images/tax.jpg" class="w-100" alt="Tax and Customs Compliances">
+                    </div>
+                    <div class="col-12 col-md-8 d-flex flex-column align-items-start justify-content-center">
+                         <h2><a href="{{ route('our-service-detail', $service->slug) }}">{{ $service->title }}</a></h2>
+                         <p class="text-start">{!! str_limit($service->description, $limit = 170) !!}</p>
+                         <a class="more_button" href="{{ route('our-service-detail',$service->slug) }}" >More about {{ $service->title }} <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                @endforeach
+                
+                {{-- <div class="row">
                     <div class="col-12">
                         <div class="accordion" id="accordionExample">
                             @forelse ($services as $service)
@@ -88,7 +101,7 @@
                             @endforelse
                         </div>
                     </div>
-                </div>
+                </div> --}}
         </section>
         <section class="contact_lead py-5 mt-5">
             <div class="container">

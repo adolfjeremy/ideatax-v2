@@ -43,6 +43,48 @@
     color: #fff;
 }
 
+.subtitle h2 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.our_service_item img {
+    height: 200px;
+}
+
+.our_service_item h2 a {
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: "Lato", sans-serif;
+    color: #111;
+}
+
+.our_service_item p {
+    font-size: 18px;
+    font-family: "Lato", sans-serif;
+}
+
+.our_service_item .more_button {
+    font-size: 17px;
+    font-weight: 600;
+    color: #272e45;
+    font-family: "Lato", sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+.our_service_item .more_button i {
+    font-size: 20px;
+    font-weight: 600;
+    color: #272e45;
+    margin-left: 5px;
+}
+
+.our_service_item .more_button:first-letter {
+    text-transform: uppercase !important;
+}
+
 #ourServices .button_container a {
     font-family: "Lato", sans-serif;
 }
@@ -54,107 +96,5 @@
 
     .button-container a {
         font-size: 14px;
-    }
-}
-
-.button-container {
-    font-family: "Lato", sans-serif;
-    position: relative;
-    margin-top: 30px;
-}
-
-.button-container a {
-    font-size: 16px;
-    border-radius: 5px;
-    padding: 13px 40px 13px 39px;
-    font-weight: 600;
-}
-
-@media (max-width: 360px) {
-    .button-container a {
-        padding: 13px 10px 13px 10px;
-    }
-}
-
-.button-container a:first-child,
-.button-container a:first-child:hover {
-    color: #111;
-}
-
-.button-container a:first-child:hover {
-    background-color: transparent;
-    border: 1px solid #fff;
-    color: #fff;
-}
-
-.button-container a:last-child:hover {
-    color: #111;
-}
-
-.accordion-item {
-    border: 1px solid #111;
-    border-left: none;
-    border-right: none;
-    border-radius: 0 !important;
-}
-
-.accordion h3 {
-    margin: 0;
-    padding: 10px 0;
-    font-family: "Lato", sans-serif;
-}
-
-.our_service_list h2 {
-    font-size: 22px;
-    padding: 20px;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-family: "Lato", sans-serif;
-}
-
-.accordion h3 button {
-    font-size: 28px;
-    font-weight: 600;
-}
-
-.accordion-button:not(.collapsed) {
-    color: #111;
-    background-color: #fff;
-}
-
-.accordion-button:focus {
-    border: none !important;
-    box-shadow: none;
-}
-
-.accordion-body {
-    font-size: 14px;
-    line-height: 25px;
-    font-weight: 400;
-    font-family: "Libre Baskerville", serif;
-    padding-left: 20px;
-}
-
-@media (min-width: 768px) {
-    #ourServices h2 {
-        font-size: 50px;
-        margin-right: 70px;
-    }
-
-    #ourServices p {
-        font-size: 20px;
-    }
-
-    .our_service_list h2 {
-        font-size: 28px;
-        text-transform: uppercase;
-    }
-
-    .accordion h3 button {
-        font-size: 34px;
-    }
-
-    .accordion-body {
-        font-size: 16px;
     }
 }
