@@ -29,6 +29,7 @@ use App\Http\Controllers\Admin\PagesController;
 use App\Http\Controllers\Admin\PhotoGalleryController;
 use App\Http\Controllers\ApplicantController;
 use App\Http\Controllers\CareersController;
+use App\Http\Controllers\CompanyProfileDonwloaderInfoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +47,7 @@ Route::prefix('id')
     ->middleware('changeLocal')
     ->group(function () {
         Route::get('/', [HomeController::class, 'index'])->name('home.id');
+        Route::post('/', [HomeController::class, 'store'])->name('home-save.id');
         
         Route::get('/our-team', [AboutController::class, 'team'])->name('our-team.id');
         Route::get('/our-team/{id}', [AboutController::class, 'teamDetail'])->name('our-team-detail.id');
@@ -74,6 +76,7 @@ Route::prefix('id')
 
 Route::get('lang/{lang}', [LocalizationController::class, 'switchLang'])->name('switchLang');
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::post('/', [HomeController::class, 'store'])->name('home-save');
 
 Route::get('/our-team', [AboutController::class, 'team'])->name('our-team');
 Route::get('/our-team/{id}', [AboutController::class, 'teamDetail'])->name('our-team-detail');

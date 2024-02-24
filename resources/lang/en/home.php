@@ -3,7 +3,7 @@
 return [
     'hero' => 'We Provide Tax Solutions for You',
     'aboutHeader' => 'About Us',
-    'aboutButton' => 'Company Profile',
+    'aboutButton' => 'Download Company Profile',
     'about' => 'We combine a long running experience in tax consulting and tax authority to deliver thorough solutions to our clients. We also present essential approaches with problem-solving capabilities imbued with a full commitment for the most polished quality of service for our clients.',
     'whyHeader' => 'Why Ideatax?',
     'valueHeader' => 'Value',

@@ -34,15 +34,59 @@
 @endsection
 
 @section('content')
-    <section class="hero_cta text-center py-0 py-lg-5 px-0">
-        <div class="overlay"></div>
-        <div class="container py-5">
+    <section class="hero_cta text-center">
+        <div class="container py-3">
             <div class="row">
-                <div class="col-12 d-flex flex-column align-items-center justify-content-center">
-                    <h1>{{ __('home.hero') }}</h1>
-                    <div class="d-flex button-container">
-                        <a href="{{ route('contact') }}" class="btn btn-lg btn-warning">{{ __('home.contactButton') }}</a>
-                        <a href="{{ route('our-services') }}" class="btn btn-lg btn-outline-light ms-3">{{ __('home.service') }}</a>
+                <div class="col-12 col-md-8">
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active position-relative">
+                                <div class="overlay"></div>
+                                <img src="/assets/images/hero_cta.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item position-relative">
+                                <div class="overlay"></div>
+                                <img src="/assets/images/carousel-1.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item position-relative">
+                                <div class="overlay"></div>
+                                <img src="/assets/images/carousel-2.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 latest_articles">
+                    <div class="row py-1">
+                        <h2>Latest Articles</h2>
+                    </div>
+                    <div class="row">
+                        <div class="latest_articles_list">
+                            @forelse ($latestArticles as $latestArticle)
+                                <a href="{{ app()->getLocale() == "en" ? route('articles', $latestArticle->slug_eng) : route('articles.id', $latestArticle->slug) }}" class="latest_articles_item">
+                                    <h3>
+                                        @if (app()->getLocale() == "en")
+                                            {!! str_limit($latestArticle->title_eng, $limit = 50) !!}
+                                        @endif
+                                        @if (app()->getLocale() == "id")
+                                            {!! str_limit($latestArticle->title, $limit = 50) !!}
+                                        @endif
+                                    </h2>
+                                    <span>{{ $latestArticle->created_at->format('d M, Y') }}</span>
+                                </a>
+                            @empty
+                                <div class="latest_articles_item text-center text-light">
+                                    No event at the moment
+                                </div>
+                            @endforelse
+                        </div>
                     </div>
                 </div>
             </div>
@@ -57,7 +101,43 @@
                     <p class="mb-2">&emsp;&emsp;{{ __('home.about') }}</p>
                     @if($compro)
                         <div class="mt-2 button-container">
-                            <a href="{{ asset("storage/" . $compro->compro) }}" target="_blank" class="btn btn-md btn-warning rounded">{{ __('home.aboutButton') }}</a>
+                            <button type="button" class="btn btn-warning rounded" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                {{ __('home.aboutButton') }}
+                            </button>
+                            {{-- <a href="{{ asset("storage/" . $compro->compro) }}" target="_blank" class="btn btn-md btn-warning rounded">{{ __('home.aboutButton') }}</a> --}}
+                        </div>
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h2 class="modal-title text-start fw-normal fs-6" id="staticBackdropLabel">Silakan isi formulir di bawah ini sebelum mengunduh</h2>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="{{ route('home-save') }}" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                            <div class="mb-3 d-flex flex-column align-items-start">
+                                                <label for="name" class="form-label fs-6">Name</label>
+                                                <input type="text" name="name" class="form-control" id="name" required>
+                                            </div>
+                                            <div class="mb-3 d-flex flex-column align-items-start">
+                                                <label for="email" class="form-label fs-6">Email</label>
+                                                <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" required>
+                                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                                            </div>
+                                            <div class="mb-3 d-flex flex-column align-items-start">
+                                                <label for="tel" class="form-label fs-6">No. Telepon</label>
+                                                <input type="tel" class="form-control" name="tel" id="tel" required>
+                                            </div>
+                                            <div class="mb-3 d-flex flex-column align-items-start">
+                                                <label for="company" class="form-label fs-6">Perusahaan</label>
+                                                <input type="text" class="form-control" name="company" id="company" required>
+                                            </div>
+                                            <button type="submit" class="btn btn-success">Submit</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     @endif
                 </div>

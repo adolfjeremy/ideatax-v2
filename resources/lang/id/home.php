@@ -3,7 +3,7 @@
 return [
     'hero' => 'Kami menyediakan solusi pajak untuk Anda',
     'aboutHeader' => 'Tentang Kami',
-    'aboutButton' => 'Profil Perusahaan',
+    'aboutButton' => 'Unduh Profil Perusahaan',
     'about' => 'Kami memadukan pengalaman jangka panjang dalam bidang konsultasi dan otoritas perpajakan untuk memberikan solusi yang menyeluruh kepada klien kami. Kami juga menyajikan pendekatan terpadu dengan kemampuan pemecahan masalah yang disertai dengan komitmen penuh untuk kualitas layanan terbaik bagi klien kami.',
     'whyHeader' => 'Kenapa Ideatax?',
     'valueHeader' => 'Nilai',
