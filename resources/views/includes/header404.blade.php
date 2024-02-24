@@ -5,9 +5,8 @@
                 <div class="col-12 d-flex align-items-center justify-content-between">
                     <div class="location d-flex align-items-center">
                         <i class="bi bi-geo-alt-fill fs-5 text me-1"></i>
-                        <a href="https://www.google.com/maps/place/Menara+Kuningan/@-6.218423,106.828485,17z/data=!3m1!4b1!4m5!3m4!1s0x2e69f3cbd9ee81e7:0x730534af13796af4!8m2!3d-6.2184283!4d106.8306737" target="_blank" rel="noopener noreferrer">Menara Kuningan - Level 1 Unit B3 Jl. H. Rasuna Said Kav. 5 Karet Kuningan,
-                            Setiabudi
-                            South Jakarta
+                        <a href="https://www.google.com/maps/place/Menara+Kuningan/@-6.218423,106.828485,17z/data=!3m1!4b1!4m5!3m4!1s0x2e69f3cbd9ee81e7:0x730534af13796af4!8m2!3d-6.2184283!4d106.8306737" target="_blank" rel="noopener noreferrer">
+                            Menara Kadin Indonesia - Level 26 Jl. HR. Rasuna Said Blok X-5 Kav.2-3, East Kuningan, Setiabudi, South Jakarta, Jakarta
                         </a>
                     </div>
                     <div class="d-flex align-items-center justify-content-center">
@@ -76,9 +75,8 @@
             <ul class="d-block mobile_top_bar">
                 <li class="nav-item py-2 d-flex align-items-center justify-content-start">
                     <i class="bi bi-geo-alt-fill fs-5 text me-2"></i>
-                    <a href="https://www.google.com/maps/place/Menara+Kuningan/@-6.218423,106.828485,17z/data=!3m1!4b1!4m5!3m4!1s0x2e69f3cbd9ee81e7:0x730534af13796af4!8m2!3d-6.2184283!4d106.8306737" target="_blank" rel="noopener noreferrer">Menara Kuningan - Level 1 Unit B3 Jl. H. Rasuna Said Kav. 5 Karet Kuningan,
-                        Setiabudi
-                        South Jakarta
+                    <a href="https://www.google.com/maps/place/Menara+Kuningan/@-6.218423,106.828485,17z/data=!3m1!4b1!4m5!3m4!1s0x2e69f3cbd9ee81e7:0x730534af13796af4!8m2!3d-6.2184283!4d106.8306737" target="_blank" rel="noopener noreferrer">
+                        Menara Kadin Indonesia - Level 26 Jl. HR. Rasuna Said Blok X-5 Kav.2-3, East Kuningan, Setiabudi, South Jakarta, Jakarta
                     </a>
                 </li>
                 <li class="nav-item py-2 d-flex align-items-center justify-content-start contact">

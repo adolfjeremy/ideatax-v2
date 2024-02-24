@@ -67,8 +67,8 @@
                     </div>
                     <div class="address_detail mt-4">
                         <h3>Office Address</h3>
-                        <h4 class="mt-3">Menara Kuningan, South Jakarta, Indonesia</h4>
-                        <p> Level 1 Unit B3 Jl. H. Rasuna Said Kav. 5, Karet Kuningan, Setiabudi, South Jakarta</p>
+                        <h4 class="mt-3">Menara Kadin, South Jakarta, Indonesia</h4>
+                        <p> Level 26 Jl. H. R. Rasuna Said No.Kav.2-3 Blok X-5 no, Kuningan,East Kuningan, Setiabudi, South Jakarta, Jakarta 12950</p>
                     </div>
                 </div>
                 <div class="col-12 col-lg-8 py-3 px-5 contact_form">

@@ -18,10 +18,8 @@
                 </div>
                 <div class="address_item d-flex flex-column">
                     <i class="bi bi-buildings"></i>
-                    <h2>Menara Kuningan, South Jakarta, Indonesia</h2>
-                    <a href="https://www.google.com/maps/place/Menara+Kuningan/@-6.218423,106.828485,17z/data=!3m1!4b1!4m5!3m4!1s0x2e69f3cbd9ee81e7:0x730534af13796af4!8m2!3d-6.2184283!4d106.8306737" target="_blank" rel="noopener noreferrer">Menara Kuningan - Level 1 Unit B3 Jl. H. Rasuna Said Kav. 5
-                        Karet Kuningan, Setiabudi,
-                        South Jakarta
+                    <h2>Menara Kadin, South Jakarta, Indonesia</h2>
+                    <a href="https://www.google.com/maps/place/Menara+Kuningan/@-6.218423,106.828485,17z/data=!3m1!4b1!4m5!3m4!1s0x2e69f3cbd9ee81e7:0x730534af13796af4!8m2!3d-6.2184283!4d106.8306737" target="_blank" rel="noopener noreferrer">Level 26 Jl. HR. Rasuna Said Blok X-5 Kav.2-3, East Kuningan, Setiabudi, South Jakarta, Jakarta
                     </a>
                 </div>
             </div>
