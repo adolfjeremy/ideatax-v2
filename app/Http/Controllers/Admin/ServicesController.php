@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Services;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-use Yajra\DataTables\Facades\DataTables;
 use App\Http\Requests\ServicesRequest;
+use Illuminate\Support\Facades\Storage;
+use Yajra\DataTables\Facades\DataTables;
 
 class ServicesController extends Controller
 {
@@ -51,10 +52,16 @@ class ServicesController extends Controller
     {
         $data = $request->all();
         $data['slug'] = Str::slug($request->title);
+        $data['slug_eng'] = Str::slug($request->title_eng);
         $data['excerpt'] = Str::limit($request->description, 130);
         $data['excerpt_eng'] = Str::limit($request->description_eng, 130);
         $servicesCount = Services::all()->count();
-        $data['order'] = $servicesCount + 1;        
+        $data['order'] = $servicesCount + 1;  
+
+        if($request->file('image'))
+        {
+            $data['image'] = $request->file('image')->store('service');
+        }        
 
         Services::create($data);
 
@@ -71,11 +78,12 @@ class ServicesController extends Controller
 
     public function update(ServicesRequest $request, $id)
     {
-
         $data = $request->all();
-        $data['slug'] = Str::slug($request->title);
-
         $item = Services::findOrFail($id);
+
+        $data['slug'] = Str::slug($request->title);
+        $data['slug_eng'] = Str::slug($request->title_eng);
+
 
         
         if($request->description)
@@ -95,6 +103,14 @@ class ServicesController extends Controller
             {
                 $sameOrder->update(['order' => $item->order]);
             }
+        }
+        if($request->file('image'))
+        {
+            if($request->oldImage)
+            {
+                Storage::delete($request->oldImage);
+            }
+            $data['image'] = $request->file('image')->store('service');
         }
 
         $item->update($data);

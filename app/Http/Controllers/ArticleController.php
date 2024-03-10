@@ -40,7 +40,7 @@ class ArticleController extends Controller
         $articles = Article::where('id', '!=' ,$article->id)->latest()->take(10)->get();
         $taxEvents = TaxEvent::latest()->take(5)->get();
         
-        $relatedArticles = Article::where('article_categories_id', '=' ,$article->article_categories_id)->where('id', '!=' ,$article->id)->latest()->take(3)->get();
+        $relatedArticles = Article::where('article_categories_id', '=' ,$article->article_categories_id)->where('id', '!=' ,$article->id)->latest()->take(5)->get();
         
         $services = Services::get();
         

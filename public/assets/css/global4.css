@@ -274,3 +274,44 @@ header .dropdown-menu span {
     margin: 4px 0 0 0;
     color: gray;
 }
+
+.search_header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("/assets/images/wall-min.webp");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 20vh;
+}
+
+@media (max-width: 576px) {
+    .search_header {
+        height: 15vh;
+    }
+}
+
+@media (max-width: 280px) {
+    .search_header {
+        padding: 0 !important;
+    }
+
+    .search_header .container {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+}
+
+.search_header h1 {
+    position: relative;
+    font-size: 44px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.search_result h2 {
+    font-family: "Lato", sans-serif;
+}

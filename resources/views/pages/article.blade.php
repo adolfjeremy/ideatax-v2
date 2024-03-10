@@ -56,7 +56,9 @@
                         <div class="carousel-inner">
                             @forelse ($articleCarousels as $articleCarousel)
                                 <div class="carousel-item @if ($loop->first)active @endif">
-                                    <a href="{{ app()->getLocale() == "en" ? route('article-detail',$articleCarousel->slug_eng) : route('article-detail.id',$articleCarousel->slug) }}"><img src="{{ asset("storage/" . $articleCarousel->photo) }}" class="d-block w-100" alt="{{ app()->getLocale() == "en" ? $articleCarousel->title_eng : $articleCarousel->title }}"></a>
+                                    <a href="{{ app()->getLocale() == "en" ? route('article-detail',$articleCarousel->slug_eng) : route('article-detail.id',$articleCarousel->slug) }}">
+                                        <img src="{{ asset("storage/" . $articleCarousel->photo) }}" class="d-block w-100" alt="{{ app()->getLocale() == "en" ? $articleCarousel->title_eng : $articleCarousel->title }}">
+                                    </a>
                                     <div class="carousel-caption d-none d-md-block">
                                         <h5>
                                             <a href="{{ app()->getLocale() == "en" ? route('article-detail',$articleCarousel->slug_eng) : route('article-detail.id',$articleCarousel->slug) }}">
@@ -131,33 +133,15 @@
                     </div>
                     <div class="row mb-2">
                         <div class="news_list">
-                            @forelse ($articles as $article)
-                                <div class="news_item">
-                                    <div class="news_image_container">
-                                        <a href="{{ app()->getLocale() == "en" ? route('article-detail',$article->slug_eng) : route('article-detail.id',$article->slug) }}"><img src="{{ asset("storage/" . $article->photo) }}" alt="{{ app()->getLocale() == "en" ? $article->title_eng : $article->title }}"></a>
-                                    </div>
-                                    <div class="text_container">
-                                        <h3>
-                                            <a href="{{ app()->getLocale() == "en" ? route('article-detail',$article->slug_eng) : route('article-detail.id',$article->slug) }}">
-                                                @if (app()->getLocale() == "en")
-                                                    {!! str_limit($article->title_eng, $limit = 61) !!}
-                                                @endif
-                                                @if (app()->getLocale() == "id")
-                                                    {!! str_limit($article->title, $limit = 61) !!}
-                                                @endif
-                                            </a>
-                                        </h3>
-                                        <div class="timestamp">
-                                            <a href="{{ app()->getLocale() == "en" ? route('article-category',$article->articleCategory->slug) : route('article-category.id',$article->articleCategory->slug) }}" class="news_category">{{ $article->articleCategory->title }}</a>
-                                            <span>{{ $article->created_at->format('d M, Y H:i') }} WIB</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            @empty
-                                <div class="col-12">
-                                    There Is No Article
-                                </div>
-                            @endforelse
+                            @foreach ($articles as $article)
+                                <x-news-item :title="$article->title" :title-eng="$article->title_eng" :route="route('article-detail.id',$article->slug)"
+                                    :route-eng="route('article-detail',$article->slug_eng)"
+                                    :category-eng-route="route('article-category',$article->articleCategory->slug)"
+                                    :category-route="route('article-category.id',$article->articleCategory->slug)"
+                                    :category="$article->articleCategory->title"
+                                    :timestamp="$article->created_at"
+                                    :image="$article->photo" />
+                            @endforeach
                         </div>
                         {{ $articles->links() }}
                     </div>

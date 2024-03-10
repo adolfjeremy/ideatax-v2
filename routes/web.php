@@ -30,6 +30,8 @@ use App\Http\Controllers\Admin\PhotoGalleryController;
 use App\Http\Controllers\ApplicantController;
 use App\Http\Controllers\CareersController;
 use App\Http\Controllers\CompanyProfileDonwloaderInfoController;
+use App\Http\Controllers\ConsultationMeetingController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,6 +81,8 @@ Route::get('lang/{lang}', [LocalizationController::class, 'switchLang'])->name('
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::post('/', [HomeController::class, 'store'])->name('home-save');
 
+Route::get('/search', [SearchController::class, 'index'])->name('search');
+
 Route::get('/our-team', [AboutController::class, 'team'])->name('our-team');
 Route::get('/our-team/{id}', [AboutController::class, 'teamDetail'])->name('our-team-detail');
 
@@ -109,6 +113,7 @@ Route::get('/login', [LoginController::class, 'index'])->name('login')->middlewa
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
+Route::post('/consultation', [ConsultationMeetingController::class, 'store'])->name('consultation-post');
 // Route::get('/register', [RegisterController::class, 'index'])->name('register');
 // Route::post('/register', [RegisterController::class, 'store'])->name('register');
 

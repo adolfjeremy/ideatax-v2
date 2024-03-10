@@ -40,24 +40,36 @@
                 <div class="col-12 col-md-8">
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
-                            <div class="carousel-item active position-relative">
-                                <div class="overlay"></div>
+                            @foreach ($sliders as $slider)
+                            <div class="carousel-item  @if ($loop->first)active @endif position-relative">
+                                <a href="{{ route("our-service-detail", $slider->service->slug) }}">
+                                    <div class="overlay"></div>
                                 <img src="/assets/images/hero_cta.jpg" class="d-block w-100" alt="...">
+                                </a>
+                                <a href="{{ route("our-service-detail", $slider->service->slug) }}" class="hero_titles">
+                                    <h1>
+                                        @if (app()->getLocale() == "en")
+                                        {{ $slider->service->title_eng }}    
+                                        @else
+                                        {{ $slider->service->title }}    
+                                        @endif
+                                    </h1>
+                                    <p>
+                                        @if (app()->getLocale() == "en")
+                                        {{ $slider->service->excerpt_eng }}
+                                        @else  
+                                        {{ $slider->service->excerpt }}
+                                        @endif
+                                    </p>
+                                </a>
                             </div>
-                            <div class="carousel-item position-relative">
-                                <div class="overlay"></div>
-                                <img src="/assets/images/carousel-1.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item position-relative">
-                                <div class="overlay"></div>
-                                <img src="/assets/images/carousel-2.jpg" class="d-block w-100" alt="...">
-                            </div>
+                            @endforeach
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <button class="carousel-control-prev" style="z-index: 9" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <button class="carousel-control-next" style="z-index: 9" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>

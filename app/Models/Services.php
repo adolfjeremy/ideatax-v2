@@ -16,6 +16,8 @@ class Services extends Model
         'title_eng',
         'description_eng',
         'excerpt_eng',
-        'order'
+        'order',
+        'image',
+        'slug_eng'
     ];
 }

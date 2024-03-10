@@ -50,17 +50,21 @@
             </div>
         </div>
     </section>
-    <section id="newsDetail" class="mt-4">
+    <section class="mt-4">
         <div class="container">
             <div class="row">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb breadcrumb-custom">
                         <li class="breadcrumb-item breadcrumb-cst"><a href="{{ app()->getLocale() == "en" ? route("articles") : route("articles.id") }}">Articles</a></li>
                         <li class="breadcrumb-item breadcrumb-cst"><a href="{{ app()->getLocale() == "en" ? route('article-category',$article->articleCategory->slug) : route('article-category.id',$article->articleCategory->slug) }}">{{ $article->articleCategory->title }}</a></li>
-                        <li class="breadcrumb-item breadcrumb-cst active" aria-current="page">Detail</li>
+                        <li class="breadcrumb-item breadcrumb-cst active" aria-current="page">{{ $article->title }}</li>
                     </ol>
                 </nav>
             </div>
+        </div>
+    </section>
+    <section id="newsDetail" class="mb-3">
+        <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-8">
                     <div class="row">
@@ -186,13 +190,19 @@
                     </div>
                 </div>
             </div>
-            <div id="newsContainer" class="row mb-5 mt-3">
-                <div class="col-12">
-                    <div class="row mt-3">
+        </div>
+    </section>
+    @include('includes.consultation')
+    <section>
+        <div id="newsContainer" class="container">
+            <div class="row mt-3">
+                <div class="col-12 mt-3">
                         <h2>Latest Article</h2>
-                    </div>
-                    <div class="row mb-4">
-                        <div class="news_list">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="news_list">
                             @forelse ($articles as $articleItem)
                             <div class="news_item">
                                 <div class="news_image_container">
@@ -223,11 +233,9 @@
                                 </div>
                             @endforelse
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
-    @include('includes.consultation')
     
 @endsection

@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use App\Models\CompanyProfileDonwloaderInfo;
 use App\Http\Requests\CompanyProfilerDownloaderRequest;
+use App\Models\HeroSlider;
 
 class HomeController extends Controller
 {
@@ -24,11 +25,13 @@ class HomeController extends Controller
         $services = Services::all();
         $latestArticles= Article::latest()->take(5)->get();
         $page = Page::findOrFail(1);
+        $sliders = HeroSlider::with('service')->get();
         $compro = companyProfile::orderBy('updated_at', 'desc')->first();
         return view('pages.home',[
             "services" => $services,
             'latestArticles' => $latestArticles,
             'page' => $page,
+            'sliders' =>$sliders,
             'compro' => $compro
         ]);
     }
