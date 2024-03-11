@@ -58,7 +58,7 @@
                             <a href="{{ route("life-at-ideatax.index") }}" class="nav-link active">Life at Ideatax</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route("pages.index") }}" class="nav-link active">Author</a>
+                            <a href="{{ route("author.index") }}" class="nav-link active">Author</a>
                         </li>
                     </ul>
                 </div>
