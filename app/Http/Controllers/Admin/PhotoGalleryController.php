@@ -18,32 +18,11 @@ class PhotoGalleryController extends Controller
      */
     public function index()
     {
-        if(request()->ajax())
-        {
-            $query = PhotoGallery::query(); 
-            return Datatables::of($query)
-            ->addColumn('action', function($item) {
-                 return '
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            Action
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="' . route('life-at-ideatax.edit', $item->id) .'">Edit</a>
-                            <form action="' . route('life-at-ideatax.destroy', $item->id) . '" method="POST">
-                                ' . method_field('delete') . csrf_field() .'
-                                <button type="submit" class="dropdown-item text-danger">
-                                    Delete
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                ';
-            })
-            ->rawColumns(['action'])
-            -> make();
-        }
-        return view('pages.admin.photoGallery.index');
+        $galleries = PhotoGallery::get();
+
+        return view('pages.admin.photoGallery.index', [
+            "galleries" => $galleries
+        ]);
     }
 
     /**

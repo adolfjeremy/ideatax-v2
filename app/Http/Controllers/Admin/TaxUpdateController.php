@@ -16,39 +16,22 @@ class TaxUpdateController extends Controller
 {
     public function index()
     {
-        if(request()->ajax())
-        {
-            $query = TaxUpdate::query(); 
-            return Datatables::of($query)
-            ->addColumn('action', function($item) {
-                 return '
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            Action
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="' . route('update.edit', $item->id) .'">Edit</a>
-                            <form action="' . route('update.destroy', $item->id) . '" method="POST">
-                                ' . method_field('delete') . csrf_field() .'
-                                <button type="submit" class="dropdown-item text-danger">
-                                    Delete
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                ';
-            })
-            ->editColumn('photo', function($item) {
-                return $item->photo ? '<img src ="'. asset("storage/" . $item->photo) .'" style="max-height:80px; border-radius: 0;"/>' : "";
-            })
-            
-            ->editColumn('tax_update_categories_id', function($item) {
-                return $item->TaxUpdateCategory ? $item->TaxUpdateCategory->title : "";
-            })
-            ->rawColumns(['action', 'photo', 'tax_update_categories_id'])
-            -> make();
+        $search = request()->query('search');
+        $categoryFilter = request()->query('category');
+        $categories = TaxUpdateCategory::get();
+
+        if($search) {
+            $updates = TaxUpdate::where('title', 'LIKE', "%{$search}%")->get();
+        } else if ($categoryFilter) {
+            $updates = TaxUpdate::where('tax_update_categories_id', $categoryFilter)->get();
+        }else {
+            $updates = TaxUpdate::get();
         }
-        return view('pages.admin.taxUpdate.index');
+        
+        return view('pages.admin.taxUpdate.index', [
+            "categories" => $categories,
+            "updates"=> $updates
+        ]);
     }
 
     public function create()

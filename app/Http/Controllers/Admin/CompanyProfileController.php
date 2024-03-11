@@ -18,35 +18,10 @@ class CompanyProfileController extends Controller
      */
     public function index()
     {
-        if(request()->ajax())
-        {
-            $query = companyProfile::query(); 
-            return Datatables::of($query)
-            ->addColumn('action', function($item) {
-                 return '
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            Action
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="' . route('compro.edit', $item->id) .'">Edit</a>
-                            <form action="' . route('compro.destroy', $item->id) . '" method="POST">
-                                ' . method_field('delete') . csrf_field() .'
-                                <button type="submit" class="dropdown-item text-danger">
-                                    Delete
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                ';
-            })
-            ->editColumn('updated_at', function ($item) {
-                return $item->updated_at;
-            })
-            ->rawColumns(['action'])
-            -> make();
-        }
-        return view('pages.admin.Compro.index');
+        $compros = companyProfile::get();
+        return view('pages.admin.Compro.index', [
+            "compros" => $compros
+        ]);
     }
 
     /**

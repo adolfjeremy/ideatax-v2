@@ -14,32 +14,10 @@ class NewsCategoryController extends Controller
 {
     public function index()
     {
-        if(request()->ajax())
-        {
-            $query = NewsCategory::query(); 
-            return Datatables::of($query)
-            ->addColumn('action', function($item) {
-                 return '
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            Action
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="' . route('category.edit', $item->id) .'">Edit</a>
-                            <form action="' . route('category.destroy', $item->id) . '" method="POST">
-                                ' . method_field('delete') . csrf_field() .'
-                                <button type="submit" class="dropdown-item text-danger">
-                                    Delete
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                ';
-            })
-            ->rawColumns(['action'])
-            -> make();
-        }
-        return view('pages.admin.newsCategory.index');
+        $categories = NewsCategory::get();
+        return view('pages.admin.newsCategory.index', [
+            "categories" => $categories
+        ]);
     }
 
     public function create()

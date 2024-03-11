@@ -17,38 +17,21 @@ class ArticleController extends Controller
 {
     public function index()
     {
-        if(request()->ajax())
-        {
-            $query = Article::query(); 
-            return Datatables::of($query)
-            ->addColumn('action', function($item) {
-                 return '
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            Action
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="' . route('articles.edit', $item->id) .'">Edit</a>
-                            <form action="' . route('articles.destroy', $item->id) . '" method="POST">
-                                ' . method_field('delete') . csrf_field() .'
-                                <button type="submit" class="dropdown-item text-danger">
-                                    Delete
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                ';
-            })
-            ->editColumn('photo', function($item) {
-                return $item->photo ? '<img src ="'. asset("storage/" . $item->photo) .'" style="max-height:80px; border-radius: 0;"/>' : "";
-            })
-            ->editColumn('article_categories_id', function($item) {
-                return $item->articleCategory ? $item->articleCategory->title : "";
-            })
-            ->rawColumns(['action', 'photo', 'article_categories_id'])
-            -> make();
+        $categories = ArticleCategory::get();
+        $search = request()->query('search');
+        $categoryFilter = request()->query('category');
+        
+        if($search) {
+            $articles = Article::where('title', 'LIKE', "%{$search}%")->get();
+        } else if($categoryFilter) {
+            $articles = Article::where('article_categories_id', $categoryFilter)->get();
+        } else {
+            $articles = Article::get();
         }
-        return view('pages.admin.article.index');
+        return view('pages.admin.article.index',[
+            "categories" => $categories,
+            "articles" => $articles
+        ]);
     }
 
     public function create() {

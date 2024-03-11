@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="/assets/vendors/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/global4.css">
     <link rel="stylesheet" href="/assets/css/pages/admin.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.css"/>
 </head>
 <body class="dashboard">
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap py-2 shadow">
@@ -41,22 +40,22 @@
                             <a href="{{ route("services.index") }}" class="nav-link active">Our Services</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route("pages.index") }}" class="nav-link active">Articles</a>
+                            <a href="{{ route("articles.index") }}" class="nav-link active">Articles</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route("pages.index") }}" class="nav-link active">Tax Updates</a>
+                            <a href="{{ route("update.index") }}" class="nav-link active">Tax Updates</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route("pages.index") }}" class="nav-link active">Tax Event</a>
+                            <a href="{{ route("event.index") }}" class="nav-link active">Tax Event</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route("pages.index") }}" class="nav-link active">Career</a>
+                            <a href="{{ route("career.index") }}" class="nav-link active">Career</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route("pages.index") }}" class="nav-link active">Company Profile</a>
+                            <a href="{{ route("compro.index") }}" class="nav-link active">Company Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route("pages.index") }}" class="nav-link active">Life at Ideatax</a>
+                            <a href="{{ route("life-at-ideatax.index") }}" class="nav-link active">Life at Ideatax</a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route("pages.index") }}" class="nav-link active">Author</a>
@@ -120,7 +119,6 @@
             $('#wrapper').toggleClass("toggled");
         });
     </script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.js"></script>
     @stack('addon-script')
 </body>
 
