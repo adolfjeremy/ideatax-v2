@@ -42,11 +42,21 @@
                         <div class="carousel-inner">
                             @foreach ($sliders as $slider)
                             <div class="carousel-item  @if ($loop->first)active @endif position-relative">
-                                <a href="{{ route("our-service-detail", $slider->service->slug) }}">
+                                <a href="
+                                    @if (app()->getLocale() == "en")
+                                        {{ route('our-service-detail', $slider->service->slug_eng) }}
+                                    @else
+                                        {{ route('our-service-detail.id', $slider->service->slug) }}
+                                    @endif">
                                     <div class="overlay"></div>
-                                <img src="/assets/images/hero_cta.jpg" class="d-block w-100" alt="...">
+                                <img src="{{ asset("storage/" . $slider->service->image) }}" class="d-block w-100" alt="{{ $slider->service->title }}">
                                 </a>
-                                <a href="{{ route("our-service-detail", $slider->service->slug) }}" class="hero_titles">
+                                <a href="
+                                    @if (app()->getLocale() == "en")
+                                        {{ route('our-service-detail', $slider->service->slug_eng) }}
+                                    @else
+                                        {{ route('our-service-detail.id', $slider->service->slug) }}
+                                    @endif" class="hero_titles">
                                     <h1>
                                         @if (app()->getLocale() == "en")
                                         {{ $slider->service->title_eng }}    
@@ -213,7 +223,7 @@
             </div>
         </div>
     </section>
-    <section class="about_us_slick pb-5">
+    {{-- <section class="about_us_slick pb-5">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
@@ -227,15 +237,59 @@
                 </div>
             </div>
         </div>
-    </section>
-    <section class="our_services overflow-hidden">
+    </section> --}}
+    <section class="our_services overflow-hidden mt-5">
         <div class="container">
             <div class="row text-center">
                 <h2>{{ __('home.service') }}</h2>
             </div>
         </div>
         <div class="container">
-            <div class="slider_outer">
+            <div class="value_list">
+                @foreach ($sliders as $item)
+                <div class="card">
+                    <img src="{{ asset("storage/" . $item->service->image) }}" alt="{{ $item->service->title }}" class="card-img-top">
+                    <div class="card-body d-flex flex-column">
+                        <h2 class="text-center mb-1">
+                            <a href="
+                        @if (app()->getLocale() == "en")
+                            {{ route('our-service-detail', $item->service->slug_eng) }}
+                        @else
+                            {{ route('our-service-detail.id', $item->service->slug) }}
+
+                        @endif" class="text-dark fs-5 fw-bold text-center lh-1" href="{{ route('our-service-detail', $item->service->id) }}">
+                                @if (app()->getLocale() == "en")
+                                {{ $item->service->title_eng }}
+                                @else
+                                {{ $item->service->title }}
+                                @endif
+                            </a>
+                        </h2>
+                        <p class="card-text fs-6">
+                            @if (app()->getLocale() == "en")
+                            {{ $item->service->excerpt_eng }}
+                            @else
+                            {{ $item->service->excerpt }}
+                            @endif
+                        </p>
+                        <a href="
+                        @if (app()->getLocale() == "en")
+                            {{ route('our-service-detail', $item->service->slug_eng) }}
+                        @else
+                            {{ route('our-service-detail.id', $item->service->slug) }}
+
+                        @endif" class="fs-6 btn btn-warning">
+                            @if (app()->getLocale() == "en")
+                            Read Details
+                            @else
+                            Baca Detail
+                            @endif
+                        </a>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+            {{-- <div class="slider_outer">
                 <div class="our_services_list m-0">
                     @foreach ($services as $service)
                         <div>
@@ -256,7 +310,7 @@
                         </div>
                     @endforeach
                 </div>
-            </div>
+            </div> --}}
         </div>
     </section>
     <section class="contact_lead py-5 mt-5">
@@ -272,7 +326,7 @@
 @push('script')
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="/assets/vendors/slick-1.8.1/slick/slick.min.js"></script>
+    {{-- <script type="text/javascript" src="/assets/vendors/slick-1.8.1/slick/slick.min.js"></script>
     <script>
         $('.our_services_list').slick({
             dots: true,
@@ -305,5 +359,5 @@
                 }
             ]
             });
-    </script>
+    </script> --}}
 @endpush

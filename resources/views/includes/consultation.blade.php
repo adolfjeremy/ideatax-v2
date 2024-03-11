@@ -97,7 +97,13 @@
                             </label>
                             <textarea type="description" class="form-control" id="description" name="description" rows="6" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-warning">Jadwalkan Pertemuan</button>
+                        <button type="submit" class="btn btn-warning">
+                            @if (app()->getLocale() == "en")
+                                Set Meeting Schedule
+                                @else
+                                Jadwalkan Pertemuan
+                                @endif
+                        </button>
                     </div>
                 </form>
             </div>

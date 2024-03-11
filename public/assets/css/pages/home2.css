@@ -410,6 +410,12 @@
     border-radius: 10px;
     position: relative;
 }
+
+.value_list p,
+.value_list a {
+    font-family: "Lato", sans-serif;
+}
+
 /* end of value section */
 
 /* start of our services */

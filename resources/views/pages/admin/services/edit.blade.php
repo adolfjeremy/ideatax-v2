@@ -40,6 +40,16 @@
                                     <label for="title_eng" class="form-label">Service Name Eng</label>
                                     <input type="text" id="title_eng" name="title_eng" class="form-control w-100" value="{{ $item->title_eng }}" required>
                                 </div>
+                                <div class="col-12 mb-3">
+                                    <label for="image" class="form-label">Service Thumbnail</label>
+                                    @if ($item->image)
+                                        <img src="{{ asset("storage/" . $item->image) }}" class="img-preview img-fluid col-sm-5 my-2 d-block">
+                                    @else
+                                        <img class="img-preview img-fluid col-sm-5 my-2">
+                                    @endif
+                                    <input type="hidden" name="oldImage" value="{{ $item->image }}">
+                                    <input type="file" id="image" name="image" class="form-control w-100" value="{{ $item->image }}" onchange="previewImage()">
+                                </div>
                                 <div class="col-12 mb-3 d-flex flex-column">
                                     <label for="description">Description Id</label>
                                     <textarea name="description" rows="10" required>{{ $item->description }}</textarea>
@@ -57,14 +67,14 @@
                                     <input type="text" id="SEO_title_eng" name="SEO_title_eng" class="form-control w-100" value="{{ $item->SEO_title_eng }}" required>
                                 </div>
                                 <div class="col-12 mb-3">
-                                    <label for="description" class="form-label">Meta Description Id</label>
-                                    <textarea name="description" id="description" class="form-control w-100" cols="30" rows="5" required>
+                                    <label for="meta_description" class="form-label">Meta Description Id</label>
+                                    <textarea name="meta_description" id="meta_description" class="form-control w-100" cols="30" rows="5" required>
                                         {{ $item->meta_description }}
                                     </textarea>
                                 </div>
                                 <div class="col-12 mb-3">
-                                    <label for="description_eng" class="form-label">Meta Description Eng</label>
-                                    <textarea name="description_eng" id="description_eng" class="form-control w-100" cols="30" rows="5" required>
+                                    <label for="meta_description_eng" class="form-label">Meta Description Eng</label>
+                                    <textarea name="meta_description_eng" id="meta_description_eng" class="form-control w-100" cols="30" rows="5" required>
                                         {{ $item->meta_description_eng }}
                                     </textarea>
                                 </div>
@@ -84,5 +94,20 @@
     <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
     <script>
         CKEDITOR.replace('editor');
+    </script>
+
+    <script>
+        function previewImage() {
+            const imgPreview = document.querySelector(".img-preview");
+
+            imgPreview.style.display = 'block';
+            const oFReader = new FileReader();
+            console.log(oFReader);
+            oFReader.readAsDataURL(photo.files[0]);
+
+            oFReader.onload = (oFREvent) => {
+                imgPreview.src = oFREvent.target.result;
+            }
+        }
     </script>
 @endpush

@@ -18,6 +18,11 @@ class Services extends Model
         'excerpt_eng',
         'order',
         'image',
-        'slug_eng'
+        'slug_eng',
+        'SEO_title',
+        'SEO_title_eng',
+        'meta_description',
+        'meta_description_eng'
+
     ];
 }

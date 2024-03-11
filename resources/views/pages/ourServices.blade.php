@@ -58,7 +58,7 @@
                 @foreach ($services as $service)
                 <div class="row our_service_item py-2">
                     <div class="col-12 col-md-4">
-                        <img src="/assets/images/tax.jpg" class="w-100" alt="Tax and Customs Compliances">
+                        <img src="{{ asset("storage/" . $service->image) }}" class="w-100" alt="Tax and Customs Compliances">
                     </div>
                     <div class="col-12 col-md-8 d-flex flex-column align-items-start justify-content-center">
                          <h2><a href="{{ route('our-service-detail', $service->slug) }}">{{ $service->title }}</a></h2>
