@@ -61,9 +61,42 @@
                         <img src="{{ asset("storage/" . $service->image) }}" class="w-100" alt="Tax and Customs Compliances">
                     </div>
                     <div class="col-12 col-md-8 d-flex flex-column align-items-start justify-content-center">
-                         <h2><a href="{{ route('our-service-detail', $service->slug) }}">{{ $service->title }}</a></h2>
-                         <p class="text-start">{!! str_limit($service->description, $limit = 170) !!}</p>
-                         <a class="more_button" href="{{ route('our-service-detail',$service->slug) }}" >More about {{ $service->title }} <i class="bi bi-arrow-right"></i></a>
+                         <h2>
+                            <a href="
+                                @if (app()->getLocale() == "en")
+                                {{ route('our-service-detail', $service->slug) }}
+                                @else
+                                {{ route('our-service-detail.id', $service->slug_eng) }}
+                                @endif
+                                ">
+                                @if (app()->getLocale() == "en")
+                                {{ $service->title_eng }}
+                                @else
+                                {{ $service->title }}
+                                @endif
+                            </a>
+                        </h2>
+                        <p class="text-start">
+                            @if (app()->getLocale() == "en")
+                            {!! str_limit($service->description_eng, $limit = 170) !!}
+                            @else
+                            {!! str_limit($service->description, $limit = 170) !!}
+                            @endif
+                        </p>
+                         <a class="more_button" href="
+                                @if (app()->getLocale() == "en")
+                                {{ route('our-service-detail', $service->slug) }}
+                                @else
+                                {{ route('our-service-detail.id', $service->slug_eng) }}
+                                @endif
+                                ">
+                                @if (app()->getLocale() == "en")
+                                More about {{ $service->title_eng }} 
+                                @else
+                                Baca detail {{ $service->title }} 
+                                @endif
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
                     </div>
                 </div>
                 @endforeach
