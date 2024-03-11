@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\PhotoGallery;
+use App\Models\Promo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
-use Yajra\DataTables\Facades\DataTables;
-use App\Http\Requests\PhotoGalleryRequest;
 
-class PhotoGalleryController extends Controller
+class PromoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,10 +16,10 @@ class PhotoGalleryController extends Controller
      */
     public function index()
     {
-        $galleries = PhotoGallery::get();
+        $promotions = Promo::get();
 
-        return view('pages.admin.photoGallery.index', [
-            "galleries" => $galleries
+        return view('pages.admin.promos.index', [
+            "promotions" => $promotions
         ]);
     }
 
@@ -32,7 +30,7 @@ class PhotoGalleryController extends Controller
      */
     public function create()
     {
-        return view('pages.admin.photoGallery.create');
+        return view('pages.admin.promos.create');
     }
 
     /**
@@ -41,27 +39,27 @@ class PhotoGalleryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PhotoGalleryRequest $request)
+    public function store(Request $request)
     {
         $data = $request->all();
 
         if($request->file('image'))
         {
-            $data['image'] = $request->file('image')->store('photo-gallery');
+            $data['image'] = $request->file('image')->store('promotion');
         }
 
-        PhotoGallery::create($data);
+        Promo::create($data);
 
-        return redirect()->route('life-at-ideatax.index');
+        return redirect()->route('promo.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\PhotoGallery  $photoGallery
+     * @param  \App\Models\Promo  $promo
      * @return \Illuminate\Http\Response
      */
-    public function show(PhotoGallery $photoGallery)
+    public function show(Promo $promo)
     {
         //
     }
@@ -69,16 +67,14 @@ class PhotoGalleryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\PhotoGallery  $photoGallery
+     * @param  \App\Models\Promo  $promo
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $item = PhotoGallery::findOrFail($id);
-
-        return view('pages.admin.photoGallery.edit',[
+        $item = Promo::findOrFail($id);
+        return view('pages.admin.promos.edit',[
             "item" => $item
-
         ]);
     }
 
@@ -86,38 +82,34 @@ class PhotoGalleryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PhotoGallery  $photoGallery
+     * @param  \App\Models\Promo  $promo
      * @return \Illuminate\Http\Response
      */
-    public function update(PhotoGalleryRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $data = $request->all();
 
-        $item = PhotoGallery::findOrFail($id);
+        $item = Promo::findOrFail($id);
         if($request->file('image'))
         {
             if($request->oldImage)
             {
                 Storage::delete($request->oldImage);
             }
-            $data['image'] = $request->file('image')->store('photo-gallery');
+            $data['image'] = $request->file('image')->store('promo');
         }
         $item->update($data);
-        return redirect()->route('life-at-ideatax.index');
+        return redirect()->route('promo.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\PhotoGallery  $photoGallery
+     * @param  \App\Models\Promo  $promo
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Promo $promo)
     {
-        $item = PhotoGallery::findOrFail($id);
-        Storage::delete($item->image);
-        $item->delete();
-
-        return redirect()->route('life-at-ideatax.index');
+        //
     }
 }

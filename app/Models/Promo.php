@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Promo extends Model
 {
     protected $fillable = [
-        'title', 'subtitle', 'image'
+        'title', 'excerpt', 'image', 'title_eng', 'excerpt_eng'
     ];
 }

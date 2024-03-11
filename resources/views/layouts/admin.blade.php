@@ -60,6 +60,19 @@
                         <li class="nav-item">
                             <a href="{{ route("author.index") }}" class="nav-link active">Author</a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route("meeting.index") }}" class="nav-link active">Consultation Meetings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route("hero-slider.index") }}" class="nav-link active">Home Slider</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route("compro-donwloader.index") }}" class="nav-link active">Comapany Profile Downloader</a>
+                        </li>
+                        {{-- <li class="nav-item">
+                            <a href="{{ route("promo.index") }}" class="nav-link active">Promotions</a>
+                        </li> --}}
+
                     </ul>
                 </div>
             </nav>

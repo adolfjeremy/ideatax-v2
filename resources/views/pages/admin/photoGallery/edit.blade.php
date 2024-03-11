@@ -43,7 +43,7 @@
                                         <img class="img-preview img-fluid col-sm-5 my-2">
                                     @endif
                                     <input type="hidden" name="oldImage" value="{{ $item->image }}">
-                                    <input type="file" id="image" name="image" accept="image/*" class="form-control w-100" onchange="previewImage()" required>
+                                    <input type="file" id="image" name="image" accept="image/*" class="form-control w-100" onchange="previewImage()">
                                 </div>
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-warning d-block w-100">Save Image</button>

@@ -49,7 +49,7 @@
                                         {{ route('our-service-detail.id', $slider->service->slug) }}
                                     @endif">
                                     <div class="overlay"></div>
-                                <img src="{{ asset("storage/" . $slider->service->image) }}" class="d-block w-100" alt="{{ $slider->service->title }}">
+                                    <img src="{{ asset("storage/" . $slider->service->image) }}" class="d-block w-100" alt="{{ $slider->service->title }}">
                                 </a>
                                 <a href="
                                     @if (app()->getLocale() == "en")
