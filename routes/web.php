@@ -59,7 +59,7 @@ Route::prefix('id')
         Route::get('/our-team/{id}', [AboutController::class, 'teamDetail'])->name('our-team-detail.id');
 
         Route::get('/our-services', [ServicesController::class, 'index'])->name('our-services.id');
-        Route::get('/our-services/{id}', [ServicesController::class, 'detail'])->name('our-services-detail.id');
+        Route::get('/our-services/{id}', [ServicesController::class, 'detail'])->name('our-service-detail.id');
 
         Route::get('/tax-update', [TaxUpdateController::class, 'index'])->name('update.id');
         Route::get('/tax-update/category/{id}', [TaxUpdateController::class, 'sortByCategory'])->name('tax-update-category.id');
