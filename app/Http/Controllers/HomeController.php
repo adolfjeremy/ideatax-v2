@@ -23,7 +23,7 @@ class HomeController extends Controller
     public function index()
     {
         $services = Services::all();
-        $latestArticles= Article::latest()->take(5)->get();
+        $latestArticles= Article::latest()->take(4)->get();
         $page = Page::findOrFail(1);
         $sliders = HeroSlider::with('service')->get();
         $compro = companyProfile::orderBy('updated_at', 'desc')->first();
