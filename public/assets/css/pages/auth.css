@@ -1,0 +1,8 @@
+main {
+    background-color: rgb(240, 244, 249);
+    min-height: 100vh;
+}
+
+main .login {
+    height: 100vh;
+}

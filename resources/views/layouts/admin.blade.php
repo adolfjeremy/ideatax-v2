@@ -12,9 +12,64 @@
     <link rel="stylesheet" href="/assets/css/pages/admin.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.css"/>
 </head>
-
-<body>
-    <main>
+<body class="dashboard">
+    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap py-2 shadow">
+        <a href="" class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6">
+            Idea<strong>tax</strong>
+        </a>
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-list"></i>
+        </button>
+        <div class="navbar-nav">
+            <div class="nav-item text-nowrap">
+                <a class="nav-link px-3" href="#">Sign out</a>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                <div class="position-sticky pt-3 sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a href="{{ route("pages.index") }}" class="nav-link active">Pages SEO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('team.index') }}" class="nav-link active">Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route("services.index") }}" class="nav-link active">Our Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route("pages.index") }}" class="nav-link active">Articles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route("pages.index") }}" class="nav-link active">Tax Updates</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route("pages.index") }}" class="nav-link active">Tax Event</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route("pages.index") }}" class="nav-link active">Career</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route("pages.index") }}" class="nav-link active">Company Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route("pages.index") }}" class="nav-link active">Life at Ideatax</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route("pages.index") }}" class="nav-link active">Author</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-2">
+                @yield('content')
+            </main>
+        </div>
+    </div>
+    {{-- <main>
         <section class="admin-dashboard">
             <div class="d-flex" id="wrapper">
                 <div class="border-right" id="sidebar-wrapper">
@@ -55,7 +110,7 @@
                 </div>
             </div>
         </section>
-    </main>
+    </main> --}}
     @stack('prepend-script')
     <script src="/assets/vendors/jquery/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

@@ -7,56 +7,33 @@
 @section('content')
     <section class="section-content">
         <div class="container-fluid">
-            <div class="dashboard-heading">
-                <h2 class="dashboard-title">Services</h2>
-                <p class="dashboard-subtitle">Add, Edit or Delete Services</p>
-            </div>
-            <div class="dashboard-content">
-                <div class="row">
-                    <div class="col-12">
-                        <a href="{{ route('services.create') }}" class="btn btn-warning">Add New Service</a>
+            <div class="dashboard-heading mt-3 d-flex align-items-center justify-content-between">
+                <div>
+                    <h2 class="dashboard-title fs-4 fw-bold">Our Services</h2>
+                    <p class="dashboard-subtitle">Add, Edit or Delete Services</p>
+                    <div class="input-group mb-3">
+                        <form action="{{ route("services.index") }}" method="GET" class="d-flex">
+                            <input type="text" name="search" class="form-control" placeholder="Search services" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                            <button class="btn btn-warning" type="submit" id="button-addon1">search</button>
+                        </form>
                     </div>
                 </div>
-                <div class="table-responsive mt-2">
-                    <table class="table table-hover scroll-horizontal-vertical w-100" id="crudTable">
-                        <thead>
-                            <tr>
-                                <th>No.</th>
-                                <th>Title</th>
-                                <th>Slug</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
+                <a href="{{ route("services.create") }}" class="btn btn-warning">
+                    New Service
+                </a>
+            </div>
+            <div class="dashboard-content mt-2">
+                <div class="row">
+                    @foreach ($services as $service)
+                        <div class="col-4">
+                        <a href="{{ route('services.edit', $service->id) }}" class="card bg-primary p-5 mb-4 align-items-center justify-content-center text-decoration-none fs-6 text-uppercase text-center text-light fw-bold discussion_item ">
+                            {{ $service->title }}
+                        </a>
+                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
     </section>
 @endsection
 
-@push('addon-script')
-    <script>
-        // AJAX DataTable
-        var datatable = $('#crudTable').DataTable({
-            processing: true,
-            serverSide: true,
-            ordering: true,
-            ajax: {
-                url: '{!! url()->current() !!}',
-            },
-            columns: [
-                { data: 'order', name: 'order' },
-                { data: 'title', name: 'title' },
-                { data: 'slug', name: 'slug' },
-                {
-                    data: 'action',
-                    name: 'action',
-                    orderable: false,
-                    searchable: true,
-                    width: '15%'
-                },
-            ]
-        });
-    </script>
-@endpush

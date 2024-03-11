@@ -3,6 +3,7 @@
 @section('page-style')
     <link rel="stylesheet" href="/assets/css/3.css">
     <link rel="stylesheet" href="/assets/css/pages/admin.css">
+    <link rel="stylesheet" href="/assets/css/pages/auth.css">
 @endsection
 
 @section('title')
@@ -10,16 +11,16 @@
 @endsection
 
 @section('content')
-    <section class="py-5 d-flex align-items-center justify-content-center mt-5">
-        <div class="container">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-12 col-lg-6 mt-4">
-                    <div class="row text-center">
-                        <h1>Idea<strong>tax</strong></h1>
-                        <p>welcome to ideatax.id admin page</p>
-                    </div>
-                    <div class="row">
-                        @if (session()->has('loginError'))
+    <section class="login p-md-5 d-flex align-items-center justify-content-center">
+        <div class="container p-md-5">
+            <div class="row p-md-5 p-4 login_page">
+                <div class="col-12 col-md-6 p-md-2">
+                    <h1 class="fs-4 fw-bold">Idea<strong>tax</strong></h1>
+                    <p class="fs-1 fw-normal">Login</p>
+                    <p>Gunakan Akun Ideatax Anda</p>
+                </div>
+                <div class="col-12 col-md-6 p-md-2">
+                    @if (session()->has('loginError'))
                             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                 {{ session('loginError') }}
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -37,7 +38,6 @@
                             </div>
                             <button type="submit" class="btn btn-warning btn-block mt-2 w-100">Log in</button>
                         </form>
-                    </div>
                 </div>
             </div>
         </div>

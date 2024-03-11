@@ -15,7 +15,6 @@ class SearchController extends Controller
         $articles = Article::where('title', 'LIKE', "%{$search}%")->paginate(20)->withQueryString();
         $taxEvents = TaxEvent::where('title', 'LIKE', "%{$search}%")->paginate(20)->withQueryString();
         $taxUpdates = TaxUpdate::where('title', 'LIKE', "%{$search}%")->paginate(20)->withQueryString();
-        // dd($taxUpdates);
         return View('pages.search-result',[
             "articles" => $articles,
             "taxEvents" => $taxEvents,

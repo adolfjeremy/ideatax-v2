@@ -7,28 +7,22 @@
 @section('content')
     <section class="section-content">
         <div class="container-fluid">
-            <div class="dashboard-heading">
-                <h2 class="dashboard-title">Team</h2>
-                <p class="dashboard-subtitle">Add, Edit or Delete Team List</p>
-            </div>
-            <div class="dashboard-content">
-                <div class="row">
-                    <div class="col-12">
-                        <a href="{{ route('team.create') }}" class="btn btn-warning">Add New Team</a>
-                    </div>
+            <div class="dashboard-heading pt-3 d-flex align-items-center justify-content-between">
+                <div>
+                    <h2 class="dashboard-title fs-4 fw-bold">Our Team</h2>
+                    <p class="dashboard-subtitle">Customize your Team Member</p>
                 </div>
-                <div class="table-responsive mt-2">
-                    <table class="table table-hover scroll-horizontal-vertical w-100" id="crudTable">
-                        <thead>
-                            <tr>
-                                <th>id</th>
-                                <th>Nama</th>
-                                <th>Position</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
+                <a href="{{ route("team.create") }}" class="btn btn-warning">New Member</a>
+            </div>
+            <div class="dashboard-content mt-2">
+                <div class="row">
+                    @foreach ($teams as $team)
+                        <div class="col-4">
+                        <a href="{{ route('team.edit', $team->id) }}" class="card bg-primary p-5 mb-4 align-items-center justify-content-center text-decoration-none fs-6 text-uppercase text-light fw-bold discussion_item ">
+                            {{ $team->name }}
+                        </a>
+                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
