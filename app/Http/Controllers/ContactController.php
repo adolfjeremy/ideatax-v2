@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Page;
 use Illuminate\Http\Request;
 use App\Mail\CustomerQuestionMail;
+use App\Models\Services;
 use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
@@ -18,8 +19,10 @@ class ContactController extends Controller
     {
         
         $page = Page::findOrFail(6);
+        $services = Services::get();
         return view('pages.contact', [
-            "page" => $page
+            "page" => $page,
+            "services" => $services
         ]);
     }
 

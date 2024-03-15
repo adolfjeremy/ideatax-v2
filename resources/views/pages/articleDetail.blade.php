@@ -111,35 +111,10 @@
                             </div>
                         </div>
                     @endif
-                    <div class="col-12">
-                        <div class="row py-1">
-                            <h2>Latest Event</h2>
-                        </div>
-                        <div class="row">
-                            <div class="tax_event_list">
-                                @forelse ($taxEvents as $taxEvent)
-                                <a href="{{ app()->getLocale() == "en" ? route('tax-event', $taxEvent->slug_eng) : route('tax-event.id', $taxEvent->slug) }}" class="tax_event_item">
-                                    <h3>
-                                        @if (app()->getLocale() == "en")
-                                            {!! str_limit($taxEvent->title_eng, $limit = 50) !!}
-                                        @endif
-                                        @if (app()->getLocale() == "id")
-                                            {!! str_limit($taxEvent->title, $limit = 50) !!}
-                                        @endif
-                                    </h3>
-                                    <span>{{ $taxEvent->created_at->format('d M, Y') }}</span>
-                                </a>
-                                @empty
-                                <div class="tax_event_item text-center text-light">
-                                    No event at the moment
-                                </div>
-                                @endforelse
-                            </div>
-                        </div>
-                    </div>
+
                     @if ($article->author_id)
                         <div class="col-12 d-none d-lg-block">
-                            <div class="row mt-4 mb-1">
+                            <div class="row mb-1">
                                 <h2>Author</h2>
                             </div>
                             <div class="row author">

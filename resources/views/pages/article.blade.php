@@ -50,8 +50,8 @@
     </section>
     <section id="newsCarousel">
         <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-8">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-12 col-lg-10">
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             @forelse ($articleCarousels as $articleCarousel)
@@ -92,33 +92,7 @@
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
-                </div>
-                <div id="taxEvent" class="col-12 col-lg-4 tax_event_container">
-                    <div class="row py-1">
-                        <h2>Tax Event</h2>
-                    </div>
-                    <div class="row">
-                        <div class="tax_event_list">
-                            @forelse ($taxEvents as $taxEvent)
-                                <a href="{{ app()->getLocale() == "en" ? route('tax-event', $taxEvent->slug_eng) : route('tax-event.id', $taxEvent->slug) }}" class="tax_event_item">
-                                    <h3>
-                                        @if (app()->getLocale() == "en")
-                                            {!! str_limit($taxEvent->title_eng, $limit = 50) !!}
-                                        @endif
-                                        @if (app()->getLocale() == "id")
-                                            {!! str_limit($taxEvent->title, $limit = 50) !!}
-                                        @endif
-                                    </h2>
-                                    <span>{{ $taxEvent->created_at->format('d M, Y') }}</span>
-                                </a>
-                            @empty
-                                <div class="tax_event_item text-center text-light">
-                                    No event at the moment
-                                </div>
-                            @endforelse
-                        </div>
-                    </div>
-                </div>
+                </div>  
             </div>
         </div>
     </section>

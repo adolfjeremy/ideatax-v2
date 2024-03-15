@@ -48,10 +48,10 @@
                 <div class="our_team_list pb-5 text-start">
                     @php $incrementCategory = 0 @endphp
                     @foreach ($teams as $team)
-                        <div class="our_team_item" style="background-image: url('{{ asset("storage/" . $team->photo) }}')">
-                            <a href="{{ app()->getLocale() == "en" ? route('our-team-detail', $team->slug) : route('our-team-detail.id', $team->slug) }}"></a>
-                            <p>{{ $team->name }}</p>
-                            <p>{{ $team->position }}</p>
+                        <div class="our_team_item">
+                            <p class="position-relative">{{ $team->name }}</p>
+                            <p class="position-relative">{{ $team->position }}</p>
+                            <a style="background-image: url('{{ asset("storage/" . $team->photo) }}')" href="{{ app()->getLocale() == "en" ? route('our-team-detail', $team->slug) : route('our-team-detail.id', $team->slug) }}"></a>
                         </div>
                     @endforeach
                 </div>

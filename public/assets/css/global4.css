@@ -193,7 +193,7 @@ header .dropdown-menu span {
 .overlay {
     position: absolute;
     inset: 0;
-    background-color: rgba(39, 46, 69, 0.5);
+    background-color: rgba(39, 46, 69, 0.75);
 }
 
 .consultation_form {

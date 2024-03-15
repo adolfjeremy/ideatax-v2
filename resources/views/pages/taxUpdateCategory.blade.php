@@ -94,27 +94,30 @@
                         </button>
                     </div>
                 </div>
-                <div id="customerQuestions" class="col-12 col-lg-4 mt-4 my-lg-0">
-                    <div class="row text-center header">
-                        <h2 class="py-3">{{ __('home.question') }}</h2>
+                <div id="taxEvent" class="col-12 col-lg-4 tax_event_container">
+                    <div class="row py-1">
+                        <h2>Tax Event</h2>
                     </div>
-                    <div class="row d-flex justify-content-center">
-                        <form action="{{ route('update-save') }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <div class="col-12 my-3">
-                                <input type="text" id="name" name="name" class="form-control w-100" placeholder="{{ __('home.name') }}" required>
-                            </div>
-                            <div class="col-12 mb-3">
-                                <input type="email" id="email" name="email" class="form-control w-100" placeholder="Email" required>
-                            </div>
-                            <input type="hidden" id="status" name="status" class="form-control w-100" value="UNANSWERED" required>
-                            <div class="col-12 mb-3 d-flex flex-column">
-                                <textarea name="question" id="editor" class="form-control w-100" placeholder="{{ __('home.ask') }}" required></textarea>
-                            </div>
-                            <div class="col-12 mb-3">
-                                <button type="submit" class="btn btn-warning d-block w-100">{{ __('home.askButton') }}</button>
-                            </div>
-                        </form>
+                    <div class="row">
+                        <div class="tax_event_list">
+                            @forelse ($taxEvents as $taxEvent)
+                                <a href="{{ app()->getLocale() == "en" ? route('tax-event', $taxEvent->slug_eng) : route('tax-event.id', $taxEvent->slug) }}" class="tax_event_item">
+                                    <h3>
+                                        @if (app()->getLocale() == "en")
+                                            {!! str_limit($taxEvent->title_eng, $limit = 50) !!}
+                                        @endif
+                                        @if (app()->getLocale() == "id")
+                                            {!! str_limit($taxEvent->title, $limit = 50) !!}
+                                        @endif
+                                    </h2>
+                                    <span>{{ $taxEvent->created_at->format('d M, Y') }}</span>
+                                </a>
+                            @empty
+                                <div class="tax_event_item text-center text-light">
+                                    No event at the moment
+                                </div>
+                            @endforelse
+                        </div>
                     </div>
                 </div>
             </div>

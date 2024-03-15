@@ -35,9 +35,9 @@
 
 @section('content')
     <section class="hero_cta text-center">
-        <div class="container py-3">
+        <div class="container-fluid p-0">
             <div class="row">
-                <div class="col-12 col-md-8">
+                <div class="col-12">
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             @foreach ($sliders as $slider)
@@ -57,7 +57,9 @@
                                     @else
                                         {{ route('our-service-detail.id', $slider->service->slug) }}
                                     @endif" class="hero_titles">
-                                    <h1>
+                                    <div class="row align-items-center justify-content-center">
+                                        <div class="col-8">
+                                            <h1>
                                         @if (app()->getLocale() == "en")
                                         {{ $slider->service->title_eng }}    
                                         @else
@@ -71,6 +73,8 @@
                                         {{ $slider->service->excerpt }}
                                         @endif
                                     </p>
+                                        </div>
+                                    </div>
                                 </a>
                             </div>
                             @endforeach
@@ -83,32 +87,6 @@
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4 latest_articles">
-                    <div class="row py-1">
-                        <h2>Latest Articles</h2>
-                    </div>
-                    <div class="row">
-                        <div class="latest_articles_list">
-                            @forelse ($latestArticles as $latestArticle)
-                                <a href="{{ app()->getLocale() == "en" ? route('articles', $latestArticle->slug_eng) : route('articles.id', $latestArticle->slug) }}" class="latest_articles_item">
-                                    <h3>
-                                        @if (app()->getLocale() == "en")
-                                            {!! str_limit($latestArticle->title_eng, $limit = 50) !!}
-                                        @endif
-                                        @if (app()->getLocale() == "id")
-                                            {!! str_limit($latestArticle->title, $limit = 50) !!}
-                                        @endif
-                                    </h2>
-                                    <span>{{ $latestArticle->created_at->format('d M, Y') }}</span>
-                                </a>
-                            @empty
-                                <div class="latest_articles_item text-center text-light">
-                                    No event at the moment
-                                </div>
-                            @endforelse
-                        </div>
                     </div>
                 </div>
             </div>
@@ -166,7 +144,7 @@
             </div>
         </div>
     </section>
-    <section class="why_ideatax pb-5">
+    <section class="why_ideatax pb-5 mt-5">
         <div class="container">
             <div class="row text-center mb-4">
                 <h2>{{ __('home.whyHeader') }}</h2>
@@ -185,7 +163,7 @@
             </div>
         </div>
     </section>
-    <section class="our_value pb-2 mt-2">
+    <section class="our_value pb-5 mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
@@ -313,14 +291,16 @@
             </div> --}}
         </div>
     </section>
-    <section class="contact_lead py-5 mt-5">
+    {{-- <section class="contact_lead py-5 mt-5">
         <div class="container">
             <div class="col-12 d-flex align-items-center justify-content-between">
                 <h2>{{ __('home.contact') }}</h2>
                 <a href="{{ app()->getLocale() == "en" ? route("contact") : route("contact.id") }}" class="contact_lead-button btn btn-warning fw-bold">{{ __('home.contactButton') }}</a>
             </div>
         </div>
-    </section>
+    </section> --}}
+    
+    @include('includes.consultation')
 @endsection
 
 @push('script')
