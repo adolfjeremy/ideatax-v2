@@ -34,7 +34,21 @@
 @endsection
 
 @section('content')
-    <section class="hero_cta text-center">
+    <section class="hero_cta text-center py-0 py-lg-5 px-0">
+        <div class="overlay"></div>
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-12 d-flex flex-column align-items-center justify-content-center">
+                    <h1>{{ __('home.hero') }}</h1>
+                    <div class="d-flex button-container">
+                        <a href="{{ route('contact') }}" class="btn btn-lg btn-warning">{{ __('home.contactButton') }}</a>
+                        <a href="{{ route('our-services') }}" class="btn btn-lg btn-outline-light ms-3">{{ __('home.service') }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- <section class="hero_cta text-center">
         <div class="container-fluid p-0">
             <div class="row">
                 <div class="col-12">
@@ -91,7 +105,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <section class="about_us">
         <div class="container py-5">
             <div class="about_bg"></div>
@@ -223,7 +237,7 @@
             </div>
         </div>
         <div class="container">
-            <div class="value_list">
+            {{-- <div class="value_list">
                 @foreach ($sliders as $item)
                 <div class="card">
                     <img src="{{ asset("storage/" . $item->service->image) }}" alt="{{ $item->service->title }}" class="card-img-top">
@@ -266,8 +280,8 @@
                     </div>
                 </div>
                 @endforeach
-            </div>
-            {{-- <div class="slider_outer">
+            </div> --}}
+            <div class="slider_outer">
                 <div class="our_services_list m-0">
                     @foreach ($services as $service)
                         <div>
@@ -288,7 +302,7 @@
                         </div>
                     @endforeach
                 </div>
-            </div> --}}
+            </div>
         </div>
     </section>
     {{-- <section class="contact_lead py-5 mt-5">
@@ -306,7 +320,7 @@
 @push('script')
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    {{-- <script type="text/javascript" src="/assets/vendors/slick-1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="/assets/vendors/slick-1.8.1/slick/slick.min.js"></script>
     <script>
         $('.our_services_list').slick({
             dots: true,
@@ -339,5 +353,5 @@
                 }
             ]
             });
-    </script> --}}
+    </script>
 @endpush
