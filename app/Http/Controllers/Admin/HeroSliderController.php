@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\HeroSlider;
 use App\Models\Services;
+use App\Models\HeroSlider;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class HeroSliderController extends Controller
 {
@@ -45,7 +46,10 @@ class HeroSliderController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-
+        if($request->file('image'))
+        {
+            $data['image'] = $request->file('image')->store('slider');
+        }
         HeroSlider::create($data);
 
         return redirect()->route('hero-slider.index');
@@ -91,6 +95,15 @@ class HeroSliderController extends Controller
         $data = $request->all();
 
         $item = HeroSlider::findOrFail($id);
+
+        if($request->file('photo'))
+        {
+            if($request->oldImage)
+            {
+                Storage::delete($request->oldImage);
+            }
+            $data['image'] = $request->file('image')->store('slider');
+        }
         $item->update($data);
 
         return redirect()->route('hero-slider.index');

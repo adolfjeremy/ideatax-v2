@@ -23,7 +23,7 @@ footer {
 body {
     margin: 0;
     padding: 0;
-    color: #272e45;
+    color: #021924;
     font-family: "Libre Baskerville", serif;
 }
 
@@ -46,7 +46,7 @@ header .dropdown-menu .on {
 }
 
 header .dropdown-menu span {
-    color: #272e45 !important;
+    color: #021924 !important;
 }
 
 .lang-flag {
@@ -86,6 +86,36 @@ header .dropdown-menu span {
         bottom: 0;
         visibility: hidden;
     }
+}
+
+.scroll_up {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: #021924;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.btn-custom {
+    background-color: #021924;
+    color: #eeeeee;
+}
+
+.btn-custom:hover {
+    background-color: #021924e0;
+    color: #eeeeee;
+}
+
+.scroll_up i {
+    color: #eeeeee;
+    font-size: 30px;
 }
 
 .floating_button {
@@ -193,7 +223,7 @@ header .dropdown-menu span {
 .overlay {
     position: absolute;
     inset: 0;
-    background-color: rgba(39, 46, 69, 0.75);
+    background-color: rgba(39, 46, 69, 0.6);
 }
 
 .consultation_form {
@@ -244,7 +274,7 @@ header .dropdown-menu span {
 .breadcrumb-cst,
 .breadcrumb-cst a {
     font-size: 14px !important;
-    color: #272e45 !important;
+    color: #021924 !important;
     font-weight: 500 !important;
     font-family: "Lato", sans-serif;
     text-transform: capitalize;

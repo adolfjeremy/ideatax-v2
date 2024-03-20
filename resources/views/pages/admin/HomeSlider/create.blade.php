@@ -27,16 +27,12 @@
                             <form action="{{ route('hero-slider.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="col-12 mb-3">
-                                    <label for="service_id" class="form-label">Article Category Title</label>
-                                    <select class="form-select" aria-label="Default select example" name="service_id" id="service_id">
-                                        <option selected>Open this select menu</option>
-                                        @foreach ($services as $service)
-                                            <option value="{{ $service->id }}">{{ $service->title }}</option>
-                                        @endforeach
-                                    </select>
+                                    <label for="photo" class="form-label">Slider Thumbnail</label>
+                                    <img class="img-preview img-fluid col-sm-5 my-2">
+                                    <input type="file" id="photo" name="photo" class="form-control w-100" onchange="previewImage()" required>
                                 </div>
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-warning d-block w-100">Save Service</button>
+                                    <button type="submit" class="btn btn-warning d-block w-100">Save Thumbnail</button>
                                 </div>
                             </form>
                         </div>

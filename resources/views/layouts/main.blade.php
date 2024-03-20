@@ -46,6 +46,9 @@
         <div class="floating_button" title="contact us via whatsapp">
             <i class="bi bi-whatsapp floating_button_icon"></i>
         </div>
+        <div class="scroll_up d-none p-2">
+            <i class="bi bi-arrow-up"></i>
+        </div>
         <div class="floating_whatsapp">
             <div class="floating_whatsapp_header py-2 px-3">
                 <i class="bi bi-whatsapp"></i>

@@ -28,16 +28,17 @@
                                 @method("PUT")
                                 @csrf
                                 <div class="col-12 mb-3">
-                                    <label for="service_id" class="form-label">Article Category Title</label>
-                                    <select class="form-select" aria-label="Default select example" name="service_id" id="service_id">
-                                        <option>Open this select menu</option>
-                                        @foreach ($services as $service)
-                                            <option @if($item->service_id == $service->id) selected @endif value="{{ $service->id }}">{{ $service->title }}</option>
-                                        @endforeach
-                                    </select>
+                                    <label for="photo" class="form-label">Thumbnail</label>
+                                    @if ($item->image)
+                                        <img src="{{ asset("storage/" . $item->image) }}" class="img-preview img-fluid col-sm-5 my-2 d-block">
+                                    @else
+                                        <img class="img-preview img-fluid col-sm-5 my-2">
+                                    @endif
+                                    <input type="hidden" name="oldImage" value="{{ $item->image }}">
+                                    <input type="file" id="image" name="image" class="form-control w-100" value="{{ $item->image }}" onchange="previewImage()">
                                 </div>
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-warning d-block w-100">Save Service</button>
+                                    <button type="submit" class="btn btn-warning d-block w-100">Save Thumbnail</button>
                                 </div>
                             </form>
                         </div>
