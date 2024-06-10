@@ -218,32 +218,12 @@
     background-color: #ffbf00 !important;
 }
 
-.about_us .about_bg {
-    position: absolute;
-    inset: 0;
-    background-image: url("/assets/images/team1.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    filter: blur(5px);
-}
-
-.about_us .about_us_text {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 4px solid #021924;
-}
-
-.about_us .about_us_text:hover {
-    transition: all linear 250ms;
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 4px solid #850e35;
-}
-
 .about_us h2 {
     font-size: 32px;
     font-weight: 800;
     text-align: center;
     margin-bottom: 20px;
+    color: #272e45;
 }
 
 .about_us p {
@@ -252,6 +232,28 @@
     color: #111;
     line-height: 30px;
     margin: 0;
+}
+
+.about_us .stat_list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+}
+.about_us .stat_list .value,
+.about_us .stat_list .stat_name {
+    font-family: "Lato", sans-serif;
+    color: #272e45;
+}
+
+.about_us .stat_list .value {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.about_us .stat_list .stat_name {
+    font-weight: 500;
+    line-height: 1.1;
+    margin-top: 5px;
 }
 
 .about_us_slick {

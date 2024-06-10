@@ -49,14 +49,34 @@
     </div>
 </section>
 <section class="about_us">
-    <div class="container py-5">
-        <div class="about_bg"></div>
-        <div class="row text-center p-4 d-flex align-items-center justify-content-center position-relative">
-            <div class="col-12 col-lg-10 p-4 about_us_text">
+    <div class="container py-2">
+        <div class="row text-center">
+            <div class="col-12">
                 <h2>{{ __('home.aboutHeader') }}</h2>
-                <p class="mb-2">&emsp;&emsp;{{ __('home.about') }}</p>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-between">
+            <div class="col-12 col-lg-7 d-flex flex-column about_us_text">
+                <p class="mb-2 text-start">{{ __('home.about') }}</p>
+                <div class="stat_list text-center mt-4">
+                    <div class="stat_item">
+                        <p class="value">359</p>
+                        <p class="stat_name">Projects</p>
+                    </div>
+                    <div class="stat_item">
+                        <p class="value">200+</p>
+                        <p class="stat_name">Clients</p>
+                    </div>
+                    <div class="stat_item">
+                        <p class="value">20+</p>
+                        <p class="stat_name">Years of Partner<br>Experience</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4 d-flex flex-column align-items-center justify-content-start">
+                <img src="/assets/images/award.png" class="w-100" alt="ideatax award winning">
                 @if($compro)
-                <div class="mt-2 button-container">
+                <div class="mt-4 button-container">
                     <button type="button" class="btn btn-warning rounded" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                         {{ __('home.aboutButton') }}
                     </button>
