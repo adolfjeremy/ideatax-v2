@@ -250,7 +250,7 @@
                 </div>
                 <div class="article_detail d-flex flex-column">
                     <p>{{ $item->articleCategory->title }} - {{ $item->updated_at->format('d M, Y H:i') }} WIB</p>
-                    <a href="@if (app()->getLocale() == "en") {{ route('article-detail',$item->slug_eng) }}  @else {{ route('article-detail.id',$item->slug) }} @endif">{{ $item->title }}</a>
+                    <a href="@if (app()->getLocale() == "en") {{ route('article-detail',$item->slug_eng) }}  @else {{ route('article-detail.id',$item->slug) }} @endif">{{ $item->title_eng }}</a>
                 </div>
             </div>
             @endforeach
@@ -276,7 +276,7 @@
                 <a href="@if (app()->getLocale() == "en") {{ route('tax-event', $item->slug_eng) }} @else {{ route('tax-event.id', $item->slug) }} @endif" class="col-6 col-md-3 d-flex flex-column event_item mt-4">
                 <img src="/assets/images/1.png" class="w-100" alt="">
                 <p>{{ $item->updated_at->format('M, d Y') }}</p>
-                <h3>{{ $item->title }}</h3>
+                <h3>{{ $item->title_eng }}</h3>
             </a>
             @endforeach
         </div>
