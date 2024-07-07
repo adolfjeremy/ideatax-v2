@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.app')
 
 @section('canonical')
     <link rel="canonical" href="https://ideatax.id/articles/{{ $taxUpdate->slug }}">

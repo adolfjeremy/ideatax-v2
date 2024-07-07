@@ -6,7 +6,7 @@
 }
 
 #ourServices {
-    font-family: "Lato", sans-serif;
+    font-family: "OpenSauce", sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,20 +56,20 @@
     font-size: 22px;
     font-weight: 700;
     text-transform: uppercase;
-    font-family: "Lato", sans-serif;
+    font-family: "OpenSauce", sans-serif;
     color: #111;
 }
 
 .our_service_item p {
     font-size: 18px;
-    font-family: "Lato", sans-serif;
+    font-family: "OpenSauce", sans-serif;
 }
 
 .our_service_item .more_button {
     font-size: 17px;
     font-weight: 600;
     color: #272e45;
-    font-family: "Lato", sans-serif;
+    font-family: "OpenSauce", sans-serif;
     display: flex;
     align-items: center;
 }
@@ -86,7 +86,7 @@
 }
 
 #ourServices .button_container a {
-    font-family: "Lato", sans-serif;
+    font-family: "OpenSauce", sans-serif;
 }
 
 @media (max-width: 280px) {

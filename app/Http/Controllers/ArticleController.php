@@ -17,11 +17,13 @@ class ArticleController extends Controller
         $articleCarousels = Article::latest()->take(5)->get();
         $taxEvents = TaxEvent::latest()->take(5)->get();
         $articles = Article::latest()->paginate(20);
+        $latests = Article::latest()->paginate(5);
         $page = Page::findOrFail(5);
         $services = Services::get();
         return view('pages.article',[
             "articleCategories" => $articleCategories,
             "articles" => $articles,
+            "latests" => $latests,
             "articleCarousels" => $articleCarousels,
             "taxEvents" => $taxEvents,
             "page" => $page,

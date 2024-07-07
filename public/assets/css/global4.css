@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Libre+Baskerville:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=OpenSauce:wght@300;400;700;900&family=Libre+Baskerville:wght@400;700&display=swap");
 
 * {
     box-sizing: border-box;
@@ -17,7 +17,7 @@ h6,
 header,
 .hero_cta *,
 footer {
-    font-family: "Lato", sans-serif;
+    font-family: "OpenSauce", sans-serif;
 }
 
 body {
@@ -153,7 +153,7 @@ header .dropdown-menu span {
     margin: 0;
     color: #fff;
     font-size: 17px;
-    font-family: "Lato", sans-serif;
+    font-family: "OpenSauce", sans-serif;
 }
 
 .floating_whatsapp_header i {
@@ -186,7 +186,7 @@ header .dropdown-menu span {
 
 .floating_whatsapp_content_wrapper p {
     font-size: 15px;
-    font-family: "Lato", sans-serif;
+    font-family: "OpenSauce", sans-serif;
     color: black;
 }
 
@@ -201,7 +201,7 @@ header .dropdown-menu span {
 }
 
 .consultation_form h2 {
-    font-family: "Lato", sans-serif;
+    font-family: "OpenSauce", sans-serif;
     font-weight: 700;
     font-size: 28px;
     color: #111;
@@ -212,7 +212,7 @@ header .dropdown-menu span {
 .consultation_form input,
 .consultation_form button,
 .consultation_form textarea {
-    font-family: "Lato", sans-serif;
+    font-family: "OpenSauce", sans-serif;
     font-size: 1rem !important;
 }
 
@@ -238,7 +238,7 @@ header .dropdown-menu span {
 }
 
 .contact_lead-button {
-    font-family: "Lato", sans-serif;
+    font-family: "OpenSauce", sans-serif;
 }
 
 .breadcrumb-cst,
@@ -246,7 +246,7 @@ header .dropdown-menu span {
     font-size: 14px !important;
     color: #272e45 !important;
     font-weight: 500 !important;
-    font-family: "Lato", sans-serif;
+    font-family: "OpenSauce", sans-serif;
     text-transform: capitalize;
     text-decoration: none;
 }
@@ -262,7 +262,7 @@ header .dropdown-menu span {
 }
 
 .author h3 {
-    font-family: "Lato", sans-serif;
+    font-family: "OpenSauce", sans-serif;
     font-size: 18px;
     font-weight: 600;
     margin-top: 10px;
@@ -313,11 +313,11 @@ header .dropdown-menu span {
 }
 
 .search_result h2 {
-    font-family: "Lato", sans-serif;
+    font-family: "OpenSauce", sans-serif;
 }
 
 .login_page {
-    font-family: "Lato", sans-serif;
+    font-family: "OpenSauce", sans-serif;
     background-color: #ffffff;
     border-radius: 30px;
 }

@@ -1,0 +1,50 @@
+.articles_hero {
+    .carousel_custom {
+        width: 100vw;
+        img {
+            object-fit: cover;
+        }
+    }
+}
+
+.latest_articles {
+    h2 {
+        line-height: 1.17857248em;
+        letter-spacing: $letter;
+        font-size: 2.30375rem;
+        color: $orange;
+    }
+
+    .articles_item {
+        h3 {
+            font-size: 0.9751rem;
+            line-height: 1.39240506em;
+            letter-spacing: $letter;
+            color: $navy;
+            font-weight: 600;
+        }
+        p {
+            font-size: 0.8939rem;
+            line-height: 1.39240506em;
+            letter-spacing: $letter;
+            color: $blue;
+            padding: 0;
+            margin: 0;
+        }
+        a {
+            font-size: 0.9052rem;
+            line-height: 1.39240506em;
+            letter-spacing: $letter;
+            color: $white;
+            background-color: #000000;
+            border-radius: 0;
+            padding: 0.8rem 1.8rem;
+        }
+    }
+}
+
+// .article_link {
+//     position: absolute;
+//     inset: 0;
+//     background-color: transparent;
+// }

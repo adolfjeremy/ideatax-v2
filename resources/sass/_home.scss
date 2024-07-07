@@ -1,0 +1,265 @@
+.hero {
+    background-image: url("/assets/images/hero.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 4rem;
+    h1 {
+        text-shadow: 0em 0.0375em 0.159375em rgba(0, 0, 0, 0.325);
+        line-height: 1.01019687em;
+        letter-spacing: -0.054em;
+        color: $white;
+        font-size: 4rem;
+        font-family: OpenSauce;
+    }
+}
+
+.btn-orange {
+    background-color: $orange;
+    color: $white;
+    font-weight: 700;
+    line-height: 1.39285466em;
+    text-align: center;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    font-size: 1.125rem;
+    padding: 1rem 2.5rem;
+    &:hover {
+        background-color: $orange !important;
+        color: $white !important;
+    }
+}
+
+.about {
+    padding: 3.5rem 0;
+    background-image: url("/assets/images/about-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    .about_desc {
+        p {
+            color: $blue;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 1.41665486em;
+            letter-spacing: 0.009em;
+            font-size: 1.4rem;
+        }
+        .about_stats {
+            gap: 6rem;
+            .about_number {
+                font-size: 4.5rem;
+                color: $navy;
+                line-height: 1.390625em;
+                text-align: center;
+                font-weight: 800;
+            }
+            .about_head {
+                color: $orange;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 1.25rem;
+                line-height: 1.44640274em;
+                text-transform: capitalize;
+                text-align: center;
+                direction: ltr;
+            }
+        }
+    }
+}
+
+.section_heading {
+    h2 {
+        color: $blue;
+        font-size: 1.9375rem;
+        line-height: 1.43749551em;
+    }
+}
+
+.expertise {
+    .expertise_item {
+        img {
+            width: 47px;
+        }
+        h3 {
+            font-weight: 700;
+            color: $navy;
+            line-height: 1.42856633em;
+            letter-spacing: 0.009em;
+            font-size: 1.6875rem;
+        }
+        p {
+            color: $blue;
+            line-height: 1.44640274em;
+            letter-spacing: 0.009em;
+            font-size: 1.15rem;
+            margin: 20px 0 10px 0;
+        }
+        a {
+            color: $orange;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+    }
+}
+
+.consultation_cta {
+    a {
+        text-decoration: none;
+        font-size: 1.6459rem;
+        color: $navy;
+        line-height: 1.42498753em;
+        letter-spacing: 0.009em;
+        img {
+            width: 50px;
+        }
+    }
+}
+
+.value_list {
+    h3 {
+        position: absolute;
+        color: $white;
+        margin: 0;
+        bottom: 20px;
+        right: 50%;
+        transform: translateX(50%);
+        font-size: 1.3125rem;
+        font-weight: 400;
+        line-height: 1.42498753em;
+        letter-spacing: 0.009em;
+    }
+}
+
+.services {
+    background-image: url("/assets/images/blue-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    .left {
+        h2 {
+            font-size: 3.4375rem;
+            line-height: 1.19642857em;
+            letter-spacing: 0.009em;
+            color: $orange;
+        }
+        p {
+            color: $blue;
+            line-height: 1.64061987em;
+            letter-spacing: 0.009em;
+            font-size: 1.3125rem;
+        }
+    }
+    .right {
+        .services_list {
+            &:last-child {
+                border-bottom: 3px solid $navy;
+            }
+            .service_item {
+                text-decoration: none;
+                border-top: 3px solid $navy;
+                p {
+                    color: $blue;
+                    line-height: 1.64061987em;
+                    letter-spacing: 0.009em;
+                    font-size: 1.3125rem;
+                    text-decoration: none;
+                }
+
+                img {
+                    width: 45px;
+                }
+            }
+        }
+    }
+    .team {
+        h2 {
+            color: $orange;
+            line-height: 1.18641819em;
+            letter-spacing: 0.009em;
+            font-size: 3.5625rem;
+        }
+    }
+}
+
+.articles {
+    .article_item {
+        .article_img {
+            height: 110px;
+            width: 110px;
+            border-radius: 50%;
+            overflow: hidden;
+            img {
+                height: 110px;
+            }
+        }
+        .article_detail {
+            margin-left: 10px;
+            p {
+                font-size: 1.2rem;
+                color: $orange;
+                line-height: 1.4062522em;
+                letter-spacing: 0.009em;
+                font-weight: 600;
+            }
+            a {
+                font-size: 1.6rem;
+                color: $blue;
+                line-height: 1.42499288em;
+                letter-spacing: 0.009em;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.subscribe {
+    .subscribe_button {
+        position: absolute;
+        bottom: 50%;
+        transform: translateY(50%);
+        right: 4.5rem;
+
+        h2 {
+            color: $white;
+            font-size: 2.625rem;
+            line-height: 1.42967633em;
+            letter-spacing: 0.009em;
+        }
+
+        a {
+            color: $white;
+            font-size: 2.125rem;
+            line-height: 1.42967633em;
+            letter-spacing: 0.009em;
+            img {
+                width: 50px;
+            }
+        }
+    }
+}
+
+.event {
+    .event_item {
+        text-decoration: none;
+        p {
+            font-size: 1.48125rem;
+            color: $navy;
+            line-height: 1.42967633em;
+            letter-spacing: 0.009em;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        h3 {
+            font-size: 1.48125rem;
+            color: $blue;
+            line-height: 1.42967633em;
+            letter-spacing: 0.009em;
+        }
+    }
+}

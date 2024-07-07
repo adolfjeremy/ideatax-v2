@@ -1,0 +1,57 @@
+@import "bootstrap/scss/bootstrap";
+
+@font-face {
+    font-family: OpenSauce;
+    src: url("/assets/font/OpenSauce.ttf");
+}
+
+$white: #fafafa;
+$orange: #ff844f;
+$blue: #005b96;
+$navy: #03396c;
+$letter: 0.009em;
+
+body {
+    font-family: OpenSauce !important;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    img {
+        width: 160px;
+    }
+}
+
+.padding_top {
+    padding-top: 86px;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(39, 46, 69, 0.75);
+}
+
+.contact_lead {
+    background-color: #850e35;
+}
+
+.contact_lead h2 {
+    color: #fff;
+}
+
+.contact_lead-button {
+    font-family: "OpenSauce", sans-serif;
+}
+
+.lang-flag {
+    width: 30px;
+}
+
+@import "home";
+@import "articles";
+@import "footer";

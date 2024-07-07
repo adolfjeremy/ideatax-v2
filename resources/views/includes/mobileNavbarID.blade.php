@@ -1,6 +1,6 @@
-<ul class="d-block p-1 border-top">
+<ul class="d-block p-1">
     <li>
-        <a href="/id" class="navbar_brand">Idea<strong>tax</strong></a>
+        <a href="/id" class="navbar_brand"><img src="/assets/images/logo.png" alt="Ideatax"></a>
     </li>
     <li class="nav-item py-2">
         <a href="{{ route('home.id') }}" class="nav-link{{ (request()->is('id') ? " active" : "") }}">home</a>

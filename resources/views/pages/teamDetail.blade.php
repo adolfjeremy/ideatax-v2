@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.app')
 
 @section('page-style')
     <link rel="stylesheet" href="/assets/css/pages/team3.css">

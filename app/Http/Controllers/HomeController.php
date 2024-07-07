@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\CompanyProfileDonwloaderInfo;
 use App\Http\Requests\CompanyProfilerDownloaderRequest;
 use App\Models\HeroSlider;
+use App\Models\TaxEvent;
 
 class HomeController extends Controller
 {
@@ -23,16 +24,26 @@ class HomeController extends Controller
     public function index()
     {
         $services = Services::all();
-        $latestArticles= Article::latest()->take(4)->get();
+        $one = Services::findOrFail(1);
+        $two = Services::findOrFail(8);
+        $three = Services::findOrFail(11);
+        $four = Services::findOrFail(4);
+        $articles= Article::latest()->take(4)->get();
+        $events= TaxEvent::latest()->take(4)->get();
         $page = Page::findOrFail(1);
         $sliders = HeroSlider::with('service')->get();
         $compro = companyProfile::orderBy('updated_at', 'desc')->first();
         return view('pages.home',[
             "services" => $services,
-            'latestArticles' => $latestArticles,
+            'articles' => $articles,
+            'events' => $events,
             'page' => $page,
             'sliders' =>$sliders,
-            'compro' => $compro
+            'compro' => $compro,
+            'one' => $one,
+            'two' => $two,
+            'three' => $three,
+            'four' => $four,
         ]);
     }
 

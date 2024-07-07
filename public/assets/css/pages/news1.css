@@ -5,7 +5,7 @@
     border-top: 3px solid #ffc107;
     padding: 5px 0;
     background-color: #272e45;
-    font-family: "Lato", sans-serif;
+    font-family: "OpenSauce", sans-serif;
 }
 
 #categoriesList ul {
@@ -74,16 +74,16 @@
 
 a {
     text-decoration: none;
-    font-family: "Lato", sans-serif;
+    font-family: "OpenSauce", sans-serif;
 }
 
 #newsCarousel {
     margin-top: 20px;
-    font-family: "Lato", sans-serif;
+    font-family: "OpenSauce", sans-serif;
 }
 
 #newsContainer * {
-    font-family: "Lato", sans-serif !important;
+    font-family: "OpenSauce", sans-serif !important;
 }
 
 .carousel-caption {
@@ -221,7 +221,7 @@ a {
 }
 
 #customerQuestions * {
-    font-family: "Lato", sans-serif;
+    font-family: "OpenSauce", sans-serif;
 }
 
 #customerQuestions .header {

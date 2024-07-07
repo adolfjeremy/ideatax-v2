@@ -58,7 +58,7 @@
 }
 
 .button-container {
-    font-family: "Lato", sans-serif;
+    font-family: "OpenSauce", sans-serif;
     position: relative;
     margin-top: 30px;
 }
@@ -183,7 +183,7 @@
 }
 
 .our_team_detail {
-    font-family: "Lato", sans-serif;
+    font-family: "OpenSauce", sans-serif;
     position: relative;
     background-image: url("/assets/images/team-detail.webp");
     background-size: cover;
@@ -237,7 +237,7 @@
 
 .our_team_description h2,
 .our_team_description h3 {
-    font-family: "Lato", sans-serif;
+    font-family: "OpenSauce", sans-serif;
     font-size: 28px;
     font-weight: 700;
     color: #111;
@@ -269,7 +269,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
     row-gap: 10px;
-    font-family: "Lato", sans-serif;
+    font-family: "OpenSauce", sans-serif;
 }
 
 @media (min-width: 480px) and (max-width: 991px) {
