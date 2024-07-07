@@ -25,12 +25,11 @@ class ServicesController extends Controller
 
     public function detail($id)
     {
-        // if(app()->getLocale() == "en") {
-        //     $item = Services::where('slug_eng', $id)->with('author')->firstOrFail();
-        // } else {
-            
-        // }
-        $item = Services::where('slug', $id)->firstOrFail();
+        if(app()->getLocale() == "en") {
+            $item = Services::where('slug_eng', $id)->firstOrFail();
+        } else {
+            $item = Services::where('slug', $id)->firstOrFail();
+        }
         $services = Services::get();
         return view('pages.serviceDetail',[
             'item' => $item,
