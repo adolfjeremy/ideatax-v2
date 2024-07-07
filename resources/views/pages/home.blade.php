@@ -250,7 +250,7 @@
                 </div>
                 <div class="article_detail d-flex flex-column">
                     <p>{{ $item->articleCategory->title }} - {{ $item->updated_at->format('d M, Y H:i') }} WIB</p>
-                    <a href="@if (app()->getLocale() == "en") {{ route('article-detail',$item->slug) }}  @else {{ route('article-detail.id',$item->slug) }} @endif">{{ $item->title }}</a>
+                    <a href="@if (app()->getLocale() == "en") {{ route('article-detail',$item->slug_eng) }}  @else {{ route('article-detail.id',$item->slug) }} @endif">{{ $item->title }}</a>
                 </div>
             </div>
             @endforeach
