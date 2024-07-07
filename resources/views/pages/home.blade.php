@@ -131,25 +131,25 @@
                 <img src="/assets/images/compliance.svg" alt="compliance">
                 <h3 class="mt-3">Tax Compliances</h3>
                 <p>Companies need to automate tax processes to stay compliant with regulations. Ideatax offers a solution with automation and expert support, minimizing risk and freeing your time to focus on running your business.</p>
-                <a href="{{ route('our-service-detail', $one->slug) }}">Read more &rarr;</a>
+                <a href="@if (app()->getLocale() == "en") {{ route('our-service-detail', $one->slug_eng) }} @else {{ route('our-service-detail.id', $one->slug) }} @endif">Read more &rarr;</a>
             </div>
             <div class="col-12 col-md-6 mt-5">
                 <img src="/assets/images/refund.svg" alt="refund">
                 <h3 class="mt-3">Tax Refund Assistance</h3>
                 <p>Tax refund happens when there is a remaining tax in a tax return year that should be returned to the Taxpayer. Ideatax is ready to help you in submitting and processing refund of tax overpayment.</p>
-                <a href="{{ route('our-service-detail', $two->slug) }}">Read more &rarr;</a>
+                <a href="@if (app()->getLocale() == "en") {{ route('our-service-detail', $two->slug_eng) }} @else {{ route('our-service-detail.id', $two->slug) }} @endif">Read more &rarr;</a>
             </div>
             <div class="col-12 col-md-6 mt-5">
                 <img src="/assets/images/transfer.svg" alt="transfer">
                 <h3 class="mt-3">Transfer Pricing Documentation</h3>
                 <p>Transfer pricing documentation ensures that multinational enterprises' intra-group transactions comply with tax regulations, demonstrating arm's length pricing to avoid tax avoidance and ensuring transparency for tax authorities.</p>
-                <a href="{{ route('our-service-detail', $three->slug) }}">Read more &rarr;</a>
+                <a href="@if (app()->getLocale() == "en") {{ route('our-service-detail', $three->slug_eng) }} @else {{ route('our-service-detail.id', $three->slug) }} @endif">Read more &rarr;</a>
             </div>
             <div class="col-12 col-md-6 mt-5">
                 <img src="/assets/images/audit.svg" alt="audit">
                 <h3 class="mt-3">Tax Audit Assistance</h3>
                 <p>Our service comprises of assistance prior to the receiving of the notification letter about tax audit process, providing a helping hand during the meeting with tax officer.</p>
-                <a href="{{ route('our-service-detail', $four->slug) }}">Read more &rarr;</a>
+                <a href="@if (app()->getLocale() == "en") {{ route('our-service-detail', $four->slug_eng) }} @else {{ route('our-service-detail.id', $four->slug) }} @endif">Read more &rarr;</a>
             </div>
         </div>
         <div class="row consultation_cta mt-5">
