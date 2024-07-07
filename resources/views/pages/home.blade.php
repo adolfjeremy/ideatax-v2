@@ -204,7 +204,7 @@
             <div class="col-7 right">
                 <div class="row services_list">
                     @foreach ($services as $service)
-                    <a href="@if (app()->getLocale() == " en") {{ route('our-service-detail', $service->slug) }} @else {{ route('our-service-detail.id', $service->slug_eng) }} @endif" class="col-12 service_item d-flex align-items-center justify-content-between py-2">
+                    <a href="@if (app()->getLocale() == "en") {{ route('our-service-detail', $service->slug_eng) }} @else {{ route('our-service-detail.id', $service->slug) }} @endif" class="col-12 service_item d-flex align-items-center justify-content-between py-2">
                         <p class="text-start m-0 py-1">
                             @if (app()->getLocale() == "en")
                             {{ $service->title_eng }}
