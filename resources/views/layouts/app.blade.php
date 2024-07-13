@@ -49,7 +49,11 @@
 </head>
 <body>
     @include('includes.header')
-    <main>
+    <main class="
+        {{ (request()->is('tax-update*') ? " padding_top" : "") }}
+        {{ (request()->is('contact*') ? " padding_top" : "") }}
+        {{ (request()->is('contact*') ? " padding_top" : "") }}
+    ">
 
         @yield('content')
     </main>
