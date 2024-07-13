@@ -4,6 +4,45 @@
         img {
             object-fit: cover;
         }
+        .article_overview {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 65vw;
+            padding-left: 10%;
+            @media (max-width: 480px) {
+                inset: 0 !important;
+                padding: 0 3%;
+            }
+            h1 {
+                font-size: 3.0861rem;
+                color: $navy;
+                line-height: 1.0999978em;
+                letter-spacing: $letter;
+                font-weight: 700;
+            }
+            .article_excerpt * {
+                font-size: 1.15215rem;
+                line-height: 1.49999732em;
+                letter-spacing: $letter;
+                color: $navy;
+                padding: 0;
+                margin: 0;
+            }
+            a {
+                font-size: 0.9875rem;
+                color: $navy;
+                line-height: 1.375em;
+                text-align: center;
+                padding: 1rem 1, 2rem;
+                background-color: $white;
+                transition: 300ms ease;
+                &:hover {
+                    font-size: 1rem;
+                }
+            }
+        }
     }
 }
 
@@ -39,6 +78,73 @@
             background-color: #000000;
             border-radius: 0;
             padding: 0.8rem 1.8rem;
+            transition: 300ms ease;
+            &:hover {
+                font-size: 0.95rem;
+            }
+        }
+    }
+}
+
+.article_detail {
+    .article_heading {
+        position: absolute;
+        left: 0;
+        z-index: 10;
+
+        h1 {
+            font-size: 4.0325rem;
+            letter-spacing: $letter;
+            line-height: 1.01561707em;
+            color: $navy;
+            font-weight: 700;
+        }
+        a {
+            font-size: 1.9751rem;
+            color: $yellow;
+            font-weight: 700;
+            text-decoration: none;
+            line-height: 1.1875em;
+            letter-spacing: -0.054em;
+        }
+
+        p {
+            font-size: 1.4459rem;
+            color: $blue;
+            line-height: 1.42498753em;
+            letter-spacing: $letter;
+        }
+    }
+}
+
+.article_desc {
+    .article_body {
+        p,
+        a,
+        li,
+        i,
+        strong,
+        h1,
+        h2,
+        h3,
+        h4 {
+            margin: 0;
+            font-size: 1.4813rem;
+            line-height: 1.41665486em;
+            text-align: left;
+            letter-spacing: $letter;
+            color: $blue;
+        }
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: $navy !important;
+        }
+
+        img,
+        table {
+            width: 100%;
         }
     }
 }

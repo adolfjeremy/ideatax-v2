@@ -28,7 +28,9 @@
     text-transform: uppercase;
     font-size: 1.125rem;
     padding: 1rem 2.5rem;
+    transition: 300ms ease-in-out;
     &:hover {
+        font-size: 1.13rem;
         background-color: $orange !important;
         color: $white !important;
     }
@@ -47,12 +49,12 @@
             font-weight: 500;
             line-height: 1.41665486em;
             letter-spacing: 0.009em;
-            font-size: 1.4rem;
+            font-size: 1.4813rem;
         }
         .about_stats {
             gap: 6rem;
             .about_number {
-                font-size: 4.5rem;
+                font-size: 3.9502rem;
                 color: $navy;
                 line-height: 1.390625em;
                 text-align: center;
@@ -104,6 +106,11 @@
             text-decoration: none;
             font-size: 0.75rem;
             font-weight: 600;
+            transition: all 300ms ease-in-out;
+            &:hover {
+                color: $blue;
+                font-size: 0.8rem;
+            }
         }
     }
 }
@@ -115,13 +122,31 @@
         color: $navy;
         line-height: 1.42498753em;
         letter-spacing: 0.009em;
+        &:hover {
+            color: $blue;
+            img {
+                margin-left: 25px !important;
+            }
+        }
         img {
             width: 50px;
+            transition: all 300ms ease-in-out;
         }
     }
 }
 
 .value_list {
+    .value_item {
+        overflow: hidden;
+        img {
+            transition: all 700ms ease-in-out;
+        }
+        &:hover {
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
     h3 {
         position: absolute;
         color: $white;
@@ -163,9 +188,18 @@
             .service_item {
                 text-decoration: none;
                 border-top: 3px solid $navy;
+                border-left: 6px solid transparent;
+                transition: 300ms ease;
+                &:hover {
+                    border-left: 6px solid $orange;
+                    background-color: rgba(230, 230, 230, 0.35);
+                    img {
+                        right: -10px;
+                    }
+                }
                 p {
                     color: $blue;
-                    line-height: 1.64061987em;
+                    line-height: 1.2em;
                     letter-spacing: 0.009em;
                     font-size: 1.3125rem;
                     text-decoration: none;
@@ -173,6 +207,9 @@
 
                 img {
                     width: 45px;
+                    position: relative;
+                    right: 0;
+                    transition: 300ms ease;
                 }
             }
         }
@@ -214,6 +251,10 @@
                 line-height: 1.42499288em;
                 letter-spacing: 0.009em;
                 text-decoration: none;
+                transition: all 300ms ease-in-out;
+                &:hover {
+                    color: $orange;
+                }
             }
         }
     }
@@ -238,8 +279,15 @@
             font-size: 2.125rem;
             line-height: 1.42967633em;
             letter-spacing: 0.009em;
+            transition: all 300ms ease-in-out;
+            &:hover {
+                img {
+                    margin-left: 30px !important;
+                }
+            }
             img {
                 width: 50px;
+                transition: all 300ms ease-in-out;
             }
         }
     }
@@ -248,6 +296,11 @@
 .event {
     .event_item {
         text-decoration: none;
+        &:hover {
+            h3 {
+                color: $orange;
+            }
+        }
         p {
             font-size: 1.48125rem;
             color: $navy;
@@ -255,6 +308,7 @@
             letter-spacing: 0.009em;
             font-weight: 600;
             margin-top: 10px;
+            transition: all 300ms ease-in-out;
         }
         h3 {
             font-size: 1.48125rem;

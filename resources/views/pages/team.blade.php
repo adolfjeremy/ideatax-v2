@@ -4,10 +4,6 @@
     <link rel="canonical" href="https://ideatax.id/our-team">
 @endsection
 
-@section('page-style')
-    <link rel="stylesheet" href="/assets/css/pages/team3.css">
-@endsection
-
 @section('meta')
     @if(app()->getLocale() == "en")
         <meta name="description" content="{{ $page->description_eng }}">
@@ -34,27 +30,30 @@
 @endsection
 
 @section('content')
-    <section class="our_team_hero py-5">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="col-12 d-flex flex-column align-items-center justify-content-center">
-                <h1>{{ __('home.teamHeader') }}</h1>
+    <section class="team position-relative">
+        <img src="/assets/images/team-hero.png" alt="Idetax team ready to serve you" class="w-100">
+        <div class="container-fluid team-heading">
+            <div class="row">
+                <div class="col-12">
+                    <h1>{{ __('TeamPage.headingOne'); }} <br> {{ __('TeamPage.headingTwo'); }}</h1>
+                </div>
             </div>
         </div>
     </section>
-    <section id="ourTeam" class="mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="our_team_list pb-5 text-start">
-                    @php $incrementCategory = 0 @endphp
-                    @foreach ($teams as $team)
-                        <div class="our_team_item">
-                            <p class="position-relative">{{ $team->name }}</p>
-                            <p class="position-relative">{{ $team->position }}</p>
-                            <a style="background-image: url('{{ asset("storage/" . $team->photo) }}')" href="{{ app()->getLocale() == "en" ? route('our-team-detail', $team->slug) : route('our-team-detail.id', $team->slug) }}"></a>
-                        </div>
-                    @endforeach
+    <section class="m-0">
+        <div class="container-fluid">
+            <div class="row team-list d-flex align-items-center justify-content-center">
+                @php $increment = 0 @endphp
+                @foreach ($teams as $team)
+                <div class="col-4 p-0 team_item position-relative">
+                    <img src="{{ asset("storage/" . $team->photo) }}" alt="{{ $team->name }}" class="w-100">
+                    <div class="team_item_title d-flex flex-column item-{{ ($increment ===3 ? $increment=1 : $increment +=1) }} px-3">
+                        <h2 class="position-relative">{{ $team->name }}</h2>
+                        <p class="position-relative">{{ $team->position }}</p>
+                    </div>
+                    <a class="team_link" href="{{ app()->getLocale() == "en" ? route('our-team-detail', $team->slug) : route('our-team-detail.id', $team->slug) }}"></a>
                 </div>
+                @endforeach
             </div>
         </div>
     </section>

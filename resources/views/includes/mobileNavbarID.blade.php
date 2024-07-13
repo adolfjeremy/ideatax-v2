@@ -1,7 +1,4 @@
-<ul class="d-block p-1">
-    <li>
-        <a href="/id" class="navbar_brand"><img src="/assets/images/logo.png" alt="Ideatax"></a>
-    </li>
+<ul class="link_list">
     <li class="nav-item py-2">
         <a href="{{ route('home.id') }}" class="nav-link{{ (request()->is('id') ? " active" : "") }}">home</a>
     </li>
@@ -23,7 +20,7 @@
         </a>
         <ul class="dropdown-menu" style="left:15px!important">
         <li>
-            <a href="{{ route('careers.id') }}" class="dropdown-item nav-link py-2{{ (request()->is('id/careers*') ? " on" : "") }}">career</a>
+            <a href="{{ route('careers.id') }}" class="dropdown-item py-2{{ (request()->is('id/careers*') ? " on" : "") }}">career</a>
         </li>
         <li><a class="dropdown-item py-2{{ (request()->is('id/life-at-ideatax*') ? " on" : "") }}" href="{{ route('life-at-ideatax.id') }}">Life at Ideatax</a></li>
         </ul>

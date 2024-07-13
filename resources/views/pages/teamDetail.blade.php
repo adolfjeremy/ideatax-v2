@@ -1,9 +1,5 @@
 @extends('layouts.app')
 
-@section('page-style')
-    <link rel="stylesheet" href="/assets/css/pages/team3.css">
-@endsection
-
 @section('meta')
     @if(app()->getLocale() == "en")
         <meta name="description" content="{{ $team->description_eng }}">
@@ -32,39 +28,22 @@
 @endsection
 
 @section('content')
-    <section class="our_team_detail py-4">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row align-items-center justify-content-center justify-content-md-start">
-                <div class="col-6 col-md-3">
-                    <div class="our_team_detail_image">
-                        <img src="{{ asset("storage/" . $team->profile_picture) }}" alt="{{ $team->name }} Profile Picture" title="{{ $team->name }}" class="w-100">
-                    </div>
-                </div>
-                <div class="col-12 col-md-3 name_contacts align-items-center align-items-md-start">
-                    <div class="name_position text-center text-md-start">
-                        <h1>{{ $team->name }}</h1>
-                        <span>{{ $team->position }}</span>
-                    </div>
-                    <div class="contacts">
-                        <ul class="d-flex">
-                            @if ($team->phone)
-                                 <li><a href="tel:{{ $team->phone }}"><i class="bi bi-telephone"></i></a></li>
-                            @endif
-                            <li><a href="mailto:{{ $team->email }}"><i class="bi bi-envelope"></i></a></li>
-                            @if ($team->linkedin)
-                                <li><a href="{{ $team->linkedin }}" target="_blank" rel="noopener"
-                            rel=”noreferrer”><i class="bi bi-linkedin"></i></a></li>
-                            @endif
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="team_detail">
+   <img src="{{ asset("storage/" . $team->photo) }}" alt="Idetax team ready to serve you" class="w-100">
+   <div class="container team-heading">
+       <div class="row d-flex align-items-center justify-content-end">
+           <div class="col-md-5 col-12 d-flex-align-items-center justify-content-start">
+               <div class="text-center">
+                    <h1>{{ $team->name }}</h1>
+                    <p>{{ $team->position }}</p>
+               </div>
+           </div>
+       </div>
+   </div>
+</section>
     <section class="our_team_description py-4">
         <div class="container">
-            <div class="row">
+            <div class="row pt-5">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb breadcrumb-custom">
                         <li class="breadcrumb-item breadcrumb-cst"><a href="{{ app()->getLocale() == "en" ? route('our-team') : route('our-team.id') }}">Team</a></li>
@@ -73,9 +52,9 @@
                 </nav>
             </div>
             <div class="row">
-                <div class="col-12 col-lg-9 px-3 team_detail">
-                    <div class="row d-flex d-flex-column align-items-start justify-content-center text-start">
-                        <h2>Biography</h2>
+                <div class="col-12 mt-2 team_detail">
+                    <div class="row d-flex d-flex-column align-items-start justify-content-center text-center">
+                        <h2 class="mb-4">Biography</h2>
                         @if (app()->getLocale() == "en")
                             <div>{!! $team->biography_eng !!}</div>
                         @endif
@@ -83,8 +62,8 @@
                             <div>{!! $team->biography !!}</div>
                         @endif
                     </div>
-                    <div class="row d-flex d-flex-column align-items-start justify-content-center text-start mt-4">
-                        <h2>Area of Expertise</h2>
+                    <div class="row d-flex d-flex-column align-items-start justify-content-center text-center mt-4">
+                        <h2 class="mb-4">Area of Expertise</h2>
                         @if (app()->getLocale() == "en")
                             <div>{!! $team->area_of_expertise_eng !!}</div>
                         @endif
@@ -93,21 +72,12 @@
                         @endif
                     </div>
                 </div>
-                <div class="col-12 col-lg-3">
-                    <div class="team_list">
-                        @foreach ($teams as $teamItem)
-                            <div class="team_item mt-4 mt-lg-0">
-                                <a href="{{ app()->getLocale() == "en" ? route('our-team-detail', $teamItem->slug) : route('our-team-detail.id', $teamItem->slug) }}" class="profile_image_container profile_detail" style="background-image: url('{{ asset("storage/" . $teamItem->profile_picture) }}')"></a>
-                                <a href="{{ app()->getLocale() == "en" ? route('our-team-detail', $teamItem->slug) : route('our-team-detail.id', $teamItem->slug) }}" class="name_container mt-2">
-                                    <h2 class="m-0">{{ $teamItem->name }}</h2>
-                                    <p class="m-0">{{ $teamItem->position }}</p>
-                                </a>
-                            </div>
-                        @endforeach
-                    </div>
+            </div>
+            <div class="row consultation_cta mt-5">
+                <div class="col-12">
+                    <a href="@if (app()->getLocale() == "en") {{ route("contact") }} @else {{ route("contact") }} @endif">Consultation Now <img src="/assets/images/arrow.svg" class="ms-2" alt="arrow"></a>
                 </div>
             </div>
         </div>
     </section>
-    @include('includes.consultation')
 @endsection

@@ -4,10 +4,6 @@
     <link rel="canonical" href="https://ideatax.id/articles">
 @endsection
 
-{{-- @section('page-style')
-    <link rel="stylesheet" href="/assets/css/pages/news1.css">
-@endsection --}}
-
 @section('meta')
     @if(app()->getLocale() == "en")
         <meta name="description" content="{{ $page->description_eng }}">
@@ -35,12 +31,32 @@
 
     
 @section('content')
-    <section id="carouselExampleInterval" class="articles_hero carousel slide carousel-fade" data-bs-ride="carousel">
+<section id="carouselExampleInterval" class="articles_hero carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-inner">
         @foreach ($latests as $item)
         <div class="carousel-item carousel_custom @if ($loop->first)active @endif" data-bs-interval="7000">
             <a href="" class="article_link"></a>
             <img src="{{ asset("storage/" . $item->photo) }}" class="d-block w-100" alt="{{ $item->title }}">
+            <div class="article_overview d-flex flex-column align-items-start justify-content-center">
+                <h1>
+                    @if ((app()->getLocale() == "en"))
+                    {{ $item->title_eng }}
+                    @else
+                    {{ $item->title }}
+                    @endif
+                </h1>
+                <div class="article_excerpt">
+                    @if (app()->getLocale() == "en")
+                        {!! str_limit($item->body_eng , $limit = 271) !!}
+                    @endif
+                    @if (app()->getLocale() == "id")
+                        {!! str_limit($item->body, $limit = 271) !!}
+                    @endif
+                </div>
+                <a href="{{ app()->getLocale() == "en" ? route('article-detail',$item->slug_eng) : route('article-detail.id',$item->slug) }}" class="btn btn-lg">
+                    {{ __('ArticlePage.button'); }}
+                </a>
+            </div>
         </div>
         @endforeach
     </div>
@@ -49,7 +65,9 @@
     <div class="container">
         <div class="row">
             <div class="col-12 mt-4">
-                <div class="h2">Latest articles.</div>
+                <h2>
+                    {{ __('ArticlePage.heading'); }}
+                </h2>
             </div>
         </div>
         <div class="row">
@@ -65,7 +83,9 @@
                         {!! str_limit($item->body, $limit = 120) !!}
                     @endif
                 </div>
-                <a href="{{ app()->getLocale() == "en" ? route('article-detail',$item->slug_eng) : route('article-detail.id',$item->slug) }}" class="btn btn-lg">Read Full Article</a>
+                <a href="{{ app()->getLocale() == "en" ? route('article-detail',$item->slug_eng) : route('article-detail.id',$item->slug) }}" class="btn btn-lg">
+                    {{ __('ArticlePage.button'); }}
+                </a>
             </div>
             @endforeach
         </div>

@@ -91,6 +91,15 @@ header .phone:hover i {
     transition: 250ms ease-out;
 }
 
+.white-bg .inner-line {
+    background-color: #fafafa !important;
+}
+
+.white-bg::after,
+.white-bg::before {
+    background-color: #fafafa !important;
+}
+
 .rotate::before {
     transform: rotate(45deg);
     width: 40px !important;

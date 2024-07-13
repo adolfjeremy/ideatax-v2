@@ -39,11 +39,11 @@
             <div class="col-10 left mt-5">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <h2>Our solutions for clients.</h2>
+                        <h2>{{ __('HomePage.headSolution'); }}</h2>
                     </div>
                     <div class="col-12 text-center mt-3">
                         <p>
-                            We strive to deliver the best service possible for our clients with the help of<br>talents who continually develop their skills in improving the quality of our services.
+                            {{ __('HomePage.descSolution'); }}
                         </p>
                     </div>
                 </div>

@@ -1,0 +1,118 @@
+.team {
+    .team-heading {
+        position: absolute;
+        top: 50px;
+
+        h1 {
+            font-size: 3.5893rem;
+            letter-spacing: $letter;
+            line-height: 1.18641911em;
+            color: $white;
+        }
+    }
+}
+
+.team-list:last-child {
+    .team_item_title {
+        text-align: center !important;
+    }
+}
+
+.team_item {
+    overflow: hidden;
+    img {
+        transition: 700ms ease-in-out;
+    }
+    &:hover img {
+        transform: scale(1.1);
+    }
+    .team_link {
+        position: absolute;
+        inset: 0;
+        z-index: 10;
+        background-color: transparent;
+    }
+    .item-1 {
+        text-align: left;
+    }
+    .item-2 {
+        text-align: center;
+    }
+    .item-3 {
+        text-align: right;
+    }
+    .team_item_title {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        right: 0;
+
+        h2,
+        p {
+            color: $orange;
+            letter-spacing: $letter;
+            line-height: 1.08664337em;
+            font-size: 1.704rem;
+            padding: 0;
+            margin: 0;
+        }
+        h2 {
+            font-weight: 700;
+        }
+    }
+}
+
+.team_detail {
+    .team-heading {
+        position: absolute;
+        top: 50%;
+        transform: translateY(50%);
+
+        h1 {
+            font-size: 2.6334rem;
+            letter-spacing: $letter;
+            line-height: 1.07812416em;
+            color: $navy;
+            font-weight: 700;
+            padding-bottom: 20px;
+            border-bottom: 2px solid $navy;
+        }
+
+        P {
+            font-size: 2.1603rem;
+            color: $orange;
+            line-height: 1.09375em;
+            font-style: italic;
+            margin-top: 15px;
+            padding: 0;
+        }
+    }
+}
+
+.our_team_description {
+    li a,
+    li {
+        line-height: 1.42103767em;
+        letter-spacing: $letter;
+        font-size: 1.5636rem;
+    }
+    li a {
+        color: $orange;
+        text-decoration: none;
+    }
+    li {
+        color: $blue !important;
+    }
+    h2 {
+        font-size: 1.7282rem;
+        color: $navy;
+        font-weight: 700;
+    }
+    p {
+        font-size: 1.15215rem;
+        line-height: 1.44642599em;
+        letter-spacing: $letter;
+        text-align: justify;
+        color: $blue;
+    }
+}

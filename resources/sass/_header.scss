@@ -1,0 +1,164 @@
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    transition: 300ms ease;
+    padding-left: 6%;
+    padding-right: 6%;
+    button {
+        z-index: 10;
+    }
+
+    img {
+        width: 160px;
+    }
+
+    a {
+        transition: 300ms ease;
+        &:hover {
+            color: $orange !important;
+        }
+    }
+}
+
+#hamburgerButton {
+    position: relative;
+    width: 40px;
+    height: 25px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+#hamburgerButton::after,
+#hamburgerButton::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    display: block;
+    height: 3px;
+    background-color: #03396c;
+    transition: 250ms ease-out;
+}
+
+#hamburgerButton::after {
+    top: 0;
+    width: 40px;
+}
+
+#hamburgerButton::before {
+    bottom: 0;
+    width: 40px;
+}
+
+.inner-line {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 3px;
+    background-color: #03396c;
+    transition: 250ms ease-out;
+}
+
+.white-bg .inner-line {
+    background-color: #fafafa !important;
+}
+
+.white-bg::after,
+.white-bg::before {
+    background-color: #fafafa !important;
+}
+
+.rotate::before {
+    transform: rotate(45deg);
+    width: 40px !important;
+}
+
+.rotate::after {
+    transform: rotate(-45deg);
+}
+
+.rotate::after,
+.rotate::before {
+    transform-origin: 35px 1px;
+}
+.rotate .inner-line {
+    opacity: 0;
+}
+
+.openNav {
+    right: 0 !important;
+}
+.reveal {
+    opacity: 1 !important;
+}
+
+.bg_anim {
+    position: absolute;
+    top: 0;
+    right: -50vw;
+    width: 50vw;
+    height: 100vh;
+    transition: 300ms ease;
+    background: linear-gradient(
+        90deg,
+        rgba(165, 114, 240, 0),
+        rgba(0, 90, 150, 0.72),
+        #005b96 90%
+    );
+}
+
+.mobile_nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50vw;
+    height: 100vh;
+    opacity: 0;
+    transition: 300ms ease;
+
+    nav {
+        height: 100%;
+        width: 100%;
+        .link_list {
+            padding: 0 12%;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            list-style-type: none;
+
+            li a {
+                font-size: 1.7rem;
+                color: $white;
+                letter-spacing: $letter;
+                text-transform: capitalize;
+            }
+        }
+    }
+}
+
+.dropdown-item.active {
+    background-color: transparent;
+    color: $orange;
+}
+
+.dropdown-menu {
+    background-color: rgba(0, 90, 150, 0.8);
+    a {
+        background-color: transparent;
+        &:hover {
+            background-color: transparent !important;
+            color: $orange !important;
+        }
+    }
+}
+
+.active {
+    color: $orange !important;
+}

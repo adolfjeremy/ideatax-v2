@@ -43,25 +43,18 @@
     <!-- End Google Tag Manager -->
     <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="/assets/css/header1.css" rel="stylesheet">
-    <script src="{{ asset('js/app.js') }}"></script>
+    {{-- <link href="/assets/css/header1.css" rel="stylesheet"> --}}
     @yield('page-style')
     <title>@yield('title')</title>
 </head>
 <body>
     @include('includes.header')
-    <main class= "@if ((request()->is('/')))
-        ''
-        @elseif ((request()->is('our-services')))
-        ''
-        @else
-        padding_top
-        @endif
-        ">
+    <main>
 
         @yield('content')
     </main>
 </body>
 <script src="/assets/js/openNavbar.js"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 @include('includes.footer')
 </html>

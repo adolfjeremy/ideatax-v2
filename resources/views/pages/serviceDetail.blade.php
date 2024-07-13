@@ -9,12 +9,6 @@
     @endif" >
 @endsection
 
-
-@section('page-style')
-    <link rel="stylesheet" href="/assets/css/pages/ourServices2.css">
-@endsection
-
-
 @section('meta')
     @if(app()->getLocale() == "en")
         <meta name="description" content="{{ $item->meta_description_eng }}">
@@ -47,31 +41,40 @@
 @endsection
 
 @section('content')
-    <section class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-7 d-flex flex-column align-items-center justify-content-center">
-                    <h1 class="fw-bold">
-                        @if (app()->getLocale() == "en")
+<section class="services_detail position-relative d-flex align-items-center justify-content-center">
+    <img src="{{ asset("storage/" . $item->image) }}" alt="Idetax team ready to serve you" class="w-100">
+    <div class="container-fluid team-heading">
+        <div class="row">
+            <div class="col-12">
+                <h1>
+                    @if (app()->getLocale() == "en")
                         {{ $item->title_eng }}
-                        @else
+                    @else
                         {{ $item->title }}
-                        @endif
-                    </h1>
-                    <p class="mt-3">
-                        @if (app()->getLocale() == "en")
-                        {{ $item->description_eng }}
-                        @else
-                        {{ $item->description }}
-                        @endif
-                    </p>
-                </div>
-                <div class="col-12 col-lg-5">
-                    
-                        <img src="{{ asset("storage/" . $item->image) }}" class="w-100" alt="{{ $item->title }}">
-                </div>
+                    @endif
+                </h1>
             </div>
         </div>
-    </section>
-    @include('includes.consultation')
+    </div>
+</section>
+<section class="service_desc py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 px-md-5 px-0 d-flex align-items-center justify-content-center">
+                <p class="text-center px-md-2 px-0">
+                    @if (app()->getLocale() == "en")
+                    {{ $item->description_eng }}
+                    @else
+                    {{ $item->description }}
+                    @endif
+                </p>
+            </div>
+        </div>
+        <div class="row consultation_cta mt-5">
+            <div class="col-12 d-flex align-items-center justify-content-center">
+                <a href="@if (app()->getLocale() == "en") {{ route("contact") }} @else {{ route("contact") }} @endif">Consultation Now <img src="/assets/images/arrow.svg" class="ms-2" alt="arrow"></a>
+            </div>
+        </div>
+    </div>
+</section>
 @endsection

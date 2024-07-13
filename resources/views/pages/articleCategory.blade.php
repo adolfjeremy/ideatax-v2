@@ -34,113 +34,64 @@
 @endsection
     
 @section('content')
-    <section id="categoriesList">
-        <div class="container">
-            <div class="row">
-                <ul>
-                    @foreach ($articleCategories as $articleCategory)
-                        <li>
-                            <a href="{{ app()->getLocale() == "en" ? route('article-category', $articleCategory->slug) : route('article-category.id', $articleCategory->slug) }}">{{ $articleCategory->title }}</a>
-                        </li>
-                    @endforeach
-                </ul>
+<section id="carouselExampleInterval" class="articles_hero carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        @foreach ($articleCarousels as $item)
+        <div class="carousel-item carousel_custom @if ($loop->first)active @endif" data-bs-interval="7000">
+            <a href="" class="article_link"></a>
+            <img src="{{ asset("storage/" . $item->photo) }}" class="d-block w-100" alt="{{ $item->title }}">
+            <div class="article_overview d-flex flex-column align-items-start justify-content-center">
+                <h1>
+                    @if ((app()->getLocale() == "en"))
+                    {{ $item->title_eng }}
+                    @else
+                    {{ $item->title }}
+                    @endif
+                </h1>
+                <div class="article_excerpt">
+                    @if (app()->getLocale() == "en")
+                    {!! str_limit($item->body_eng , $limit = 271) !!}
+                    @endif
+                    @if (app()->getLocale() == "id")
+                    {!! str_limit($item->body, $limit = 271) !!}
+                    @endif
+                </div>
+                <a href="{{ app()->getLocale() == "en" ? route('article-detail',$item->slug_eng) : route('article-detail.id',$item->slug) }}" class="btn btn-lg">
+                    {{ __('ArticlePage.button'); }}
+                </a>
             </div>
         </div>
-    </section>
-    <section id="newsCarousel">
-        <div class="container">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-12 col-lg-10">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb breadcrumb-custom">
-                            <li class="breadcrumb-item breadcrumb-cst"><a href="{{ app()->getLocale() == "en" ? route("articles") : route("articles.id") }}">Articles</a></li>
-                            <li class="breadcrumb-item breadcrumb-cst active" aria-current="page">{{ $currentCategory }}</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-            <div class="row align-items-center justify-content-center">
-                <div class="col-12 col-lg-10">
-                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            @forelse ($articleCarousels as $articleCarousel)
-                                <div class="carousel-item @if ($loop->first)active @endif">
-                                    <a href="{{ app()->getLocale() == "en" ? route('article-detail',$articleCarousel->slug_eng) : route('article-detail.id',$articleCarousel->slug) }}"><img src="{{ asset("storage/" . $articleCarousel->photo) }}" class="d-block w-100" alt="{{ app()->getLocale() == "en" ? $articleCarousel->title_eng : $articleCarousel->title }}"></a>
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h5>
-                                            <a href="{{ app()->getLocale() == "en" ? route('article-detail',$articleCarousel->slug_eng) : route('article-detail.id',$articleCarousel->slug) }}">
-                                            {{ app()->getLocale() == "en" ? $articleCarousel->title_eng : $articleCarousel->title }}
-                                            </a>
-                                        </h5>
-                                    </div>
-                                </div>
-                            @empty
-                                <div class="carousel-item active">
-                                    <img src="/assets/images/no-data.jpg" class="d-block w-100" alt="ideatax updates">
-                                    <div class="carousel-caption d-block">
-                                        <h5>There Is No Article</h5>
-                                    </div>
-                                </div>
-                            @endforelse
-                        </div>
-                        <button class="carousel-control-prev" type="button"
-                            data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button"
-                            data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
+        @endforeach
+    </div>
+</section>
+<section class="latest_articles">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-4">
+                <h2>
+                    {{ __('ArticlePage.heading'); }}
+                </h2>
             </div>
         </div>
-    </section>
-    <section id="newsContainer" class="pt-2 mt-3 pb-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="row">
-                        <div class="header_container text-start mb-2">
-                            <h1>Latest Articles</h1>
-                        </div>
-                    </div>
-                    <div class="row mb-2">
-                        <div class="news_list">
-                            @forelse ($articles as $article)
-                                <div class="news_item">
-                                    <div class="news_image_container">
-                                        <a href="{{ app()->getLocale() == "en" ? route('article-detail',$article->slug_eng) : route('article-detail.id',$article->slug) }}"><img src="{{ asset("storage/" . $article->photo) }}" alt="{{ app()->getLocale() == "en" ? $article->title_eng : $article->title }}"></a>
-                                    </div>
-                                    <div class="text_container">
-                                        <h3>
-                                            <a href="{{ app()->getLocale() == "en" ? route('article-detail',$article->slug_eng) : route('article-detail.id',$article->slug) }}">
-                                                @if (app()->getLocale() == "en")
-                                                    {!! str_limit($article->title_eng, $limit = 61) !!}
-                                                @endif
-                                                @if (app()->getLocale() == "id")
-                                                    {!! str_limit($article->title, $limit = 61) !!}
-                                                @endif
-                                            </a>
-                                        </h3>
-                                        <div class="timestamp">
-                                            <a href="{{ app()->getLocale() == "en" ? route('article-category',$article->articleCategory->slug) :route('article-category.id',$article->articleCategory->slug) }}" class="news_category">{{ $article->articleCategory->title }}</a>
-                                            <span>{{ $article->created_at->format('d M, Y H:i') }} WIB</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            @empty
-                                <div class="col-12">
-                                    There Is No Article
-                                </div>
-                            @endforelse
-                        </div>
-                        {{ $articles->links() }}
-                    </div>
+        <div class="row">
+            @foreach ($articles as $item)
+            <div class="col-4 articles_item d-flex flex-column gap-4 align-items-start mt-5 px-4">
+                <img src="{{ asset("storage/" . $item->photo) }}" class="w-100" alt="{{ $item->title }}">
+                <h3 class="m-0">{{ $item->title }}</h3>
+                <div class="m-0">
+                    @if (app()->getLocale() == "en")
+                        {!! str_limit($item->body_eng , $limit = 120) !!}
+                    @endif
+                    @if (app()->getLocale() == "id")
+                        {!! str_limit($item->body, $limit = 120) !!}
+                    @endif
                 </div>
+                <a href="{{ app()->getLocale() == "en" ? route('article-detail',$item->slug_eng) : route('article-detail.id',$item->slug) }}" class="btn btn-lg">
+                    {{ __('ArticlePage.button'); }}
+                </a>
             </div>
+            @endforeach
         </div>
-    </section>
+    </div>
+</section>
 @endsection

@@ -1,12 +1,13 @@
 @extends('layouts.app')
 
 @section('canonical')
+@if (app()->getLocale() == "en")
+    <link rel="canonical" href="https://ideatax.id/articles/{{ $article->slug_eng }}">
+@endif
+@if (app()->getLocale() == "id")
     <link rel="canonical" href="https://ideatax.id/articles/{{ $article->slug }}">
-@endsection
+@endif
 
-@section('page-style')
-    <link rel="stylesheet" href="/assets/css/pages/news1.css">
-    <link rel="stylesheet" href="/assets/css/pages/newsDetail1.css">
 @endsection
 
 @section('meta')
@@ -37,180 +38,42 @@
 
     
 @section('content')
-    <section id="categoriesList">
-        <div class="container">
-            <div class="row">
-                <ul>
-                    @foreach ($articleCategories as $articleCategory)
-                        <li>
-                            <a href="{{ app()->getLocale() == "en" ? route('article-category', $articleCategory->slug) : route('article-category.id', $articleCategory->slug) }}">{{ $articleCategory->title }}</a>
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-        </div>
-    </section>
-    <section class="mt-4">
-        <div class="container">
-            <div class="row">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb breadcrumb-custom">
-                        <li class="breadcrumb-item breadcrumb-cst"><a href="{{ app()->getLocale() == "en" ? route("articles") : route("articles.id") }}">Articles</a></li>
-                        <li class="breadcrumb-item breadcrumb-cst"><a href="{{ app()->getLocale() == "en" ? route('article-category',$article->articleCategory->slug) : route('article-category.id',$article->articleCategory->slug) }}">{{ $article->articleCategory->title }}</a></li>
-                        <li class="breadcrumb-item breadcrumb-cst active" aria-current="page">{{ $article->title }}</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-    </section>
-    <section id="newsDetail" class="mb-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-8">
-                    <div class="row">
-                        <img src="{{ asset("storage/" . $article->photo) }}" alt="{{ app()->getLocale() == "en" ? $article->title_eng : $article->title }}" class="w-100">
-                    </div>
-                    <div class="row mt-2 news_title">
-                        <h1>
-                            @if (app()->getLocale() == "en")
-                                {{ $article->title_eng }}
-                            @endif
-                            @if (app()->getLocale() == "id")
-                                {{ $article->title }}
-                            @endif
-                        </h1>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <a href="{{ app()->getLocale() == "en" ? route('article-category',$article->articleCategory->slug) : route('article-category.id',$article->articleCategory->slug) }}" class="text-warning fs-6 fw-bolder">{{ $article->articleCategory->title }}</a>
-                            <span class="text-dark fw-normal timestamp">- {{ $article->created_at->format('d M, Y H:m') }} WIB</span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="news_body">
-                            @if (app()->getLocale() == "en")
-                                {!! $article->body_eng !!}
-                            @endif
-                            @if (app()->getLocale() == "id")
-                                {!! $article->body !!}
-                            @endif
-                        </div>
-                    </div>
-                </div>
-                <div id="sideNews" class="col-12 col-lg-4">
-                    @if ($article->author_id)
-                        <div class="col-12 d-block d-lg-none">
-                            <div class="row mt-4 mb-1">
-                                <h2>Author</h2>
-                            </div>
-                            <div class="row author">
-                                <img src="{{ asset("storage/" . $article->author->image) }}"class="author_image" alt="author image">
-                                <h3>{{$article->author->name}}</p>
-                                <p>{{ $article->author->position }}</p>
-                                <p>{{ $article->author->email }}</p>
-                            </div>
-                        </div>
+<section class="article_detail position-relative d-flex align-items-center justify-content-center">
+    <img src="{{ asset("storage/" . $article->photo) }}" alt="{{ app()->getLocale() == "en" ? $article->title_eng : $article->title }}" class="w-100">
+    <div class="container article_heading">
+        <div class="row ps-md-2 position-relative">
+            <div class="col-md-8 col-12 ps-md-5 text-left">
+                <h1>
+                    @if (app()->getLocale() == "en")
+                        {{ $article->title_eng }}
+                    @else
+                        {{ $article->title }}
                     @endif
-
-                    @if ($article->author_id)
-                        <div class="col-12 d-none d-lg-block">
-                            <div class="row mb-1">
-                                <h2>Author</h2>
-                            </div>
-                            <div class="row author">
-                                <img src="{{ asset("storage/" . $article->author->image) }}"class="author_image" alt="author image">
-                                <h3>{{$article->author->name}}</p>
-                                <p>{{ $article->author->position }}</p>
-                                <p>{{ $article->author->email }}</p>
-                            </div>
-                        </div>
-                    @endif
-                    <div class="col-12 related">
-                        <div class="row mt-4 mb-1">
-                            <h2>Related Article</h2>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="news_detail_list">
-                                @forelse ($relatedArticles as $relatedArticle)
-                                <div class="news_detail_item">
-                                    <div class="news_image_container">
-                                        <a href="{{ app()->getLocale() == "en" ? route('article-detail',$relatedArticle->slug_eng) : route('article-detail.id',$relatedArticle->slug) }}">
-                                            <img src="{{ asset("storage/" . $relatedArticle->photo) }}" alt="{{ app()->getLocale() == "en" ? $relatedArticle->title_eng : $relatedArticle->title }}">
-                                        </a>
-                                    </div>
-                                    <div class="text_container">
-                                        <h3>
-                                            <a href="{{ app()->getLocale() == "en" ? route('article-detail',$relatedArticle->slug_eng) : route('article-detail.id',$relatedArticle->slug) }}">
-                                                @if (app()->getLocale() == "en")
-                                                    {!! str_limit($relatedArticle->title_eng, $limit = 61) !!}
-                                                @endif
-                                                @if (app()->getLocale() == "id")
-                                                    {!! str_limit($relatedArticle->title, $limit = 61) !!}
-                                                @endif
-                                            </a>
-                                        </h3>
-                                        <div class="timestamp">
-                                            <a href="{{ app()->getLocale() == "en" ? route('article-category',$article->articleCategory->slug) : route('article-category.id',$article->articleCategory->slug) }}" class="news_category">{{ $relatedArticle->articleCategory->title }}</a>
-                                            <span>{{ $relatedArticle->created_at->format('d M, Y') }}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                @empty
-                                <div class="col-12">
-                                    There Is No Related Article
-                                </div>
-                                @endforelse
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </h1>
+                <a class="mt-5" href="{{ app()->getLocale() == "en" ? route('article-category',$article->articleCategory->slug) : route('article-category.id',$article->articleCategory->slug) }}" class="text-warning fs-6 fw-bolder">{{ $article->articleCategory->title }}</a>
+                <p>{{ $article->created_at->format('d M, Y H:m') }} WIB</p>
             </div>
         </div>
-    </section>
-    @include('includes.consultation')
-    <section>
-        <div id="newsContainer" class="container">
-            <div class="row mt-3">
-                <div class="col-12 mt-3">
-                        <h2>Latest Article</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 mb-4">
-                    <div class="news_list">
-                            @forelse ($articles as $articleItem)
-                            <div class="news_item">
-                                <div class="news_image_container">
-                                    <a href="{{ app()->getLocale() == "en" ? route('article-detail',$articleItem->slug_eng) : route('article-detail.id',$articleItem->slug) }}">
-                                        <img src="{{ asset("storage/" . $articleItem->photo) }}" alt="{{ $articleItem->title }}">
-                                    </a>
-                                </div>
-                                <div class="text_container">
-                                    <h3>
-                                        <a href="{{ app()->getLocale() == "en" ? route('article-detail',$articleItem->slug_eng) : route('article-detail.id',$articleItem->slug) }}">
-                                            @if (app()->getLocale() == "en")
-                                                {!! str_limit($articleItem->title_eng, $limit = 61) !!}
-                                            @endif
-                                            @if (app()->getLocale() == "id")
-                                                {!! str_limit($articleItem->title, $limit = 61) !!}
-                                            @endif
-                                        </a>
-                                    </h3>
-                                    <div class="timestamp">
-                                        <a href="{{ app()->getLocale() == "en" ? route('article-category',$article->articleCategory->slug) : route('article-category.id',$article->articleCategory->slug) }}" class="news_category">{{ $articleItem->articleCategory->title }}</a>
-                                        <span>{{ $articleItem->created_at->format('d M, Y H:i') }} WIB</span>
-                                    </div>
-                                </div>
-                            </div>
-                            @empty
-                                <div class="col-12">
-                                    There Is No Other Article
-                                </div>
-                            @endforelse
-                        </div>
-                </div>
+    </div>
+</section>
+<section class="article_desc mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 article_body">
+                @if (app()->getLocale() == "en")
+                {!! $article->body_eng !!}
+                @endif
+                @if (app()->getLocale() == "id")
+                {!! $article->body !!}
+                @endif
             </div>
         </div>
-    </section>
+        <div class="row consultation_cta mt-5">
+            <div class="col-12 d-flex align-items-center justify-content-start">
+                <a href="@if (app()->getLocale() == " en") {{ route("contact") }} @else {{ route("contact") }} @endif">Consultation Now <img src="/assets/images/arrow.svg" class="ms-2" alt="arrow"></a>
+            </div>
+        </div>
+    </div>
+</section>
     
 @endsection

@@ -11,6 +11,10 @@ footer {
         a {
             text-decoration: none;
             color: $blue;
+            transition: 300ms ease;
+            &:hover {
+                color: $orange;
+            }
         }
     }
     .right {
@@ -21,6 +25,10 @@ footer {
                 color: $blue;
                 color: $navy;
                 font-weight: 500;
+                transition: 300ms ease;
+                &:hover {
+                    color: $orange;
+                }
             }
         }
     }

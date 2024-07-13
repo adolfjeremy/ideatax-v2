@@ -1,0 +1,23 @@
+.services_detail {
+    .team-heading {
+        position: absolute;
+
+        h1 {
+            font-size: 3.95025rem;
+            letter-spacing: $letter;
+            line-height: 1.01561707em;
+            color: $navy;
+            text-align: center;
+            font-weight: 700;
+        }
+    }
+}
+
+.service_desc {
+    p {
+        font-size: 1.652rem;
+        color: $blue;
+        line-height: 1.9em;
+        letter-spacing: $letter;
+    }
+}

@@ -7,6 +7,7 @@
 
 $white: #fafafa;
 $orange: #ff844f;
+$yellow: #ff9e1e;
 $blue: #005b96;
 $navy: #03396c;
 $letter: 0.009em;
@@ -20,10 +21,28 @@ header {
     top: 0;
     left: 0;
     right: 0;
+    z-index: 10;
+    transition: 300ms ease;
+    button {
+        z-index: 10;
+    }
 
     img {
         width: 160px;
     }
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.scrolled {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px 6% !important;
 }
 
 .padding_top {
@@ -52,6 +71,13 @@ header {
     width: 30px;
 }
 
+.disable-scroll {
+    overflow: hidden;
+}
+
+@import "header";
 @import "home";
+@import "team";
+@import "service";
 @import "articles";
 @import "footer";

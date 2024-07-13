@@ -1,18 +1,33 @@
-<header>
-    <div class="nav_bar py-2">
-        <div class="container d-flex align-items-center justify-content-between">
-            @if (app()->getLocale() == "en")
-                <a href="/" class="navbar_brand"><img src="/assets/images/logo.png" alt="Ideatax"></a>
-            @else
-                <a href="/id" class="navbar_brand"><img src="/assets/images/logo.png" alt="Ideatax"></a> 
+<header class="navbar-fixed-top fixed-top pt-5">
+    <div class="nav_bar">
+        <div class="d-flex align-items-center {{ (request()->is('our-team') ? "justify-content-end" : "justify-content-between") }}">
+            @if (!(request()->is('our-team')))
+                @if (app()->getLocale() == "en")
+                <a href="/" class="navbar_brand">
+                    @if ((request()->is('/')))
+                        <img src="/assets/images/logo-clear.png" alt="Ideatax">
+                    @else
+                        <img src="/assets/images/logo.png" alt="Ideatax">
+                    @endif
+                </a>
+                @else
+                <a href="/id" class="navbar_brand">
+                    @if ((request()->is('/')))
+                        <img src="/assets/images/logo-clear.png" alt="Ideatax">
+                    @else
+                        <img src="/assets/images/logo.png" alt="Ideatax">
+                    @endif
+                </a>
+                @endif
             @endif
-            <button id="hamburgerButton" class="d-block">
+            <button id="hamburgerButton" class="d-block {{ (request()->is('/')) ? "white-bg" :"" }}">
                 <div class="inner-line"></div>
             </button>
         </div>
     </div>
-    <div class="mobile_nav d-block">
-        <nav class="d-block p-1">
+    <div class="bg_anim"></div>
+    <div class="mobile_nav">
+        <nav class="d-block">
             @if (app()->getLocale() === "id")
                 @include('includes/mobileNavbarID')
             @else
