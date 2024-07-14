@@ -35,7 +35,6 @@
     <div class="carousel-inner">
         @foreach ($latests as $item)
         <div class="carousel-item carousel_custom @if ($loop->first)active @endif" data-bs-interval="7000">
-            <a href="" class="article_link"></a>
             <img src="{{ asset("storage/" . $item->photo) }}" class="d-block w-100" alt="{{ $item->title }}">
             <div class="article_overview d-flex flex-column align-items-start justify-content-center">
                 <h1>
