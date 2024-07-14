@@ -75,6 +75,33 @@ header {
     overflow: hidden;
 }
 
+.pagination {
+    .active {
+        .page-link {
+            color: $navy !important;
+        }
+    }
+    .page-link {
+        font-size: 1.8231rem;
+        line-height: 1.38802842em;
+        letter-spacing: $letter;
+        background-color: transparent;
+        color: #d9d9d9;
+        border: 1px solid #a6a6a6;
+        padding: 20px;
+    }
+    .page-item:first-child {
+        .page-link {
+            color: $navy !important;
+        }
+    }
+    .page-item:last-child {
+        .page-link {
+            color: $navy !important;
+        }
+    }
+}
+
 @import "header";
 @import "home";
 @import "team";
