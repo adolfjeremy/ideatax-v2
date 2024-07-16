@@ -32,7 +32,7 @@
    <img src="{{ asset("storage/" . $team->profile_picture) }}" alt="Idetax team ready to serve you" class="w-100">
    <div class="container team-heading">
        <div class="row d-flex align-items-center justify-content-end">
-           <div class="col-md-5 col-12 d-flex-align-items-center justify-content-start">
+           <div class="col-md-6 col-12 d-flex align-items-center justify-content-start">
                <div class="text-center">
                     <h1>{{ $team->name }}</h1>
                     <p>{{ $team->position }}</p>
@@ -53,7 +53,7 @@
             </div>
             <div class="row px-md-5">
                 <div class="col-12 mt-2 px-md-4 team_detail">
-                    <div class="row d-flex d-flex-column align-items-start justify-content-center text-center">
+                    <div class="row d-flex flex-column align-items-start justify-content-center text-center">
                         <h2 class="mb-4">Biography</h2>
                         @if (app()->getLocale() == "en")
                             <div>{!! $team->biography_eng !!}</div>
@@ -62,7 +62,7 @@
                             <div>{!! $team->biography !!}</div>
                         @endif
                     </div>
-                    <div class="row d-flex d-flex-column align-items-start justify-content-center text-center mt-4">
+                    <div class="row d-flex flex-column align-items-start justify-content-center text-center mt-4">
                         <h2 class="mb-4">Area of Expertise</h2>
                         @if (app()->getLocale() == "en")
                             <div>{!! $team->area_of_expertise_eng !!}</div>
