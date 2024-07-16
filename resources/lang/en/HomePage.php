@@ -16,7 +16,7 @@ return [
     "expertiseHeadFour" => "Tax Audit Assistance",
     "expertiseDescOne" => "Companies need to automate tax processes to stay compliant with regulations. Ideatax offers a solution with automation and expert support, minimizing risk and freeing your time to focus on running your business.",
     "expertiseDescTwo" => "Tax refund happens when there is a remaining tax in a tax return year that should be returned to the Taxpayer. Ideatax is ready to help you in submitting and processing refund of tax overpayment.",
-    "expertiseDescThree" => "Transfer pricing documentation ensures that multinational enterprises' intra-group transactions comply with tax regulations, demonstrating arm's length pricing to avoid tax avoidance and ensuring transparency for tax authorities.",
+    "expertiseDescThree" => "Transfer pricing documentation ensures that both national and multinational companies intra-group transactions comply with tax regulations, demonstrating arm's length pricing to avoid tax avoidance and ensuring transparency for tax authorities.",
     "expertiseDescFour" => "Our service comprises of assistance prior to the receiving of the notification letter about tax audit process, providing a helping hand during the meeting with tax officer.",
     "readMore" => "Read more",
     "consultationCta" => "Consultation Now",

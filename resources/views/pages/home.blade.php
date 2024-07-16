@@ -151,7 +151,7 @@
             <div class="col-12 col-md-6 mt-5">
                 <img src="/assets/images/audit.svg" alt="audit">
                 <h3 class="mt-3">{{ __('HomePage.expertiseHeadFour'); }}</h3>
-                <p>{{ __('HomePage.expertiseDescThree'); }}</p>
+                <p>{{ __('HomePage.expertiseDescFour'); }}</p>
                 <a href="@if (app()->getLocale() == "en") {{ route('our-service-detail', $four->slug_eng) }} @else {{ route('our-service-detail.id', $four->slug) }} @endif">{{ __('HomePage.readMore'); }} &rarr;</a>
             </div>
         </div>
@@ -265,9 +265,35 @@
     <img src="/assets/images/subscribe.png" class="w-100 position-relative" alt="">
     <div class="subscribe_button d-flex flex-column align-items-center justify-content-center">
         <h2 class="position-relative">{{ __('HomePage.subHead'); }}</h2>
-        <a href="@if (app()->getLocale() == "en") {{ route("contact") }} @else {{ route("contact.id") }} @endif" class="position-relative">{{ __('HomePage.subLink'); }} <img src="/assets/images/arrow-white.svg" class="ms-3" alt=""></a>
+        <button type="button" class="btn-modal" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            {{ __('HomePage.subLink'); }} <img src="/assets/images/arrow-white.svg" class="ms-3" alt="">
+        </button>
     </div>
 </section>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">{{ __('HomePage.subHead'); }}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="{{ route('home-subs') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="mb-3 d-flex flex-column align-items-start">
+                <label for="nama" class="form-label fs-6">Name</label>
+                <input type="text" name="nama" class="form-control" id="nama" required>
+            </div>
+            <div class="mb-3 d-flex flex-column align-items-start">
+                <label for="email" class="form-label fs-6">Email</label>
+                <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" required>
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 <section class="event py-5">
     <div class="container-fluid">
         <div class="row section_heading">
@@ -278,7 +304,7 @@
         <div class="row">
             @foreach ($events as $item)
                 <a href="@if (app()->getLocale() == "en") {{ route('tax-event', $item->slug_eng) }} @else {{ route('tax-event.id', $item->slug) }} @endif" class="col-6 col-md-3 d-flex flex-column event_item mt-4">
-                <img src="/assets/images/1.png" class="w-100" alt="">
+                <img src="{{ asset("storage/" . $item->photo) }}" class="w-100" alt="">
                 <p>{{ $item->updated_at->format('M, d Y') }}</p>
                 <h3>
                     @if (app()->getLocale() == "en")

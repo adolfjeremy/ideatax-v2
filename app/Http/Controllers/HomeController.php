@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\CompanyProfileDonwloaderInfo;
 use App\Http\Requests\CompanyProfilerDownloaderRequest;
 use App\Models\HeroSlider;
+use App\Models\Subscription;
 use App\Models\TaxEvent;
 
 class HomeController extends Controller
@@ -61,6 +62,18 @@ class HomeController extends Controller
         Session::flush();
 
         return  redirect()->to($path);
+        
     }
+
+    public function subs(Request $request)
+    {
+        $data = $request->all();
+        
+        Subscription::create($data);
+
+        return  redirect()->back();
+        
+    }
+    
 }
 

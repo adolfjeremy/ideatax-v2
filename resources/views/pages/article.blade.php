@@ -72,7 +72,7 @@
         <div class="row">
             @foreach ($articles as $item)
             <div class="col-4 articles_item d-flex flex-column gap-4 align-items-start mt-5 px-4">
-                <img src="{{ asset("storage/" . $item->photo) }}" class="w-100" alt="{{ $item->title }}">
+                <img src="{{ asset("storage/" . $item->thumbnail) }}" class="w-100" alt="{{ $item->title }}">
                 <h3 class="m-0">{{ $item->title }}</h3>
                 <div class="m-0">
                     @if (app()->getLocale() == "en")

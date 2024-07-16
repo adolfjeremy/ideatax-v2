@@ -69,9 +69,9 @@
                         <li class="nav-item">
                             <a href="{{ route("compro-donwloader.index") }}" class="nav-link active">Comapany Profile Downloader</a>
                         </li>
-                        {{-- <li class="nav-item">
-                            <a href="{{ route("promo.index") }}" class="nav-link active">Promotions</a>
-                        </li> --}}
+                        <li class="nav-item">
+                            <a href="{{ route("subs.index") }}" class="nav-link active">Subscriptions</a>
+                        </li>
 
                     </ul>
                 </div>

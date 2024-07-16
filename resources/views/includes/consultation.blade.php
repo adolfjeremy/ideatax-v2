@@ -71,7 +71,13 @@
                                     @endif
                                 </option>
                                 @foreach ($services as $service)
-                                    <option value="{{ $service->id }}">{{ $service->title }}</option>
+                                    <option value="{{ $service->id }}">
+                                        @if (app()->getLocale() == "en")
+                                        {{ $service->title_eng }}
+                                        @else
+                                        {{ $service->title }}
+                                        @endif
+                                    </option>
                                 @endforeach
                             </select>
                         </div>

@@ -58,14 +58,37 @@
 </section>
 <section class="article_desc mt-5">
     <div class="container">
-        <div class="row">
-            <div class="col-12 article_body">
+        <div class="row px-md-5">
+            <div class="col-12 px-md-4 article_body">
                 @if (app()->getLocale() == "en")
                 {!! $article->body_eng !!}
                 @endif
                 @if (app()->getLocale() == "id")
                 {!! $article->body !!}
                 @endif
+            </div>
+        </div>
+        <div class="row mt-5 share_group">
+            <div class="col-12 d-flex align-items-center justify-content-center gap-5">
+                <div class="dropdown">
+                    <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-send"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <div class="d-flex align-items-center justify-content-center gap-3">
+                            <a href="https://wa.me/62811195708?text={{ route('article-detail', $article->slug_eng) }}" target="_blank" rel="noopener noreferrer" class="dropdown-item d-flex flex-column align-items-center justify-content-center gap-1">
+                                <i class="bi bi-whatsapp"></i>
+                                <span>Whatsapp</span>
+                            </a>
+                            <button class="dropdown-item copy_button d-flex flex-column align-items-center copy-link justify-content-center gap-2" href="#">
+                                <p class="copy_link visually-hidden">{{ route('article-detail', $article->slug_eng) }}</p>
+                                <i class="bi bi-link-45deg text-secondary"></i>
+                                <span>Copy Link</span>
+                            </button>
+                        </div>
+                    </ul>
+                </div>
+                <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/company/89691805/admin/feed/posts/"><i class="bi bi-linkedin"></i></a>
             </div>
         </div>
         <div class="row consultation_cta mt-5">

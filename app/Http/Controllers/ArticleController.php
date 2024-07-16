@@ -16,7 +16,7 @@ class ArticleController extends Controller
         $articleCategories = ArticleCategory::all();
         $articleCarousels = Article::latest()->take(5)->get();
         $taxEvents = TaxEvent::latest()->take(5)->get();
-        $articles = Article::latest()->paginate(9);
+        $articles = Article::latest()->paginate(1);
         $latests = Article::latest()->paginate(5);
         $page = Page::findOrFail(5);
         $services = Services::get();

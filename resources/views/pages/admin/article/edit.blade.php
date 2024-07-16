@@ -61,7 +61,7 @@
                                     </select>
                                 </div>
                                 <div class="col-12 mb-3">
-                                    <label for="photo" class="form-label">Thumbnail</label>
+                                    <label for="photo" class="form-label">Slider</label>
                                     @if ($item->photo)
                                         <img src="{{ asset("storage/" . $item->photo) }}" class="img-preview img-fluid col-sm-5 my-2 d-block">
                                     @else
@@ -69,6 +69,11 @@
                                     @endif
                                     <input type="hidden" name="oldImage" value="{{ $item->photo }}">
                                     <input type="file" id="photo" name="photo" class="form-control w-100" value="{{ $item->photo }}" onchange="previewImage()">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="thumbnail" class="form-label">Thumbnail</label>
+                                    <input type="hidden" name="oldThumbnail" value="{{ $item->thumbnail }}">
+                                    <input type="file" id="thumbnail" name="thumbnail" class="form-control w-100" value="{{ $item->thumbnail }}">
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="body">article Body Id</label>

@@ -1,5 +1,6 @@
 import "./bootstrap";
 import $ from "jquery";
+import "./floatingButton";
 
 import "bootstrap";
 
@@ -42,3 +43,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     observer.observe(target);
 });
+
+function copyLink() {
+    const elem = document.querySelector(".copy_link");
+    navigator.clipboard.writeText(elem.innerText);
+    alert("link copied");
+}
+
+const copyButton = document.querySelector(".copy_button");
+copyButton.addEventListener("click", copyLink);

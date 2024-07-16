@@ -29,7 +29,7 @@
 
 @section('content')
 <section class="team_detail">
-   <img src="{{ asset("storage/" . $team->photo) }}" alt="Idetax team ready to serve you" class="w-100">
+   <img src="{{ asset("storage/" . $team->profile_picture) }}" alt="Idetax team ready to serve you" class="w-100">
    <div class="container team-heading">
        <div class="row d-flex align-items-center justify-content-end">
            <div class="col-md-5 col-12 d-flex-align-items-center justify-content-start">
@@ -41,9 +41,9 @@
        </div>
    </div>
 </section>
-    <section class="our_team_description py-4">
+    <section class="our_team_description py-4 ">
         <div class="container">
-            <div class="row pt-5">
+            <div class="row pt-5 px-md-5 px-0">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb breadcrumb-custom">
                         <li class="breadcrumb-item breadcrumb-cst"><a href="{{ app()->getLocale() == "en" ? route('our-team') : route('our-team.id') }}">Team</a></li>
@@ -51,8 +51,8 @@
                     </ol>
                 </nav>
             </div>
-            <div class="row">
-                <div class="col-12 mt-2 team_detail">
+            <div class="row px-md-5">
+                <div class="col-12 mt-2 px-md-4 team_detail">
                     <div class="row d-flex d-flex-column align-items-start justify-content-center text-center">
                         <h2 class="mb-4">Biography</h2>
                         @if (app()->getLocale() == "en")

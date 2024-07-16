@@ -53,6 +53,10 @@ class ArticleController extends Controller
         {
             $data['photo'] = $request->file('photo')->store('article');
         }
+        if($request->file('thumbnail'))
+        {
+            $data['thumbnail'] = $request->file('thumbnail')->store('article');
+        }
 
         $data['slug'] = Str::slug($request->title);
         $data['slug_eng'] = Str::slug($request->title_eng);
@@ -90,6 +94,15 @@ class ArticleController extends Controller
                 Storage::delete($request->oldImage);
             }
             $data['photo'] = $request->file('photo')->store('article');
+        }
+
+        if($request->file('thumbnail'))
+        {
+            if($request->oldImage)
+            {
+                Storage::delete($request->oldThumbnail);
+            }
+            $data['thumbnail'] = $request->file('thumbnail')->store('article');
         }
         
         $data['slug'] = Str::slug($request->title);

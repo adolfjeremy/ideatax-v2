@@ -148,3 +148,25 @@
         }
     }
 }
+
+.share_group {
+    .dropdown i,
+    .bi-linkedin {
+        font-size: 3.3706rem;
+        color: $blue;
+    }
+    .bi-whatsapp {
+        color: #25d366 !important;
+    }
+    span {
+        font-size: 1rem;
+        color: $navy;
+    }
+    .dropdown-menu i {
+        font-size: 1.8rem;
+    }
+    button {
+        border: none;
+        outline: none;
+    }
+}

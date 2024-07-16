@@ -16,7 +16,7 @@ return [
     "expertiseHeadFour" => "Asistensi Pemeriksaan Pajak",
     "expertiseDescOne" => "Perushaan perlu mengotomatiskan proses pajak agar tetap patuh terhadap peraturan. Ideatax menawarkan solusi dengan otomatisasi dan dukungan ahli, sehingga dapat meminimalkan risiko dan membebaskan waktu Anda untuk fokus menjalankan bisnis.",
     "expertiseDescTwo" => "Pengembalian pajak terjadi ketika terdapat sisa pajak dalam tahun pelaporan pajak yang harus dikembalikan kepada Wajib Pajak.",
-    "expertiseDescThree" => "Dokumen harga transfer  memastikan transaksi antar-entitas dalam perusahaan multinasional mematuhi peraturan perpajakan. Dokumentasi ini berfungsi untuk menunjukkan bahwa harga transfer yang diterapkan sesuai dengan harga pasar (arm's length pricing), sehingga dapat mencegah penghindaran pajak dan menjamin transparansi kepada otoritas pajak.",
+    "expertiseDescThree" => "Dokumentasi transfer pricing memastikan bahwa transaksi antar-perusahaan, baik perusahaan nasional maupun multinasional, mematuhi peraturan perpajakan. Hal ini menunjukkan penetapan harga yang sesuai dengan prinsip kewajaran (arm's length) untuk menghindari penghindaran pajak dan memastikan transparansi bagi otoritas pajak.",
     "expertiseDescFour" => "Layanan kami mencakup pendampingan sebelum Anda menerima surat pemberitahuan pemeriksaan pajak, serta membantu Anda selama bertemu dengan petugas pajak.",
     "readMore" => "Baca Selengkapnya",
     "consultationCta" => "Konsultasi Sekarang",

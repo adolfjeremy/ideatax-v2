@@ -13,6 +13,7 @@ class Article extends Model
         'slug', 
         'slug_eng',
         'photo', 
+        'thumbnail', 
         'body', 
         'article_categories_id', 
         'user_id', 

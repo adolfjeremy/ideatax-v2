@@ -51,9 +51,13 @@
                                     </select>
                                 </div>
                                 <div class="col-12 mb-3">
-                                    <label for="photo" class="form-label">Article Thumbnail</label>
+                                    <label for="photo" class="form-label">Article Slider</label>
                                     <img class="img-preview img-fluid col-sm-5 my-2">
                                     <input type="file" id="photo" name="photo" class="form-control w-100" onchange="previewImage()" required>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="thumbnail" class="form-label">Article Thumbnail</label>
+                                    <input type="file" id="thumbnail" name="thumbnail" class="form-control w-100" required>
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="author_id" class="form-label">Select Author</label>
@@ -111,5 +115,6 @@
                 imgPreview.src = oFREvent.target.result;
             }
         }
+
     </script>
 @endpush

@@ -35,6 +35,7 @@ use App\Http\Controllers\CareersController;
 use App\Http\Controllers\CompanyProfileDonwloaderInfoController;
 use App\Http\Controllers\ConsultationMeetingController;
 use App\Http\Controllers\Admin\MeetingController;
+use App\Http\Controllers\Admin\SubscriptionController;
 use App\Http\Controllers\SearchController;
 
 /*
@@ -54,6 +55,7 @@ Route::prefix('id')
     ->group(function () {
         Route::get('/', [HomeController::class, 'index'])->name('home.id');
         Route::post('/', [HomeController::class, 'store'])->name('home-save.id');
+        Route::post('/', [HomeController::class, 'subs'])->name('home-subs.id');
         
         Route::get('/our-team', [AboutController::class, 'team'])->name('our-team.id');
         Route::get('/our-team/{id}', [AboutController::class, 'teamDetail'])->name('our-team-detail.id');
@@ -84,6 +86,7 @@ Route::prefix('id')
 Route::get('lang/{lang}', [LocalizationController::class, 'switchLang'])->name('switchLang');
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::post('/', [HomeController::class, 'store'])->name('home-save');
+Route::post('/subs', [HomeController::class, 'subs'])->name('home-subs');
 
 Route::get('/search', [SearchController::class, 'index'])->name('search');
 
@@ -142,6 +145,7 @@ Route::prefix('admin')
     Route::resource('compro', CompanyProfileController::class);
     Route::resource('team', TeamController::class);
     Route::resource('author', AuthorController::class);
+    Route::resource('subs', SubscriptionController::class);
     Route::get('/answered', [DiscussionController::class, 'answered'])->name('answered');
 });
 
