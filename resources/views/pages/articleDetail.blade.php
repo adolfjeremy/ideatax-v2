@@ -76,7 +76,7 @@
                     </button>
                     <ul class="dropdown-menu">
                         <div class="d-flex align-items-center justify-content-center gap-3">
-                            <a href="https://wa.me/62811195708?text={{ route('article-detail', $article->slug_eng) }}" target="_blank" rel="noopener noreferrer" class="dropdown-item d-flex flex-column align-items-center justify-content-center gap-1">
+                            <a href="https://api.whatsapp.com/send?text={{ route('article-detail', $article->slug_eng) }}" data-action="share/whatsapp/share" target="_blank" rel="noopener noreferrer" class="dropdown-item d-flex flex-column align-items-center justify-content-center gap-1">
                                 <i class="bi bi-whatsapp"></i>
                                 <span>Whatsapp</span>
                             </a>
