@@ -36,7 +36,7 @@
         @foreach ($latests as $item)
         <div class="carousel-item carousel_custom @if ($loop->first)active @endif" data-bs-interval="7000">
             <img src="{{ asset("storage/" . $item->photo) }}" class="d-block w-100" alt="{{ $item->title }}">
-            <div class="article_overview d-flex flex-column align-items-start justify-content-center">
+            <div class="article_overview d-flex flex-column align-items-start justify-content-center gap-2">
                 <h1>
                     @if ((app()->getLocale() == "en"))
                     {{ $item->title_eng }}
