@@ -98,7 +98,7 @@ class ArticleController extends Controller
 
         if($request->file('thumbnail'))
         {
-            if($request->oldImage)
+            if($request->oldThumbnail)
             {
                 Storage::delete($request->oldThumbnail);
             }
