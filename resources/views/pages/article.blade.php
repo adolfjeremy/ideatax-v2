@@ -72,8 +72,21 @@
         <div class="row">
             @foreach ($articles as $item)
             <div class="col-4 articles_item d-flex flex-column gap-4 align-items-start mt-5 px-4">
-                <img src="{{ asset("storage/" . $item->thumbnail) }}" class="w-100" alt="{{ $item->title }}">
-                <h3 class="m-0">{{ $item->title }}</h3>
+                <img src="{{ asset("storage/" . $item->thumbnail) }}" class="w-100" alt="@if (app()->getLocale() == "en")
+                    {{ $item->title_eng }}
+                    @endif
+                    @if (app()->getLocale() == "id")
+                    {{ $item->title }}
+                    @endif">
+                <h3 class="m-0">
+                    @if (app()->getLocale() == "en")
+                    {{ $item->title_eng }}
+                    @endif
+                    @if (app()->getLocale() == "id")
+                    {{ $item->title }}
+                    @endif
+
+                </h3>
                 <div class="m-0">
                     @if (app()->getLocale() == "en")
                         {!! str_limit($item->body_eng , $limit = 120) !!}
