@@ -8,6 +8,17 @@
     align-items: flex-end;
     justify-content: flex-start;
     padding: 4rem;
+    @media (max-width: 1024px) {
+        width: 100vw;
+        height: auto;
+        padding: 20rem 4rem 4rem 4rem;
+    }
+    @media (max-width: 480px) {
+        width: 100vw;
+        height: auto;
+        padding: 12rem 4rem 4rem 2rem;
+        background-position: -200px top;
+    }
     h1 {
         text-shadow: 0em 0.0375em 0.159375em rgba(0, 0, 0, 0.325);
         line-height: 1.01019687em;
@@ -15,6 +26,12 @@
         color: $white;
         font-size: 4rem;
         font-family: OpenSauce;
+        @media (max-width: 1024px) {
+            font-size: 2.822rem;
+        }
+        @media (max-width: 480px) {
+            font-size: 1.0881rem;
+        }
     }
 }
 
@@ -29,10 +46,23 @@
     font-size: 1.125rem;
     padding: 1rem 2.5rem;
     transition: 300ms ease-in-out;
+    @media (max-width: 1024px) {
+        font-size: 1rem;
+        padding: 0.8rem 1.6rem;
+    }
+    @media (max-width: 480px) {
+        font-size: 0.5rem 1rem;
+    }
     &:hover {
         font-size: 1.13rem;
         background-color: $orange !important;
         color: $white !important;
+        @media (max-width: 1024px) {
+            font-size: 1.1rem;
+        }
+        @media (max-width: 480px) {
+            font-size: 0.8rem;
+        }
     }
 }
 
@@ -50,15 +80,30 @@
             line-height: 1.41665486em;
             letter-spacing: 0.009em;
             font-size: 1.4813rem;
+            @media (max-width: 1024px) {
+                font-size: 1.0366rem;
+            }
+            @media (max-width: 480px) {
+                font-size: 0.9rem;
+            }
         }
         .about_stats {
             gap: 6rem;
+            @media (max-width: 480px) {
+                gap: 3rem;
+            }
             .about_number {
                 font-size: 3.9502rem;
                 color: $navy;
                 line-height: 1.390625em;
                 text-align: center;
                 font-weight: 800;
+                @media (max-width: 1024px) {
+                    font-size: 2.7644rem;
+                }
+                @media (max-width: 480px) {
+                    font-size: 2rem;
+                }
             }
             .about_head {
                 color: $orange;
@@ -69,6 +114,9 @@
                 text-transform: capitalize;
                 text-align: center;
                 direction: ltr;
+                @media (max-width: 1024px) {
+                    font-size: 0.8rem;
+                }
             }
         }
     }
@@ -158,6 +206,9 @@
         font-weight: 400;
         line-height: 1.42498753em;
         letter-spacing: 0.009em;
+        @media (max-width: 480px) {
+            font-size: 0.8rem;
+        }
     }
 }
 
@@ -172,6 +223,9 @@
             line-height: 1.19642857em;
             letter-spacing: 0.009em;
             color: $orange;
+            @media (max-width: 480px) {
+                font-size: 2.4189rem;
+            }
         }
         p {
             color: $blue;
@@ -220,6 +274,9 @@
             line-height: 1.18641819em;
             letter-spacing: 0.009em;
             font-size: 3.5625rem;
+            @media (max-width: 480px) {
+                font-size: 2.4189rem;
+            }
         }
     }
 }
@@ -244,6 +301,9 @@
                 line-height: 1.4062522em;
                 letter-spacing: 0.009em;
                 font-weight: 600;
+                @media (max-width: 480px) {
+                    font-size: 0.876rem;
+                }
             }
             a {
                 font-size: 1.6rem;
@@ -254,6 +314,9 @@
                 transition: all 300ms ease-in-out;
                 &:hover {
                     color: $orange;
+                }
+                @media (max-width: 480px) {
+                    font-size: 1.06259rem;
                 }
             }
         }
@@ -266,12 +329,19 @@
         bottom: 50%;
         transform: translateY(50%);
         right: 4.5rem;
+        @media (max-width: 480px) {
+            right: 0;
+            left: 0;
+        }
 
         h2 {
             color: $white;
             font-size: 2.625rem;
             line-height: 1.42967633em;
             letter-spacing: 0.009em;
+            @media (max-width: 480px) {
+                font-size: 1.875rem;
+            }
         }
 
         .btn-modal {
@@ -283,6 +353,9 @@
             background-color: transparent;
             border: none;
             outline: none;
+            @media (max-width: 480px) {
+                font-size: 1.75rem;
+            }
             &:hover {
                 img {
                     margin-left: 30px !important;
@@ -312,12 +385,18 @@
             font-weight: 600;
             margin-top: 10px;
             transition: all 300ms ease-in-out;
+            @media (max-width: 480px) {
+                font-size: 1.1875rem;
+            }
         }
         h3 {
             font-size: 1.48125rem;
             color: $blue;
             line-height: 1.42967633em;
             letter-spacing: 0.009em;
+            @media (max-width: 480px) {
+                font-size: 0.9rem;
+            }
         }
     }
 }

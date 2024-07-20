@@ -44,7 +44,7 @@
                     {{ $item->title }}
                     @endif
                 </h1>
-                <div class="article_excerpt">
+                <div class="article_excerpt d-none d-md-block">
                     @if (app()->getLocale() == "en")
                         {!! str_limit($item->body_eng , $limit = 271) !!}
                     @endif
@@ -71,7 +71,7 @@
         </div>
         <div class="row">
             @foreach ($articles as $item)
-            <div class="col-4 articles_item d-flex flex-column gap-4 align-items-start mt-5 px-4">
+            <div class="col-12 col-md-4 articles_item d-flex flex-column gap-4 align-items-start mt-5 px-4">
                 <img src="{{ asset("storage/" . $item->thumbnail) }}" class="w-100" alt="@if (app()->getLocale() == "en")
                     {{ $item->title_eng }}
                     @endif

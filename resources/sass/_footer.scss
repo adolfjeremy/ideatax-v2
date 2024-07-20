@@ -2,6 +2,9 @@ footer {
     font-size: 1.80625rem;
     line-height: 1.42967633em;
     letter-spacing: 0.009em;
+    @media (max-width: 480px) {
+        font-size: 1.4rem;
+    }
     .left {
         color: $blue;
         h2 {

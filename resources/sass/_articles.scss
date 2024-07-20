@@ -1,4 +1,7 @@
 .articles_hero {
+    @media (max-width: 480px) {
+        padding-top: 100px;
+    }
     .carousel_custom {
         width: 100vw;
         img {
@@ -21,6 +24,9 @@
                 line-height: 1.0999978em;
                 letter-spacing: $letter;
                 font-weight: 700;
+                @media (max-width: 480px) {
+                    font-size: 1rem;
+                }
             }
             .article_excerpt * {
                 font-size: 1.15215rem;
@@ -29,17 +35,23 @@
                 color: $navy;
                 padding: 0;
                 margin: 0;
+                @media (max-width: 480px) {
+                    font-size: 0.8rem;
+                }
             }
             a {
                 font-size: 0.9875rem;
-                color: $navy;
+                color: $white;
                 line-height: 1.375em;
                 text-align: center;
                 padding: 1rem 1, 2rem;
-                background-color: $white;
+                background-color: #000000;
                 transition: 300ms ease;
                 &:hover {
                     font-size: 1rem;
+                }
+                @media (max-width: 480px) {
+                    font-size: 0.75rem;
                 }
             }
         }
@@ -52,6 +64,9 @@
         letter-spacing: $letter;
         font-size: 2.30375rem;
         color: $orange;
+        @media (max-width: 480px) {
+            font-size: 1.6rem;
+        }
     }
 
     .articles_item {
@@ -87,6 +102,9 @@
 }
 
 .article_detail {
+    @media (max-width: 480px) {
+        padding-top: 100px;
+    }
     .article_heading {
         position: absolute;
         left: 0;
@@ -98,6 +116,12 @@
             line-height: 1.01561707em;
             color: $navy;
             font-weight: 700;
+            @media (max-width: 1024px) {
+                font-size: 3rem;
+            }
+            @media (max-width: 480px) {
+                font-size: 1.125rem;
+            }
         }
         a {
             font-size: 1.9751rem;
@@ -106,13 +130,19 @@
             text-decoration: none;
             line-height: 1.1875em;
             letter-spacing: -0.054em;
+            @media (max-width: 480px) {
+                font-size: 1.05rem;
+            }
         }
+    }
 
-        p {
-            font-size: 1.4459rem;
-            color: $blue;
-            line-height: 1.42498753em;
-            letter-spacing: $letter;
+    p {
+        font-size: 1.4459rem;
+        color: $blue;
+        line-height: 1.42498753em;
+        letter-spacing: $letter;
+        @media (max-width: 480px) {
+            font-size: 0.8rem;
         }
     }
 }
@@ -134,6 +164,9 @@
             text-align: left;
             letter-spacing: $letter;
             color: $blue;
+            @media (max-width: 480px) {
+                font-size: 1.125rem;
+            }
         }
         h1,
         h2,

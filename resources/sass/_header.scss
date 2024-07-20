@@ -110,6 +110,11 @@ header {
         rgba(0, 90, 150, 0.72),
         #005b96 90%
     );
+
+    @media (max-width: 480px) {
+        width: 80vw;
+        right: -80vw;
+    }
 }
 
 .mobile_nav {
@@ -121,6 +126,9 @@ header {
     opacity: 0;
     transition: 300ms ease;
     display: none;
+    @media (max-width: 480px) {
+        width: 80vw;
+    }
 
     nav {
         height: 100%;

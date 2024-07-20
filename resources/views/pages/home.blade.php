@@ -72,14 +72,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-4">
-                <div class="row">
-                    <div class="col-12">
+            <div class="col-12 col-md-4 mt-3 mt-md-0">
+                <div class="row d-flex align-items-center justify-content-center">
+                    <div class="col-7 col-md-12">
                         <img src="/assets/images/award.png" class="w-100" alt="award">
                     </div>
                 </div>
-                <div class="row mt-4">
-                    <div class="col-12">
+                <div class="row mt-4 d-flex align-items-center justify-content-center">
+                    <div class="col-7 col-md-12">
                         <button type="button" class="btn btn-orange w-100" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                             Company Profile
                         </button>
@@ -193,7 +193,7 @@
 <section class="services py-5">
     <div class="container">
         <div class="row">
-            <div class="col-5 left">
+            <div class="col-12 col-md-5 left">
                 <div class="row">
                     <div class="col-12">
                         <h2>{{ __('HomePage.headSolution'); }}</h2>
@@ -205,7 +205,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-7 right">
+            <div class="col-12 col-md-7 right">
                 <div class="row services_list">
                     @foreach ($services as $service)
                     <a href="@if (app()->getLocale() == "en") {{ route('our-service-detail', $service->slug_eng) }} @else {{ route('our-service-detail.id', $service->slug) }} @endif" class="col-12 service_item d-flex align-items-center justify-content-between py-2">
@@ -248,9 +248,9 @@
         </div>
         <div class="row">
             @foreach ($articles as $item)
-            <div class="col-6 ps-0 d-flex align-items-center article_item mt-5">
+            <div class="col-12 col-md-6 ps-0 d-flex align-items-center article_item mt-5">
                 <div class="article_img">
-                    <img src="{{ asset("storage/" . $item->photo) }}" alt="$item->title">
+                    <img src="{{ asset("storage/" . $item->thumbnail) }}" alt="$item->title">
                 </div>
                 <div class="article_detail d-flex flex-column">
                     <p>{{ $item->articleCategory->title }} - {{ $item->updated_at->format('d M, Y H:i') }} WIB</p>
@@ -263,7 +263,7 @@
 </section>
 <section class="subscribe position-relative">
     <img src="/assets/images/subscribe.png" class="w-100 position-relative" alt="">
-    <div class="subscribe_button d-flex flex-column align-items-center justify-content-center">
+    <div class="subscribe_button py-5 py-md-0 d-flex flex-column align-items-center justify-content-center">
         <h2 class="position-relative">{{ __('HomePage.subHead'); }}</h2>
         <button type="button" class="btn-modal" data-bs-toggle="modal" data-bs-target="#exampleModal">
             {{ __('HomePage.subLink'); }} <img src="/assets/images/arrow-white.svg" class="ms-3" alt="">

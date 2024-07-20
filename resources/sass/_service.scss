@@ -1,4 +1,7 @@
 .services_detail {
+    @media (max-width: 480px) {
+        padding-top: 100px;
+    }
     .team-heading {
         position: absolute;
 
@@ -9,6 +12,9 @@
             color: $navy;
             text-align: center;
             font-weight: 700;
+            @media (max-width: 480px) {
+                font-size: 2rem;
+            }
         }
     }
 }
@@ -19,5 +25,8 @@
         color: $blue;
         line-height: 1.9em;
         letter-spacing: $letter;
+        @media (max-width: 480px) {
+            font-size: 1.2rem;
+        }
     }
 }

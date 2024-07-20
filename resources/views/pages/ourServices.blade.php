@@ -36,7 +36,7 @@
 <section class="services py-5">
     <div class="container">
         <div class="row d-flex flex-column align-items-center mt-5">
-            <div class="col-10 left mt-5">
+            <div class="col-12 col-md-10 left mt-5">
                 <div class="row">
                     <div class="col-12 text-center">
                         <h2>{{ __('HomePage.headSolution'); }}</h2>
@@ -48,7 +48,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-8 right mt-5">
+            <div class="col-12 col-md-8 right mt-5">
                 <div class="row services_list">
                     @foreach ($services as $service)
                     <a href="@if (app()->getLocale() == "en") {{ route('our-service-detail', $service->slug_eng) }} @else {{ route('our-service-detail.id', $service->slug) }} @endif" class="col-12 service_item d-flex align-items-center justify-content-between py-2">

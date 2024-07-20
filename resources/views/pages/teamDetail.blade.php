@@ -28,7 +28,7 @@
 @endsection
 
 @section('content')
-<section class="team_detail">
+<section class="team_detail position-relative">
    <img src="{{ asset("storage/" . $team->profile_picture) }}" alt="Idetax team ready to serve you" class="w-100">
    <div class="container team-heading">
        <div class="row d-flex align-items-center justify-content-end">
