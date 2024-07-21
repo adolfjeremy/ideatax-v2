@@ -164,6 +164,7 @@
             text-align: left;
             letter-spacing: $letter;
             color: $blue;
+            overflow-wrap: break-word;
             @media (max-width: 480px) {
                 font-size: 1.125rem;
             }
