@@ -32,7 +32,7 @@
    <img src="{{ asset("storage/" . $team->profile_picture) }}" alt="Idetax team ready to serve you" class="w-100">
    <div class="container team-heading">
        <div class="row d-flex align-items-center justify-content-end">
-           <div class="col-md-6 col-12 mt-lg d-flex align-items-center justify-content-end me-4 me-md-0">
+           <div class="col-md-6 col-12 padding_top d-flex align-items-center justify-content-end me-4 me-md-0">
                <div class="text-center">
                     <h1>{{ $team->name }}</h1>
                     <p>{{ $team->position }}</p>

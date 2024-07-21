@@ -103,7 +103,7 @@
         </div>
         <div class="row">
             <div class="col-12 d-flex align-items-center justify-content-center py-5">
-                {{ $articles->onEachSide(3)->links() }}
+                {{ $articles->links() }}
             </div>
         </div>
     </div>
