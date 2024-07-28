@@ -1,13 +1,15 @@
 .hero {
-    background-image: url("/assets/images/hero.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
     height: 100vh;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: flex-start;
     padding: 4rem;
+    .row {
+        margin-top: 5rem;
+    }
     @media (max-width: 1024px) {
         width: 100vw;
         height: auto;
@@ -79,7 +81,7 @@
             font-weight: 500;
             line-height: 1.41665486em;
             letter-spacing: 0.009em;
-            font-size: 1.4813rem;
+            font-size: 1.15rem;
             @media (max-width: 1024px) {
                 font-size: 1.0366rem;
             }
@@ -213,7 +215,7 @@
 }
 
 .services {
-    background-image: url("/assets/images/blue-bg.png");
+    background-image: url("/assets/images/team-bg.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

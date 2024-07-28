@@ -1,7 +1,7 @@
 <header class="navbar-fixed-top fixed-top pt-5">
     <div class="nav_bar">
-        <div class="d-flex align-items-center {{ (request()->is('our-team') ? "justify-content-end" : "justify-content-between") }}">
-            @if (!(request()->is('our-team')))
+        <div class="d-flex align-items-center {{ (request()->is('our-team') ? "justify-content-end" : (request()->is('id/our-team') ? "justify-content-end" : "justify-content-between")) }}">
+            @if (!(request()->is('our-team')) and !(request()->is('id/our-team')))
                 @if (app()->getLocale() == "en")
                 <a href="/" class="navbar_brand">
                     @if ((request()->is('/')))

@@ -24,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $hero = HeroSlider::findOrFail(1);
         $services = Services::all();
         $one = Services::findOrFail(1);
         $two = Services::findOrFail(8);
@@ -32,14 +33,13 @@ class HomeController extends Controller
         $articles= Article::latest()->take(4)->get();
         $events= TaxEvent::latest()->take(4)->get();
         $page = Page::findOrFail(1);
-        $sliders = HeroSlider::with('service')->get();
         $compro = companyProfile::orderBy('updated_at', 'desc')->first();
         return view('pages.home',[
+            "hero" => $hero,
             "services" => $services,
             'articles' => $articles,
             'events' => $events,
             'page' => $page,
-            'sliders' =>$sliders,
             'compro' => $compro,
             'one' => $one,
             'two' => $two,

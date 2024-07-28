@@ -7,11 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class HeroSlider extends Model
 {
     protected $fillable = [
-        'service_id'
+        'hero', 'cta', 'cta_eng', 'button', 'button_eng',
     ];
-
-    public function service()
-    {
-        return $this->belongsTo(Services::class, "service_id", "id");
-    }
 }

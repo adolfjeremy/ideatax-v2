@@ -135,7 +135,7 @@ Route::prefix('admin')
     Route::resource('promo', PromoController::class);
     Route::resource('meeting', MeetingController::class);
     Route::resource('compro-donwloader', CompanyProfilerDownloaderController::class);
-    Route::resource('hero-slider', HeroSliderController::class);
+    Route::resource('hero', HeroSliderController::class);
     Route::resource('article-category', ArticleCategoryController::class);
     Route::resource('articles', AdminArticleController::class);
     Route::resource('event', TaxEventController::class);

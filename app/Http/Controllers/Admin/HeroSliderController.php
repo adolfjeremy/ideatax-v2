@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\HeroSlider;
-use App\Models\Services;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class HeroSliderController extends Controller
 {
@@ -16,11 +16,7 @@ class HeroSliderController extends Controller
      */
     public function index()
     {
-        $heroes = HeroSlider::get();
-
-        return view('pages.admin.HomeSlider.index', [
-            "heroes" => $heroes
-        ]);
+        
     }
 
     /**
@@ -30,10 +26,7 @@ class HeroSliderController extends Controller
      */
     public function create()
     {
-        $services = Services::get();
-        return view('pages.admin.HomeSlider.create',[
-            "services" => $services
-        ]);
+        
     }
 
     /**
@@ -44,11 +37,7 @@ class HeroSliderController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-
-        HeroSlider::create($data);
-
-        return redirect()->route('hero-slider.index');
+        
     }
 
     /**
@@ -70,11 +59,9 @@ class HeroSliderController extends Controller
      */
     public function edit($id)
     {
-        $services = Services::get();
         $item = HeroSlider::findOrFail($id);
 
-        return view('pages.admin.HomeSlider.edit',[
-            "services" => $services,
+        return view('pages.admin.hero.edit',[
             "item" => $item
         ]);
     }
@@ -90,10 +77,19 @@ class HeroSliderController extends Controller
     {
         $data = $request->all();
 
+        if($request->file('hero'))
+        {
+            if($request->oldImage)
+            {
+                Storage::delete($request->oldImage);
+            }
+            $data['hero'] = $request->file('hero')->store('hero');
+        }
+
         $item = HeroSlider::findOrFail($id);
         $item->update($data);
 
-        return redirect()->route('hero-slider.index');
+        return redirect()->route('hero.edit',1);
     }
 
     /**

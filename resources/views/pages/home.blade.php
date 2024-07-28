@@ -31,13 +31,25 @@
 
 @section('content')
 @section('content')
-<section class="hero">
+<section class="hero" style="background-image: url('{{ asset("storage/" . $hero->hero) }}')">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <h1>{{ __('HomePage.headingOne'); }} <br> {{ __('HomePage.headingTwo'); }}</h1>
+        <div class="row mt-5">
+            <div class="col-8">
+                <h1>
+                    @if (app()->getLocale() == "en")
+                    {{ $hero->cta_eng }}
+                    @endif
+                    @if (app()->getLocale() == "id")
+                    {{ $hero->cta }}
+                    @endif
+                </h1>
                 <a href="@if (app()->getLocale() == "en") {{ route("contact") }} @else {{ route("contact") }} @endif" class="btn btn-orange mt-3">
-                    {{ __('HomePage.cta'); }}
+                    @if (app()->getLocale() == "en")
+                    {{ $hero->button_eng }}
+                    @endif
+                    @if (app()->getLocale() == "id")
+                    {{ $hero->button }}
+                    @endif
                 </a>
             </div>
         </div>
@@ -131,10 +143,10 @@
         </div>
         <div class="row expertise_item">
             <div class="col-12 col-md-6 mt-5">
-                <img src="/assets/images/compliance.svg" alt="compliance">
-                <h3 class="mt-3">{{ __('HomePage.expertiseHeadOne'); }}</h3>
-                <p>{{ __('HomePage.expertiseDescOne'); }}</p>
-                <a href="@if (app()->getLocale() == "en") {{ route('our-service-detail', $one->slug_eng) }} @else {{ route('our-service-detail.id', $one->slug) }} @endif">{{ __('HomePage.readMore'); }} &rarr;</a>
+                <img src="/assets/images/audit.svg" alt="audit">
+                <h3 class="mt-3">{{ __('HomePage.expertiseHeadFour'); }}</h3>
+                <p>{{ __('HomePage.expertiseDescFour'); }}</p>
+                <a href="@if (app()->getLocale() == "en") {{ route('our-service-detail', $four->slug_eng) }} @else {{ route('our-service-detail.id', $four->slug) }} @endif">{{ __('HomePage.readMore'); }} &rarr;</a>
             </div>
             <div class="col-12 col-md-6 mt-5">
                 <img src="/assets/images/refund.svg" alt="refund">
@@ -149,10 +161,10 @@
                 <a href="@if (app()->getLocale() == "en") {{ route('our-service-detail', $three->slug_eng) }} @else {{ route('our-service-detail.id', $three->slug) }} @endif">{{ __('HomePage.readMore'); }} &rarr;</a>
             </div>
             <div class="col-12 col-md-6 mt-5">
-                <img src="/assets/images/audit.svg" alt="audit">
-                <h3 class="mt-3">{{ __('HomePage.expertiseHeadFour'); }}</h3>
-                <p>{{ __('HomePage.expertiseDescFour'); }}</p>
-                <a href="@if (app()->getLocale() == "en") {{ route('our-service-detail', $four->slug_eng) }} @else {{ route('our-service-detail.id', $four->slug) }} @endif">{{ __('HomePage.readMore'); }} &rarr;</a>
+                <img src="/assets/images/compliance.svg" alt="compliance">
+                <h3 class="mt-3">{{ __('HomePage.expertiseHeadOne'); }}</h3>
+                <p>{{ __('HomePage.expertiseDescOne'); }}</p>
+                <a href="@if (app()->getLocale() == "en") {{ route('our-service-detail', $one->slug_eng) }} @else {{ route('our-service-detail.id', $one->slug) }} @endif">{{ __('HomePage.readMore'); }} &rarr;</a>
             </div>
         </div>
         <div class="row consultation_cta mt-5">
@@ -227,14 +239,18 @@
                 <h2>{{ __('HomePage.headServiceOne'); }}<br>{{ __('HomePage.headServiceTwo'); }}</h2>
             </div>
         </div>
+    </div>
+    <div class="container-fluid p-0 m-0">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 p-0">
                 <img src="/assets/images/team-img-2.png" class="w-100" alt="ideatax team">
             </div>
         </div>
+    </div>
+    <div class="container">
         <div class="row consultation_cta mt-5">
             <div class="col-12">
-                <a href="@if (app()->getLocale() == "en") {{ route("contact") }} @else {{ route("contact.id") }} @endif">{{ __('HomePage.consultationCta'); }} <img src=" /assets/images/arrow.svg" class="ms-2" alt="arrow"></a>
+                <a href="@if (app()->getLocale() == " en") {{ route("contact") }} @else {{ route("contact.id") }} @endif">{{ __('HomePage.consultationCta'); }} <img src=" /assets/images/arrow.svg" class="ms-2" alt="arrow"></a>
             </div>
         </div>
     </div>
