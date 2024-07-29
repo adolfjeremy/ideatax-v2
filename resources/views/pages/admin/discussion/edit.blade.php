@@ -126,8 +126,8 @@
 @push('addon-script')
     <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
     <script>
-        CKEDITOR.replace('answer');
-        CKEDITOR.replace('answer_eng');
+        CKEDITOR.replace('answer',{versionCheck: false,});
+        CKEDITOR.replace('answer_eng',{versionCheck: false,});
     </script>
     <script>
         function previewImage() {

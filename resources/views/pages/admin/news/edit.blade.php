@@ -72,7 +72,8 @@
 @push('addon-script')
     <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
     <script>
-        CKEDITOR.replace('editor');
+        CKEDITOR.replace('editor',{versionCheck: false,});
+
     </script>
     <script>
         function previewImage() {

@@ -104,13 +104,13 @@
 @push('addon-script')
     <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
     <script>
-        CKEDITOR.replace('jobdesc');
-        CKEDITOR.replace('jobdesc_eng');
-        CKEDITOR.replace('qualification');
-        CKEDITOR.replace('qualification_eng');
-        CKEDITOR.replace('skill');
-        CKEDITOR.replace('skill_eng');
-        CKEDITOR.replace('course');
-        CKEDITOR.replace('course_eng');
+        CKEDITOR.replace('jobdesc' ,{versionCheck: false,});
+        CKEDITOR.replace('jobdesc_eng' ,{versionCheck: false,});
+        CKEDITOR.replace('qualification' ,{versionCheck: false,});
+        CKEDITOR.replace('qualification_eng' ,{versionCheck: false,});
+        CKEDITOR.replace('skill' ,{versionCheck: false,});
+        CKEDITOR.replace('skill_eng' ,{versionCheck: false,});
+        CKEDITOR.replace('course' ,{versionCheck: false,});
+        CKEDITOR.replace('course_eng' ,{versionCheck: false,});
     </script>
 @endpush

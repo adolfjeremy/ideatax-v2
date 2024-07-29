@@ -32,7 +32,7 @@
             font-size: 2.822rem;
         }
         @media (max-width: 480px) {
-            font-size: 1.0881rem;
+            font-size: 2.5rem;
         }
     }
 }
@@ -53,7 +53,8 @@
         padding: 0.8rem 1.6rem;
     }
     @media (max-width: 480px) {
-        font-size: 0.5rem 1rem;
+        font-size: 0.875rem;
+        padding: 0.5rem 1rem;
     }
     &:hover {
         font-size: 1.13rem;
@@ -75,6 +76,11 @@
     background-size: cover;
     background-position: center bottom;
     .about_desc {
+        .btn-orange {
+            @media (max-width: 480px) {
+                font-size: 0.5rem !important;
+            }
+        }
         p {
             color: $blue;
             font-style: normal;
@@ -90,10 +96,6 @@
             }
         }
         .about_stats {
-            gap: 6rem;
-            @media (max-width: 480px) {
-                gap: 3rem;
-            }
             .about_number {
                 font-size: 3.9502rem;
                 color: $navy;
@@ -104,7 +106,7 @@
                     font-size: 2.7644rem;
                 }
                 @media (max-width: 480px) {
-                    font-size: 2rem;
+                    font-size: 1.125rem;
                 }
             }
             .about_head {
@@ -119,8 +121,22 @@
                 @media (max-width: 1024px) {
                     font-size: 0.8rem;
                 }
+
+                @media (max-width: 480px) {
+                    font-size: 0.5rem;
+                }
             }
         }
+    }
+}
+
+.dynamic_width {
+    width: calc((100vw - 233px) / 6);
+    @media (max-width: 1024px) {
+        width: calc((100vw - 71px) / 6);
+    }
+    @media (max-width: 480px) {
+        width: calc((100vw - 24px) / 6);
     }
 }
 
@@ -233,7 +249,13 @@
             color: $blue;
             line-height: 1.64061987em;
             letter-spacing: 0.009em;
-            font-size: 1.3125rem;
+            font-size: 1.15rem;
+            @media (max-width: 1024px) {
+                font-size: 1.0366rem;
+            }
+            @media (max-width: 480px) {
+                font-size: 0.9rem;
+            }
         }
     }
     .right {

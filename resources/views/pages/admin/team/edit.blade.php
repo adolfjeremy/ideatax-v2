@@ -111,11 +111,11 @@
 @endsection
 
 @push('addon-script')
-    <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/4.24.0-lts/standard/ckeditor.js"></script>
     <script>
-        CKEDITOR.replace('editor');
-        CKEDITOR.replace('editor2');
-        CKEDITOR.replace('editor3');
-        CKEDITOR.replace('editor4');
+        CKEDITOR.replace('editor',{versionCheck: false,});
+        CKEDITOR.replace('editor2',{versionCheck: false,});
+        CKEDITOR.replace('editor3',{versionCheck: false,});
+        CKEDITOR.replace('editor4',{versionCheck: false,});
     </script>
 @endpush
