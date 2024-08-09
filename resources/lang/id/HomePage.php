@@ -1,8 +1,7 @@
 <?php
 
 return [
-    "headingOne" => "Pakar Pajak Indonesia,", 
-    "headingTwo" => "Dipercaya Secara Global." ,
+    "heading" => "Pakar Pajak Indonesia, Dipercaya Secara Global.", 
     "cta" => "HUBUNGI KAMI",
     "about" => "Kami memadukan pengalaman panjang dalam konsultasi pajak dan otoritas pajak untuk memberikan solusi menyeluruh kepada klien kami. Kami juga menghadirkan pendekatan penting dengan kemampuan memecahkan masalah yang dijiwai dengan komitmen penuh untuk memberikan kualitas layanan terbaik kepada klien kami.",
     "statOne" => "Proyek",

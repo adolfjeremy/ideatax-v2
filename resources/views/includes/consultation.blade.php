@@ -103,7 +103,8 @@
                             </label>
                             <textarea type="description" class="form-control" id="description" name="description" rows="6" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-warning">
+                        <div class="g-recaptcha mt-4" data-sitekey={{config('services.recaptcha.key')}}></div>
+                        <button type="submit" class="btn btn-warning mt-3">
                             @if (app()->getLocale() == "en")
                                 Set Meeting Schedule
                                 @else

@@ -23,6 +23,7 @@
     
     <meta property="og:url" content="https://ideatax.id/contact">
     <meta property="og:type" content="article">
+    <script async src="https://www.google.com/recaptcha/api.js"></script>
 @endsection
 
 @section('title')

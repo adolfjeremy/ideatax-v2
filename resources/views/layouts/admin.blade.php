@@ -64,7 +64,10 @@
                             <a href="{{ route("meeting.index") }}" class="nav-link active">Consultation Meetings</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route("hero.edit", 1) }}" class="nav-link active">Hero Section</a>
+                            <a href="{{ route("hero.index") }}" class="nav-link active">Hero Section</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route("stat.index") }}" class="nav-link active">Company Stat</a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route("compro-donwloader.index") }}" class="nav-link active">Comapany Profile Downloader</a>

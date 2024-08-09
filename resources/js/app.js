@@ -11,9 +11,7 @@ $(function () {
     });
 });
 
-const projectCount = document.querySelector(".project_num");
-const clientCount = document.querySelector(".client_num");
-const expCount = document.querySelector(".exp_num");
+const statCount = document.querySelectorAll(".stat_nums");
 
 function count(limit, element) {
     let count = 0;
@@ -28,14 +26,17 @@ function count(limit, element) {
 
 document.addEventListener("DOMContentLoaded", function () {
     const target = document.querySelector(".about_stats");
+    const projectValue = statCount[0].getAttribute("data-id");
+    const clientValue = statCount[1].getAttribute("data-id");
+    const expValue = statCount[2].getAttribute("data-id");
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 console.log("Target is visible!");
-                count(359, projectCount);
-                count(200, clientCount);
-                count(20, expCount);
+                count(projectValue, statCount[0]);
+                count(clientValue, statCount[1]);
+                count(expValue, statCount[2]);
                 observer.unobserve(entry.target);
             }
         });

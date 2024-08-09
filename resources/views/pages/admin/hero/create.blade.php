@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Ideatax | Edit Hero Section
+    Ideatax | Create New Hero Section
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@
         <div class="container-fluid">
             <div class="dashboard-heading pt-3">
                 <h2 class="dashboard-title fs-4 fw-bold">Hero</h2>
-                <p class="dashboard-subtitle">Edit Hero Section</p>
+                <p class="dashboard-subtitle">Create Hero Section</p>
             </div>
             <div class="dashboard-content pb-3 mt-4">
                 <div class="row">
@@ -24,18 +24,12 @@
                         </div>                        
                         @endif
                         <div class="row d-flex justify-content-center">
-                            <form action="{{ route('hero.update', $item->id) }}" method="POST" enctype="multipart/form-data">
-                                @method("PUT")
+                            <form action="{{ route('hero.store') }}" method="POST" enctype="multipart/form-data">
+                                @method("POST")
                                 @csrf
                                 <div class="col-12 mb-3">
                                     <label for="photo" class="form-label">Hero Image</label>
-                                    @if ($item->hero)
-                                    <img src="{{ asset("storage/" . $item->hero) }}" class="img-preview img-fluid col-sm-5 my-2 d-block">
-                                    @else
-                                    <img class="img-preview img-fluid col-sm-5 my-2">
-                                    @endif
-                                    <input type="hidden" name="oldImage" value="{{ $item->hero }}">
-                                    <input type="file" id="hero" name="hero" class="form-control w-100" value="{{ $item->hero }}" onchange="previewImage()">
+                                    <input type="file" id="hero" name="hero" class="form-control w-100">
                                 </div>
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-warning d-block w-100">Save</button>

@@ -35,6 +35,7 @@ use App\Http\Controllers\CareersController;
 use App\Http\Controllers\CompanyProfileDonwloaderInfoController;
 use App\Http\Controllers\ConsultationMeetingController;
 use App\Http\Controllers\Admin\MeetingController;
+use App\Http\Controllers\Admin\StatController;
 use App\Http\Controllers\Admin\SubscriptionController;
 use App\Http\Controllers\SearchController;
 
@@ -146,6 +147,7 @@ Route::prefix('admin')
     Route::resource('team', TeamController::class);
     Route::resource('author', AuthorController::class);
     Route::resource('subs', SubscriptionController::class);
+    Route::resource('stat', StatController::class);
     Route::get('/answered', [DiscussionController::class, 'answered'])->name('answered');
 });
 

@@ -1,8 +1,7 @@
 <?php
 
 return [
-    "headingOne" => "Indonesian Tax Expertise,", 
-    "headingTwo" => "Worldwide Trust.",
+    "heading" => "Indonesian Tax Expertise, Worldwide Trust.",
     "cta" => "GET IN TOUCH",
     "about" => "We combine a long running experience in tax consulting and tax authority to deliver thorough solutions to our clients. We also present essential approaches with problem-solving capabilities imbued with a full commitment for the most polished quality of service for our clients." ,
     "statOne" => "Projects",

@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class HeroSlider extends Model
+class Stat extends Model
 {
     protected $fillable = [
-        'hero'
+        'value', 'head'
     ];
 }

@@ -16,7 +16,11 @@ class HeroSliderController extends Controller
      */
     public function index()
     {
-        
+        $heroes = HeroSlider::get();
+
+        return view('pages.admin.hero.index', [
+            "heroes" => $heroes
+        ]);
     }
 
     /**
@@ -27,6 +31,7 @@ class HeroSliderController extends Controller
     public function create()
     {
         
+        return view('pages.admin.hero.create');
     }
 
     /**
@@ -37,7 +42,20 @@ class HeroSliderController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $data = $request->all();
+
+        if($request->file('hero'))
+        {
+            if($request->oldImage)
+            {
+                Storage::delete($request->oldImage);
+            }
+            $data['hero'] = $request->file('hero')->store('hero');
+        }
+
+        HeroSlider::create($data);
+
+        return redirect()->route('hero.index');
     }
 
     /**

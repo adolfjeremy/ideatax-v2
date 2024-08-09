@@ -20,7 +20,7 @@
                 <div class="row">
                     @foreach ($heroes as $hero)
                     <div class="col-4">
-                        <a href="{{ route('hero.edit', $hero->id) }}" class="card bg-primary mb-4 align-items-center justify-content-center text-decoration-none fs-6 text-uppercase text-center text-light fw-bold discussion_item ">
+                        <a href="{{ route('hero.edit', $hero->id) }}" style="background-image: url('{{ asset("storage/" . $hero->hero) }}')" class="hero_admin card mb-4 align-items-center justify-content-center text-decoration-none fs-6 text-uppercase text-center text-light fw-bold discussion_item ">
                             {{ $hero->cta}}
                         </a>
                     </div>

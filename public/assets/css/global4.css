@@ -103,6 +103,13 @@ header .dropdown-menu span {
     z-index: 10000;
 }
 
+.hero_admin {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 6rem !important;
+}
+
 .floating_button i {
     font-size: 30px;
     color: #fff;

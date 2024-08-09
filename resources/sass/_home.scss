@@ -2,24 +2,30 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 4rem;
-    .row {
-        margin-top: 5rem;
-    }
+    // padding: 4rem;
     @media (max-width: 1024px) {
-        width: 100vw;
         height: auto;
-        padding: 20rem 4rem 4rem 4rem;
+        // padding: 20rem 4rem 4rem 4rem;
     }
     @media (max-width: 480px) {
         width: 100vw;
         height: auto;
-        padding: 12rem 4rem 4rem 2rem;
+        // padding: 12rem 4rem 4rem 2rem;
         background-position: -200px top;
+    }
+    #carouselExample {
+        width: 100%;
+    }
+    .hero_text {
+        padding: 0 4rem;
+        inset: 0;
+        z-index: 1;
+        @media (max-width: 480px) {
+            padding: 0 2rem;
+        }
     }
     h1 {
         text-shadow: 0em 0.0375em 0.159375em rgba(0, 0, 0, 0.325);
@@ -32,7 +38,7 @@
             font-size: 2.822rem;
         }
         @media (max-width: 480px) {
-            font-size: 2.5rem;
+            font-size: 1.2em;
         }
     }
 }
@@ -53,7 +59,7 @@
         padding: 0.8rem 1.6rem;
     }
     @media (max-width: 480px) {
-        font-size: 0.875rem;
+        font-size: 0.675rem;
         padding: 0.5rem 1rem;
     }
     &:hover {

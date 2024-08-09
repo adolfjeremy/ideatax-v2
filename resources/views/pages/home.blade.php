@@ -18,6 +18,7 @@
 @endif
 <meta property="og:url" content="https://ideatax.id">
 <meta property="og:type" content="website">
+<script async src="https://www.google.com/recaptcha/api.js"></script>
 @endsection
 
 @section('title')
@@ -30,8 +31,28 @@
 @endsection
 
 @section('content')
-@section('content')
-<section class="hero" style="background-image: url('{{ asset("storage/" . $hero->hero) }}')">
+<section class="hero position-relative">
+    <div id="carouselExample" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+                @foreach ($hero as $item)
+                <div class="carousel-item @if ($loop->first)active @endif" data-bs-interval="6000">
+                    <img src="{{ asset("storage/" . $item->hero) }}" alt="{{ $item->cta_eng }}" class="w-100">
+                </div>
+                @endforeach
+            </div>
+        </div>
+    <div class="hero_text position-absolute d-flex align-items-center justify-content-start mt-4 mt-md-0">
+        <div class="col-md-8 col-12">
+            <h1 class="mt-5 mt-md-3">
+                {{ __('HomePage.heading'); }}
+            </h1>
+            <a href="@if (app()->getLocale() == " en") {{ route("contact") }} @else {{ route("contact") }} @endif" class="btn btn-orange mt-1 mt-md-3">
+                {{ __('HomePage.cta'); }}
+            </a>
+        </div>
+    </div>
+</section>
+{{-- <section class="hero" style="background-image: url('{{ asset("storage/" . $hero->hero) }}')">
     <div class="container-fluid">
         <div class="row mt-5">
             <div class="col-md-8 col-12">
@@ -54,7 +75,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <section class="about">
     <div class="container about_desc">
         <div class="row">
@@ -75,18 +96,19 @@
             </div>
         </div>
         <div class="row about_stats">
-            <div class="col--md-3 col-3 d-flex flex-column align-items-center justify-content-start">
-                <p class="about_number project_num p-0 m-0">0</p>
-                <p class="about_head p-0 m-0">{{ __('HomePage.statOne'); }}</p>
+            @foreach ($stats as $item)
+                <div class="col--md-3 col-3 d-flex flex-column align-items-center justify-content-start">
+                <p class="about_number stat_nums p-0 m-0" data-id="{{ $item->value }}">0</p>
+                <p class="about_head p-0 m-0">
+                    @if (app()->getLocale() == "en")
+                    {{ $item->head_eng }}
+                    @endif
+                    @if (app()->getLocale() == "id")
+                    {{ $item->head }}
+                    @endif
+                </p>
             </div>
-            <div class="col--md-3 col-3 d-flex flex-column align-items-center justify-content-start">
-                <p class=" about_number client_num p-0 m-0">200+</p>
-                <p class="about_head p-0 m-0">{{ __('HomePage.statTwo'); }}</p>
-            </div>
-            <div class="col--md-3 col-3 d-flex flex-column align-items-center justify-content-start">
-                <p class=" about_number exp_num p-0 m-0">20+</p>
-                <p class="about_head p-0 m-0">{{ __('HomePage.statThree'); }} <br>{{ __('HomePage.statFour'); }}</p>
-            </div>
+            @endforeach
             <div class="col--md-3 col-3 d-flex flex-column align-items-center justify-content-center">
                 <button type="button" class="btn btn-orange w-100" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     Company Profile
@@ -118,7 +140,9 @@
                                         <label for="company" class="form-label fs-6">Perusahaan</label>
                                         <input type="text" class="form-control" name="company" id="company" required>
                                     </div>
-                                    <button type="submit" class="btn btn-success">Submit</button>
+                                    <!-- Google Recaptcha Widget-->
+                                    <div class="g-recaptcha mt-4" data-sitekey={{config('services.recaptcha.key')}}></div>
+                                    <button type="submit" class="btn btn-success mt-3">Submit</button>
                                 </form>
                             </div>
                         </div>
@@ -294,7 +318,8 @@
                 <label for="email" class="form-label fs-6">Email</label>
                 <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" required>
             </div>
-            <button type="submit" class="btn btn-success">Submit</button>
+            <div class="g-recaptcha mt-4" data-sitekey={{config('services.recaptcha.key')}}></div>
+            <button type="submit" class="btn btn-success mt-3">Submit</button>
         </form>
       </div>
     </div>
@@ -323,6 +348,15 @@
         </div>
     </div>
 </section>
-@endsection
-
+@if(Session::has('status'))
+<div class="toast position-fixed bottom-0 start-1 show bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header d-flex align-items-center justify-content-between">
+        <P class="m-0 fw-bold">Ideatax</P>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body text-light">
+        {{ Session::get('status') }}
+    </div>
+</div>
+@endif
 @endsection
