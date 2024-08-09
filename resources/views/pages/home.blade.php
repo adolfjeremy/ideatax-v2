@@ -52,30 +52,6 @@
         </div>
     </div>
 </section>
-{{-- <section class="hero" style="background-image: url('{{ asset("storage/" . $hero->hero) }}')">
-    <div class="container-fluid">
-        <div class="row mt-5">
-            <div class="col-md-8 col-12">
-                <h1>
-                    @if (app()->getLocale() == "en")
-                    {{ $hero->cta_eng }}
-                    @endif
-                    @if (app()->getLocale() == "id")
-                    {{ $hero->cta }}
-                    @endif
-                </h1>
-                <a href="@if (app()->getLocale() == "en") {{ route("contact") }} @else {{ route("contact") }} @endif" class="btn btn-orange mt-3">
-                    @if (app()->getLocale() == "en")
-                    {{ $hero->button_eng }}
-                    @endif
-                    @if (app()->getLocale() == "id")
-                    {{ $hero->button }}
-                    @endif
-                </a>
-            </div>
-        </div>
-    </div>
-</section> --}}
 <section class="about">
     <div class="container about_desc">
         <div class="row">
@@ -348,15 +324,5 @@
         </div>
     </div>
 </section>
-@if(Session::has('status'))
-<div class="toast position-fixed bottom-0 start-1 show bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-header d-flex align-items-center justify-content-between">
-        <P class="m-0 fw-bold">Ideatax</P>
-        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-    </div>
-    <div class="toast-body text-light">
-        {{ Session::get('status') }}
-    </div>
-</div>
 @endif
 @endsection
