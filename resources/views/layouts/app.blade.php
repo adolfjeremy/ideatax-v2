@@ -73,16 +73,6 @@
             </div>
         </div>
         @yield('content')
-        @if(Session::has('status'))
-        <div class="toast position-fixed z-3 bottom-0 start-1 show bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header d-flex align-items-center justify-content-between">
-                <P class="m-0 fw-bold">Ideatax</P>
-                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <div class="toast-body text-light">
-                {{ Session::get('status') }}
-            </div>
-        </div>
     </main>
 </body>
 <script src="/assets/js/openNavbar.js"></script>
