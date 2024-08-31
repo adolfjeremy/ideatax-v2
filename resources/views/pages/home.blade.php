@@ -36,7 +36,7 @@
         <div class="carousel-inner">
                 @foreach ($hero as $item)
                 <div class="carousel-item @if ($loop->first)active @endif" data-bs-interval="6000">
-                    <img src="{{ asset("storage/" . $item->hero) }}" alt="{{ $item->cta_eng }}" class="w-100">
+                    <img src="{{ asset("storage/" . $item->hero) }}" alt="{{ $item->cta_eng }}" class="w-100" loading="eager">
                 </div>
                 @endforeach
             </div>
@@ -55,13 +55,13 @@
 <section class="about">
     <div class="container about_desc">
         <div class="row">
-            <div class="col-12 d-flex align-items-center justify-content-center">
-                <img src="/assets/images/award.png" class="dynamic_width" alt="world tax recommended firm">
-                <img src="/assets/images/aw-1.png" class="dynamic_width" alt="most creative tax solution strategist">
-                <img src="/assets/images/aw-2.png" class="dynamic_width" alt="accuracy and compliance expert">
-                <img src="/assets/images/aw-3.png" class="dynamic_width" alt="best new tax firm of the year 2024">
-                <img src="/assets/images/aw-4.png" class="dynamic_width" alt="best corporate tax specialist indonesia">
-                <img src="/assets/images/aw-5.png" class="dynamic_width" alt="fastest growing tax firm of the year 2024">
+            <div class="col-12 d-flex align-items-center justify-content-center" loading="eager">
+                <img src="/assets/images/award.webp" class="dynamic_width" loading="eager" alt="world tax recommended firm">
+                <img src="/assets/images/aw-1.webp" class="dynamic_width" loading="eager" alt="most creative tax solution strategist">
+                <img src="/assets/images/aw-2.webp" class="dynamic_width" loading="eager" alt="accuracy and compliance expert">
+                <img src="/assets/images/aw-3.webp" class="dynamic_width" loading="eager" alt="best new tax firm of the year 2024">
+                <img src="/assets/images/aw-4.webp" class="dynamic_width" loading="eager" alt="best corporate tax specialist indonesia">
+                <img src="/assets/images/aw-5.webp" class="dynamic_width" loading="eager" alt="fastest growing tax firm of the year 2024">
             </div>
         </div>
         <div class="row">
@@ -178,19 +178,19 @@
         </div>
         <div class="row value_list mt-4">
             <div class="col-3 position-relative value_item p-0">
-                <img src="/assets/images/1.png" class="w-100" alt="Professional">
+                <img src="/assets/images/1.webp" loading="lazy" class="w-100" alt="Professional">
                 <h3>Professional</h3>
             </div>
             <div class="col-3 position-relative value_item p-0">
-                <img src="/assets/images/2.png" class="w-100" alt="Trustwothy">
+                <img src="/assets/images/2.webp" loading="lazy" class="w-100" alt="Trustwothy">
                 <h3>Trustwothy</h3>
             </div>
             <div class="col-3 position-relative value_item p-0">
-                <img src="/assets/images/3.png" class="w-100" alt="Creativity">
+                <img src="/assets/images/3.webp" loading="lazy" class="w-100" alt="Creativity">
                 <h3>Creativity</h3>
             </div>
             <div class="col-3 position-relative value_item p-0">
-                <img src="/assets/images/4.png" class="w-100" alt="Prudent">
+                <img src="/assets/images/4.webp" loading="lazy" class="w-100" alt="Prudent">
                 <h3>Prudent</h3>
             </div>
         </div>
@@ -235,7 +235,7 @@
         </div>
     </div>
     <div class="container-fluid p-0 m-0">
-        <img src="/assets/images/team-img-2.png" class="w-100" alt="ideatax team">
+        <img src="/assets/images/team-img-2.webp" class="w-100" alt="ideatax team">
     </div>
     <div class="container">
         <div class="row consultation_cta mt-5">
@@ -268,7 +268,7 @@
     </div>
 </section>
 <section class="subscribe position-relative">
-    <img src="/assets/images/subscribe.png" class="w-100 position-relative" alt="">
+    <img src="/assets/images/subscribe.webp" class="w-100 position-relative" alt="">
     <div class="subscribe_button py-5 py-md-0 d-flex flex-column align-items-center justify-content-center">
         <h2 class="position-relative">{{ __('HomePage.subHead'); }}</h2>
         <button type="button" class="btn-modal" data-bs-toggle="modal" data-bs-target="#exampleModal">

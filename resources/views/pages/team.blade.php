@@ -31,7 +31,7 @@
 
 @section('content')
     <section class="team position-relative">
-        <img src="/assets/images/team-hero.png" alt="Idetax team ready to serve you" class="w-100">
+        <img src="/assets/images/team-hero.webp" alt="Idetax team ready to serve you" class="w-100">
         <div class="container-fluid team-heading">
             <div class="row">
                 <div class="col-12">
