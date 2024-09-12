@@ -31,12 +31,24 @@
                                     <input type="text" id="title" name="title" class="form-control w-100" required>
                                 </div>
                                 <div class="col-12 mb-3">
+                                    <label for="title_eng" class="form-label">Title Eng</label>
+                                    <input type="text" id="title_eng" name="title_eng" class="form-control w-100" required>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="title_jpn" class="form-label">Title Jpn</label>
+                                    <input type="text" id="title_jpn" name="title_jpn" class="form-control w-100" required>
+                                </div>
+                                <div class="col-12 mb-3">
                                     <label for="SEO_title" class="form-label">SEO Title Id</label>
                                     <input type="text" id="SEO_title" name="SEO_title" class="form-control w-100" required>
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="SEO_title_eng" class="form-label">SEO Title Eng</label>
                                     <input type="text" id="SEO_title_eng" name="SEO_title_eng" class="form-control w-100" required>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="SEO_title_jpn" class="form-label">SEO Title Jpn</label>
+                                    <input type="text" id="SEO_title_jpn" name="SEO_title_jpn" class="form-control w-100" required>
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="body">Job Description Id</label>
@@ -47,12 +59,20 @@
                                     <textarea name="jobdesc_eng" id="jobdesc_eng"></textarea>
                                 </div>
                                 <div class="col-12 mb-3">
+                                    <label for="jobdesc_jpn">Job Description Jpn</label>
+                                    <textarea name="jobdesc_jpn" id="jobdesc_jpn"></textarea>
+                                </div>
+                                <div class="col-12 mb-3">
                                     <label for="qualification" class="form-label">Minimum Qualifications Id</label>
                                     <textarea name="qualification" id="qualification" class="form-control w-100" cols="20" rows="5" required></textarea>
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="qualification_eng" class="form-label">Minimum Qualifications Eng</label>
                                     <textarea name="qualification_eng" id="qualification_eng" class="form-control w-100" cols="20" rows="5" required></textarea>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="qualification_jpn" class="form-label">Minimum Qualifications Jpn</label>
+                                    <textarea name="qualification_jpn" id="qualification_jpn" class="form-control w-100" cols="20" rows="5" required></textarea>
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="skill" class="form-label">Required Skills Id</label>
@@ -62,6 +82,11 @@
                                 <div class="col-12 mb-3">
                                     <label for="skill_eng" class="form-label">Required Skills Eng</label>
                                     <textarea name="skill_eng" id="skill_eng" class="form-control w-100" cols="20" rows="5"></textarea>
+                                    <small>*leave blank if not necessary</small>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="skill_jpn" class="form-label">Required Skills Jpn</label>
+                                    <textarea name="skill_jpn" id="skill_jpn" class="form-control w-100" cols="20" rows="5"></textarea>
                                     <small>*leave blank if not necessary</small>
                                 </div>
                                 <div class="col-12 mb-3">
@@ -75,12 +100,21 @@
                                     <small>*leave blank if not necessary</small>
                                 </div>
                                 <div class="col-12 mb-3">
+                                    <label for="course_jpn" class="form-label">Preferred Courses Jpn</label>
+                                    <textarea name="course_jpn" id="course_jpn" class="form-control w-100" cols="20" rows="5"></textarea>
+                                    <small>*leave blank if not necessary</small>
+                                </div>
+                                <div class="col-12 mb-3">
                                     <label for="description" class="form-label">Meta Description Id</label>
                                     <textarea name="description" id="description" class="form-control w-100" cols="30" rows="5"></textarea>
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="description_eng" class="form-label">Meta Description Eng</label>
                                     <textarea name="description_eng" id="description_eng" class="form-control w-100" cols="30" rows="5"></textarea>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="description_jpn" class="form-label">Meta Description Jpn</label>
+                                    <textarea name="description_jpn" id="description_jpn" class="form-control w-100" cols="30" rows="5"></textarea>
                                 </div>
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-warning d-block w-100">Post</button>
@@ -99,11 +133,15 @@
     <script>
         CKEDITOR.replace('jobdesc' ,{versionCheck: false,});
         CKEDITOR.replace('jobdesc_eng' ,{versionCheck: false,});
+        CKEDITOR.replace('jobdesc_jpn' ,{versionCheck: false,});
         CKEDITOR.replace('qualification' ,{versionCheck: false,});
         CKEDITOR.replace('qualification_eng' ,{versionCheck: false,});
+        CKEDITOR.replace('qualification_jpn' ,{versionCheck: false,});
         CKEDITOR.replace('skill' ,{versionCheck: false,});
         CKEDITOR.replace('skill_eng' ,{versionCheck: false,});
+        CKEDITOR.replace('skill_jpn' ,{versionCheck: false,});
         CKEDITOR.replace('course' ,{versionCheck: false,});
         CKEDITOR.replace('course_eng' ,{versionCheck: false,});
+        CKEDITOR.replace('course_jpn' ,{versionCheck: false,});
     </script>
 @endpush

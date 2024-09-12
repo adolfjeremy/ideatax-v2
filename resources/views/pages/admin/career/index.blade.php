@@ -12,7 +12,7 @@
                     <h2 class="dashboard-title fs-4 fw-bold">Career</h2>
                     <p class="dashboard-subtitle">Create, Edit or Delete Job Openings</p>
                 </div>
-                <a href="{{ route("career.create") }}" class="btn btn-warning">Creat Job Opening</a>
+                <a href="{{ route("career.create") }}" class="btn btn-warning">Create Job Opening</a>
             </div>
             <div class="dashboard-content mt-2">
                 <div class="row">

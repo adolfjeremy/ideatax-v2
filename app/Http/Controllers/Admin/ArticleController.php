@@ -60,6 +60,7 @@ class ArticleController extends Controller
 
         $data['slug'] = Str::slug($request->title);
         $data['slug_eng'] = Str::slug($request->title_eng);
+        $data['slug_jpn'] = Str::slug($request->title_jpn);
         
         Article::create($data);
 

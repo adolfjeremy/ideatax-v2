@@ -36,12 +36,20 @@
                                     <input type="text" id="SEO_title_eng" name="SEO_title_eng" class="form-control w-100" value="{{ $item->SEO_title_eng }}" required>
                                 </div>
                                 <div class="col-12 mb-3">
+                                    <label for="SEO_title_jpn" class="form-label">SEO Title Jpn</label>
+                                    <input type="text" id="SEO_title_jpn" name="SEO_title_jpn" class="form-control w-100" value="{{ $item->SEO_title_jpn }}" required>
+                                </div>
+                                <div class="col-12 mb-3">
                                     <label for="description" class="form-label">Meta Description Id</label>
                                     <textarea name="description" id="description" class="form-control w-100" cols="30" rows="5" required>{{ $item->description }}</textarea>
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="description_eng" class="form-label">Meta Description Eng</label>
-                                    <textarea name="description_eng" id="description_eng" class="form-control w-100" cols="30" rows="5" required>{{ $item->description }}</textarea>
+                                    <textarea name="description_eng" id="description_eng" class="form-control w-100" cols="30" rows="5" required>{{ $item->description_eng }}</textarea>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="description_jpn" class="form-label">Meta Description Jpn</label>
+                                    <textarea name="description_jpn" id="description_jpn" class="form-control w-100" cols="30" rows="5" required>{{ $item->description_jpn }}</textarea>
                                 </div>
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-warning d-block w-100">Save</button>

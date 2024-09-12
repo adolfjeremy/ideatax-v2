@@ -44,6 +44,8 @@ class CareersAdminController extends Controller
         $data = $request->all();
 
         $data['slug'] = Str::slug($request->title);
+        $data['slug_eng'] = Str::slug($request->title_eng);
+        $data['slug_jpn'] = Str::slug($request->title_jpn);
         Career::create($data);
 
         return redirect()->route('career.index');
@@ -89,6 +91,8 @@ class CareersAdminController extends Controller
         $item = Career::findOrFail($id);
         
         $data['slug'] = Str::slug($request->title);
+        $data['slug_eng'] = Str::slug($request->title_eng);
+        $data['slug_jpn'] = Str::slug($request->title_jpn);
 
         $item->update($data);
 

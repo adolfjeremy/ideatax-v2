@@ -35,6 +35,10 @@
                                     <input type="text" id="title_eng" name="title_eng" class="form-control w-100" required>
                                 </div>
                                 <div class="col-12 mb-3">
+                                    <label for="title_jpn" class="form-label">Service Name Jpn</label>
+                                    <input type="text" id="title_jpn" name="title_jpn" class="form-control w-100" required>
+                                </div>
+                                <div class="col-12 mb-3">
                                     <label for="image" class="form-label">Service Thumbnail</label>
                                     <img class="img-preview img-fluid col-sm-5 my-2">
                                     <input type="file" id="image" name="image" class="form-control w-100" onchange="previewImage()" required>
@@ -47,6 +51,10 @@
                                     <label for="description_eng">Description Eng</label>
                                     <textarea name="description_eng" rows="10" required></textarea>
                                 </div>
+                                <div class="col-12 mb-3 d-flex flex-column">
+                                    <label for="description_jpn">Description Jpn</label>
+                                    <textarea name="description_jpn" rows="10" required></textarea>
+                                </div>
                                 <div class="col-12 mb-3">
                                     <label for="SEO_title" class="form-label">SEO Title Id</label>
                                     <input type="text" id="SEO_title" name="SEO_title" class="form-control w-100" required>
@@ -56,12 +64,20 @@
                                     <input type="text" id="SEO_title_eng" name="SEO_title_eng" class="form-control w-100" required>
                                 </div>
                                 <div class="col-12 mb-3">
+                                    <label for="SEO_title_jpn" class="form-label">SEO Title Jpn</label>
+                                    <input type="text" id="SEO_title_jpn" name="SEO_title_jpn" class="form-control w-100" required>
+                                </div>
+                                <div class="col-12 mb-3">
                                     <label for="description" class="form-label">Meta Description Id</label>
                                     <textarea name="description" id="description" class="form-control w-100" cols="30" rows="5" required></textarea>
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="description_eng" class="form-label">Meta Description Eng</label>
                                     <textarea name="description_eng" id="description_eng" class="form-control w-100" cols="30" rows="5" required></textarea>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="description_jpn" class="form-label">Meta Description Jpn</label>
+                                    <textarea name="description_jpn" id="description_jpn" class="form-control w-100" cols="30" rows="5" required></textarea>
                                 </div>
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-warning d-block w-100">Post Services</button>
@@ -76,12 +92,6 @@
 @endsection
 
 @push('addon-script')
-    <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
-    <script>
-        CKEDITOR.replace('editor',{versionCheck: false,});
-
-    </script>
-
     <script>
         function previewImage() {
             const imgPreview = document.querySelector(".img-preview");

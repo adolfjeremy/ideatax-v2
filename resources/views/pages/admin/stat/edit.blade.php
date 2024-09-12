@@ -36,11 +36,15 @@
                                     <input type="text" id="title_eng" name="head_eng" class="form-control w-100" value="{{ $item->head_eng }}" required>
                                 </div>
                                 <div class="col-12 mb-3">
+                                    <label for="titlejpn" class="form-label">Title Jpn</label>
+                                    <input type="text" id="titlejpn" name="head_jpn" class="form-control w-100" value="{{ $item->head_jpn }}" required>
+                                </div>
+                                <div class="col-12 mb-3">
                                     <label for="value" class="form-label">Value</label>
                                     <input type="number" id="value" name="value" class="form-control w-100" value="{{ $item->value }}" required>
                                 </div>
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-warning d-block w-100">Save Article Category</button>
+                                    <button type="submit" class="btn btn-warning d-block w-100">Save Stats</button>
                                 </div>
                             </form>
                         </div>

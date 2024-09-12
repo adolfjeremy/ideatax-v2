@@ -41,6 +41,7 @@ class TaxEventController extends Controller
 
         $data['slug'] = Str::slug($request->title);
         $data['slug_eng'] = Str::slug($request->title_eng);
+        $data['slug_jpn'] = Str::slug($request->title_jpn);
 
         TaxEvent::create($data);
 
@@ -73,6 +74,7 @@ class TaxEventController extends Controller
 
         $data['slug'] = Str::slug($request->title);
         $data['slug_eng'] = Str::slug($request->title_eng);
+        $data['slug_jpn'] = Str::slug($request->title_jpn);
         
         $item->update($data);
 

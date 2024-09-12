@@ -37,6 +37,7 @@ class ServicesController extends Controller
         $data = $request->all();
         $data['slug'] = Str::slug($request->title);
         $data['slug_eng'] = Str::slug($request->title_eng);
+        $data['slug_jpn'] = Str::slug($request->title_jpn);
         $data['excerpt'] = Str::limit($request->description, 130);
         $data['excerpt_eng'] = Str::limit($request->description_eng, 130);
         $servicesCount = Services::all()->count();
@@ -67,6 +68,7 @@ class ServicesController extends Controller
 
         $data['slug'] = Str::slug($request->title);
         $data['slug_eng'] = Str::slug($request->title_eng);
+        $data['slug_jpn'] = Str::slug($request->title_jpn);
 
 
         
