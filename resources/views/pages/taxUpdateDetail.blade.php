@@ -180,45 +180,45 @@
                     </div>
                 </div>
             </div>
-            <div id="newsContainer" class="row mb-4 mt-3">
-                <div class="col-12">
-                    <div class="row">
-                        <div class="header_container text-start mb-2">
-                            <h2>Tax Consulting</h2>
-                        </div>
-                    </div>
-                    <div class="row mb-2">
-                        <div class="discussion_list">
-                            @forelse ($customerQuestions as $customerQuestion)
-                                <div class="discussion_item">
-                                    <div class="image-container w-100">
-                                        <a href="{{ route('tax-consulting', $customerQuestion->slug) }}"><img src="{{ asset("storage/" . $customerQuestion->photo) }}" alt="" class="w-100"></a>
-                                    </div>
-                                    <div class="caption_container px-2">
-                                        <h3>
-                                            @if (app()->getLocale() == "en")
-                                            <a href="{{ route('tax-consulting', $customerQuestion->slug) }}">{!! str_limit($customerQuestion->title_eng,$limit = 61) !!}</a>
-                                            @endif
-                                            @if (app()->getLocale() == "id")
-                                            <a href="{{ route('tax-consulting', $customerQuestion->slug) }}">{!! str_limit($customerQuestion->title,$limit = 61) !!}</a>
-                                            @endif
-                                        </h3>
-                                        <div class="timestamp">
-                                            <a href="{{ route('tax-update-category',$customerQuestion->taxUpdateCategory->slug) }}" class="text-warning">{{ $customerQuestion->taxUpdateCategory->title }}</a>
-                                            <span class="ms-1">{{ $customerQuestion->created_at->format('d M, Y H:i') }} WIB</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            @empty
-                                <div class="col-12">
-                                    There is No Other Data 
-                                </div>
-                            @endforelse
-                        </div>
-                        {{ $customerQuestions->links() }}
-                    </div>
-                </div>
-            </div>
+            <!--<div id="newsContainer" class="row mb-4 mt-3">-->
+            <!--    <div class="col-12">-->
+            <!--        <div class="row">-->
+            <!--            <div class="header_container text-start mb-2">-->
+            <!--                <h2>Tax Consulting</h2>-->
+            <!--            </div>-->
+            <!--        </div>-->
+            <!--        <div class="row mb-2">-->
+            <!--            <div class="discussion_list">-->
+            <!--                @forelse ($customerQuestions as $customerQuestion)-->
+            <!--                    <div class="discussion_item">-->
+            <!--                        <div class="image-container w-100">-->
+            <!--                            <a href="{{ route('tax-consulting', $customerQuestion->slug) }}"><img src="{{ asset("storage/" . $customerQuestion->photo) }}" alt="" class="w-100"></a>-->
+            <!--                        </div>-->
+            <!--                        <div class="caption_container px-2">-->
+            <!--                            <h3>-->
+            <!--                                @if (app()->getLocale() == "en")-->
+            <!--                                <a href="{{ route('tax-consulting', $customerQuestion->slug) }}">{!! str_limit($customerQuestion->title_eng,$limit = 61) !!}</a>-->
+            <!--                                @endif-->
+            <!--                                @if (app()->getLocale() == "id")-->
+            <!--                                <a href="{{ route('tax-consulting', $customerQuestion->slug) }}">{!! str_limit($customerQuestion->title,$limit = 61) !!}</a>-->
+            <!--                                @endif-->
+            <!--                            </h3>-->
+            <!--                            <div class="timestamp">-->
+            <!--                                <a href="{{ route('tax-update-category',$customerQuestion->taxUpdateCategory->slug) }}" class="text-warning">{{ $customerQuestion->taxUpdateCategory->title }}</a>-->
+            <!--                                <span class="ms-1">{{ $customerQuestion->created_at->format('d M, Y H:i') }} WIB</span>-->
+            <!--                            </div>-->
+            <!--                        </div>-->
+            <!--                    </div>-->
+            <!--                @empty-->
+            <!--                    <div class="col-12">-->
+            <!--                        There is No Other Data -->
+            <!--                    </div>-->
+            <!--                @endforelse-->
+            <!--            </div>-->
+            <!--            {{ $customerQuestions->links() }}-->
+            <!--        </div>-->
+            <!--    </div>-->
+            <!--</div>-->
         </div>
     </section>
 @endsection
